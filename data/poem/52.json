@@ -1,0 +1,56 @@
+{
+  "number": 52,
+  "name_en": "Stilling",
+  "judgment": [
+    "Stilling the back —",
+    "the body not caught.",
+    "Crossing the courtyard, no one seen.",
+    "No harm."
+  ],
+  "image": [
+    "Mountain on mountain: Stilling.",
+    "The noble one, by this,",
+    "lets no thought leave its place."
+  ],
+  "lines": [
+    [
+      "Stilling the toes.",
+      "No harm.",
+      "Favours holding firm, long."
+    ],
+    [
+      "Stilling the calves.",
+      "What it follows, it cannot lift.",
+      "The heart is not glad."
+    ],
+    [
+      "Stilling the waist,",
+      "splitting the muscles of the back.",
+      "Danger smokes the heart."
+    ],
+    [
+      "Stilling the trunk.",
+      "No harm."
+    ],
+    [
+      "Stilling the jaws.",
+      "Words in order.",
+      "Regret gone."
+    ],
+    [
+      "Stilling, made solid.",
+      "Good."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "艮 is used as a verb throughout ('still the toes/waist/jaws') and as the mountain trigram only in the Image （兼山）. Title takes the verb ('Stilling'), rejecting 'Stillness' (abstraction) and Wilhelm's 'Keeping Still, Mountain'.",
+    "judgment": "艮其背不獲其身行其庭不見其人無咎。 The back is the part that cannot see or grab: stilling there, the body is 'not caught' （獲 kept as catch/get hold of) and courtyard people go unseen. Kept literal against Legge's paraphrase 'loses all consciousness of self'. Possessive 其 dropped throughout per style (no 'his').",
+    "image": "兼山艮；君子以思不出其位。 兼 = doubled/joined mountains. 位 kept spatial as 'place' (position in the world), not narrowed to duties or office.",
+    "L2": "六二 艮其腓不拯其隨其心不快。 Subject of 隨 is ambiguous — calf following thigh, or this line following the one above. 'What it follows, it cannot lift' keeps the ambiguity; 拯 = lift up/rescue, rendered with its physical verb 'lift'. 快 = glad.",
+    "L3": "九三 艮其限列其夤厲薰心。 限 is the waist as a threshold/boundary between lower and upper body; 夤 are the muscles along the spine, split （列） when stilling is forced at the join. 薰 kept as a verb: danger smokes/fumes the heart.",
+    "L4": "六四 艮其身。 身 narrowed to 'trunk' by the ascending sequence toes → calves → waist → trunk → jaws; in the Judgment 身 is the whole body.",
+    "L5": "六五 艮其輔言有序悔亡。 輔 are the cheek/jaw bones that move in speech — 'jaws'. 悔亡 per glossary, distinct from 無悔.",
+    "L6": "上九 敦艮吉。 敦 is thick, solid, substantial — 'made solid', not Legge's moralised 'devotedly maintaining'."
+  }
+}

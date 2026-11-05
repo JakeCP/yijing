@@ -1,0 +1,59 @@
+{
+  "number": 1,
+  "name_en": "Heaven",
+  "judgment": [
+    "Great,",
+    "through,",
+    "favourable —",
+    "hold firm."
+  ],
+  "image": [
+    "Heaven moves, strong.",
+    "The noble one, by this,",
+    "keeps strong, does not rest."
+  ],
+  "lines": [
+    [
+      "Dragon under water.",
+      "Do not act."
+    ],
+    [
+      "Dragon appears in the field.",
+      "Favours seeing the great person."
+    ],
+    [
+      "The noble one, all day, strong and strong,",
+      "at dusk wary, as if in danger.",
+      "No harm."
+    ],
+    [
+      "Perhaps leaping,",
+      "still in the deep.",
+      "No harm."
+    ],
+    [
+      "Dragon flying in heaven.",
+      "Favours seeing the great person."
+    ],
+    [
+      "Dragon too high.",
+      "There will be regret."
+    ]
+  ],
+  "special": [
+    "Dragons appear together,",
+    "no head among them.",
+    "Good."
+  ],
+  "notes": {
+    "name_en": "乾 is the doubled heaven trigram; title names the thing (heaven), rejecting Wilhelm's force-abstraction 'The Creative'. Vigour （乾健） is left to the Image.",
+    "judgment": "元，亨，利，貞。 Base punctuation separates the four words, so they stay four beats; 利貞 is not fused into a moral phrase here. Wording is the glossary fixed form.",
+    "image": "天行健，君子以自強不息。 健 = strong in motion, kept as a quality of the movement. 自強不息： reflexive pronoun dropped ('keeps strong'); 息 = rest, not 'ceaseless activity'.",
+    "L1": "初九 潛龍勿用。 潛 is submerged in water, not merely 'hidden' — hence 'under water', setting up 淵 in L4.",
+    "L2": "九二 見龍在田。 First 見 reads xiàn 'appear'; second 見 （利見大人） is 'see'. The hinge on one character is kept by using both English verbs.",
+    "L3": "九三 君子終日乾乾夕惕若厲。 乾乾 reduplication kept as 'strong and strong'; 惕 = wary caution at dusk; 若厲 'as if in danger' keeps 若 hypothetical.",
+    "L4": "九四 或躍在淵。 或 uncertainty kept ('Perhaps'); 淵 is a deep pool of water, rendered 'the deep', not a metaphysical abyss.",
+    "L6": "上九 亢龍有悔。 亢 is height stiffened into excess — 'too high', not a character trait ('arrogant').",
+    "special": "用九 見群龍無首吉。 群 = together as a group; 首 kept literal as 'head', holding both animal-head and leader senses. 見 again reads 'appear'."
+  }
+}
