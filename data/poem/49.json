@@ -2,7 +2,7 @@
   "number": 49,
   "name_en": "Change of Skin",
   "judgment": [
-    "On its own day, then there is trust.",
+    "On its own day, and only then, there is trust.",
     "Begin greatly, and go through.",
     "It is good to hold firm.",
     "Regret gone."
@@ -14,38 +14,39 @@
   ],
   "lines": [
     [
-      "Bound fast with yellow oxhide."
+      "He is bound fast",
+      "with yellow oxhide."
     ],
     [
-      "On its own day, change it.",
+      "When its own day comes, change it.",
       "To march: good.",
       "No harm."
     ],
     [
       "To march: misfortune. Holding firm: danger.",
-      "The talk of change, three times settled —",
+      "But when the talk of change is three times settled,",
       "there is trust."
     ],
     [
       "Regret gone.",
-      "There is trust: change the charge.",
+      "There is trust now to change the charge.",
       "Good."
     ],
     [
       "The great person changes like a tiger.",
-      "Before any casting, there is trust."
+      "Before any casting, there is trust in him."
     ],
     [
-      "The noble one changes like a leopard;",
-      "the small person changes his face.",
+      "The noble one changes like a leopard,",
+      "but the small person only changes his face.",
       "To march: misfortune.",
-      "Staying, holding firm: good."
+      "Staying, and holding firm: good."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "革 is hide/skin, and stripping a hide = change (tiger, leopard, face in L5-6); 'Change of Skin', not Wilhelm's 'Revolution (Moulting)'.",
-    "judgment": "己日 the ji day (sixth stem-day) — the proper, appointed day: 'its own day'.",
+    "judgment": "己日 the ji day (sixth stem-day) — the proper, appointed day: 'its own day'; B adds 'only then' for 乃孚 (trust only on that day).",
     "L4": "改命 changing the charge/mandate; 命 as decree, not fate."
   }
 }

@@ -3,8 +3,8 @@
   "name_en": "Lawsuit",
   "judgment": [
     "There is trust, and it is blocked.",
-    "Wary, and held to the middle: good.",
-    "In the end, misfortune.",
+    "If he is wary and holds to the middle: good.",
+    "But pressed to the end: misfortune.",
     "It is good to see the great person.",
     "It is not good to ford the great river."
   ],
@@ -16,41 +16,41 @@
   "lines": [
     [
       "Do not drag the matter on.",
-      "There is a little talk.",
-      "In the end, good."
+      "There is a little talk,",
+      "but in the end: good."
     ],
     [
-      "The suit cannot be won.",
-      "Go home and slip away —",
-      "the town's three hundred households",
+      "He cannot win the suit,",
+      "so he goes home and slips away —",
+      "and the town's three hundred households",
       "take no harm."
     ],
     [
-      "Living on old virtue.",
-      "Holding firm: danger — in the end, good.",
-      "In the king's service, perhaps:",
-      "nothing completed."
+      "He lives on old virtue.",
+      "Holding firm: danger, but in the end good.",
+      "If he serves the king,",
+      "he completes nothing."
     ],
     [
-      "The suit cannot be won.",
-      "Turn back, accept what is charged,",
-      "change, and rest holding firm.",
+      "He cannot win the suit,",
+      "so he turns back and accepts what is charged;",
+      "he changes, and rests holding firm.",
       "Good."
     ],
     [
-      "To plead the suit:",
+      "He pleads the suit:",
       "great good."
     ],
     [
-      "Perhaps given a belt of honour —",
-      "by morning's end,",
-      "three times stripped of it."
+      "He may be given a belt of honour,",
+      "but by morning's end",
+      "he is three times stripped of it."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "訟 is a plea at law; 'Lawsuit', not Wilhelm's 'Conflict'.",
-    "judgment": "惕中吉終凶 parsed as middle-course good, end pressed through misfortune.",
+    "judgment": "惕中吉終凶 parsed as middle-course good, end pressed through misfortune; B spells out the if/but.",
     "L6": "鞶帶 a broad belt of rank, given and stripped (褫) three times in a morning."
   }
 }

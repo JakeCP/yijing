@@ -4,8 +4,8 @@
   "judgment": [
     "Begin greatly, and go through.",
     "It is good to hold firm.",
-    "What is not right in it brings harm.",
-    "It is not good to set out."
+    "If it is not right, it brings harm.",
+    "Then it is not good to set out."
   ],
   "image": [
     "Thunder rolls under heaven; things are given without falseness.",
@@ -14,37 +14,38 @@
   ],
   "lines": [
     [
-      "Without falseness.",
+      "Without falseness, he goes.",
       "Going: good."
     ],
     [
       "Reaping without ploughing,",
-      "a ripe field without clearing it —",
+      "gathering a ripe field without clearing it —",
       "then it is good to set out."
     ],
     [
-      "A disaster out of nowhere:",
-      "a cow, left tethered —",
-      "the passer-by's gain,",
-      "the townsman's disaster."
+      "A disaster out of nowhere: a cow left tethered —",
+      "the passer-by gains it,",
+      "the townsman bears the disaster."
     ],
     [
-      "It can hold firm.",
+      "He can hold firm.",
       "No harm."
     ],
     [
       "Sickness out of nowhere:",
-      "no medicine — there will be joy."
+      "take no medicine, and there will be joy."
     ],
     [
-      "Without falseness,",
-      "going brings harm.",
+      "Without falseness, but going brings harm.",
       "No good anywhere."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "無妄 no falseness/recklessness (妄 false, wild); 'Without Falseness', not Wilhelm's 'Innocence'.",
-    "L2": "菑 newly cleared ground, 畬 field in its third year: the ripe field unmade by you."
+    "L2": "菑 newly cleared ground, 畬 field in its third year: the ripe field unmade by you.",
+    "judgment": "其匪正有眚: B makes the condition explicit ('If it is not right… then…').",
+    "L5": "無妄之疾勿藥有喜: the sickness undeserved; B links no-medicine to joy with 'and'.",
+    "L6": "無妄行有眚: B supplies the contrast — without falseness, but going still brings harm."
   }
 }

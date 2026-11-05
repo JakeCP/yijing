@@ -2,8 +2,8 @@
   "number": 39,
   "name_en": "Limping",
   "judgment": [
-    "It is good in the south-west;",
-    "not good in the north-east.",
+    "It is good in the south-west,",
+    "but not good in the north-east.",
     "It is good to see the great person.",
     "Holding firm: good."
   ],
@@ -14,29 +14,34 @@
   ],
   "lines": [
     [
-      "Going: limping. Coming: praise."
+      "If he goes: limping.",
+      "If he comes: praise."
     ],
     [
-      "The king's servant, limping, limping —",
-      "not for his own sake."
+      "The king's servant limps and limps,",
+      "but not for his own sake."
     ],
     [
-      "Going: limping. Coming: turning back."
+      "If he goes: limping.",
+      "If he comes: he turns back."
     ],
     [
-      "Going: limping. Coming: joining."
+      "If he goes: limping.",
+      "If he comes: he joins the others."
     ],
     [
-      "Great limping — friends come."
+      "His limping is great,",
+      "but his friends come."
     ],
     [
-      "Going: limping. Coming: great. Good.",
+      "If he goes: limping. If he comes: great, and good.",
       "It is good to see the great person."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "蹇 is lameness, a limping halt; 'Limping', not Wilhelm's 'Obstruction'.",
-    "judgment": "South-west level, north-east steep — directions kept without the traditional topography glossed in."
+    "judgment": "South-west level, north-east steep — directions kept without the traditional topography glossed in.",
+    "L1": "往蹇來譽 and its refrains (L3, L4, L6): B supplies the 'if' the going/coming pair turns on; wording of the refrain otherwise unchanged."
   }
 }

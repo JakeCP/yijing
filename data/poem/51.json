@@ -16,38 +16,41 @@
   "lines": [
     [
       "Thunder comes, shock upon shock;",
-      "afterwards, laughter and talk.",
+      "afterwards there is laughter and talk.",
       "Good."
     ],
     [
-      "Thunder comes: danger.",
-      "A hundred thousand cowries lost —",
-      "climb to the nine mounds.",
-      "Do not chase them: in seven days, got back."
+      "Thunder comes, and there is danger.",
+      "He loses a hundred thousand cowries —",
+      "let him climb to the nine mounds.",
+      "Do not chase them: in seven days he gets them back."
     ],
     [
-      "Thunder, stunned, stunned.",
-      "Moving in thunder: no harm."
+      "Thunder leaves him stunned, stunned,",
+      "but if he moves in thunder: no harm."
     ],
     [
-      "Thunder — stuck in mud."
+      "Thunder comes,",
+      "and sticks in the mud."
     ],
     [
-      "Thunder going and coming: danger.",
-      "A hundred thousand — nothing lost.",
-      "There is work to do."
+      "Thunder goes and comes, and there is danger.",
+      "Of his hundred thousand, nothing is lost.",
+      "There is work for him to do."
     ],
     [
-      "Thunder: shrinking back, eyes darting.",
+      "In the thunder he shrinks back, his eyes darting.",
       "To march: misfortune.",
-      "Thunder not at the body, at the neighbour's: no harm.",
-      "Over marriages, there is talk."
+      "But the thunder strikes not his body, only his neighbour's: no harm.",
+      "Over marriages, though, there is talk."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "震 doubled thunder trigram; the thing named, not Wilhelm's 'The Arousing (Shock, Thunder)'.",
     "judgment": "匕鬯 the ladle and aromatic sacrificial wine, held steady through the shock.",
-    "L2": "億 a vast count ('a hundred thousand' cowrie money); same measure in L5, kept identical."
+    "L2": "億 a vast count ('a hundred thousand' cowrie money); same measure in L5, kept identical.",
+    "L3": "震蘇蘇震行無眚: B gives the stunned one his pronoun; 眚 harm as in 無咎 family.",
+    "L6": "震不于其躬于其鄰: B supplies 'strikes' and the not/only contrast; 婚媾有言 talk kept as a separate tag."
   }
 }

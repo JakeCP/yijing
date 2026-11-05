@@ -4,7 +4,7 @@
   "judgment": [
     "Begin greatly, and go through.",
     "It is good to hold firm.",
-    "Do not set out.",
+    "Do not set out yet.",
     "It is good to set up lords."
   ],
   "image": [
@@ -13,42 +13,42 @@
   ],
   "lines": [
     [
-      "Pacing back and forth.",
+      "Pacing back and forth, held up.",
       "It is good to stay and hold firm.",
       "It is good to set up lords."
     ],
     [
-      "Halting, turning — horses wheeling back.",
-      "Not raiders — suitors.",
-      "The girl holds firm: not promised.",
-      "Ten years — then promised."
+      "Halting, turning; the horses wheel back.",
+      "They are not raiders, but suitors.",
+      "The girl holds firm: she is not promised.",
+      "Ten years pass, and then she is promised."
     ],
     [
-      "After a deer, with no guide —",
-      "only deeper into the forest.",
+      "Chasing a deer with no guide,",
+      "he only goes deeper into the forest.",
       "The noble one sees early: better to let go.",
-      "To go on: shame."
+      "To go on brings shame."
     ],
     [
-      "Horses wheeling back.",
-      "Seeking marriage.",
-      "Going: good.",
+      "The horses wheel back.",
+      "Seeking marriage, she goes: good.",
       "Nothing unfavourable."
     ],
     [
-      "Its fat stored up.",
+      "Its fat is stored up, held back.",
       "Holding firm in small things: good.",
       "Holding firm in great things: misfortune."
     ],
     [
-      "Horses wheeling back.",
+      "The horses wheel back.",
       "Weeping blood in streams."
     ]
   ],
   "special": null,
   "notes": {
-    "judgment": "勿用有攸往 read as one phrase, 'do not set out'.",
+    "judgment": "勿用有攸往 read as one phrase, 'do not set out'; B adds 'yet' — the block is at the sprouting start, not for good.",
     "L2": "班如 refrain 'horses wheeling back' in L2/L4/L6, word for word. 字 as betrothal, 'promised'.",
-    "L5": "屯其膏: 屯 in its store-up sense; 膏 fat kept literal."
+    "L5": "屯其膏: 屯 in its store-up sense; 膏 fat kept literal, 'held back' for the storing.",
+    "L3": "既鹿無虞: B supplies the hunter ('he only goes deeper'); 君子幾 'sees early'."
   }
 }

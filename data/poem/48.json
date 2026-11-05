@@ -2,10 +2,10 @@
   "number": 48,
   "name_en": "Well",
   "judgment": [
-    "The town may move, the well does not.",
-    "Nothing lost, nothing gained — coming and going, the well wells on.",
-    "Almost at the water, the rope not yet down —",
-    "the jug smashed.",
+    "The town may move, but the well does not.",
+    "Nothing is lost, nothing gained — they come and go, and the well wells on.",
+    "Almost at the water, but the rope not yet down —",
+    "and the jug is smashed.",
     "Misfortune."
   ],
   "image": [
@@ -15,18 +15,18 @@
   ],
   "lines": [
     [
-      "A well of mud, not drunk from.",
-      "An old well: no birds even."
+      "The well is mud, and no one drinks from it.",
+      "It is an old well: not even birds come."
     ],
     [
-      "At the well's low pool, shooting little fish.",
-      "The jar is cracked and leaking."
+      "At the well's low pool he shoots little fish,",
+      "while his jar is cracked and leaking."
     ],
     [
-      "The well is cleaned, and not drunk from —",
-      "it grieves my heart.",
-      "It could be drawn from.",
-      "The king, bright: all receive its blessing."
+      "The well is cleaned, but no one drinks from it —",
+      "and it grieves my heart.",
+      "It could be drawn from:",
+      "if the king is bright, all receive its blessing."
     ],
     [
       "The well is tiled.",
@@ -34,10 +34,10 @@
     ],
     [
       "The well is clear:",
-      "a cold spring, drunk from."
+      "a cold spring, and people drink from it."
     ],
     [
-      "The well drawn: do not cover it.",
+      "The well is drawn from: do not cover it.",
       "There is trust. Great good."
     ]
   ],

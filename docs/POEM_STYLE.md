@@ -11,20 +11,40 @@ the pilot review (one notch toward poetry). Batches of 8 follow this sheet.
 Any change to a glossary rendering is changed here first, then in every file
 already written — no local synonyms for a fixed formula.
 
-## Voice
+Voice choice: after reviewing `voice-pilot.html`, the house voice is
+**B — Clearer** (`voice-pilot.json` voices.B). Hexagrams 1, 3, 25, 29, 55
+and 62 take their pilot B texts as the starting point; the other 58 are
+rewritten from the shipped A texts to the same definition below.
 
-Spare, modern, imagistic English verse. The Chinese is mostly concrete —
+## Voice — B, Clearer (the house voice)
+
+Spare, modern, imagistic English verse — voice A — plus the implied subject
+or connective wherever the reader would otherwise not know who acts or how
+clauses relate. That is the whole difference. The Chinese is mostly concrete —
 dragons, deer, jars, toes, thorns — plus terse mantic verdicts （吉， 凶， 無咎）.
 Keep both registers: physical images at full strength, verdicts as short tags.
 Do not explain an image, moralise it, or turn it into advice.
 
+- **Supply the link, nothing else.** Where A would leave the actor or the
+  clause-relation blank, add the smallest word that closes it: the implied
+  subject (the named person in the slot, or *he / she / they / you / it*
+  only where the slot's story fixes who it is), or a connective — *if,
+  then, so, but, and, yet, when* — where two clauses sit side by side
+  without their relation. "There is danger, but no harm."; "If it is not
+  right, it brings harm. / Then it is not good to set out." If the A line
+  already tells the reader who acts and how its clauses relate, leave it
+  alone: B is a light touch, not a rewrite into fuller prose (that was C).
 - Concrete first. If the text says fat, mud, a window, a tail, keep fat, mud,
   window, tail. Never upgrade a thing into an abstraction ("bounty",
   "adversity", "revelation") unless the Chinese is itself abstract.
 - Short words, plain syntax. Prefer Anglo-Saxon monosyllables where they are
-  accurate. Cut every word that only smooths.
-- Fragments are allowed. The Chinese drops subjects and verbs; English verse
-  may too. A fragment that matches the Chinese beats a padded full sentence.
+  accurate. Cut every word that only smooths — but a supplied subject or
+  connective that does the work above earns its place.
+- Fragments are allowed only where no reader is left guessing. The Chinese
+  drops subjects and verbs; English verse may too, where image and verdict
+  carry the meaning by themselves ("A yellow skirt. / Great good.").
+  Where a fragment hides who does what, or whether one clause causes,
+  conditions or contrasts with the next, write the small sentence instead.
 - Natural English first (pilot review). This is a poem, not a gloss: allow
   articles, small verbs and ordinary syntax so a line reads as English
   ("It is good to see the great person.", "So the noble one…"). Ban gloss-ese:
@@ -33,7 +53,15 @@ Do not explain an image, moralise it, or turn it into advice.
   found in its own images, never in added ones.
 - No added imagery. No metaphors, landscapes, seasons, or feelings that are
   not in the slot. Review test: every English content word answers to a
-  Chinese content word, or is listed as supplied grammar (see Mechanics).
+  Chinese content word, or is the supplied subject/connective above, or is
+  listed as supplied grammar (see Mechanics). Supplied subjects and
+  connectives are grammar — they name no new thing and add no new event.
+- Formulae stay as in the glossary. Voice B never re-words a fixed formula
+  (元亨利貞， 利涉大川， 貞吉 and the rest) to make it "clearer in context":
+  clarity comes from the words around it, and the formula itself is the
+  reader's anchor across hexagrams. Likewise banned throughout: added
+  images, advice, brackets and parentheses in verse, and archaism
+  (see Banned below).
 - Parallelism in, parallelism out. Where the Chinese repeats a structure or a
   whole phrase (refrains, body sequences, 利… / 不利… pairs), repeat the same
   English words. Variation for elegance is a fault here.
@@ -45,9 +73,11 @@ Do not explain an image, moralise it, or turn it into advice.
   literal travel is 旅 "travelling"), *destiny, fate* (unless rendering 命，
   which is a charge/decree, not fate), *soul, spiritual, inner truth, higher
   self, lesson, growth, abundance, manifest, synchronicity, shadow work*.
-- Advice-column voice. No "you should", no second-person supplied where the
-  Chinese has no subject, no reassurance ("all will be well"), no turning a
-  verdict into a tip.
+- Advice-column voice. No "you should", no reassurance ("all will be
+  well"), no turning a verdict into a tip. A supplied *you* is allowed
+  only as the actor the slot's story already implies (the one passing,
+  meeting, going in a line addressed to whoever cast it — as in 62),
+  never as the addressee of new advice.
 - Archaism. No *thee/thou/doth/hath*, no *o'er, ere, lo, behold*, no
   fortune-teller diction (*auspicious, inauspicious, felicitous, portent*).
 - Victorians, ours or Legge's. No *superior man, inferior man, correct and
@@ -64,9 +94,12 @@ Do not explain an image, moralise it, or turn it into advice.
 ## Mechanics
 
 - **Slots and length.** Judgment: a few verse lines. Image: 2–4 lines.
-  Each line statement: 1–4 short lines. Special （用九/用六）: like a line
-  statement. A verse line is one breath — usually one clause or image.
-  A verdict （吉， 無咎) normally gets a line or half-line of its own.
+  Each line statement: 2–4 short lines as a rule (voice B). Special
+  （用九/用六）: like a line statement. A verse line is one breath — usually
+  one clause or image. A verdict （吉， 無咎) normally gets a line or
+  half-line of its own, which is how even a two-character Chinese line
+  （貞吉， 悔亡） reaches two verse lines — break it at its meaning break,
+  never pad it to reach the count.
 - **Line breaks** are meaning breaks: image / turn / verdict. Do not break
   mid-phrase for looks. Lineation may vary; glossary *wording* may not.
 - **Capitals.** Sentence capitals only. A verse line that continues a sentence
@@ -77,13 +110,23 @@ Do not explain an image, moralise it, or turn it into advice.
   No semicolons inside a verse line if a line break will do.
 - **Spelling.** British, as in the other docs (*favours, favourable,
   honoured, practises* for the verb).
-- **Pronouns and supplied words.** Chinese 其/之 and dropped subjects are
-  rendered by structure, not by padding. Do not supply *you, he, she* for a
-  generic subject. Body parts take *the* ("Stilling the back"), not a
-  gendered possessive. Where a pronoun is unavoidable and the referent is
-  human-generic, use singular *they*. Small supplied verbs (*come, get, keep*)
-  are allowed only where English has no fragment equivalent; note any that
-  carry meaning in the file's `notes`.
+- **Pronouns and supplied words (voice B).** Chinese 其/之 and dropped
+  subjects are supplied, not left blank, wherever the reader would
+  otherwise not know who acts: repeat the named person where the slot
+  names one (the king, the girl, the noble one), and otherwise use the
+  pronoun the slot's story fixes — *he* for the lord, hunter, officer or
+  traveller the line is about, *she* for the woman or wife in it, *you*
+  where the line addresses whoever cast it (62), *they* where the actors
+  are plural or truly generic, *it* for a thing. Never invent an actor
+  the story does not imply, and never let a supplied pronoun float free
+  of an antecedent in the same slot or the hexagram's running story.
+  Body parts take *the* ("Stilling the back") where the owner is clear
+  from the subject just supplied, or the possessive (*his, her*) where
+  it is not. Connectives are supplied on the same rule: *if* for a
+  condition the verdict answers, *then/so* for consequence, *but/yet*
+  for contrast, *and* only for plain sequence. Small supplied verbs
+  (*come, get, keep*) are allowed only where English has no fragment
+  equivalent; note any that carry meaning in the file's `notes`.
 - **Tense.** Present and fragment by default. Future only where the verdict
   is predictive and English needs it （有悔 "There will be regret.").
 - **Numbers and measures** are written out (*ten years, three years*), as in
@@ -291,11 +334,14 @@ in PLAN.md M4 and are a display concern only.
 1. Read the Chinese slot first, the English second. Legge last, if at all —
    and only to check a variant reading, never for wording.
 2. Account for every Chinese content character. List supplied English words;
-   each must be grammar, a glossary inflection, or flagged in `notes`.
+   each must be grammar, the voice-B subject/connective, a glossary
+   inflection, or flagged in `notes`. Read each slot cold: if a first
+   reader could ask "who does this?" or "is that *if*, *then* or *but*?",
+   the link is still missing.
 3. Search the batch for banned words and for glossary drift (same Chinese
    formula, different English). Refrains must match word for word.
-4. Check lengths: image 2–4 lines, each line statement 1–4, judgment a few.
-   Check no verse string contains CJK, brackets, or a label.
+4. Check lengths: image 2–4 lines, each line statement 2–4 as a rule,
+   judgment a few. Check no verse string contains CJK, brackets, or a label.
 5. Read aloud. Cut any word whose removal loses nothing. If a line only
    works as prose explanation, re-break it around its image and verdict.
 6. Confirm `name_en` against the name policy and the full 64-name list so

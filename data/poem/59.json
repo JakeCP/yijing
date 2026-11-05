@@ -14,35 +14,38 @@
   ],
   "lines": [
     [
-      "Rescue with a strong horse: good."
+      "Rescue comes with a strong horse:",
+      "good."
     ],
     [
-      "Scattering: run to your support.",
+      "Scattering, he runs to his support.",
       "Regret gone."
     ],
     [
-      "Scattering your own self.",
+      "He scatters his own self.",
       "No regret."
     ],
     [
-      "Scattering the flock: great good.",
-      "Scattered, there is a hill —",
+      "He scatters his flock: great good.",
+      "Scattered, they gather into a hill —",
       "not what is commonly thought."
     ],
     [
-      "Scattering like sweat, his great cry goes out;",
-      "scattering the king's dwelling.",
+      "His great cry goes out, scattering like sweat;",
+      "he scatters the king's dwelling.",
       "No harm."
     ],
     [
-      "Scattering the blood,",
-      "leaving it far behind.",
+      "He scatters the blood",
+      "and leaves it far behind him.",
       "No harm."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "渙 is dispersal, water loosened; 'Scattering', not Wilhelm's 'Dispersion (Dissolution)'.",
-    "L2": "機 a support/stool to run to as the ice gives; 'your support' keeps it physical."
+    "L2": "機 a support/stool to run to as the ice gives; 'your support' keeps it physical.",
+    "L1": "用拯馬壯 repeats 36 L2's phrase; same English ('Rescue comes with a strong horse'), verdict split onto its own line.",
+    "L4": "渙有丘: the scattered massing as a hill — B gives them the gathering ('they gather into a hill'); 匪夷所思 not ordinary thinking."
   }
 }

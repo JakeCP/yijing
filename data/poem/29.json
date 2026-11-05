@@ -3,53 +3,49 @@
   "name_en": "Pit",
   "judgment": [
     "Pit after pit.",
-    "There is trust.",
-    "Only the heart goes through.",
+    "There is trust; the heart goes through.",
     "Going is honoured."
   ],
   "image": [
     "Water comes again and again: Pit after pit.",
-    "So the noble one holds virtue and conduct constant",
+    "So the noble one holds virtue and conduct constant,",
     "and practises teaching."
   ],
   "lines": [
     [
-      "Pit after pit —",
-      "down into a pit inside the pit.",
+      "Pit after pit: down into a pit inside the pit.",
       "Misfortune."
     ],
     [
       "The pit is perilous.",
-      "Seeking brings a little."
+      "Seeking, he gets a little of what he seeks."
     ],
     [
-      "Coming, going: pit, pit.",
-      "Peril for a pillow.",
-      "Down into a pit inside the pit.",
+      "Coming or going, pit after pit;",
+      "peril is his pillow, and he sinks deeper.",
       "Do not act."
     ],
     [
-      "A jar of wine, two vessels of grain —",
-      "earthenware only —",
+      "A jar of wine and two vessels of grain, in plain earthenware —",
       "the simple gift passed in at the window.",
       "In the end, no harm."
     ],
     [
-      "The pit, not overfull,",
-      "only just level.",
+      "The water in the pit is not overfull;",
+      "it is only just level.",
       "No harm."
     ],
     [
-      "Bound with cords,",
-      "set down among thorns,",
-      "three years, no way out.",
+      "Bound with cords and set down among thorns,",
+      "for three years he finds no way out.",
       "Misfortune."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "坎 is a pit, hole, trap in the ground; rejecting Wilhelm's 'The Abysmal'. Revised pilot: 凶 now 'Misfortune.', Image pivot 'So…'.",
-    "L3": "險且枕 kept literal — peril for a pillow, resting your head on danger.",
-    "L4": "簋 ritual grain vessels; 約 the frugal/simple gift; 牖 a window-opening."
+    "L3": "險且枕 kept literal — peril as his pillow, resting his head on danger; B supplies 'he sinks deeper' for 入于坎窞.",
+    "L4": "簋 ritual grain vessels; 約 the frugal/simple gift; 牖 a window-opening.",
+    "judgment": "維心亨: B links trust and heart in one sentence — 'There is trust; the heart goes through.'"
   }
 }

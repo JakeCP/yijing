@@ -2,55 +2,52 @@
   "number": 62,
   "name_en": "Small Excess",
   "judgment": [
-    "It goes through.",
-    "It is good to hold firm.",
+    "It goes through. It is good to hold firm.",
     "Small things can be done; great things cannot.",
-    "A flying bird leaves its sound behind:",
-    "not fit to go up, fit to go down. Great good."
+    "A flying bird leaves its sound behind: fit to go down, not up.",
+    "Great good."
   ],
   "image": [
     "Thunder on the mountain: Small Excess.",
-    "So the noble one, in conduct, exceeds in reverence,",
-    "in mourning exceeds in grief,",
-    "in spending exceeds in thrift."
+    "So the noble one exceeds in reverence in conduct,",
+    "in grief in mourning, in thrift in spending."
   ],
   "lines": [
     [
-      "A bird flying on:",
-      "misfortune with it."
+      "A bird flies on and up.",
+      "Misfortune comes with it."
     ],
     [
-      "Passing your grandfather, meeting your grandmother;",
-      "not reaching your ruler, meeting his minister.",
+      "Passing your grandfather, you meet your grandmother;",
+      "not reaching your ruler, you meet his minister.",
       "No harm."
     ],
     [
-      "Do not pass it by: guard against it.",
-      "Close behind, someone may strike you.",
+      "If you pass it by without guarding against it,",
+      "someone close behind may strike you.",
       "Misfortune."
     ],
     [
-      "No harm.",
-      "Not passing, you meet it.",
-      "Going: danger — take warning.",
-      "Do not hold firm, long."
+      "No harm: not passing it by, you meet it.",
+      "To go on is dangerous: take warning.",
+      "Do not hold firm for long."
     ],
     [
-      "Thick clouds, no rain —",
-      "from our western outskirts.",
-      "The duke shoots with a stringed arrow",
+      "Thick clouds bring no rain, from our western outskirts.",
+      "The duke shoots with a stringed arrow,",
       "and takes the one in the cave."
     ],
     [
-      "Not meeting, passing it by:",
+      "Not meeting it, but passing it by:",
       "the flying bird is snared.",
-      "Misfortune.",
-      "This is called disaster and harm."
+      "Misfortune. This is called disaster and harm."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "小過 a small going-past; paired with 28 Great Excess. Not Wilhelm's 'Preponderance of the Small'.",
-    "L5": "密雲不雨自我西郊 repeats 9 J in the Chinese; the English repeats it word for word."
+    "L5": "密雲不雨自我西郊 repeats 9 J in the Chinese; the English repeats it word for word.",
+    "L3": "弗過防之: B reads it as the conditional ('If you pass it by without guarding…') — A had the imperative; 從或戕之 the blow from close behind.",
+    "L4": "勿用永貞 kept as a limit on duration ('Do not hold firm for long.'), not 'for ever'."
   }
 }

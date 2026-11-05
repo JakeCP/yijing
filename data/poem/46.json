@@ -14,32 +14,34 @@
   ],
   "lines": [
     [
-      "Climbing in trust.",
+      "He is allowed to climb.",
       "Great good."
     ],
     [
-      "Trust — then it is good to use",
+      "If there is trust, then it is good to use",
       "the simple offering. No harm."
     ],
     [
-      "Climbing into an empty town."
+      "He climbs",
+      "into an empty town."
     ],
     [
-      "The king offers on Mount Qi.",
-      "Good. No harm."
+      "The king makes his offering on Mount Qi.",
+      "Good, and no harm."
     ],
     [
       "Holding firm: good.",
-      "Climbing the steps."
+      "He climbs the steps."
     ],
     [
-      "Climbing in the dark:",
-      "It is good to hold firm without ceasing."
+      "He climbs in the dark:",
+      "it is good to hold firm without ceasing."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "升 is rising/climbing by steps; 'Climbing', not Wilhelm's 'Pushing Upward'.",
-    "judgment": "用見大人 'seek to see' per glossary, distinct from 利見大人; 亨 in L4 reads 享 'offers'."
+    "judgment": "用見大人 'seek to see' per glossary, distinct from 利見大人; 亨 in L4 reads 享 'offers'.",
+    "L1": "允升: 允 trust/permission — B reads the allowed/trusted climb ('He is allowed to climb'); A had 'in trust'."
   }
 }

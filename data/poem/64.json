@@ -3,8 +3,8 @@
   "name_en": "Not Yet Across",
   "judgment": [
     "It goes through.",
-    "A small fox, almost across —",
-    "its tail gets wet.",
+    "A small fox is almost across —",
+    "then its tail gets wet.",
     "No good anywhere."
   ],
   "image": [
@@ -14,37 +14,38 @@
   ],
   "lines": [
     [
-      "Wetting your tail.",
+      "It wets its tail.",
       "Shame."
     ],
     [
-      "Dragging your wheels.",
+      "He drags his wheels.",
       "Holding firm: good."
     ],
     [
-      "Not yet across. To march: misfortune.",
-      "It is good to ford the great river."
+      "He is not yet across, and to march: misfortune.",
+      "Yet it is good to ford the great river."
     ],
     [
-      "Holding firm: good. Regret gone.",
-      "Thundering, he strikes the Guifang;",
-      "three years — rewarded with a great state."
+      "Holding firm: good, and regret gone.",
+      "Thundering, he strikes the Guifang,",
+      "and is rewarded in three years with a great state."
     ],
     [
-      "Holding firm: good. No regret.",
-      "The light of the noble one:",
-      "there is trust. Good."
+      "Holding firm: good, and no regret.",
+      "The noble one's light shines:",
+      "there is trust in it. Good."
     ],
     [
-      "There is trust in drinking wine: no harm.",
-      "Wetting your head —",
-      "trust there may be, but this is lost."
+      "There is trust as he drinks wine: no harm.",
+      "But if he wets his head,",
+      "then, trust or not, this is lost."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "未濟 the crossing not yet made; paired with 63 Already Across. Not Wilhelm's 'Before Completion'.",
     "L1": "The wet tail of the judgment's fox, now in the first line; the water sequence (tail, wheels, head) mirrors 63 in reverse.",
-    "L6": "有孚失是 'though there is trust, losing this (rightness)' — kept open as 'but this is lost'."
+    "L6": "有孚失是 'though there is trust, losing this (rightness)'; B makes the wet head the condition ('if he wets his head, then…').",
+    "L5": "君子之光有孚: B gives the light its verb ('shines'); 有孚 then answers it ('there is trust in it')."
   }
 }

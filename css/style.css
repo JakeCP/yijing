@@ -224,6 +224,9 @@ h1, h2, h3 { font-weight: 500; line-height: 1.25; }
   margin: 0 0 0.35rem;
 }
 .layer-label .zh { font-style: normal; }
+/* The label gloss runs on quietly after the name, a touch smaller. */
+.layer-label .label-gloss { font-size: 0.92em; }
+.layer-label .label-gloss::before { content: " · "; }
 
 .rule {
   border: 0;
@@ -870,6 +873,19 @@ body::after {
   }
   .layer-label .zh { font-variant-caps: normal; letter-spacing: 0.06em; font-size: 1.02em; }
   .layer-label .soft { font-variant-caps: normal; letter-spacing: 0; font-size: 0.92em; }
+  /* Under the small-caps name, the gloss drops to small italic — the
+     name is set in caps, the explanation never shouts with it. */
+  .layer-label .label-gloss {
+    display: block;
+    font-style: italic;
+    font-variant-caps: normal;
+    letter-spacing: 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-top: 0.12rem;
+  }
+  .layer-label .label-gloss::before { content: none; }
+  .layer-label .label-gloss .zh { font-size: 1em; letter-spacing: 0; }
 
   /* ------------------------------------------------ cast: passage | ritual */
   .cast-layout {

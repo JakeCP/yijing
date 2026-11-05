@@ -2,8 +2,7 @@
   "number": 7,
   "name_en": "Army",
   "judgment": [
-    "Hold firm.",
-    "An elder in charge:",
+    "Holding firm, with an elder in charge:",
     "good, and no harm."
   ],
   "image": [
@@ -13,13 +12,13 @@
   ],
   "lines": [
     [
-      "The army marches out in order.",
-      "Without order: misfortune."
+      "The army marches out in order;",
+      "if it does not: misfortune."
     ],
     [
-      "In the midst of the army:",
+      "He is in the midst of the army:",
       "good, and no harm.",
-      "Three times the king gives the charge."
+      "Three times the king gives him the charge."
     ],
     [
       "The army, perhaps,",
@@ -31,15 +30,15 @@
       "No harm."
     ],
     [
-      "Game in the field — it is good to seize it, and speak out.",
+      "There is game in the field; it is good to seize it, and speak out.",
       "No harm.",
-      "The eldest leads the army; the younger carts corpses.",
+      "The eldest leads the army, but the younger carts corpses.",
       "Holding firm: misfortune."
     ],
     [
       "The great ruler gives the charge:",
-      "open states, found houses.",
-      "Do not use the small person."
+      "to open states and found houses.",
+      "But do not use the small person."
     ]
   ],
   "special": null,

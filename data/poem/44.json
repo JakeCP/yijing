@@ -12,39 +12,40 @@
   ],
   "lines": [
     [
-      "Tied to a metal brake.",
+      "It is tied to a metal brake.",
       "Holding firm: good.",
-      "Setting out, you meet misfortune.",
+      "But if you set out, you meet misfortune.",
       "A lean pig, surely, stamps and stamps."
     ],
     [
-      "A fish in the wrapping.",
-      "No harm.",
-      "Not good for guests."
+      "There is a fish in the wrapping.",
+      "No harm,",
+      "but it is not good for guests."
     ],
     [
-      "No skin on the buttocks;",
-      "walking comes haltingly.",
-      "Danger. No great harm."
+      "There is no skin on his buttocks,",
+      "so his walking comes haltingly.",
+      "Danger, but no great harm."
     ],
     [
-      "No fish in the wrapping.",
-      "Rising up: misfortune."
+      "There is no fish in the wrapping.",
+      "If he rises up: misfortune."
     ],
     [
-      "A melon wrapped in willow leaves,",
+      "A melon is wrapped in willow leaves,",
       "its pattern held inside.",
-      "Something falls from heaven."
+      "Then something falls from heaven."
     ],
     [
-      "Meeting with the horns.",
-      "Shame. No harm."
+      "He meets it with his horns.",
+      "Shame, but no harm."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "姤 is an unexpected meeting/encounter; plain 'Meeting', not Wilhelm's 'Coming to Meet'.",
     "L1": "金柅 a metal cart-brake; the lean pig (羸豕) stamping (蹢躅) is the small force barely held.",
-    "L4": "43 L4 repeats here in the Chinese (臀無膚其行次且); the English repeats word for word."
+    "L4": "44 L3 repeats 43 L4 in the Chinese (臀無膚其行次且); the English repeats word for word.",
+    "L3": "44 L3 repeats 43 L4 in the Chinese (臀無膚其行次且); the English repeats word for word."
   }
 }

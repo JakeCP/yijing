@@ -3,7 +3,7 @@
   "name_en": "Great Store",
   "judgment": [
     "It is good to hold firm.",
-    "Not eating at home: good.",
+    "If he does not eat at home: good.",
     "It is good to ford the great river."
   ],
   "image": [
@@ -13,28 +13,29 @@
   ],
   "lines": [
     [
-      "There is danger:",
-      "it is good to stop."
+      "There is danger,",
+      "so it is good to stop."
     ],
     [
-      "The cart sheds a spoke."
+      "The cart",
+      "sheds a spoke."
     ],
     [
       "Fine horses, chasing.",
       "It is good to hold firm in hardship.",
-      "Daily, drill cart and guard.",
-      "It is good to set out."
+      "Day by day, he drills cart and guard.",
+      "Then it is good to set out."
     ],
     [
       "A board on the young bull's horns.",
       "Great good."
     ],
     [
-      "Teeth of a gelded pig.",
+      "The teeth of a gelded pig.",
       "Good."
     ],
     [
-      "Carrying heaven's high road.",
+      "He carries heaven's high road.",
       "It goes through."
     ]
   ],

@@ -13,34 +13,38 @@
   ],
   "lines": [
     [
-      "Digging deep for lasting.",
+      "He digs deep for what lasts.",
       "Holding firm: misfortune.",
       "No good anywhere."
     ],
     [
-      "Regret gone."
+      "Regret",
+      "gone."
     ],
     [
-      "Not lasting in virtue:",
-      "perhaps shame borne for it.",
+      "He does not last in his virtue,",
+      "and so he may bear shame for it.",
       "Holding firm: shame."
     ],
     [
-      "In the field, no game."
+      "He hunts the field,",
+      "but there is no game in it."
     ],
     [
-      "Lasting in virtue, holding firm:",
+      "She lasts in her virtue and holds firm:",
       "for a wife, good;",
-      "for a husband, misfortune."
+      "but for a husband, misfortune."
     ],
     [
-      "Shaking lasting.",
+      "He shakes what should last.",
       "Misfortune."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "恆 is constancy through time; 'Lasting', not Wilhelm's 'Duration'.",
-    "L1": "浚恆 digging deep at once for permanence — depth seized too soon."
+    "L1": "浚恆 digging deep at once for permanence — depth seized too soon.",
+    "L4": "田無禽: B supplies the hunter implied by the empty field; no game is the whole statement.",
+    "L5": "恆其德貞: the lasting one is the wife of the verdict's first half; B gives her the sentence, husband as contrast."
   }
 }

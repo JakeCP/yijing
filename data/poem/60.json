@@ -3,7 +3,7 @@
   "name_en": "Measure",
   "judgment": [
     "It goes through.",
-    "Bitter measure: cannot hold firm."
+    "But bitter measure cannot hold firm."
   ],
   "image": [
     "Water over the marsh: Measure.",
@@ -12,29 +12,29 @@
   ],
   "lines": [
     [
-      "Not going out of the door-courtyard.",
+      "He does not go out of his door-courtyard.",
       "No harm."
     ],
     [
-      "Not going out of the gate-courtyard.",
+      "He does not go out of his gate-courtyard.",
       "Misfortune."
     ],
     [
-      "No measure — then lamenting.",
-      "No harm."
+      "If there is no measure, then there is lamenting.",
+      "Yet no harm."
     ],
     [
-      "Measure at rest.",
+      "His measure is at rest.",
       "It goes through."
     ],
     [
-      "Sweet measure: good.",
+      "His measure is sweet: good.",
       "Going is honoured."
     ],
     [
-      "Bitter measure.",
+      "His measure is bitter.",
       "Holding firm: misfortune.",
-      "Regret gone."
+      "But regret is gone."
     ]
   ],
   "special": null,

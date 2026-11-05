@@ -9,7 +9,7 @@ import {
 import { hexagramSVG, trigramFigure, coinSVG, stalksSVG, escapeHtml } from './render.js';
 import { buildTrigramMatrix, firstJudgmentLine, facingEnglishId, facingActive, libraryMode } from './book.js';
 
-const DATA_VERSION = '4'; // bump when data/*.json changes (PLAN.md S9)
+const DATA_VERSION = '5'; // bump when data/*.json changes (PLAN.md S9)
 const app = document.getElementById('app');
 const liveRegion = document.getElementById('live');
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -296,11 +296,13 @@ function slotBlock(labelHtml, h, tr, slot, facingEn, anchor, headingTag = 'h2') 
   </section>`;
 }
 
+// Section labels carry a quiet gloss after the name (all translations):
+// what this layer of the text is, in one short phrase.
 function judgmentBlock(h, tr, anchor = 'judgment', headingTag = 'h2', facingEn = null) {
-  return slotBlock(`The Judgment · <span class="zh" lang="zh-Hant">卦辭</span>`, h, tr, 'judgment', facingEn, anchor, headingTag);
+  return slotBlock(`The Judgment · <span class="zh" lang="zh-Hant">卦辭</span><span class="label-gloss">the hexagram's core statement</span>`, h, tr, 'judgment', facingEn, anchor, headingTag);
 }
 function imageBlock(h, tr, anchor = 'image', headingTag = 'h2', facingEn = null) {
-  return slotBlock(`The Image · <span class="zh" lang="zh-Hant">大象</span> <span class="soft">(from the later <span class="zh" lang="zh-Hant">象傳</span>)</span>`, h, tr, 'image', facingEn, anchor, headingTag);
+  return slotBlock(`The Image · <span class="zh" lang="zh-Hant">大象</span><span class="label-gloss">a later commentary on its two trigrams <span class="zh" lang="zh-Hant">(象傳)</span></span>`, h, tr, 'image', facingEn, anchor, headingTag);
 }
 
 function lineEntry(h, tr, index, { changing = false, anchor = true, facingEn = null, focusable = null } = {}) {
@@ -734,13 +736,13 @@ function readingView(route) {
       if (specialCase) {
         // All six changing on 1/2: 用九/用六 is the primary text (PLAN.md M9).
         body += slotBlock(
-          `<span class="zh" lang="zh-Hant">${specialLabel(primary.number)}</span> · when all six lines change`,
+          `All lines changing · <span class="zh" lang="zh-Hant">${specialLabel(primary.number)}</span><span class="label-gloss">an extra statement, read only when all six lines change</span>`,
           primary, tr, 'special', facingEn, 'special', 'h2');
       } else {
         body += judgmentBlock(primary, tr, 'judgment', 'h2', facingEn);
         body += imageBlock(primary, tr, 'image', 'h2', facingEn);
         if (changing.length > 0) {
-          body += `<section><h2 class="layer-label">Changing lines · <span class="zh" lang="zh-Hant">爻辭</span></h2>`;
+          body += `<section><h2 class="layer-label">Changing lines · <span class="zh" lang="zh-Hant">爻辭</span><span class="label-gloss">lines turning into their opposites, which make the second hexagram</span></h2>`;
           body += changing.map((i) => lineEntry(primary, tr, i, { changing: true, facingEn })).join('');
           body += '</section>';
           body += `<p class="small soft">Every changing line is shown, without choosing among them — <a href="#/about">why, in About</a>.</p>`;
@@ -833,14 +835,14 @@ function hexagramView(number) {
       body += translationBar([h], tr, facingEn);
       body += judgmentBlock(h, tr, 'judgment', 'h2', facingEn);
       body += imageBlock(h, tr, 'image', 'h2', facingEn);
-      body += `<section><h2 class="layer-label">The Lines · <span class="zh" lang="zh-Hant">爻辭</span> <span class="soft">(from the bottom)</span></h2>`;
+      body += `<section><h2 class="layer-label">The Lines · <span class="zh" lang="zh-Hant">爻辭</span><span class="label-gloss">six short statements, one for each line, from the bottom up</span></h2>`;
       body += [0, 1, 2, 3, 4, 5].map((i) => lineEntry(h, tr, i, { facingEn })).join('');
       if (h.texts[tr].special || (facingEn && h.texts.zh.special)) {
         const specialText = facingEn
           ? `<div class="facing-cols"><div class="facing-zh">${zhVerticalText(h.texts.zh.special)}</div><div class="facing-en">${slotText(h.texts[facingEn].special, facingEn)}</div></div>`
           : slotText(h.texts[tr].special, tr);
         body += `<article class="line-entry${facingEn ? ' facing-pair' : ''}" data-anchor="special">
-          <p class="line-tag"><span class="line-tag-name zh" lang="zh-Hant">${specialLabel(number)}</span><span class="line-tag-sep" aria-hidden="true"> · </span><span class="line-tag-sub">when all six lines change</span></p>
+          <p class="line-tag"><span class="line-tag-name zh" lang="zh-Hant">${specialLabel(number)}</span><span class="line-tag-sep" aria-hidden="true"> · </span><span class="line-tag-sub">all lines changing · read only when all six lines change</span></p>
           <div class="line-text">${specialText}</div>
         </article>`;
       }

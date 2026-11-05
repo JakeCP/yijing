@@ -2,10 +2,9 @@
   "number": 55,
   "name_en": "Fullness",
   "judgment": [
-    "It goes through.",
-    "The king comes to it.",
-    "Do not grieve:",
-    "it should be as at midday."
+    "It goes through; the king comes to it.",
+    "Do not grieve.",
+    "Let it stand as at midday."
   ],
   "image": [
     "Thunder and lightning both arrive: Fullness.",
@@ -14,43 +13,40 @@
   ],
   "lines": [
     [
-      "Meeting the lord who matches him:",
-      "though ten days pass, no harm.",
+      "He meets the lord who matches him.",
+      "Even if ten days pass, no harm.",
       "Going is honoured."
     ],
     [
-      "Fullness screened off:",
-      "at midday the Dipper is seen.",
-      "Going brings suspicion and sickness.",
-      "There is trust, breaking out: good."
+      "Fullness is screened off: at midday the Dipper is seen.",
+      "Going brings suspicion and ill feeling.",
+      "Trust breaks through: good."
     ],
     [
-      "Fullness curtained thick:",
-      "at midday small stars are seen.",
-      "His right arm is broken.",
-      "No harm."
+      "Fullness is curtained thick: at midday small stars are seen.",
+      "His right arm is broken, yet no harm."
     ],
     [
-      "Fullness screened off:",
-      "at midday the Dipper is seen.",
-      "Meeting the lord, his equal: good."
+      "Fullness is screened off: at midday the Dipper is seen.",
+      "He meets the lord, his equal: good."
     ],
     [
-      "Brightness comes:",
-      "there is blessing and praise.",
+      "Brightness comes, and with it blessing and praise.",
       "Good."
     ],
     [
-      "A full house, the household screened off.",
+      "A full house, but the household is screened off.",
       "Peering in at the door: still, no one there.",
-      "Three years, nothing seen.",
+      "For three years, nothing is seen.",
       "Misfortune."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "豐 is largeness/fullness at its height; 'Fullness', not Wilhelm's 'Abundance'.",
-    "L2": "日中見斗 stars visible at noon — eclipse or darkness at fullness, kept literal.",
-    "L4": "夷主 the level/equal lord (parallel 配主 in L1); Phase 5 review replaced 'in the half-light', which had no word in the slot."
+    "L2": "疑疾: B reads 疾 as ill feeling (suspicion and dislike), not sickness; A had 'suspicion and sickness'. 日中見斗 stars at noon kept literal.",
+    "L4": "夷主 the level/equal lord (parallel 配主 in L1); Phase 5 review replaced 'in the half-light', which had no word in the slot.",
+    "L1": "雖旬無咎: B keeps the time sense — 'Even if ten days pass, no harm.' 配主 the lord who matches him.",
+    "L3": "折其右肱無咎: B supplies the contrast — broken arm, yet no harm."
   }
 }

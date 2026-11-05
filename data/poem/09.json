@@ -3,7 +3,7 @@
   "name_en": "Small Store",
   "judgment": [
     "It goes through.",
-    "Thick clouds, no rain —",
+    "Thick clouds bring no rain,",
     "from our western outskirts."
   ],
   "image": [
@@ -13,11 +13,11 @@
   ],
   "lines": [
     [
-      "Coming back by the same road —",
+      "He comes back by his own road —",
       "what harm in that? Good."
     ],
     [
-      "Led back.",
+      "He is led back.",
       "Good."
     ],
     [
@@ -25,24 +25,25 @@
       "Husband and wife glare at each other."
     ],
     [
-      "There is trust.",
-      "Blood goes, fear leaves.",
+      "There is trust, so blood goes",
+      "and fear leaves.",
       "No harm."
     ],
     [
-      "Trust, bound tight.",
-      "Rich through the neighbours."
+      "Trust holds them bound tight,",
+      "and he is rich through his neighbours."
     ],
     [
-      "Rain has come, and rest.",
-      "The wife carried on honoured virtue. Holding firm: danger.",
-      "The moon is almost full.",
-      "For the noble one to march: misfortune."
+      "Rain has come, and rest with it.",
+      "The wife is carried on honoured virtue, but holding firm: danger.",
+      "The moon is almost full:",
+      "if the noble one marches: misfortune."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "小畜 is small keeping/restraining (畜 store, rear); paired with 26 Great Store. Not Wilhelm's 'Taming Power'.",
-    "L6": "既雨既處 rain and rest both arrived; 尚德載婦 compressed, 婦 the wife kept."
+    "L6": "既雨既處 rain and rest both arrived; 尚德載婦 compressed, 婦 the wife kept.",
+    "judgment": "密雲不雨自我西郊 repeats in 62 L5; English repeats word for word ('Thick clouds bring no rain, / from our western outskirts.')."
   }
 }
