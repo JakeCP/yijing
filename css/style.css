@@ -139,7 +139,10 @@ button {
   gap: 1.4rem;
   width: min(100% - 2.5rem, var(--measure));
   margin: 0 auto;
-  padding: 1.1rem 0 0.4rem;
+  /* Installed (standalone) on a notched phone the bar sits under the
+     status bar / notch: keep the safe-area inset on top of the pad.
+     Zero everywhere else, so the browser layout is unchanged. */
+  padding: calc(1.1rem + env(safe-area-inset-top)) 0 0.4rem;
   font-size: 0.98rem;
   color: var(--soft);
 }
@@ -289,7 +292,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.25; }
 
 .translation-bar {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top);
   z-index: 5;
   background: var(--paper);
   display: flex;
@@ -858,7 +861,7 @@ body::after {
   }
   body[data-route="library"] .topbar, body[data-route="library"] footer,
   body[data-route="library"] main { width: min(100% - 5rem, 82rem); }
-  .topbar { padding: 1.4rem 0 0.9rem; border-bottom: 1px solid var(--hairline); }
+  .topbar { padding: calc(1.4rem + env(safe-area-inset-top)) 0 0.9rem; border-bottom: 1px solid var(--hairline); }
   .page-title { font-size: 2.5rem; margin-top: 3rem; }
   .lede { font-size: 1.12rem; }
 

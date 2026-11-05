@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="易">
+<title>易 — Yijing</title>
+<!-- Purpose: any.
+     Cinnabar seal (Noto Serif TC glyph outlines, reused from favicon.svg)
+     stamped on warm paper: full-bleed, no transparency. The seal is turned
+     -2deg like the .seal in css/style.css; a turbulence-displaced edge and
+     faint mottling keep it a stamp, not a flat logo. -->
+<defs>
+<radialGradient id="paper" cx="50%" cy="42%" r="78%">
+<stop offset="0" stop-color="#f9f5ec"/><stop offset="0.62" stop-color="#f4efe6"/><stop offset="1" stop-color="#eadfc9"/>
+</radialGradient>
+<linearGradient id="seal" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#bc4232"/><stop offset="0.55" stop-color="#b23a2b"/><stop offset="1" stop-color="#9e3022"/>
+</linearGradient>
+<filter id="rough" x="-4%" y="-4%" width="108%" height="108%">
+<feTurbulence type="fractalNoise" baseFrequency="0.032" numOctaves="3" seed="7" result="n"/>
+<feDisplacementMap in="SourceGraphic" in2="n" scale="7"/>
+</filter>
+<filter id="grain" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="11"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.42 0 0 0 0 0.36 0 0 0 0 0.26 0 0 0 0.05 0"/>
+</filter>
+<filter id="mottle" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.012 0.016" numOctaves="3" seed="4"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.96 0 0 0 0 0.94 0 0 0 0 0.90 0 0 0 0.10 0"/>
+</filter>
+<clipPath id="sealClip"><rect x="84" y="84" width="344" height="344" rx="20"/></clipPath>
+</defs>
+<rect width="512" height="512" fill="url(#paper)"/>
+<rect width="512" height="512" filter="url(#grain)"/>
+<g transform="rotate(-2 256 256)">
+<rect x="84" y="84" width="344" height="344" rx="20" fill="url(#seal)" filter="url(#rough)"/>
+<g clip-path="url(#sealClip)"><rect x="84" y="84" width="344" height="344" filter="url(#mottle)"/></g>
+<g transform="translate(84 84) scale(3.44)"><g transform="translate(9.55 80.34) scale(0.08324 -0.08324)"><path d="M246 626H771V596H246ZM246 472H771V442H246ZM735 776H725L755 809L823 757Q818 751 806.0 745.5Q794 740 779 737V426Q779 423 772.5 418.5Q766 414 757.5 410.5Q749 407 741 407H735ZM230 776V802L279 776H780V747H274V416Q274 414 268.5 410.0Q263 406 255.0 403.0Q247 400 237 400H230ZM297 333H850V303H268ZM464 333H509V317Q450 220 357.5 138.0Q265 56 154 -3L142 14Q208 55 268.0 106.5Q328 158 378.5 216.0Q429 274 464 333ZM654 333H702V317Q652 186 555.5 86.5Q459 -13 313 -80L303 -62Q434 8 522.0 108.5Q610 209 654 333ZM834 333H824L852 366L915 313Q910 308 900.0 305.0Q890 302 875 300Q867 221 851.5 151.5Q836 82 816.0 32.5Q796 -17 772 -37Q753 -53 724.5 -62.0Q696 -71 667 -70Q667 -60 662.5 -50.5Q658 -41 647 -35Q635 -29 603.0 -23.5Q571 -18 540 -14L541 6Q565 3 598.0 0.0Q631 -3 660.5 -5.5Q690 -8 701 -8Q718 -8 727.5 -5.0Q737 -2 747 5Q765 19 782.0 66.5Q799 114 813.0 183.0Q827 252 834 333ZM399 417Q363 370 312.0 318.0Q261 266 199.0 218.0Q137 170 69 136L57 150Q119 188 176.5 239.5Q234 291 281.0 346.0Q328 401 356 449L439 433Q437 426 428.0 421.5Q419 417 399 417Z" fill="#f4efe6"/></g></g>
+</g>
+</svg>

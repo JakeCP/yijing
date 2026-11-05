@@ -44,6 +44,73 @@ check on every push — it does not deploy.
 
 **Live URL:** https://jakecp.github.io/yijing/ — set in the `og:url`, `og:image` and canonical tags in `index.html`. Update them if the repo or domain changes.
 
+## Install as an app (PWA & offline)
+
+The site installs as a standalone app: **Android/Chrome** offers
+*Install app* (or *Add to Home screen*); **iPhone/Safari**: Share →
+*Add to Home Screen*. It then opens full-screen with the cinnabar seal
+icon and works with no network at all.
+
+How it fits together (all paths relative — the site is a project page
+under `/yijing/`, never the domain root):
+
+- `manifest.webmanifest` — name `Yijing 易經`, `start_url` / `scope`
+  `./`, `display: standalone`, paper colours, and the `icons/*.png`
+  set (`any` + `maskable` + `monochrome` for Android themed icons).
+  iOS ignores the manifest icons, so `index.html` also carries
+  `icons/apple-touch-icon.png` (180px, opaque) and the
+  `apple-mobile-web-app-*` tags (title 易經; status-bar style
+  `default`, the readable choice over the light paper background —
+  `black-translucent` would put white status text on paper).
+- `sw.js` (repo root, registered as `'sw.js'` from `index.html`)
+  precaches the whole app shell: HTML, CSS, all JS modules, the three
+  WOFF2 fonts, `data/*.json`, the manifest, favicon and icons.
+  Strategies: **network-first** for `index.html` / navigations and
+  data JSON (cache only as an offline fallback; query strings like
+  `?v=<DATA_VERSION>` are ignored when matching the fallback),
+  **cache-first** for fonts and icons, **stale-while-revalidate** for
+  CSS/JS. Hash routes are untouched — the fragment never reaches the
+  worker, so offline navigation just serves the cached shell and the
+  router takes over. Hash routing and the local dev server work as
+  before (`python3 -m http.server` on localhost is a secure context,
+  so the worker registers there too).
+- **Bumping the version (how updates reach installed copies):**
+  whenever *any* precached file changes, bump `APP_VERSION` in
+  `sw.js`. On the next visit the browser byte-diffs the changed
+  `sw.js`, installs the new worker, precaches into the new
+  `yijing-v<APP_VERSION>` cache, and on activate deletes every older
+  cache (`skipWaiting` + `clients.claim`, so no restart is needed).
+  Data change? Still bump `DATA_VERSION` in `js/app.js` as before —
+  and bump `APP_VERSION` too if installed copies should refresh their
+  offline texts right away (network-first already keeps online
+  readers current). Forget the bump and the worst case is one visit
+  of staleness: network-first pages/data stay fresh, and CSS/JS
+  self-refresh in the background.
+- `tests/pwa.test.js` (in `node --test`) asserts every precached path
+  and every manifest icon exists in the repo — a typo in the precache
+  list would otherwise fail the whole `cache.addAll` install silently
+  on readers' phones.
+
+### Rebuilding the icons
+
+Sources are hand-authored SVGs in `icons/src/` — `icon.svg`
+(any-purpose: the cinnabar seal 易 — glyph outlines reused from
+`favicon.svg`, stamped on full-bleed warm paper, no transparency),
+`icon-maskable.svg` (seal inside the central 80% safe zone) and
+`icon-monochrome.svg` (glyph knocked out of the seal, for Android
+themed icons). To re-rasterize after editing them:
+
+```bash
+node scripts/build-icons.mjs   # needs Chrome (or CHROME_PATH=…)
+```
+
+It drives headless Chrome over CDP (the `scripts/dev-screenshot.mjs`
+pattern, no dependencies) and writes `icons/apple-touch-icon.png`
+(180), `icon-192/512.png`, `icon-maskable-192/512.png`,
+`icon-monochrome-512.png` and `favicon-32.png` (rasterized from
+`favicon.svg`, whose full-bleed seal stays legible at 32px). Commit
+the PNGs, bump `APP_VERSION` in `sw.js`, and re-run the tests.
+
 ## Performance (measured, Phase 5; desktop book layouts re-measured)
 
 Per-route transfer over the wire, gzip for text (HTML/CSS/JS/JSON) and
@@ -160,7 +227,7 @@ wording changed, run this after the data build, then run it again with
 | Poetic rendering + English names | Written for this site from the Chinese | CC BY 4.0 |
 | Code | This repository | MIT ([LICENSE](LICENSE)) |
 | Fonts | EB Garamond; Noto Serif TC (subset WOFF2) | SIL OFL 1.1 (licences ship in `fonts/`) |
-| Seal / favicon | Made for this site | CC BY 4.0 |
+| Seal / favicon / app icons | Made for this site (`icons/src/`) | CC BY 4.0 |
 
 Full table with attributions as shown on the site:
 [LICENSE-content.md](LICENSE-content.md) (mirrored on the About page).
