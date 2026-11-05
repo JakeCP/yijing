@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yijing 易經 — the Book of Changes</title>
+<meta name="description" content="A quiet, ad-free Yijing (I Ching) for the web. Cast with three coins or yarrow stalks; read the received Chinese text and James Legge's 1882 translation.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efe6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121110">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yijing 易經 — the Book of Changes">
+<meta property="og:description" content="A quiet, ad-free Yijing for the web. Cast with three coins or yarrow stalks; read the Chinese text and Legge (1882).">
+<meta property="og:image" content="favicon.svg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/noto-serif-tc.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Set the colour scheme before first paint (stored choice wins over system).
+  try {
+    var t = localStorage.getItem('yi-theme');
+    if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+  } catch (e) { /* private mode: follow the system */ }
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#/" data-nav="cast" aria-label="Yijing — cast a hexagram">
+    <span class="seal" lang="zh-Hant" aria-hidden="true">易</span>
+    <span lang="zh-Hant">易經</span>
+  </a>
+  <nav aria-label="Site">
+    <a href="#/library" data-nav="library">Library</a>
+    <a href="#/about" data-nav="about">About</a>
+  </nav>
+  <span class="spacer"></span>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+</header>
+
+<main>
+  <div id="app">
+    <div class="view state-msg">
+      <p class="big-zh" lang="zh-Hant">易</p>
+      <p class="soft"><em>Opening the book…</em></p>
+    </div>
+  </div>
+  <noscript>
+    <div class="view state-msg">
+      <p class="big-zh" lang="zh-Hant">易</p>
+      <h1 class="page-title">This book needs JavaScript</h1>
+      <p class="soft">Casting and reading happen entirely on your device, in the browser.
+      With JavaScript turned off there is nothing to cast with. The texts themselves are
+      plain files in this site's repository (<code>data/hexagrams.json</code>) if you would
+      like to read them another way.</p>
+    </div>
+  </noscript>
+</main>
+
+<div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+<footer>
+  <span><span lang="zh-Hant">原文</span> · Legge (1882)</span>
+  <a href="#/about">About, sources &amp; licences</a>
+</footer>
+
+<script>
+  // Light/dark toggle. Effective scheme: stored choice, else system.
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    function effective() {
+      var t = document.documentElement.dataset.theme;
+      return t || (mq.matches ? 'dark' : 'light');
+    }
+    function paint() {
+      var dark = effective() === 'dark';
+      btn.textContent = dark ? 'Light' : 'Dark';
+      btn.setAttribute('aria-pressed', String(dark));
+      btn.setAttribute('aria-label', dark ? 'Switch to light colours' : 'Switch to dark colours');
+    }
+    btn.addEventListener('click', function () {
+      var next = effective() === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('yi-theme', next); } catch (e) { /* ignore */ }
+      paint();
+    });
+    mq.addEventListener('change', paint);
+    paint();
+  })();
+</script>
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>
