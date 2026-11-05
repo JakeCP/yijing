@@ -925,8 +925,12 @@ body::after {
   .passage-source { width: 100%; color: var(--soft); font-size: 0.98rem; margin: 0.4rem 0 0; }
   .passage-gloss { width: 100%; color: var(--soft); font-size: 1rem; line-height: 1.65; margin: 0; max-width: 17em; }
   /* Its own reserved band below the ritual — never under a control.
-     Barely there, and masked on every edge so the ridges dissolve
-     into the paper instead of ending in a rectangle. */
+     Barely there. The ridge fills run through the wash-fade gradient,
+     which takes each one to fully transparent at the bottom edge, and
+     this mask takes the whole band to fully transparent at the left
+     and right edges — nothing is ever clipped, so no rectangle edge
+     is perceptible. (A radial mask larger than the box still had
+     visible strength where the box cut it.) */
   .ink-wash {
     display: block;
     width: 100%;
@@ -934,11 +938,13 @@ body::after {
     margin-top: 2.8rem;
     color: var(--ink);
     pointer-events: none;
-    -webkit-mask-image: radial-gradient(118% 108% at 50% 58%, #000 50%, transparent 97%);
-    mask-image: radial-gradient(118% 108% at 50% 58%, #000 50%, transparent 97%);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
   }
-  .wash-far { fill: currentColor; opacity: 0.028; }
-  .wash-mid { fill: currentColor; opacity: 0.042; }
+  .wash-stop-a { stop-color: currentColor; stop-opacity: 1; }
+  .wash-stop-b { stop-color: currentColor; stop-opacity: 0; }
+  .wash-far { fill: url(#wash-fade); opacity: 0.028; }
+  .wash-mid { fill: url(#wash-fade); opacity: 0.042; }
   .wash-water { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; opacity: 0.07; }
   .wash-sun { fill: var(--accent); opacity: 0.1; }
 

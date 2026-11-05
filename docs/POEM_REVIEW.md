@@ -123,3 +123,37 @@ contradicts them. Legge was not used as evidence.
 - 18 L2 and 43 judgment were found on the editor's rescan after the batch
   reviews (glossary-fixed 不可貞; consistency of 自邑/告 with 11 L6).
 
+## Follow-up: 有攸往 family re-rendered (desktop-design)
+
+The "have somewhere to go" family read awkwardly, so the whole family was
+re-rendered on "set out" (glossary in POEM_STYLE.md updated to match).
+This also resolves the flagged 33 L1 awkwardness above: both 勿用有攸往
+slots (3 judgment, 33 L1) now read "Do not set out." 無攸利 keeps
+"No good anywhere." unchanged (4 L3, 19 L3, 25 L6, 27 L3, 32 L1, 34 L6,
+45 L3, 54 judgment/L6, 64 judgment). After these edits
+`node scripts/build.mjs` was re-run and `DATA_VERSION` in `js/app.js`
+was bumped to `4`.
+
+| HX | Slot | Was → Now |
+|---|---|---|
+| 2 | judgment | The noble one has somewhere to go: → **The noble one sets out:** （君子有攸往） |
+| 3 | judgment | Do not set out anywhere. → **Do not set out.** （勿用有攸往； 03 note updated to match) |
+| 14 | L2 | Having somewhere to go: → **Setting out:** （有攸往） |
+| 22 | judgment | It is a little good / to have somewhere to go. → **It is a little good / to set out.** （小利有所往） |
+| 23 | judgment | It is not good to have somewhere to go. → **It is not good to set out.** （不利有攸往） |
+| 24 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 25 | judgment | It is not good to have somewhere to go. → **It is not good to set out.** （不利有攸往） |
+| 25 | L2 | then it is good to have somewhere to go. → **then it is good to set out.** （則利有攸往） |
+| 26 | L3 | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 28 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 32 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 33 | L1 | Do not set out anywhere. → **Do not set out.** （勿用有攸往） |
+| 36 | L1 | He has somewhere to go; → **He sets out;** （有攸往） |
+| 40 | judgment | With nowhere to go, / coming back: good. / With somewhere to go: → **Not setting out, / coming back: good. / Setting out:** （無所往 / 有攸往 pair kept as a pair) |
+| 41 | judgment, L6 | It is good to have somewhere to go. → **It is good to set out.** （利有攸往， twice) |
+| 42 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 43 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 44 | L1 | With somewhere to go, you meet misfortune. → **Setting out, you meet misfortune.** （有攸往，見凶） |
+| 45 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+| 57 | judgment | It is good to have somewhere to go. → **It is good to set out.** （利有攸往） |
+

@@ -162,15 +162,15 @@ is the same word and takes the same rendering.
 | 無咎 （无咎） | No harm. | 咎 is fault landing as harm; not inner "blame", guilt, or "error". |
 | 何咎 | What harm? | Rhetorical question kept as a question, same noun as 無咎. |
 | 無不利 | Nothing unfavourable. | Double negative preserved; never flattened to "everything favourable". |
-| 無攸利 | No good anywhere. | 攸 = anywhere (cf. 有攸往）; stronger and vaguer than 無不利, kept distinct. |
+| 無攸利 | No good anywhere. | 攸 leaves the verdict placeless — no good in any direction; stronger and vaguer than 無不利, kept distinct. |
 
 ### Going, crossing, acting
 
 | Chinese | Rendering | Why (one line) |
 |---|---|---|
-| 有攸往 | having somewhere to go | 攸 is a where; literal "somewhere" keeps the destination open. |
-| 利有攸往 | It is good to have somewhere to go. | Fixed phrase; never "furthers to have a goal". |
-| 不利有攸往 | It is not good to have somewhere to go. | Straight negation, same somewhere. |
+| 有攸往 | setting out / sets out (by syntax) | The going itself, destination unnamed. |
+| 利有攸往 | It is good to set out. | Fixed phrase; never "furthers to have a goal". |
+| 不利有攸往 | It is not good to set out. | Straight negation, same setting out. |
 | 往 / 來 | going, go / coming, come | Plain direction words; verdicts stay tags ("Going: good."). |
 | 征 | march | 征 is a punitive expedition, not generic travel; kept military. |
 | 行 | go, walk, move (by syntax) | Feet first; 行有尚 (29) is "Going is honoured." （尚 = honoured/valued). |
@@ -178,7 +178,7 @@ is the same word and takes the same rendering.
 | 不利涉大川 | It is not good to ford the great river. | Same crossing, negated; the pair must mirror exactly. |
 | 勿用 (standalone) | Do not act. | Mantic prohibition with no object: refrain from action/employment. |
 | 勿用 + verb phrase | Do not + verb | Object cases stay literal （勿用取女 "Do not take the woman."). |
-| 勿用有攸往 (3 J, 33 L1) | Do not set out anywhere. | One idiom for the fused phrase; glossed in 03 notes, not generalised. |
+| 勿用有攸往 (3 J, 33 L1) | Do not set out. | 勿用 + the fixed phrase, in the plain forms; glossed in 03 notes. |
 | 見 | see; (read xiàn) appear | 見龍 is the dragon appearing; 利見大人 is seeing — syntax decides, notes mark it. |
 | 利見大人 | It is good to see the great person. | An audience in plain words; natural syntax over gloss-ese. |
 | 有孚 / 孚 | There is trust. / trust | Trust as credit held between people; not private "sincerity" or "inner truth". |

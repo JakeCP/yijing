@@ -9,7 +9,7 @@ import {
 import { hexagramSVG, trigramFigure, coinSVG, stalksSVG, escapeHtml } from './render.js';
 import { buildTrigramMatrix, firstJudgmentLine, facingEnglishId, facingActive, libraryMode } from './book.js';
 
-const DATA_VERSION = '3'; // bump when data/*.json changes (PLAN.md S9)
+const DATA_VERSION = '4'; // bump when data/*.json changes (PLAN.md S9)
 const app = document.getElementById('app');
 const liveRegion = document.getElementById('live');
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -416,14 +416,17 @@ function detailRecord(line, splits) {
 }
 
 // Faint ink-wash ridges for the foot of the desktop cast page. Drawn
-// paths only, currentColor at CSS-set low opacity; CSS masks every
-// edge so it dissolves into the paper, and it sits in its own band
-// below the ritual, never under a control. The small disc is a
-// cinnabar sun inside the landscape. Hidden on narrow screens/print.
+// paths only, currentColor at CSS-set low opacity; a vertical gradient
+// dissolves each ridge to nothing at the bottom edge and a CSS mask
+// dissolves the left and right, so no rectangle edge survives. It sits
+// in its own band below the ritual, never under a control. The small
+// disc is a cinnabar sun inside the landscape. Hidden on narrow
+// screens/print.
 const INK_WASH = `<svg class="ink-wash" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<defs><linearGradient id="wash-fade" x1="0" y1="0" x2="0" y2="1"><stop class="wash-stop-a" offset="0.45"/><stop class="wash-stop-b" offset="1"/></linearGradient></defs>
 <path class="wash-far" d="M0 150 C140 96 240 132 360 84 C470 40 560 92 680 70 C800 48 900 108 1020 78 C1100 58 1160 84 1200 72 L1200 220 L0 220 Z"/>
 <path class="wash-mid" d="M0 182 C120 140 260 176 400 132 C540 88 640 150 790 124 C930 100 1030 152 1200 126 L1200 220 L0 220 Z"/>
-<path class="wash-water" d="M60 198 q30 -6 60 0 M210 206 q34 -6 68 0 M420 200 q30 -6 60 0 M640 208 q34 -6 68 0 M860 202 q30 -6 60 0 M1020 210 q34 -6 68 0"/>
+<path class="wash-water" d="M60 186 q30 -6 60 0 M210 194 q34 -6 68 0 M420 188 q30 -6 60 0 M640 196 q34 -6 68 0 M860 190 q30 -6 60 0 M1020 198 q34 -6 68 0"/>
 <circle class="wash-sun" cx="300" cy="52" r="11"/>
 </svg>`;
 
