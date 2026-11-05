@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voice pilot — a middle register · Yijing 易經</title>
+<meta name="description" content="Pilot comparison: the current spare rendering, two middle voices (Clearer and Fuller), and James Legge (1882), for hexagrams 1, 3, 25, 29, 55 and 62.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efe6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121110">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+@font-face{font-family:"EB Garamond";src:url("../fonts/eb-garamond.woff2") format("woff2");font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:"EB Garamond";src:url("../fonts/eb-garamond-italic.woff2") format("woff2");font-weight:400 800;font-style:italic;font-display:swap}
+@font-face{font-family:"Noto Serif TC";src:url("../fonts/noto-serif-tc.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
+:root{
+  --paper:#f4efe6;--ink:#1d1b19;--soft:#5c564d;--accent:#b23a2b;
+  --hairline:color-mix(in srgb,var(--ink) 16%,transparent);
+  --wash:color-mix(in srgb,var(--ink) 5%,transparent);
+  --serif:"EB Garamond","Noto Serif TC",Georgia,"Times New Roman",serif;
+  --serif-zh:"Noto Serif TC","EB Garamond","Songti TC","PMingLiU",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121110;--ink:#f4efe6;--soft:#a89d8c;--accent:#e0785f;--hairline:color-mix(in srgb,var(--ink) 18%,transparent);--wash:color-mix(in srgb,var(--ink) 7%,transparent);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121110;--ink:#f4efe6;--soft:#a89d8c;--accent:#e0785f;--hairline:color-mix(in srgb,var(--ink) 18%,transparent);--wash:color-mix(in srgb,var(--ink) 7%,transparent);color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--paper);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.1rem;line-height:1.7;min-height:100dvh;transition:background-color .6s ease,color .6s ease}
+::selection{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+a{color:inherit;text-decoration-color:var(--hairline);text-underline-offset:.22em}
+a:hover{text-decoration-color:var(--accent)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.topbar{display:flex;align-items:center;gap:1.2rem;width:min(100% - 2.5rem,72rem);margin:0 auto;padding:1.1rem 0 .4rem;font-size:.98rem;color:var(--soft);flex-wrap:wrap}
+.topbar a{text-decoration:none}.topbar a:hover{color:var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:.55rem;color:var(--ink);font-size:1.05rem}
+.seal{display:inline-grid;place-items:center;width:1.65em;height:1.65em;background:var(--accent);color:var(--paper);font-family:var(--serif-zh);font-size:.92rem;line-height:1;border-radius:3px;transform:rotate(-2deg);flex:none}
+.topbar .spacer{flex:1}
+.theme-toggle{color:var(--soft);font-size:.95rem;padding:.4rem .2rem;min-height:2.75rem}.theme-toggle:hover{color:var(--ink)}
+main{width:min(100% - 2.5rem,72rem);margin:0 auto;padding-bottom:3.5rem}
+.kicker{color:var(--accent);font-size:1rem;margin:2rem 0 0}
+h1{font-weight:500;line-height:1.2;font-size:2.1rem;margin:.3rem 0 .6rem;max-width:22em}
+.lede{max-width:42em;color:var(--ink)}
+.lede, .intro p{margin:.7rem 0}
+.example{border:1px solid var(--hairline);background:var(--wash);padding:1rem 1.1rem;border-radius:6px;margin:1.2rem 0;max-width:52rem}
+.example p{margin:.35rem 0}
+.voices{display:grid;gap:1rem;margin:1.4rem 0}
+.voice{border-top:1px solid var(--hairline);padding-top:.7rem}
+.voice h3{margin:0 0 .3rem;font-weight:500;font-size:1.15rem}
+.voice p{margin:0;max-width:46em}
+.principles{max-width:44em;padding-left:1.2em}
+.labels{margin:1.6rem 0;max-width:56rem}
+.labels table{border-collapse:collapse;width:100%}
+.labels th,.labels td{text-align:left;vertical-align:top;padding:.5rem .8rem .5rem 0;border-bottom:1px solid var(--hairline);font-weight:400}
+.labels th{color:var(--soft);white-space:normal}
+.hexnav{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:.8rem 0;margin:1.8rem 0 0}
+.hexnav a{text-decoration:none;color:var(--soft)}.hexnav a:hover{color:var(--ink)}
+.hexa{margin:3.2rem 0 0;padding-top:1rem;border-top:1px solid var(--hairline)}
+.hexa-head{text-align:center;margin:1rem 0 1.4rem}
+.hexsvg{width:min(9.5rem,44vw);fill:var(--ink);display:block;margin:0 auto 1rem}
+.hexa-no{color:var(--soft);margin:0;font-size:1rem}
+.hexa-name{font-family:var(--serif-zh);font-weight:600;font-size:2.4rem;line-height:1.2;margin:.1rem 0 0}
+.hexa-name .pinyin{font-family:var(--serif);font-weight:400;font-style:italic;font-size:1.3rem}
+.hexa-en{color:var(--soft);margin:.15rem 0 0;font-size:1.1rem}
+.hexa-trig{color:var(--soft);font-size:.98rem;margin:.5rem 0 0}
+.slot{margin:1.8rem 0;scroll-margin-top:2rem}
+.slot-label{font-weight:400;font-style:italic;color:var(--soft);font-size:1rem;margin:0 0 .3rem}
+.zh-line{font-family:var(--serif-zh);font-size:1.25rem;line-height:1.9;letter-spacing:.02em;margin:0 0 .8rem}
+.grid{display:grid;grid-template-columns:1fr;gap:.9rem}
+.card{border:1px solid var(--hairline);border-radius:6px;padding:.85rem 1rem 1rem;background:transparent}
+.card.is-b{background:var(--wash)}
+.card.is-c{border-color:color-mix(in srgb,var(--accent) 45%,var(--hairline))}
+.card-tag{margin:0 0 .4rem;font-size:.92rem;color:var(--soft);letter-spacing:.02em}
+.card.is-c .card-tag{color:var(--accent)}
+.card-body{margin:0;line-height:1.65}
+.card.is-legge .card-body{color:var(--soft)}
+.notes{border-top:1px solid var(--hairline);margin:1.6rem 0 0;padding-top:.8rem;max-width:52rem}
+.notes h4{margin:0 0 .4rem;font-weight:500;font-size:1.05rem}
+.notes ul{margin:0;padding-left:1.2em;color:var(--soft)}
+.notes li{margin:.3rem 0}
+footer{width:min(100% - 2.5rem,72rem);margin:0 auto;padding:1.2rem 0 1.6rem;border-top:1px solid var(--hairline);color:var(--soft);font-size:.95rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+@media (min-width:760px){.voices{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1120px){.grid{grid-template-columns:repeat(4,1fr)}.card-body{font-size:1.02rem}}
+@media (prefers-reduced-motion:reduce){body{transition:none}}
+</style>
+<script>
+  try { var t = localStorage.getItem('yi-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html" aria-label="Back to the book"><span class="seal" lang="zh-Hant" aria-hidden="true">易</span><span lang="zh-Hant">易經</span></a>
+  <span>Pilot — not on the site</span>
+  <span class="spacer"></span>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+</header>
+<main>
+  <p class="kicker">A question of voice</p>
+  <h1>Between sparseness and Legge: two tries at a middle register</h1>
+  <div class="intro">
+    <p class="lede">The rendering on the site is faithful, but so spare that a reader often cannot tell who acts, why, or how one clause follows the next. Legge is clear because he supplies the implied subject, the logical connectives, and the sense of the technical terms — but in Victorian syntax, with bracketed insertions. This page tests whether we can keep the concrete images and the calm voice, and still give the reader complete, natural sentences. Nothing here has changed the site or <code>data/poem/</code>. Read a few slots closely, then say which strength feels right — or where it over-explains.</p>
+    <div class="example">
+      <p><span lang="zh-Hant">乾 Line 1 · 潛龍,勿用。</span></p>
+      <p><strong>A — Current:</strong> “The dragon lies hidden. / Do not act.”</p>
+      <p><strong>Middle:</strong> “The dragon lies hidden in the deep. / This is not yet the time to act.”</p>
+      <p><strong>Legge:</strong> “…the dragon lying hid (in the deep). It is not the time for active doing.”</p>
+    </div>
+    <p>For each hexagram below, every slot shows the Chinese first, then four versions side by side. <strong>A</strong> is the text as shipped. <strong>B</strong> and <strong>C</strong> are new. <strong>Legge (1882)</strong> is shown in full, preambles and brackets included, so the borrowings — and the refusals — are visible.</p>
+  </div>
+
+  <div class="voices">
+    <div class="voice"><h3>A — Current</h3><p>The rendering as shipped (<code>data/hexagrams.json</code>, <code>texts.poem</code>). Fragments allowed; subjects and connectives often left for the reader to infer. Verdicts land as short tags: “Good.” “No harm.” “Misfortune.”</p></div>
+    <div class="voice"><h3>B — Clearer</h3><p>One light touch beyond A. A supplied subject or a single connective (“but”, “then”, “if … then”) where A leaves a blank; a formula eased only enough to parse. The verse shape, the fixed glossary wording, and the refrain-matching all stay. If B alone satisfies, the revision across all 64 hexagrams is small.</p></div>
+    <div class="voice"><h3>C — Fuller</h3><p>Closer to Legge’s clarity, still modern and unbracketed. Complete sentences throughout; the if / so / but logic spelled out; technical formulae made understandable where they stand (“hold firm to the course”, “trust is held, and through it the heart goes through”). No new images, no moralising, no turning a verdict into advice.</p></div>
+    <div class="voice"><h3>Legge (1882)</h3><p>James Legge’s translation, verbatim. The clarity benchmark — and the cautionary tale. Note where his extra words genuinely help (a subject, a “but”, a consequence) and where they invent: a court scene, a motive, a lesson. B and C take the first kind and refuse the second.</p></div>
+  </div>
+
+  <h3>What the middle voice promises</h3>
+  <ul class="principles">
+    <li>Complete natural modern sentences — a newcomer can parse every slot without the Chinese beside it.</li>
+    <li>The implied subject and the connective logic the Chinese leaves implicit are supplied, once, in plain words.</li>
+    <li>Concrete images stay at full strength; formulae become understandable in context.</li>
+    <li>Nothing is added that is not in the Chinese: no new landscapes, feelings, or morals; no advice-column “you”.</li>
+    <li>Typically 2–4 lines per line statement. Parallel lines stay parallel, word for word.</li>
+  </ul>
+
+  <section class="labels" aria-labelledby="labels-h">
+    <h3 id="labels-h">A companion proposal: glossing the section labels</h3>
+    <p>Clearer sentences help only if a newcomer also knows what kind of text they are reading. The site currently labels its layers <em>The Judgment · <span lang="zh-Hant">卦辭</span></em>, <em>The Image · <span lang="zh-Hant">大象</span> (from the later <span lang="zh-Hant">象傳</span>)</em>, <em>Changing lines · <span lang="zh-Hant">爻辭</span></em>, and <em>The Lines · <span lang="zh-Hant">爻辭</span> (from the bottom)</em>. Proposal: keep those names — readers learn them once and keep them — and add a short gloss quietly after each, as modelled in the slot headings below.</p>
+    <table>
+      <thead><tr><th scope="col">Now</th><th scope="col">Proposed gloss</th></tr></thead>
+      <tbody>
+        <tr><td>The Judgment</td><td>The Judgment · the hexagram’s core statement</td></tr>
+        <tr><td>The Image</td><td>The Image · a later commentary on its two trigrams, told as a picture</td></tr>
+        <tr><td>Changing lines</td><td>Changing lines · the lines that turn into their opposites, and so into a second hexagram</td></tr>
+        <tr><td>The Lines</td><td>The Lines · six short statements, one for each line, read from the bottom up</td></tr>
+        <tr><td>Line 1 … Line 6</td><td>Line 1 … Line 6 · one short statement for that line’s place in the figure</td></tr>
+        <tr><td><span lang="zh-Hant">用九</span> / <span lang="zh-Hant">用六</span></td><td>All lines changing (<span lang="zh-Hant">用九</span> / <span lang="zh-Hant">用六</span>) · an extra statement, read only when all six lines change</td></tr>
+      </tbody>
+    </table>
+    <p>Show the full gloss where there is room (a hexagram page, a first reading); let it shorten or drop where space is tight. The point is a handrail on first encounter, not a permanent subtitle.</p>
+  </section>
+
+  <nav class="hexnav" aria-label="Pilot hexagrams"><a href="#h1">1 乾 Qián</a><a href="#h3">3 屯 Zhūn</a><a href="#h25">25 無妄 Wú Wàng</a><a href="#h29">29 坎 Kǎn</a><a href="#h55">55 豐 Fēng</a><a href="#h62">62 小過 Xiǎo Guò</a></nav>
+
+  <article class="hexa" id="h1">
+  <header class="hexa-head">
+    <svg class="hexsvg" viewBox="0 0 120 96" role="img" aria-hidden="true" focusable="false"><rect x="6" y="8" width="108" height="7" rx="1.5"/><rect x="6" y="23" width="108" height="7" rx="1.5"/><rect x="6" y="38" width="108" height="7" rx="1.5"/><rect x="6" y="53" width="108" height="7" rx="1.5"/><rect x="6" y="68" width="108" height="7" rx="1.5"/><rect x="6" y="83" width="108" height="7" rx="1.5"/></svg>
+    <p class="hexa-no">Hexagram 1 · ䷀</p>
+    <h2 class="hexa-name"><span lang="zh-Hant">乾</span> <span class="pinyin">Qián</span></h2>
+    <p class="hexa-en">Heaven</p>
+    <p class="hexa-trig">☰ 乾 Heaven above · ☰ 乾 Heaven below</p>
+  </header>
+  <section class="slot" id="h1-judgment">
+  <h4 class="slot-label">The Judgment · 卦辭 — the core statement</h4>
+  <p class="zh-line" lang="zh-Hant">元，亨，利，貞。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm to the course.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Khien (represents) what is great and originating, penetrating, advantageous, correct and firm.</p></div></div>
+</section><section class="slot" id="h1-image">
+  <h4 class="slot-label">The Image · 大象 — a later commentary</h4>
+  <p class="zh-line" lang="zh-Hant">天行健，君子以自強不息。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Heaven moves, strong.<br>
+So the noble one keeps strong<br>
+and does not rest.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Heaven moves, strong and steady.<br>
+So the noble one keeps strong,<br>
+and does not rest.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Heaven moves on, strong without slackening.<br>
+So the noble one keeps his strength up<br>
+and does not let it rest.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Heaven, in its motion, (gives the idea of) strength. The superior man, in accordance with this, nerves himself to ceaseless activity.</p></div></div>
+</section><section class="slot" id="h1-l1">
+  <h4 class="slot-label">Line 1 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">潛龍，勿用。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">The dragon lies hidden.<br>
+Do not act.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The dragon lies hidden in the deep.<br>
+This is not yet the time to act.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The dragon lies hidden in the deep.<br>
+This is not yet the time to act.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">In the first (or lowest) line, undivided, (we see its subject as) the dragon lying hid (in the deep). It is not the time for active doing.</p></div></div>
+</section><section class="slot" id="h1-l2">
+  <h4 class="slot-label">Line 2 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">見龍在田，利見大人。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">The dragon appears in the field.<br>
+It is good to see the great person.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The dragon appears in the field.<br>
+Now it is good to see the great person.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The dragon appears in the open field.<br>
+It is good to go and see the great person.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">In the second line, undivided, (we see its subject as) the dragon appearing in the field. It will be advantageous to meet with the great man.</p></div></div>
+</section><section class="slot" id="h1-l3">
+  <h4 class="slot-label">Line 3 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">君子終日乾乾，夕惕，若厲，無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">All day the noble one is strong, and strong again,<br>
+at dusk still wary, as if in danger.<br>
+No harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">All day the noble one is strong, and strong again;<br>
+at dusk still wary, as if in danger.<br>
+There is danger, but no harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">All day long the noble one is active, and active again;<br>
+in the evening he is still careful, as if in danger.<br>
+The place is dangerous, but there is no harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">In the third line, undivided, (we see its subject as) the superior man active and vigilant all the day, and in the evening still careful and apprehensive. (The position is) dangerous, but there will be no mistake.</p></div></div>
+</section><section class="slot" id="h1-l4">
+  <h4 class="slot-label">Line 4 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">或躍在淵，無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Perhaps leaping —<br>
+still in the deep.<br>
+No harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Perhaps leaping, still in the deep.<br>
+No harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The dragon is poised to leap, but still in the deep.<br>
+No harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">In the fourth line, undivided, (we see its subject as the dragon looking) as if he were leaping up, but still in the deep. There will be no mistake.</p></div></div>
+</section><section class="slot" id="h1-l5">
+  <h4 class="slot-label">Line 5 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">飛龍在天，利見大人。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">The dragon flies in heaven.<br>
+It is good to see the great person.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The dragon flies in heaven.<br>
+Now it is good to see the great person.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The dragon flies in the sky.<br>
+It is good to go and see the great person.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">In the fifth line, undivided, (we see its subject as) the dragon on the wing in the sky. It will be advantageous to meet with the great man.</p></div></div>
+</section><section class="slot" id="h1-l6">
+  <h4 class="slot-label">Line 6 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">亢龍有悔。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">The dragon flies too high.<br>
+There will be regret.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The dragon flies too high.<br>
+There will be regret.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The dragon flies too high, beyond its proper limit.<br>
+There will be regret.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">In the sixth (or topmost) line, undivided, (we see its subject as) the dragon exceeding the proper limits. There will be occasion for repentance.</p></div></div>
+</section><section class="slot" id="h1-special">
+  <h4 class="slot-label">All lines changing · 用九 — read only when all six change</h4>
+  <p class="zh-line" lang="zh-Hant">見群龍無首，吉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Dragons appear together,<br>
+no head among them.<br>
+Good.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Dragons appear together, no head among them.<br>
+Good.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">A flight of dragons appears, with no head leading them.<br>
+Good.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">(The lines of this hexagram are all strong and undivided, as appears from) the use of the number nine. If the host of dragons (thus) appearing were to divest themselves of their heads, there would be good fortune.</p></div></div>
+</section>
+  <aside class="notes"><h4>Translator’s notes</h4><ul><li><strong>L1.</strong> B and C both take Legge&#x27;s &#x27;not the time&#x27; turn for 勿用; C adds nothing more, which is right for this line.</li><li><strong>L3.</strong> C gives 終日乾乾 its full activity and keeps A&#x27;s wariness; the but-link is Legge&#x27;s clarity, in plain words.</li></ul></aside>
+</article><article class="hexa" id="h3">
+  <header class="hexa-head">
+    <svg class="hexsvg" viewBox="0 0 120 96" role="img" aria-hidden="true" focusable="false"><rect x="6" y="8" width="48" height="7" rx="1.5"/><rect x="66" y="8" width="48" height="7" rx="1.5"/><rect x="6" y="23" width="108" height="7" rx="1.5"/><rect x="6" y="38" width="48" height="7" rx="1.5"/><rect x="66" y="38" width="48" height="7" rx="1.5"/><rect x="6" y="53" width="48" height="7" rx="1.5"/><rect x="66" y="53" width="48" height="7" rx="1.5"/><rect x="6" y="68" width="48" height="7" rx="1.5"/><rect x="66" y="68" width="48" height="7" rx="1.5"/><rect x="6" y="83" width="108" height="7" rx="1.5"/></svg>
+    <p class="hexa-no">Hexagram 3 · ䷂</p>
+    <h2 class="hexa-name"><span lang="zh-Hant">屯</span> <span class="pinyin">Zhūn</span></h2>
+    <p class="hexa-en">Sprouting</p>
+    <p class="hexa-trig">☵ 坎 Water above · ☳ 震 Thunder below</p>
+  </header>
+  <section class="slot" id="h3-judgment">
+  <h4 class="slot-label">The Judgment · 卦辭 — the core statement</h4>
+  <p class="zh-line" lang="zh-Hant">元，亨，利，貞，勿用，有攸往，利建侯。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm.<br>
+Do not set out.<br>
+It is good to set up lords.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm.<br>
+Do not set out yet.<br>
+It is good to set up lords.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm to the course.<br>
+Do not set out on the undertaking yet.<br>
+It is good to set up lords to help.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Kun (indicates that in the case which it presupposes) there will be great progress and success, and the advantage will come from being correct and firm. (But) any movement in advance should not be (lightly) undertaken. There will be advantage in appointing feudal princes.</p></div></div>
+</section><section class="slot" id="h3-image">
+  <h4 class="slot-label">The Image · 大象 — a later commentary</h4>
+  <p class="zh-line" lang="zh-Hant">雲，雷，屯；君子以經綸。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Clouds and thunder: Sprouting.<br>
+So the noble one sorts the warp threads.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Clouds and thunder: Sprouting.<br>
+So the noble one sorts the warp threads.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Clouds gather and thunder rolls: Sprouting.<br>
+So the noble one sorts the warp threads, as if ordering tangled work.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">(The trigram representing) clouds and (that representing) thunder form Kun. The superior man, in accordance with this, (adjusts his measures of government) as in sorting the threads of the warp and woof.</p></div></div>
+</section><section class="slot" id="h3-l1">
+  <h4 class="slot-label">Line 1 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">磐桓；利居貞，利建侯。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Pacing back and forth.<br>
+It is good to stay and hold firm.<br>
+It is good to set up lords.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Pacing back and forth, held up.<br>
+It is good to stay and hold firm.<br>
+It is good to set up lords.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He paces back and forth, unable to advance.<br>
+It is good for him to stay where he is and hold firm.<br>
+It is also good to set up lords.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The first line, undivided, shows the difficulty (its subject has) in advancing. It will be advantageous for him to abide correct and firm; advantageous (also) to be made a feudal ruler.</p></div></div>
+</section><section class="slot" id="h3-l2">
+  <h4 class="slot-label">Line 2 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">屯如邅如，乘馬班如。匪寇婚媾，女子貞不字，十年乃字。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Halting, turning — horses wheeling back.<br>
+Not raiders — suitors.<br>
+The girl holds firm: not promised.<br>
+Ten years — then promised.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Halting, turning; the horses wheel back.<br>
+They are not raiders, but suitors.<br>
+The girl holds firm: she is not promised.<br>
+Ten years pass, and then she is promised.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">She is held up and turned back; even her horses wheel round.<br>
+Those who come are not raiders, but suitors seeking her in marriage.<br>
+The girl holds firm and is not promised to them.<br>
+Only after ten years is she promised.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The second line, divided, shows (its subject) distressed and obliged to return; (even) the horses of her chariot (also) seem to be retreating. (But) not by a spoiler (is she assailed), but by one who seeks her to be his wife. The young lady maintains her firm correctness, and declines a union. After ten years she will be united, and have children.</p></div></div>
+</section><section class="slot" id="h3-l3">
+  <h4 class="slot-label">Line 3 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">既鹿無虞，惟入于林中，君子幾不如舍，往吝。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">After a deer, with no guide —<br>
+only deeper into the forest.<br>
+The noble one sees early: better to let go.<br>
+To go on: shame.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Chasing a deer with no guide,<br>
+he only goes deeper into the forest.<br>
+The noble one sees early: better to let go.<br>
+To go on brings shame.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">A man chases a deer without a forester to guide him,<br>
+and finds himself only deeper in the forest.<br>
+The noble one sees the turn early: it is better to give up the chase.<br>
+To go on would bring shame.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The third line, divided, shows one following the deer without (the guidance of) the forester, and only finding himself in the midst of the forest. The superior man, acquainted with the secret risks, thinks it better to give up the chase. If he went forward, he would regret it.</p></div></div>
+</section><section class="slot" id="h3-l4">
+  <h4 class="slot-label">Line 4 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">乘馬班如，求婚媾，往吉，無不利。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Horses wheeling back.<br>
+Seeking marriage.<br>
+Going: good.<br>
+Nothing unfavourable.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The horses wheel back.<br>
+Seeking marriage, she goes: good.<br>
+Nothing unfavourable.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Her horses wheel back as she sets out.<br>
+She seeks the marriage that is sought of her.<br>
+To go is good; nothing is unfavourable.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fourth line, divided, shows (its subject as a lady), the horses of whose chariot appear in retreat. She seeks, however, (the help of) him who seeks her to be his wife. Advance will be fortunate; all will turn out advantageously.</p></div></div>
+</section><section class="slot" id="h3-l5">
+  <h4 class="slot-label">Line 5 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">屯其膏，小貞吉，大貞凶。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Its fat stored up.<br>
+Holding firm in small things: good.<br>
+Holding firm in great things: misfortune.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Its fat is stored up, held back.<br>
+Holding firm in small things: good.<br>
+Holding firm in great things: misfortune.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">His richness is stored up and held back, hard to share out.<br>
+Holding firm brings good in small things,<br>
+but misfortune in great things.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fifth line, undivided, shows the difficulties in the way of (its subject’s) dispensing the rich favours that might be expected from him. With firmness and correctness there will be good fortune in small things; (even) with them in great things there will be evil.</p></div></div>
+</section><section class="slot" id="h3-l6">
+  <h4 class="slot-label">Line 6 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">乘馬班如，泣血漣如。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Horses wheeling back.<br>
+Weeping blood in streams.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The horses wheel back.<br>
+Weeping blood in streams.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">His horses are forced to wheel back.<br>
+He weeps tears of blood in streams.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The topmost line, divided, shows (its subject) with the horses of his chariot obliged to retreat, and weeping tears of blood in streams.</p></div></div>
+</section>
+  <aside class="notes"><h4>Translator’s notes</h4><ul><li><strong>L2.</strong> 字 is betrothal, then childbearing; A and B/C keep &#x27;promised&#x27; and do not add Legge&#x27;s &#x27;have children&#x27;.</li><li><strong>L5.</strong> 屯其膏: B stays literal (fat stored up). Legge reads withheld bounty (&#x27;dispensing the rich favours&#x27;); C meets him halfway with &#x27;richness … hard to share out&#x27; — the clearest test in this pilot of how much explaining taste allows.</li></ul></aside>
+</article><article class="hexa" id="h25">
+  <header class="hexa-head">
+    <svg class="hexsvg" viewBox="0 0 120 96" role="img" aria-hidden="true" focusable="false"><rect x="6" y="8" width="108" height="7" rx="1.5"/><rect x="6" y="23" width="108" height="7" rx="1.5"/><rect x="6" y="38" width="108" height="7" rx="1.5"/><rect x="6" y="53" width="48" height="7" rx="1.5"/><rect x="66" y="53" width="48" height="7" rx="1.5"/><rect x="6" y="68" width="48" height="7" rx="1.5"/><rect x="66" y="68" width="48" height="7" rx="1.5"/><rect x="6" y="83" width="108" height="7" rx="1.5"/></svg>
+    <p class="hexa-no">Hexagram 25 · ䷘</p>
+    <h2 class="hexa-name"><span lang="zh-Hant">無妄</span> <span class="pinyin">Wú Wàng</span></h2>
+    <p class="hexa-en">Without Falseness</p>
+    <p class="hexa-trig">☰ 乾 Heaven above · ☳ 震 Thunder below</p>
+  </header>
+  <section class="slot" id="h25-judgment">
+  <h4 class="slot-label">The Judgment · 卦辭 — the core statement</h4>
+  <p class="zh-line" lang="zh-Hant">元，亨，利，貞。其匪正有眚，不利有攸往。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm.<br>
+What is not right in it brings harm.<br>
+It is not good to set out.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm.<br>
+If it is not right, it brings harm.<br>
+Then it is not good to set out.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Begin greatly, and go through.<br>
+It is good to hold firm to the course.<br>
+If what is done is not right, harm follows,<br>
+and it is not good to set out in any direction.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Wu Wang indicates great progress and success, while there will be advantage in being firm and correct. If (its subject and his action) be not correct, he will fall into errors, and it will not be advantageous for him to move in any direction.</p></div></div>
+</section><section class="slot" id="h25-image">
+  <h4 class="slot-label">The Image · 大象 — a later commentary</h4>
+  <p class="zh-line" lang="zh-Hant">天下雷行，物與無妄；先王以茂對時，育萬物。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Thunder rolls under heaven; things are given without falseness.<br>
+So the early kings, in full accord with the season,<br>
+nourished the ten thousand things.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Thunder rolls under heaven; things are given without falseness.<br>
+So the early kings, in full accord with the season,<br>
+nourished the ten thousand things.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Thunder rolls beneath heaven, and each thing is given its nature without falseness.<br>
+So the early kings ordered their work in full accord with the seasons,<br>
+and so nourished the ten thousand things.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The thunder rolls all under the sky, and to (every)thing there is given (its nature), free from all insincerity. The ancient kings, in accordance with this, (made their regulations) in complete accordance with the seasons, thereby nourishing all things.</p></div></div>
+</section><section class="slot" id="h25-l1">
+  <h4 class="slot-label">Line 1 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">無妄，往吉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Without falseness.<br>
+Going: good.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Without falseness, he goes.<br>
+Going: good.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He is without falseness, and he goes forward.<br>
+His going brings good.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The first line, undivided, shows its subject free from all insincerity. His advance will be accompanied with good fortune.</p></div></div>
+</section><section class="slot" id="h25-l2">
+  <h4 class="slot-label">Line 2 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">不耕獲，不菑畬，則利有攸往。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Reaping without ploughing,<br>
+a ripe field without clearing it —<br>
+then it is good to set out.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Reaping without ploughing,<br>
+gathering a ripe field without clearing it —<br>
+then it is good to set out.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He reaps without having ploughed for the reaping,<br>
+and gathers from a field made ripe without his clearing it.<br>
+For such a one, it is good to set out.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The second line, divided, shows one who reaps without having ploughed (that he might reap), and gathers the produce of his third year’s fields without having cultivated them the first year for that end. To such a one there will be advantage in whatever direction he may move.</p></div></div>
+</section><section class="slot" id="h25-l3">
+  <h4 class="slot-label">Line 3 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">無妄之災，或繫之牛，行人之得，邑人之災。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">A disaster out of nowhere:<br>
+a cow, left tethered —<br>
+the passer-by&#x27;s gain,<br>
+the townsman&#x27;s disaster.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">A disaster out of nowhere: a cow left tethered —<br>
+the passer-by gains it,<br>
+the townsman bears the disaster.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Disaster comes undeserved, as when a cow is left tethered:<br>
+a passer-by finds it and takes it,<br>
+while the townsman bears the disaster.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The third line, divided, shows calamity happening to one who is free from insincerity;—as in the case of an ox that has been tied up. A passer by finds it (and carries it off), while the people in the neighbourhood have the calamity (of being accused and apprehended).</p></div></div>
+</section><section class="slot" id="h25-l4">
+  <h4 class="slot-label">Line 4 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">可貞，無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">It can hold firm.<br>
+No harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">He can hold firm.<br>
+No harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">If he can hold firm,<br>
+there is no harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fourth line, undivided, shows (a case) in which, if its subject can remain firm and correct, there will be no error.</p></div></div>
+</section><section class="slot" id="h25-l5">
+  <h4 class="slot-label">Line 5 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">無妄之疾，勿藥有喜。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Sickness out of nowhere:<br>
+no medicine — there will be joy.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Sickness out of nowhere:<br>
+take no medicine, and there will be joy.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Sickness comes undeserved.<br>
+Take no medicine for it, and there will be joy.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fifth line, undivided, shows one who is free from insincerity, and yet has fallen ill. Let him not use medicine, and he will have occasion for joy (in his recovery).</p></div></div>
+</section><section class="slot" id="h25-l6">
+  <h4 class="slot-label">Line 6 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">無妄，行有眚，無攸利。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Without falseness,<br>
+going brings harm.<br>
+No good anywhere.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Without falseness, but going brings harm.<br>
+No good anywhere.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He is without falseness, yet if he acts, harm follows.<br>
+There is no good in any direction.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The topmost line, undivided, shows its subject free from insincerity, yet sure to fall into error, if he take action. (His action) will not be advantageous in any way.</p></div></div>
+</section>
+  <aside class="notes"><h4>Translator’s notes</h4><ul><li><strong>L2.</strong> 菑畬 is newly cleared ground and a field in its third year; B/C keep the paradox plain and do not turn it into a farming note.</li><li><strong>L3.</strong> Legge adds that the neighbours are &#x27;accused and apprehended&#x27;; C leaves the townsman&#x27;s disaster open, as the Chinese does.</li></ul></aside>
+</article><article class="hexa" id="h29">
+  <header class="hexa-head">
+    <svg class="hexsvg" viewBox="0 0 120 96" role="img" aria-hidden="true" focusable="false"><rect x="6" y="8" width="48" height="7" rx="1.5"/><rect x="66" y="8" width="48" height="7" rx="1.5"/><rect x="6" y="23" width="108" height="7" rx="1.5"/><rect x="6" y="38" width="48" height="7" rx="1.5"/><rect x="66" y="38" width="48" height="7" rx="1.5"/><rect x="6" y="53" width="48" height="7" rx="1.5"/><rect x="66" y="53" width="48" height="7" rx="1.5"/><rect x="6" y="68" width="108" height="7" rx="1.5"/><rect x="6" y="83" width="48" height="7" rx="1.5"/><rect x="66" y="83" width="48" height="7" rx="1.5"/></svg>
+    <p class="hexa-no">Hexagram 29 · ䷜</p>
+    <h2 class="hexa-name"><span lang="zh-Hant">坎</span> <span class="pinyin">Kǎn</span></h2>
+    <p class="hexa-en">Pit</p>
+    <p class="hexa-trig">☵ 坎 Water above · ☵ 坎 Water below</p>
+  </header>
+  <section class="slot" id="h29-judgment">
+  <h4 class="slot-label">The Judgment · 卦辭 — the core statement</h4>
+  <p class="zh-line" lang="zh-Hant">習坎，有孚，維心亨，行有尚。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Pit after pit.<br>
+There is trust.<br>
+Only the heart goes through.<br>
+Going is honoured.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Pit after pit.<br>
+There is trust; the heart goes through.<br>
+Going is honoured.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Pit after pit, the danger repeated.<br>
+Trust is held, and through it the heart goes through.<br>
+Action taken from that trust is honoured.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Khan, here repeated, shows the possession of sincerity, through which the mind is penetrating. Action (in accordance with this) will be of high value.</p></div></div>
+</section><section class="slot" id="h29-image">
+  <h4 class="slot-label">The Image · 大象 — a later commentary</h4>
+  <p class="zh-line" lang="zh-Hant">水洊至，習坎；君子以常德行，習教事。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Water comes again and again: Pit after pit.<br>
+So the noble one holds virtue and conduct constant<br>
+and practises teaching.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Water comes again and again: Pit after pit.<br>
+So the noble one holds virtue and conduct constant,<br>
+and practises teaching.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Water flows on and comes again: Pit after pit.<br>
+So the noble one keeps his virtue and his conduct constant,<br>
+and keeps up the practice of teaching.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">(The representation of) water flowing on continuously forms the repeated Khan. The superior man, in accordance with this, maintains constantly the virtue (of his heart) and (the integrity of) his conduct, and practises the business of instruction.</p></div></div>
+</section><section class="slot" id="h29-l1">
+  <h4 class="slot-label">Line 1 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">習坎，入于坎窞，凶。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Pit after pit —<br>
+down into a pit inside the pit.<br>
+Misfortune.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Pit after pit: down into a pit inside the pit.<br>
+Misfortune.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">In the repeated pit, he goes down into a still deeper pit within it.<br>
+Misfortune.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The first line, divided, shows its subject in the double defile, and (yet) entering a cavern within it. There will be evil.</p></div></div>
+</section><section class="slot" id="h29-l2">
+  <h4 class="slot-label">Line 2 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">坎有險，求小得。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">The pit is perilous.<br>
+Seeking brings a little.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The pit is perilous.<br>
+Seeking, he gets a little of what he seeks.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He is in peril in the pit.<br>
+He seeks a way out, and gets a little of what he seeks.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The second line, undivided, shows its subject in all the peril of the defile. He will, however, get a little (of the deliverance) that he seeks.</p></div></div>
+</section><section class="slot" id="h29-l3">
+  <h4 class="slot-label">Line 3 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">來之坎坎，險且枕，入于坎窞，勿用。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Coming, going: pit, pit.<br>
+Peril for a pillow.<br>
+Down into a pit inside the pit.<br>
+Do not act.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Coming or going, pit after pit;<br>
+peril is his pillow, and he sinks deeper.<br>
+Do not act.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Whether he comes or goes, he meets pit after pit.<br>
+All is peril and unrest, and he sinks into the deeper pit.<br>
+In such a case, do not act.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The third line, divided, shows its subject, whether he comes or goes (=descends or ascends), confronted by a defile. All is peril to him and unrest. (His endeavours) will lead him into the cavern of the pit. There should be no action (in such a case).</p></div></div>
+</section><section class="slot" id="h29-l4">
+  <h4 class="slot-label">Line 4 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">樽酒簋貳，用缶，納約自牖，終無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">A jar of wine, two vessels of grain —<br>
+earthenware only —<br>
+the simple gift passed in at the window.<br>
+In the end, no harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">A jar of wine and two vessels of grain, in plain earthenware —<br>
+the simple gift passed in at the window.<br>
+In the end, no harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">A jar of wine and two vessels of grain, served in plain earthenware;<br>
+the simple gift is passed in through the window.<br>
+In the end there is no harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fourth line, divided, shows its subject (at a feast), with (simply) a bottle of spirits, and a subsidiary basket of rice, while (the cups and bowls) are (only) of earthenware. He introduces his important lessons (as his ruler’s) intelligence admits. There will in the end be no error.</p></div></div>
+</section><section class="slot" id="h29-l5">
+  <h4 class="slot-label">Line 5 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">坎不盈，祗既平，無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">The pit, not overfull,<br>
+only just level.<br>
+No harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">The water in the pit is not overfull;<br>
+it is only just level.<br>
+No harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The water in the pit does not overflow;<br>
+it has only just come level.<br>
+No harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fifth line, undivided, shows the water of the defile not yet full, (so that it might flow away); but order will (soon) be brought about. There will be no error.</p></div></div>
+</section><section class="slot" id="h29-l6">
+  <h4 class="slot-label">Line 6 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">係用徽纆，寘于叢棘，三歲不得，凶。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Bound with cords,<br>
+set down among thorns,<br>
+three years, no way out.<br>
+Misfortune.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Bound with cords and set down among thorns,<br>
+for three years he finds no way out.<br>
+Misfortune.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Bound with cords and set down in a thicket of thorns,<br>
+in three years he does not find his way out.<br>
+Misfortune.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The topmost line, divided, shows its subject bound with cords of three strands or two strands, and placed in the thicket of thorns. But in three years he does not learn the course for him to pursue. There will be evil.</p></div></div>
+</section>
+  <aside class="notes"><h4>Translator’s notes</h4><ul><li><strong>judgment.</strong> 維心亨: B links trust and heart with a semicolon; C spells out Legge&#x27;s &#x27;through which&#x27;, still in one calm sentence.</li><li><strong>L4.</strong> Legge&#x27;s &#x27;important lessons&#x27; is his gloss on 納約; B/C keep the simple gift and the window.</li></ul></aside>
+</article><article class="hexa" id="h55">
+  <header class="hexa-head">
+    <svg class="hexsvg" viewBox="0 0 120 96" role="img" aria-hidden="true" focusable="false"><rect x="6" y="8" width="48" height="7" rx="1.5"/><rect x="66" y="8" width="48" height="7" rx="1.5"/><rect x="6" y="23" width="48" height="7" rx="1.5"/><rect x="66" y="23" width="48" height="7" rx="1.5"/><rect x="6" y="38" width="108" height="7" rx="1.5"/><rect x="6" y="53" width="108" height="7" rx="1.5"/><rect x="6" y="68" width="48" height="7" rx="1.5"/><rect x="66" y="68" width="48" height="7" rx="1.5"/><rect x="6" y="83" width="108" height="7" rx="1.5"/></svg>
+    <p class="hexa-no">Hexagram 55 · ䷶</p>
+    <h2 class="hexa-name"><span lang="zh-Hant">豐</span> <span class="pinyin">Fēng</span></h2>
+    <p class="hexa-en">Fullness</p>
+    <p class="hexa-trig">☳ 震 Thunder above · ☲ 離 Fire below</p>
+  </header>
+  <section class="slot" id="h55-judgment">
+  <h4 class="slot-label">The Judgment · 卦辭 — the core statement</h4>
+  <p class="zh-line" lang="zh-Hant">亨，王假之，勿憂，宜日中。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">It goes through.<br>
+The king comes to it.<br>
+Do not grieve:<br>
+it should be as at midday.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">It goes through; the king comes to it.<br>
+Do not grieve.<br>
+Let it stand as at midday.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">It goes through; the king attains this fullness.<br>
+There is no cause to grieve.<br>
+Let him be as the sun at midday.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Fang intimates progress and development. When a king has reached the point (which the name denotes) there is no occasion to be anxious (through fear of a change). Let him be as the sun at noon.</p></div></div>
+</section><section class="slot" id="h55-image">
+  <h4 class="slot-label">The Image · 大象 — a later commentary</h4>
+  <p class="zh-line" lang="zh-Hant">雷電皆至，豐；君子以折獄致刑。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Thunder and lightning both arrive: Fullness.<br>
+So the noble one settles lawsuits,<br>
+and carries out punishments.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Thunder and lightning both arrive: Fullness.<br>
+So the noble one settles lawsuits,<br>
+and carries out punishments.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Thunder and lightning arrive together: Fullness.<br>
+So the noble one decides lawsuits clearly,<br>
+and carries out the punishments exactly.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">(The trigrams representing) thunder and lightning combine to form Fang. The superior man, in accordance with this, decides cases of litigation, and apportions punishments with exactness.</p></div></div>
+</section><section class="slot" id="h55-l1">
+  <h4 class="slot-label">Line 1 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">遇其配主，雖旬無咎，往有尚。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Meeting the lord who matches him:<br>
+though ten days pass, no harm.<br>
+Going is honoured.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">He meets the lord who matches him.<br>
+Even if ten days pass, no harm.<br>
+Going is honoured.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He meets his matched lord, one of like character to himself.<br>
+Even a full ten days together brings no harm.<br>
+To go forward calls forth honour.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The first line, undivided, shows its subject meeting with his mate. Though they are both of the same character, there will be no error. Advance will call forth approval.</p></div></div>
+</section><section class="slot" id="h55-l2">
+  <h4 class="slot-label">Line 2 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">豐其蔀，日中見斗，往得疑疾，有孚發若，吉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Fullness screened off:<br>
+at midday the Dipper is seen.<br>
+Going brings suspicion and sickness.<br>
+There is trust, breaking out: good.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Fullness is screened off: at midday the Dipper is seen.<br>
+Going brings suspicion and ill feeling.<br>
+Trust breaks through: good.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The screens around him are so thick that at midday he sees the Dipper.<br>
+If he goes forward, he meets suspicion and dislike.<br>
+Let trust break through openly, and there is good.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The second line, divided, shows its subject surrounded by screens so large and thick that at midday he can see from them the constellation of the Bushel. If he go (and try to enlighten his ruler who is thus emblemed), he will make himself to be viewed with suspicion and dislike. Let him cherish his feeling of sincere devotion that he may thereby move (his ruler’s mind), and there will be good fortune.</p></div></div>
+</section><section class="slot" id="h55-l3">
+  <h4 class="slot-label">Line 3 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">豐其沛，日中見沫，折其右肱，無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Fullness curtained thick:<br>
+at midday small stars are seen.<br>
+His right arm is broken.<br>
+No harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Fullness is curtained thick: at midday small stars are seen.<br>
+His right arm is broken, yet no harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">A thicker curtain still: at midday he sees only small stars.<br>
+In the darkness he breaks his right arm.<br>
+Even so, no harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The third line, undivided, shows its subject with an (additional) screen of a large and thick banner, through which at midday he can see (the small) Mei star. (In the darkness) he breaks his right arm; but there will be no error.</p></div></div>
+</section><section class="slot" id="h55-l4">
+  <h4 class="slot-label">Line 4 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">豐其蔀，日中見斗，遇其夷主，吉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Fullness screened off:<br>
+at midday the Dipper is seen.<br>
+Meeting the lord, his equal: good.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Fullness is screened off: at midday the Dipper is seen.<br>
+He meets the lord, his equal: good.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The screens are still thick, and at midday he sees the Dipper.<br>
+But he meets his equal lord.<br>
+Good.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fourth line, undivided, shows its subject in a tent so large and thick that at midday he can see from it the constellation of the Bushel. But he meets with the subject of the (first) line, undivided like himself. There will be good fortune.</p></div></div>
+</section><section class="slot" id="h55-l5">
+  <h4 class="slot-label">Line 5 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">來章，有慶譽，吉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Brightness comes:<br>
+there is blessing and praise.<br>
+Good.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Brightness comes, and with it blessing and praise.<br>
+Good.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Brilliant worth comes into the open.<br>
+There is blessing and praise.<br>
+Good.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fifth line, divided, shows its subject bringing around him the men of brilliant ability. There will be occasion for congratulation and praise. There will be good fortune.</p></div></div>
+</section><section class="slot" id="h55-l6">
+  <h4 class="slot-label">Line 6 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">豐其屋，蔀其家，窺其戶，闃其無人，三歲不覿，凶。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">A full house, the household screened off.<br>
+Peering in at the door: still, no one there.<br>
+Three years, nothing seen.<br>
+Misfortune.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">A full house, but the household is screened off.<br>
+Peering in at the door: still, no one there.<br>
+For three years, nothing is seen.<br>
+Misfortune.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">His house is made full and large, but it only screens his household from view.<br>
+He peers in at the door: all is still, and no one is there.<br>
+For three years no one is seen.<br>
+Misfortune.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The topmost line, divided, shows its subject with his house made large, but only serving as a screen to his household. When he looks at his door, it is still, and there is nobody about it. For three years no one is to be seen. There will be evil.</p></div></div>
+</section>
+  <aside class="notes"><h4>Translator’s notes</h4><ul><li><strong>L1.</strong> 雖旬: A &#x27;though ten days pass&#x27;; Legge &#x27;both of the same character&#x27;. B keeps A&#x27;s time sense; C keeps time and adds likeness from 配主 itself, not from Legge&#x27;s aside.</li><li><strong>L2.</strong> 疑疾: A &#x27;suspicion and sickness&#x27;; B &#x27;ill feeling&#x27; follows Legge&#x27;s &#x27;suspicion and dislike&#x27; without his court scene.</li><li><strong>L5.</strong> 來章: B keeps &#x27;brightness comes&#x27;. Legge &#x27;men of brilliant ability&#x27;; C &#x27;brilliant worth&#x27; keeps the human hint without inventing a court.</li></ul></aside>
+</article><article class="hexa" id="h62">
+  <header class="hexa-head">
+    <svg class="hexsvg" viewBox="0 0 120 96" role="img" aria-hidden="true" focusable="false"><rect x="6" y="8" width="48" height="7" rx="1.5"/><rect x="66" y="8" width="48" height="7" rx="1.5"/><rect x="6" y="23" width="48" height="7" rx="1.5"/><rect x="66" y="23" width="48" height="7" rx="1.5"/><rect x="6" y="38" width="108" height="7" rx="1.5"/><rect x="6" y="53" width="108" height="7" rx="1.5"/><rect x="6" y="68" width="48" height="7" rx="1.5"/><rect x="66" y="68" width="48" height="7" rx="1.5"/><rect x="6" y="83" width="48" height="7" rx="1.5"/><rect x="66" y="83" width="48" height="7" rx="1.5"/></svg>
+    <p class="hexa-no">Hexagram 62 · ䷽</p>
+    <h2 class="hexa-name"><span lang="zh-Hant">小過</span> <span class="pinyin">Xiǎo Guò</span></h2>
+    <p class="hexa-en">Small Excess</p>
+    <p class="hexa-trig">☳ 震 Thunder above · ☶ 艮 Mountain below</p>
+  </header>
+  <section class="slot" id="h62-judgment">
+  <h4 class="slot-label">The Judgment · 卦辭 — the core statement</h4>
+  <p class="zh-line" lang="zh-Hant">亨，利貞，可小事，不可大事。飛鳥遺之音，不宜上宜下，大吉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">It goes through.<br>
+It is good to hold firm.<br>
+Small things can be done; great things cannot.<br>
+A flying bird leaves its sound behind:<br>
+not fit to go up, fit to go down. Great good.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">It goes through. It is good to hold firm.<br>
+Small things can be done; great things cannot.<br>
+A flying bird leaves its sound behind: fit to go down, not up.<br>
+Great good.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">It goes through, and it is good to hold firm to the course.<br>
+This can be done in small affairs, but not in great ones.<br>
+Like the sound a flying bird leaves behind it as it comes down:<br>
+to descend is fitting, to ascend is not. Great good.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">Hsiao Kwo indicates that (in the circumstances which it implies) there will be progress and attainment. But it will be advantageous to be firm and correct. (What the name denotes) may be done in small affairs, but not in great affairs. (It is like) the notes that come down from a bird on the wing;—to descend is better than to ascend. There will (in this way) be great good fortune.</p></div></div>
+</section><section class="slot" id="h62-image">
+  <h4 class="slot-label">The Image · 大象 — a later commentary</h4>
+  <p class="zh-line" lang="zh-Hant">山上有雷，小過；君子以行過乎恭，喪過乎哀，用過乎儉。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Thunder on the mountain: Small Excess.<br>
+So the noble one, in conduct, exceeds in reverence,<br>
+in mourning exceeds in grief,<br>
+in spending exceeds in thrift.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Thunder on the mountain: Small Excess.<br>
+So the noble one exceeds in reverence in conduct,<br>
+in grief in mourning, in thrift in spending.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Thunder on the mountain: Small Excess.<br>
+So the noble one, in conduct, goes somewhat beyond in reverence;<br>
+in mourning, beyond in grief;<br>
+and in spending, beyond in thrift.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">(The trigram representing) a hill and that for thunder above it form Hsiao Kwo. The superior man, in accordance with this, in his conduct exceeds in humility, in mourning exceeds in sorrow, and in his expenditure exceeds in economy.</p></div></div>
+</section><section class="slot" id="h62-l1">
+  <h4 class="slot-label">Line 1 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">飛鳥以凶。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">A bird flying on:<br>
+misfortune with it.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">A bird flies on and up.<br>
+Misfortune comes with it.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">The bird flies on and climbs.<br>
+The outcome is misfortune.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The first line, divided, suggests (the idea of) a bird flying, (and ascending) till the issue is evil.</p></div></div>
+</section><section class="slot" id="h62-l2">
+  <h4 class="slot-label">Line 2 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">過其祖，遇其妣；不及其君，遇其臣；無咎。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Passing your grandfather, meeting your grandmother;<br>
+not reaching your ruler, meeting his minister.<br>
+No harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Passing your grandfather, you meet your grandmother;<br>
+not reaching your ruler, you meet his minister.<br>
+No harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He passes by his grandfather and meets his grandmother instead;<br>
+he does not reach his ruler, but meets the ruler&#x27;s minister.<br>
+No harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The second line, divided, shows its subject passing by his grandfather, and meeting with his grandmother; not attempting anything against his ruler, but meeting him as his minister. There will be no error.</p></div></div>
+</section><section class="slot" id="h62-l3">
+  <h4 class="slot-label">Line 3 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">弗過防之，從或戕之，凶。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Do not pass it by: guard against it.<br>
+Close behind, someone may strike you.<br>
+Misfortune.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">If you pass it by without guarding against it,<br>
+someone close behind may strike you.<br>
+Misfortune.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">If he takes no guard against what he passes,<br>
+someone following close behind may strike and wound him.<br>
+Misfortune.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The third line, undivided, shows its subject taking no extraordinary precautions against danger; and some in consequence finding opportunity to assail and injure him. There will be evil.</p></div></div>
+</section><section class="slot" id="h62-l4">
+  <h4 class="slot-label">Line 4 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">無咎，弗過遇之。往厲必戒，勿用永貞。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">No harm.<br>
+Not passing, you meet it.<br>
+Going: danger — take warning.<br>
+Do not hold firm, long.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">No harm: not passing it by, you meet it.<br>
+To go on is dangerous: take warning.<br>
+Do not hold firm for long.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">There is no harm: he does not pass it by, but meets it.<br>
+To go forward is dangerous, and calls for caution.<br>
+There is no call to hold firm for long.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fourth line, undivided, shows its subject falling into no error, but meeting (the exigency of his situation), without exceeding (in his natural course). If he go forward, there will be peril, and he must be cautious. There is no occasion to be using firmness perpetually.</p></div></div>
+</section><section class="slot" id="h62-l5">
+  <h4 class="slot-label">Line 5 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">密雲不雨，自我西郊，公弋取彼在穴。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Thick clouds, no rain —<br>
+from our western outskirts.<br>
+The duke shoots with a stringed arrow<br>
+and takes the one in the cave.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Thick clouds bring no rain, from our western outskirts.<br>
+The duke shoots with a stringed arrow,<br>
+and takes the one in the cave.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">Dense clouds come from our western outskirts, but they bring no rain.<br>
+The duke shoots with a stringed arrow,<br>
+and takes the bird in the cave.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The fifth line, divided, (suggests the idea) of dense clouds, but no rain, coming from our borders in the west. It also (shows) the prince shooting his arrow, and taking the bird in a cave.</p></div></div>
+</section><section class="slot" id="h62-l6">
+  <h4 class="slot-label">Line 6 · 爻辭</h4>
+  <p class="zh-line" lang="zh-Hant">弗遇過之，飛鳥離之，凶，是謂災眚。</p>
+  <div class="grid"><div class="card is-a"><p class="card-tag">A — Current</p><p class="card-body">Not meeting, passing it by:<br>
+the flying bird is snared.<br>
+Misfortune.<br>
+This is called disaster and harm.</p></div><div class="card is-b"><p class="card-tag">B — Clearer</p><p class="card-body">Not meeting it, but passing it by:<br>
+the flying bird is snared.<br>
+Misfortune. This is called disaster and harm.</p></div><div class="card is-c"><p class="card-tag">C — Fuller</p><p class="card-body">He does not meet it, but goes past it,<br>
+like a bird flown too far and snared.<br>
+Misfortune. This is what is called disaster and harm.</p></div><div class="card is-legge"><p class="card-tag">Legge (1882)</p><p class="card-body">The sixth line, divided, shows its subject not meeting (the exigency of his situation), and exceeding (his proper course). (It suggests the idea of) a bird flying far aloft. There will be evil. The case is what is called one of calamity and self-produced injury.</p></div></div>
+</section>
+  <aside class="notes"><h4>Translator’s notes</h4><ul><li><strong>L3.</strong> 弗過防之: A reads an imperative (&#x27;Do not pass it by: guard&#x27;); Legge reads neglected precaution. B/C use the conditional, which honours both and is clearest for a newcomer.</li><li><strong>L4.</strong> 勿用永貞 kept as a limit on duration (&#x27;not for long&#x27;), not Legge&#x27;s &#x27;perpetually&#x27;.</li></ul></aside>
+</article>
+
+  <section class="labels">
+    <h3>How to judge the pilot</h3>
+    <p>Three useful questions, slot by slot. First: in B or C, can you say who acts and why one clause follows the next, without rereading? Second: has anything been explained that the Chinese deliberately leaves as an image? Third: does C ever sound like advice, or like Legge with the brackets removed? Where B already does the work, C is needless; where B still baffles, C earns its extra words. The strongest tests here are 3 line 5 (stored fat, or withheld richness?), 25 line 2 (a harvest paradox), 29’s judgment (how trust and heart connect), 55 lines 1–2 (ten days; suspicion and sickness, or dislike?), and 62 line 3 (an order to guard, or a failure to guard?).</p>
+  </section>
+</main>
+<footer>
+  <span>Pilot data: <a href="voice-pilot.json">voice-pilot.json</a> · A and Legge from <code>data/hexagrams.json</code></span>
+  <a href="../index.html">Back to the book</a>
+</footer>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    function effective() { var t = document.documentElement.dataset.theme; return t || (mq.matches ? 'dark' : 'light'); }
+    function paint() { var dark = effective() === 'dark'; btn.textContent = dark ? 'Light' : 'Dark'; btn.setAttribute('aria-pressed', String(dark)); btn.setAttribute('aria-label', dark ? 'Switch to light colours' : 'Switch to dark colours'); }
+    btn.addEventListener('click', function () { var next = effective() === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = next; try { localStorage.setItem('yi-theme', next); } catch (e) {} paint(); });
+    mq.addEventListener('change', paint);
+    paint();
+  })();
+</script>
+</body>
+</html>

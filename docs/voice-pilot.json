@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "title": "Voice pilot — a middle register between the spare rendering and Legge",
+    "date": "Pilot only. No file in data/poem/ or on the site was changed.",
+    "hexagrams": [1, 3, 25, 29, 55, 62],
+    "voices": {
+      "A": "A — Current. The rendering as shipped (data/hexagrams.json, texts.poem). Faithful and spare.",
+      "B": "B — Clearer. One light touch beyond A: a supplied subject or connective where A leaves the link blank; the same verse shape.",
+      "C": "C — Fuller. Closer to Legge's clarity without his brackets or Victorian diction: complete modern sentences, the if / so / but logic spelled out, technical formulae made understandable in context. Still no added images, no moralising, no advice."
+    },
+    "principles": [
+      "Complete natural modern sentences.",
+      "Supply the implied subject and the connective logic the Chinese leaves implicit.",
+      "Make formulae understandable in context; keep concrete images and the calm voice.",
+      "Never add images that are not in the Chinese; never moralise or turn a verdict into advice.",
+      "Typically 2–4 lines per line statement."
+    ],
+    "sectionLabels": {
+      "current": [
+        "The Judgment · 卦辭",
+        "The Image · 大象 (from the later 象傳)",
+        "Changing lines · 爻辭",
+        "The Lines · 爻辭 (from the bottom)"
+      ],
+      "proposed": [
+        "The Judgment · the hexagram's core statement",
+        "The Image · a later commentary on its two trigrams, told as a picture",
+        "Changing lines · the lines that turn into their opposites, and so into a second hexagram",
+        "The Lines · six short statements, one for each line, read from the bottom up",
+        "Line 1 … Line 6 · one short statement for that line's place in the figure",
+        "All lines changing （用九 / 用六） · an extra statement, read only when all six lines change"
+      ],
+      "note": "Keep the familiar names; put the gloss quietly after them, on first use where space allows. The Chinese layer names stay beside them, as now."
+    }
+  },
+  "hexagrams": {
+    "1": {
+      "B": {
+        "judgment": ["Begin greatly, and go through.", "It is good to hold firm."],
+        "image": ["Heaven moves, strong and steady.", "So the noble one keeps strong,", "and does not rest."],
+        "lines": [
+          ["The dragon lies hidden in the deep.", "This is not yet the time to act."],
+          ["The dragon appears in the field.", "Now it is good to see the great person."],
+          ["All day the noble one is strong, and strong again;", "at dusk still wary, as if in danger.", "There is danger, but no harm."],
+          ["Perhaps leaping, still in the deep.", "No harm."],
+          ["The dragon flies in heaven.", "Now it is good to see the great person."],
+          ["The dragon flies too high.", "There will be regret."]
+        ],
+        "special": ["Dragons appear together, no head among them.", "Good."]
+      },
+      "C": {
+        "judgment": ["Begin greatly, and go through.", "It is good to hold firm to the course."],
+        "image": ["Heaven moves on, strong without slackening.", "So the noble one keeps his strength up", "and does not let it rest."],
+        "lines": [
+          ["The dragon lies hidden in the deep.", "This is not yet the time to act."],
+          ["The dragon appears in the open field.", "It is good to go and see the great person."],
+          ["All day long the noble one is active, and active again;", "in the evening he is still careful, as if in danger.", "The place is dangerous, but there is no harm."],
+          ["The dragon is poised to leap, but still in the deep.", "No harm."],
+          ["The dragon flies in the sky.", "It is good to go and see the great person."],
+          ["The dragon flies too high, beyond its proper limit.", "There will be regret."]
+        ],
+        "special": ["A flight of dragons appears, with no head leading them.", "Good."]
+      },
+      "notes": {
+        "L1": "B and C both take Legge's 'not the time' turn for 勿用; C adds nothing more, which is right for this line.",
+        "L3": "C gives 終日乾乾 its full activity and keeps A's wariness; the but-link is Legge's clarity, in plain words."
+      }
+    },
+    "3": {
+      "B": {
+        "judgment": ["Begin greatly, and go through.", "It is good to hold firm.", "Do not set out yet.", "It is good to set up lords."],
+        "image": ["Clouds and thunder: Sprouting.", "So the noble one sorts the warp threads."],
+        "lines": [
+          ["Pacing back and forth, held up.", "It is good to stay and hold firm.", "It is good to set up lords."],
+          ["Halting, turning; the horses wheel back.", "They are not raiders, but suitors.", "The girl holds firm: she is not promised.", "Ten years pass, and then she is promised."],
+          ["Chasing a deer with no guide,", "he only goes deeper into the forest.", "The noble one sees early: better to let go.", "To go on brings shame."],
+          ["The horses wheel back.", "Seeking marriage, she goes: good.", "Nothing unfavourable."],
+          ["Its fat is stored up, held back.", "Holding firm in small things: good.", "Holding firm in great things: misfortune."],
+          ["The horses wheel back.", "Weeping blood in streams."]
+        ],
+        "special": null
+      },
+      "C": {
+        "judgment": ["Begin greatly, and go through.", "It is good to hold firm to the course.", "Do not set out on the undertaking yet.", "It is good to set up lords to help."],
+        "image": ["Clouds gather and thunder rolls: Sprouting.", "So the noble one sorts the warp threads, as if ordering tangled work."],
+        "lines": [
+          ["He paces back and forth, unable to advance.", "It is good for him to stay where he is and hold firm.", "It is also good to set up lords."],
+          ["She is held up and turned back; even her horses wheel round.", "Those who come are not raiders, but suitors seeking her in marriage.", "The girl holds firm and is not promised to them.", "Only after ten years is she promised."],
+          ["A man chases a deer without a forester to guide him,", "and finds himself only deeper in the forest.", "The noble one sees the turn early: it is better to give up the chase.", "To go on would bring shame."],
+          ["Her horses wheel back as she sets out.", "She seeks the marriage that is sought of her.", "To go is good; nothing is unfavourable."],
+          ["His richness is stored up and held back, hard to share out.", "Holding firm brings good in small things,", "but misfortune in great things."],
+          ["His horses are forced to wheel back.", "He weeps tears of blood in streams."]
+        ],
+        "special": null
+      },
+      "notes": {
+        "L2": "字 is betrothal, then childbearing; A and B/C keep 'promised' and do not add Legge's 'have children'.",
+        "L5": "屯其膏: B stays literal (fat stored up). Legge reads withheld bounty ('dispensing the rich favours'); C meets him halfway with 'richness … hard to share out' — the clearest test in this pilot of how much explaining taste allows."
+      }
+    },
+    "25": {
+      "B": {
+        "judgment": ["Begin greatly, and go through.", "It is good to hold firm.", "If it is not right, it brings harm.", "Then it is not good to set out."],
+        "image": ["Thunder rolls under heaven; things are given without falseness.", "So the early kings, in full accord with the season,", "nourished the ten thousand things."],
+        "lines": [
+          ["Without falseness, he goes.", "Going: good."],
+          ["Reaping without ploughing,", "gathering a ripe field without clearing it —", "then it is good to set out."],
+          ["A disaster out of nowhere: a cow left tethered —", "the passer-by gains it,", "the townsman bears the disaster."],
+          ["He can hold firm.", "No harm."],
+          ["Sickness out of nowhere:", "take no medicine, and there will be joy."],
+          ["Without falseness, but going brings harm.", "No good anywhere."]
+        ],
+        "special": null
+      },
+      "C": {
+        "judgment": ["Begin greatly, and go through.", "It is good to hold firm to the course.", "If what is done is not right, harm follows,", "and it is not good to set out in any direction."],
+        "image": ["Thunder rolls beneath heaven, and each thing is given its nature without falseness.", "So the early kings ordered their work in full accord with the seasons,", "and so nourished the ten thousand things."],
+        "lines": [
+          ["He is without falseness, and he goes forward.", "His going brings good."],
+          ["He reaps without having ploughed for the reaping,", "and gathers from a field made ripe without his clearing it.", "For such a one, it is good to set out."],
+          ["Disaster comes undeserved, as when a cow is left tethered:", "a passer-by finds it and takes it,", "while the townsman bears the disaster."],
+          ["If he can hold firm,", "there is no harm."],
+          ["Sickness comes undeserved.", "Take no medicine for it, and there will be joy."],
+          ["He is without falseness, yet if he acts, harm follows.", "There is no good in any direction."]
+        ],
+        "special": null
+      },
+      "notes": {
+        "L2": "菑畬 is newly cleared ground and a field in its third year; B/C keep the paradox plain and do not turn it into a farming note.",
+        "L3": "Legge adds that the neighbours are 'accused and apprehended'; C leaves the townsman's disaster open, as the Chinese does."
+      }
+    },
+    "29": {
+      "B": {
+        "judgment": ["Pit after pit.", "There is trust; the heart goes through.", "Going is honoured."],
+        "image": ["Water comes again and again: Pit after pit.", "So the noble one holds virtue and conduct constant,", "and practises teaching."],
+        "lines": [
+          ["Pit after pit: down into a pit inside the pit.", "Misfortune."],
+          ["The pit is perilous.", "Seeking, he gets a little of what he seeks."],
+          ["Coming or going, pit after pit;", "peril is his pillow, and he sinks deeper.", "Do not act."],
+          ["A jar of wine and two vessels of grain, in plain earthenware —", "the simple gift passed in at the window.", "In the end, no harm."],
+          ["The water in the pit is not overfull;", "it is only just level.", "No harm."],
+          ["Bound with cords and set down among thorns,", "for three years he finds no way out.", "Misfortune."]
+        ],
+        "special": null
+      },
+      "C": {
+        "judgment": ["Pit after pit, the danger repeated.", "Trust is held, and through it the heart goes through.", "Action taken from that trust is honoured."],
+        "image": ["Water flows on and comes again: Pit after pit.", "So the noble one keeps his virtue and his conduct constant,", "and keeps up the practice of teaching."],
+        "lines": [
+          ["In the repeated pit, he goes down into a still deeper pit within it.", "Misfortune."],
+          ["He is in peril in the pit.", "He seeks a way out, and gets a little of what he seeks."],
+          ["Whether he comes or goes, he meets pit after pit.", "All is peril and unrest, and he sinks into the deeper pit.", "In such a case, do not act."],
+          ["A jar of wine and two vessels of grain, served in plain earthenware;", "the simple gift is passed in through the window.", "In the end there is no harm."],
+          ["The water in the pit does not overflow;", "it has only just come level.", "No harm."],
+          ["Bound with cords and set down in a thicket of thorns,", "in three years he does not find his way out.", "Misfortune."]
+        ],
+        "special": null
+      },
+      "notes": {
+        "judgment": "維心亨: B links trust and heart with a semicolon; C spells out Legge's 'through which', still in one calm sentence.",
+        "L4": "Legge's 'important lessons' is his gloss on 納約; B/C keep the simple gift and the window."
+      }
+    },
+    "55": {
+      "B": {
+        "judgment": ["It goes through; the king comes to it.", "Do not grieve.", "Let it stand as at midday."],
+        "image": ["Thunder and lightning both arrive: Fullness.", "So the noble one settles lawsuits,", "and carries out punishments."],
+        "lines": [
+          ["He meets the lord who matches him.", "Even if ten days pass, no harm.", "Going is honoured."],
+          ["Fullness is screened off: at midday the Dipper is seen.", "Going brings suspicion and ill feeling.", "Trust breaks through: good."],
+          ["Fullness is curtained thick: at midday small stars are seen.", "His right arm is broken, yet no harm."],
+          ["Fullness is screened off: at midday the Dipper is seen.", "He meets the lord, his equal: good."],
+          ["Brightness comes, and with it blessing and praise.", "Good."],
+          ["A full house, but the household is screened off.", "Peering in at the door: still, no one there.", "For three years, nothing is seen.", "Misfortune."]
+        ],
+        "special": null
+      },
+      "C": {
+        "judgment": ["It goes through; the king attains this fullness.", "There is no cause to grieve.", "Let him be as the sun at midday."],
+        "image": ["Thunder and lightning arrive together: Fullness.", "So the noble one decides lawsuits clearly,", "and carries out the punishments exactly."],
+        "lines": [
+          ["He meets his matched lord, one of like character to himself.", "Even a full ten days together brings no harm.", "To go forward calls forth honour."],
+          ["The screens around him are so thick that at midday he sees the Dipper.", "If he goes forward, he meets suspicion and dislike.", "Let trust break through openly, and there is good."],
+          ["A thicker curtain still: at midday he sees only small stars.", "In the darkness he breaks his right arm.", "Even so, no harm."],
+          ["The screens are still thick, and at midday he sees the Dipper.", "But he meets his equal lord.", "Good."],
+          ["Brilliant worth comes into the open.", "There is blessing and praise.", "Good."],
+          ["His house is made full and large, but it only screens his household from view.", "He peers in at the door: all is still, and no one is there.", "For three years no one is seen.", "Misfortune."]
+        ],
+        "special": null
+      },
+      "notes": {
+        "L1": "雖旬: A 'though ten days pass'; Legge 'both of the same character'. B keeps A's time sense; C keeps time and adds likeness from 配主 itself, not from Legge's aside.",
+        "L2": "疑疾: A 'suspicion and sickness'; B 'ill feeling' follows Legge's 'suspicion and dislike' without his court scene.",
+        "L5": "來章: B keeps 'brightness comes'. Legge 'men of brilliant ability'; C 'brilliant worth' keeps the human hint without inventing a court."
+      }
+    },
+    "62": {
+      "B": {
+        "judgment": ["It goes through. It is good to hold firm.", "Small things can be done; great things cannot.", "A flying bird leaves its sound behind: fit to go down, not up.", "Great good."],
+        "image": ["Thunder on the mountain: Small Excess.", "So the noble one exceeds in reverence in conduct,", "in grief in mourning, in thrift in spending."],
+        "lines": [
+          ["A bird flies on and up.", "Misfortune comes with it."],
+          ["Passing your grandfather, you meet your grandmother;", "not reaching your ruler, you meet his minister.", "No harm."],
+          ["If you pass it by without guarding against it,", "someone close behind may strike you.", "Misfortune."],
+          ["No harm: not passing it by, you meet it.", "To go on is dangerous: take warning.", "Do not hold firm for long."],
+          ["Thick clouds bring no rain, from our western outskirts.", "The duke shoots with a stringed arrow,", "and takes the one in the cave."],
+          ["Not meeting it, but passing it by:", "the flying bird is snared.", "Misfortune. This is called disaster and harm."]
+        ],
+        "special": null
+      },
+      "C": {
+        "judgment": ["It goes through, and it is good to hold firm to the course.", "This can be done in small affairs, but not in great ones.", "Like the sound a flying bird leaves behind it as it comes down:", "to descend is fitting, to ascend is not. Great good."],
+        "image": ["Thunder on the mountain: Small Excess.", "So the noble one, in conduct, goes somewhat beyond in reverence;", "in mourning, beyond in grief;", "and in spending, beyond in thrift."],
+        "lines": [
+          ["The bird flies on and climbs.", "The outcome is misfortune."],
+          ["He passes by his grandfather and meets his grandmother instead;", "he does not reach his ruler, but meets the ruler's minister.", "No harm."],
+          ["If he takes no guard against what he passes,", "someone following close behind may strike and wound him.", "Misfortune."],
+          ["There is no harm: he does not pass it by, but meets it.", "To go forward is dangerous, and calls for caution.", "There is no call to hold firm for long."],
+          ["Dense clouds come from our western outskirts, but they bring no rain.", "The duke shoots with a stringed arrow,", "and takes the bird in the cave."],
+          ["He does not meet it, but goes past it,", "like a bird flown too far and snared.", "Misfortune. This is what is called disaster and harm."]
+        ],
+        "special": null
+      },
+      "notes": {
+        "L3": "弗過防之: A reads an imperative ('Do not pass it by: guard'); Legge reads neglected precaution. B/C use the conditional, which honours both and is clearest for a newcomer.",
+        "L4": "勿用永貞 kept as a limit on duration ('not for long'), not Legge's 'perpetually'."
+      }
+    }
+  }
+}
+
