@@ -49,7 +49,7 @@ a clearly marked `TODO(launch)` placeholder (search for
 `og:url`, and canonical tags. They are left commented out because Open
 Graph URLs must be absolute and the origin is not known until deploy.
 
-## Performance (measured, Phase 5)
+## Performance (measured, Phase 5; desktop book layouts re-measured)
 
 Per-route transfer over the wire, gzip for text (HTML/CSS/JS/JSON) and
 as-is for the already-compressed WOFF2 fonts. Measured on the committed
@@ -58,19 +58,25 @@ routes, so later routes add only their delta.
 
 | Route | First visit (compressed) | What it adds |
 |---|---|---|
-| `#/` cast, first paint | ~519 KB | HTML 1.9 KB + CSS 5.0 KB + JS 18.6 KB (app/engine/render) + EB Garamond 117 KB + Noto Serif TC 376 KB |
+| `#/` cast, first paint | ~532 KB | HTML 1.9 KB + CSS 12.2 KB + JS 24.2 KB (app/engine/render/book) + EB Garamond 117 KB + Noto Serif TC 376 KB |
 | any page with italics | +133 KB | EB Garamond Italic, on first italic text |
 | `#/r/…`, `#/h/…`, `#/library` | +60 KB | `data/hexagrams.json` 59.4 KB gzip (265 KB raw) + `data/trigrams.json` 0.4 KB |
 | `#/about` | +2.5 KB | `js/about.js`, loaded lazily by dynamic `import()`; no JSON |
 
 Notes:
 
-- Initial-route JS is 57 KB unminified (`js/app.js` 34 KB +
-  `js/engine.js` 13 KB + `js/render.js` 9 KB); the About copy (5.6 KB)
-  lives in `js/about.js` and loads only on `#/about`. There is no
-  bundler and no minifier, by design (PLAN.md: no build step to serve).
-  This misses the plan's aspirational “JS < 40 KB unminified” — the
-  gzip wire size (18.6 KB) is the number visitors actually pay.
+- Initial-route JS is 76 KB unminified (`js/app.js` 48 KB +
+  `js/engine.js` 13 KB + `js/render.js` 11 KB + `js/book.js` 3.5 KB);
+  the About copy (5.6 KB) lives in `js/about.js` and loads only on
+  `#/about`. There is no bundler and no minifier, by design (PLAN.md:
+  no build step to serve). This misses the plan's aspirational
+  “JS < 40 KB unminified” — the gzip wire size (24.2 KB) is the number
+  visitors actually pay.
+- Desktop decoration is nearly free: the paper-grain tile is a 3.3 KB
+  PNG embedded in the CSS (inside its 12.2 KB gzip), the cast page's
+  ink-wash landscape is ~0.7 KB gzip of SVG paths inside `js/app.js`,
+  and the rebuilt Noto subset grew 708 B for the 繫辭 passage (太極）.
+  Wide screens open the book — see `docs/DESKTOP_DESIGN.md`.
 - Corpus JSON loads lazily (idle after first paint, or on the first
   cast tap), so the cast page paints without it. Fetches are
   cache-busted with `?v=<DATA_VERSION>` in `js/app.js` — bump

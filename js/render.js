@@ -66,7 +66,7 @@ function variantFor(bits, indexFromBottom) {
  * className: extra class on the <svg>.
  * freshIndex: 0-based line just cast (gets the ink-in class), or -1.
  */
-export function hexagramSVG({ bits, values = null, plain = false, label = '', className = '', freshIndex = -1 } = {}) {
+export function hexagramSVG({ bits, values = null, plain = false, label = '', className = '', freshIndex = -1, interactive = false, lineNames = null } = {}) {
   const n = bits.length;
   const W = 100;
   const lineH = 12;
@@ -76,40 +76,65 @@ export function hexagramSVG({ bits, values = null, plain = false, label = '', cl
   const totalW = hasMarkers ? W + 20 : W;
   const parts = [];
   // Draw top line first in SVG coordinates; bits[0] is the bottom line.
+  // Each line (stroke + changing marker) sits in its own <g class="hex-line">
+  // so the spread layout can light a line and its text together.
   for (let row = 0; row < n; row += 1) {
     const idx = n - 1 - row;
     const bit = bits[idx];
     const cy = row * (lineH + gap) + lineH / 2;
-    const fresh = idx === freshIndex ? ' class="line-fresh"' : '';
+    const fresh = idx === freshIndex ? ' line-fresh' : '';
+    const lineParts = [];
     if (plain) {
       const h = 7;
       const y = cy - h / 2;
-      if (bit === 1) parts.push(`<rect${fresh} x="1" y="${y}" width="${W - 2}" height="${h}"/>`);
+      if (bit === 1) lineParts.push(`<rect x="1" y="${y}" width="${W - 2}" height="${h}"/>`);
       else {
         const seg = (W - 2) * 0.43;
-        parts.push(`<g${fresh}><rect x="1" y="${y}" width="${seg}" height="${h}"/><rect x="${W - 1 - seg}" y="${y}" width="${seg}" height="${h}"/></g>`);
+        lineParts.push(`<rect x="1" y="${y}" width="${seg}" height="${h}"/><rect x="${W - 1 - seg}" y="${y}" width="${seg}" height="${h}"/>`);
       }
     } else {
       const profile = variantFor(bits, idx);
       if (bit === 1) {
-        parts.push(`<path${fresh} d="${brushPath(profile, 1, W - 2, cy, 9.5, 0, 1)}"/>`);
+        lineParts.push(`<path d="${brushPath(profile, 1, W - 2, cy, 9.5, 0, 1)}"/>`);
       } else {
-        parts.push(`<g${fresh}><path d="${brushPath(profile, 1, W - 2, cy, 9.5, 0, 0.43)}"/><path d="${brushPath(profile, 1, W - 2, cy, 9.5, 0.57, 1)}"/></g>`);
+        lineParts.push(`<path d="${brushPath(profile, 1, W - 2, cy, 9.5, 0, 0.43)}"/><path d="${brushPath(profile, 1, W - 2, cy, 9.5, 0.57, 1)}"/>`);
       }
     }
     if (values) {
       const v = values[idx];
       const mx = W + 11;
       if (v === 9) {
-        parts.push(`<circle class="marker" cx="${mx}" cy="${cy}" r="4.6" fill="none" stroke-width="1.7"><title>changing line</title></circle>`);
+        lineParts.push(`<circle class="marker" cx="${mx}" cy="${cy}" r="4.6" fill="none" stroke-width="1.7"><title>changing line</title></circle>`);
       } else if (v === 6) {
         const r = 3.9;
-        parts.push(`<path class="marker" d="M ${mx - r} ${cy - r} L ${mx + r} ${cy + r} M ${mx + r} ${cy - r} L ${mx - r} ${cy + r}" fill="none" stroke-width="1.7" stroke-linecap="round"><title>changing line</title></path>`);
+        lineParts.push(`<path class="marker" d="M ${mx - r} ${cy - r} L ${mx + r} ${cy + r} M ${mx + r} ${cy - r} L ${mx - r} ${cy + r}" fill="none" stroke-width="1.7" stroke-linecap="round"><title>changing line</title></path>`);
       }
     }
+    // Invisible fat hit-band so hover/focus finds the line, not just its ink.
+    const hit = interactive ? `<rect class="hex-line-hit" x="0" y="${(cy - lineH / 2 - gap / 2).toFixed(1)}" width="${totalW}" height="${lineH + gap}" fill="transparent"/>` : '';
+    const name = lineNames && lineNames[idx] ? lineNames[idx] : `Line ${idx + 1}`;
+    const focus = interactive ? ` tabindex="0" role="img" aria-label="${escapeAttr(name)}"` : '';
+    parts.push(`<g class="hex-line${fresh}" data-line="${idx + 1}"${focus}>${hit}${lineParts.join('')}</g>`);
   }
-  const aria = label ? ` role="img" aria-label="${escapeAttr(label)}"` : ' aria-hidden="true"';
+  // Interactive figures contain focusable lines, so the outer figure is a
+  // labelled group, not a single image (its lines name themselves).
+  const outerRole = interactive ? 'group' : 'img';
+  const aria = label ? ` role="${outerRole}" aria-label="${escapeAttr(label)}"` : ' aria-hidden="true"';
   return `<svg class="hexagram${plain ? ' hexagram-plain' : ''}${className ? ` ${escapeAttr(className)}` : ''}" viewBox="0 0 ${totalW} ${H.toFixed(1)}"${aria} focusable="false">${parts.join('')}</svg>`;
+}
+
+/**
+ * A trigram as a small crisp figure. The Unicode trigram block
+ * (U+2630..U+2637) is in neither self-hosted font, so the symbol is
+ * drawn, never typeset: three plain lines from the trigram bits.
+ */
+export function trigramFigure(trigram, { className = '' } = {}) {
+  return hexagramSVG({
+    bits: trigram.bits,
+    plain: true,
+    className: `trigram-figure${className ? ` ${className}` : ''}`,
+    label: `Trigram ${trigram.name_zh} ${trigram.name_pinyin}`,
+  });
 }
 
 export function escapeAttr(s) {

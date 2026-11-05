@@ -6,7 +6,8 @@ import {
   changingIndices, describeValue, labelFor, specialLabel,
   chineseNumeral, hexagramHash,
 } from './engine.js';
-import { hexagramSVG, coinSVG, stalksSVG, escapeHtml } from './render.js';
+import { hexagramSVG, trigramFigure, coinSVG, stalksSVG, escapeHtml } from './render.js';
+import { buildTrigramMatrix, firstJudgmentLine, facingEnglishId, facingActive, libraryMode } from './book.js';
 
 const DATA_VERSION = '3'; // bump when data/*.json changes (PLAN.md S9)
 const app = document.getElementById('app');
@@ -30,6 +31,11 @@ const local = storage('local');
 const S_CAST = 'yi-cast-in-progress';
 const S_LAST = 'yi-last-cast';
 const L_TRANSLATION = 'yi-translation';
+const L_FACING = 'yi-facing';
+const L_LIBRARY = 'yi-library-view';
+// Desktop book layouts engage at these widths (mirrors css/style.css).
+const WIDE_MQ = window.matchMedia('(min-width: 1024px)');
+const FACING_MQ = window.matchMedia('(min-width: 1280px)');
 
 // ------------------------------------------------------------------ data
 let DATA = null; // { hexagrams, trigrams, byNumber, trigramByName }
@@ -79,13 +85,28 @@ function pickTranslation(hexagram) {
 
 const TRANSLATION_LABELS = { zh: '原文', legge: 'Legge', poem: 'Rendering' };
 
-function translationBar(hexagrams, currentId) {
+function translationBar(hexagrams, currentId, facingEn = null) {
   // Offer an option only when every hexagram on the page has it.
   const ids = ['zh', 'legge', 'poem'].filter((id) => hexagrams.every((h) => h.texts[id]));
   const buttons = ids.map((id) => (
     `<button type="button" data-translation="${id}" aria-pressed="${id === currentId}">${id === 'zh' ? `<span lang="zh-Hant">原文</span>` : TRANSLATION_LABELS[id]}</button>`
   )).join('<span class="sep" aria-hidden="true">·</span>');
-  return `<div class="translation-bar" role="group" aria-label="Translation">${buttons}</div>`;
+  // Facing pages (desktop, wide): the Chinese set vertically facing the
+  // chosen English. The toggle renders wherever a pairing exists; CSS
+  // shows it only at the facing width, JS applies it only there too.
+  const en = facingEnglishId(currentId, ids);
+  const on = facingActive(local.get(L_FACING) === true, FACING_MQ.matches) && facingEn !== null;
+  const facing = en
+    ? `<span class="sep facing-sep" aria-hidden="true">·</span><button type="button" class="facing-toggle" data-facing aria-pressed="${on}">Facing pages</button>`
+    : '';
+  return `<div class="translation-bar" role="group" aria-label="Translation">${buttons}${facing}</div>`;
+}
+
+/** The facing companion for the current render, or null when off/unavailable. */
+function facingFor(hexagrams, currentId) {
+  if (!facingActive(local.get(L_FACING) === true, FACING_MQ.matches)) return null;
+  const ids = ['zh', 'legge', 'poem'].filter((id) => hexagrams.every((h) => h.texts[id]));
+  return facingEnglishId(currentId, ids);
 }
 
 function bindTranslationBar(rerender) {
@@ -99,6 +120,29 @@ function bindTranslationBar(rerender) {
       if (next) next.focus({ preventScroll: true });
     });
   });
+  const facingBtn = app.querySelector('[data-facing]');
+  if (facingBtn) {
+    facingBtn.addEventListener('click', () => {
+      const next = local.get(L_FACING) !== true;
+      local.set(L_FACING, next);
+      rerender(true);
+      announce(next ? 'Facing pages shown: Chinese facing the English.' : 'Facing pages off.');
+      const again = app.querySelector('[data-facing]');
+      if (again) again.focus({ preventScroll: true });
+    });
+  }
+}
+
+/** Re-render once when the viewport crosses a layout gate (same route only). */
+let wideRerenderHandler = null;
+function bindWideRerender(seq, rerender) {
+  if (wideRerenderHandler) {
+    FACING_MQ.removeEventListener('change', wideRerenderHandler);
+    WIDE_MQ.removeEventListener('change', wideRerenderHandler);
+  }
+  wideRerenderHandler = () => { if (seq === routeSeq) rerender(true); };
+  FACING_MQ.addEventListener('change', wideRerenderHandler, { once: true });
+  WIDE_MQ.addEventListener('change', wideRerenderHandler, { once: true });
 }
 
 // Keep the reader's place across a translation switch using block anchors.
@@ -125,18 +169,68 @@ function trigramPhrase(t) {
   return `<span lang="zh-Hant">${escapeHtml(t.name_zh)}</span> ${escapeHtml(t.name_pinyin)}, ${IMAGE_EN[t.image_zh] || escapeHtml(t.image_pinyin)}`;
 }
 
-function hexaHead(h, { values = null, big = true, headingLevel = 1 } = {}) {
+function hexaHead(h, { values = null, big = true, headingLevel = 1, interactive = false } = {}) {
   const upper = DATA.trigramByName.get(h.upper);
   const lower = DATA.trigramByName.get(h.lower);
   const tag = `h${headingLevel}`;
+  const lineNames = interactive
+    ? h.bits.map((bit, i) => `Line ${i + 1}, ${labelFor(i + 1, bit)}${values && (values[i] === 6 || values[i] === 9) ? ', changing' : ''}`)
+    : null;
   return `<header class="hexa-head">
-    ${hexagramSVG({ bits: h.bits, values, label: nameLabel(h) })}
+    ${hexagramSVG({ bits: h.bits, values, label: nameLabel(h), interactive, lineNames })}
     <p class="hexa-number">${h.number} · <span lang="zh-Hant">第${chineseNumeral(h.number)}卦</span></p>
     <${tag} class="hexa-name"${headingLevel === 1 ? ' tabindex="-1"' : ''} lang="zh-Hant">${escapeHtml(h.name_zh)}</${tag}>
     <p class="hexa-pinyin">${escapeHtml(h.name_pinyin)}</p>
     ${h.name_en ? `<p class="hexa-en">${escapeHtml(h.name_en)}</p>` : ''}
     <p class="hexa-trigrams">${trigramPhrase(upper)} above · ${trigramPhrase(lower)} below</p>
   </header>`;
+}
+
+/**
+ * The sticky figure column of the desktop spread. On narrow screens it is
+ * simply the familiar centred head (the extra rows stay hidden there).
+ * The trigram rows repeat the head's trigram phrase with drawn figures,
+ * so they are visual only; the relating miniature is a real link.
+ */
+function spreadSide(h, { values = null, headingLevel = 1, relating = null } = {}) {
+  const upper = DATA.trigramByName.get(h.upper);
+  const lower = DATA.trigramByName.get(h.lower);
+  const row = (t, place) => `<div class="trigram-row">
+      ${trigramFigure(t)}
+      <p class="trigram-row-text"><span class="trigram-place">${place}</span>
+      <span lang="zh-Hant">${escapeHtml(t.name_zh)}</span> ${escapeHtml(t.name_pinyin)} ·
+      <span lang="zh-Hant">${escapeHtml(t.image_zh)}</span> ${IMAGE_EN[t.image_zh] || escapeHtml(t.image_pinyin)}</p>
+    </div>`;
+  const mini = relating ? `<a class="relating-mini" href="${hexagramHash(relating.number)}">
+      <span class="relating-mini-label"><span lang="zh-Hant">之</span> · becoming</span>
+      ${hexagramSVG({ bits: relating.bits, plain: true, label: nameLabel(relating) })}
+      <span class="relating-mini-name">${relating.number} <span lang="zh-Hant">${escapeHtml(relating.name_zh)}</span> ${escapeHtml(relating.name_pinyin)}${relating.name_en ? ` · ${escapeHtml(relating.name_en)}` : ''}</span>
+    </a>` : '';
+  return `<div class="spread-side">
+    ${hexaHead(h, { values, headingLevel, interactive: WIDE_MQ.matches })}
+    <div class="trigram-rows" aria-hidden="true">${row(upper, 'Above')}${row(lower, 'Below')}</div>
+    ${mini}
+  </div>`;
+}
+
+/** Light a figure line and its text together (hover and keyboard focus). */
+function bindLineHighlight() {
+  const lines = app.querySelectorAll('.spread-side .hex-line[data-line]');
+  const entries = app.querySelectorAll('.line-entry[data-line]');
+  if (!lines.length || !entries.length) return;
+  const light = (n, on) => {
+    app.querySelectorAll(`.spread-side .hex-line[data-line="${n}"], .line-entry[data-line="${n}"]`)
+      .forEach((el) => el.classList.toggle('is-lit', on));
+  };
+  const wire = (els) => els.forEach((el) => {
+    const n = el.dataset.line;
+    el.addEventListener('mouseenter', () => light(n, true));
+    el.addEventListener('mouseleave', () => light(n, false));
+    el.addEventListener('focus', () => light(n, true));
+    el.addEventListener('blur', () => light(n, false));
+  });
+  wire(lines);
+  wire(entries);
 }
 
 function slotText(lines, translation) {
@@ -148,6 +242,20 @@ function slotText(lines, translation) {
   return lines.map((l) => `<p class="slot-text"${lang}>${escapeHtml(l)}</p>`).join('');
 }
 
+/** Chinese set as one continuous vertical column (facing pages). */
+function zhVerticalText(lines) {
+  return `<p class="slot-text vertical-text" lang="zh-Hant">${lines.map(escapeHtml).join('')}</p>`;
+}
+
+/** One slot in one language, or the same slot facing in two (facingEn). */
+function facingSlot(h, tr, slot, facingEn) {
+  if (!facingEn) return slotText(h.texts[tr][slot], tr);
+  return `<div class="facing-cols">
+    <div class="facing-zh">${zhVerticalText(h.texts.zh[slot])}</div>
+    <div class="facing-en">${slotText(h.texts[facingEn][slot], facingEn)}</div>
+  </div>`;
+}
+
 function textBlock(labelHtml, lines, translation, anchor, headingTag = 'h2') {
   return `<section class="text-block" data-anchor="${anchor}">
     <${headingTag} class="layer-label">${labelHtml}</${headingTag}>
@@ -155,18 +263,35 @@ function textBlock(labelHtml, lines, translation, anchor, headingTag = 'h2') {
   </section>`;
 }
 
-function judgmentBlock(h, tr, anchor = 'judgment', headingTag = 'h2') {
-  return textBlock(`The Judgment · <span class="zh" lang="zh-Hant">卦辭</span>`, h.texts[tr].judgment, tr, anchor, headingTag);
-}
-function imageBlock(h, tr, anchor = 'image', headingTag = 'h2') {
-  return textBlock(`The Image · <span class="zh" lang="zh-Hant">大象</span> <span class="soft">(from the later <span class="zh" lang="zh-Hant">象傳</span>)</span>`, h.texts[tr].image, tr, anchor, headingTag);
+function slotBlock(labelHtml, h, tr, slot, facingEn, anchor, headingTag = 'h2') {
+  if (!facingEn) return textBlock(labelHtml, h.texts[tr][slot], tr, anchor, headingTag);
+  return `<section class="text-block facing-pair" data-anchor="${anchor}">
+    <${headingTag} class="layer-label">${labelHtml}</${headingTag}>
+    ${facingSlot(h, tr, slot, facingEn)}
+  </section>`;
 }
 
-function lineEntry(h, tr, index, { changing = false, anchor = true } = {}) {
+function judgmentBlock(h, tr, anchor = 'judgment', headingTag = 'h2', facingEn = null) {
+  return slotBlock(`The Judgment · <span class="zh" lang="zh-Hant">卦辭</span>`, h, tr, 'judgment', facingEn, anchor, headingTag);
+}
+function imageBlock(h, tr, anchor = 'image', headingTag = 'h2', facingEn = null) {
+  return slotBlock(`The Image · <span class="zh" lang="zh-Hant">大象</span> <span class="soft">(from the later <span class="zh" lang="zh-Hant">象傳</span>)</span>`, h, tr, 'image', facingEn, anchor, headingTag);
+}
+
+function lineEntry(h, tr, index, { changing = false, anchor = true, facingEn = null, focusable = null } = {}) {
+  // Line texts join the tab order only where the spread can light the
+  // figure beside them; narrow screens keep their leaner tab order.
+  const canFocus = focusable === null ? WIDE_MQ.matches : focusable;
   const label = labelFor(index + 1, h.bits[index]);
-  return `<article class="line-entry"${anchor ? ` data-anchor="line-${index + 1}"` : ''}>
+  const text = facingEn
+    ? `<div class="facing-cols">
+        <div class="facing-zh">${zhVerticalText(h.texts.zh.lines[index])}</div>
+        <div class="facing-en">${slotText(h.texts[facingEn].lines[index], facingEn)}</div>
+      </div>`
+    : slotText(h.texts[tr].lines[index], tr);
+  return `<article class="line-entry${changing ? ' is-changing' : ''}${facingEn ? ' facing-pair' : ''}" data-line="${index + 1}"${canFocus ? ' tabindex="0"' : ''}${anchor ? ` data-anchor="line-${index + 1}"` : ''}>
     <p class="line-tag"><span class="zh" lang="zh-Hant">${label}</span> · line ${index + 1}${changing ? ' · <span class="changing-note">changing</span>' : ''}</p>
-    ${slotText(h.texts[tr].lines[index], tr)}
+    <div class="line-text">${text}</div>
   </article>`;
 }
 
@@ -208,7 +333,10 @@ function announce(message) {
   window.setTimeout(() => { liveRegion.textContent = message; }, 40);
 }
 
-function setBodyTranslation(tr) { document.body.dataset.translation = tr; }
+function setBodyTranslation(tr, facingEn = null) {
+  document.body.dataset.translation = tr;
+  document.body.dataset.facing = facingEn ? 'on' : '';
+}
 
 function delay(ms) {
   return REDUCED.matches ? Promise.resolve() : new Promise((res) => { window.setTimeout(res, ms); });
@@ -262,13 +390,23 @@ function detailRecord(line, splits) {
   };
 }
 
+// Faint ink-wash ridges for the foot of the desktop cast page. Drawn
+// paths only, currentColor at CSS-set low opacity; hidden on narrow
+// screens and in print.
+const INK_WASH = `<svg class="ink-wash" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<path class="wash-far" d="M0 150 C140 96 240 132 360 84 C470 40 560 92 680 70 C800 48 900 108 1020 78 C1100 58 1160 84 1200 72 L1200 220 L0 220 Z"/>
+<path class="wash-mid" d="M0 182 C120 140 260 176 400 132 C540 88 640 150 790 124 C930 100 1030 152 1200 126 L1200 220 L0 220 Z"/>
+<path class="wash-water" d="M60 198 q30 -6 60 0 M210 206 q34 -6 68 0 M420 200 q30 -6 60 0 M640 208 q34 -6 68 0 M860 202 q30 -6 60 0 M1020 210 q34 -6 68 0"/>
+<circle class="wash-moon" cx="1015" cy="36" r="17"/>
+</svg>`;
+
 function castView() {
   const cast = currentCast();
   saveCast(cast);
   const started = cast.values.length > 0;
   document.title = 'Yijing 易經 — cast';
 
-  app.innerHTML = `<div class="view cast-wrap">
+  app.innerHTML = `<div class="view cast-wrap"><div class="cast-layout"><div class="cast-ritual">
     <h1 class="cast-title" tabindex="-1" lang="zh-Hant">易經</h1>
     <p class="cast-subtitle">the Book of Changes</p>
 
@@ -318,7 +456,15 @@ function castView() {
         <button type="submit" class="btn-primary">See the reading</button>
       </form>
     </details>
-  </div>`;
+    <div class="cast-arrival" id="cast-arrival" hidden></div>
+  </div>
+  <aside class="cast-aside" aria-label="From the Appended Words">
+    <div class="title-slip"><span class="slip-text" lang="zh-Hant">易經</span></div>
+    <p class="vertical-passage" lang="zh-Hant">易有太極，是生兩儀，兩儀生四象，四象生八卦。</p>
+    <p class="passage-source"><span lang="zh-Hant">繫辭上</span> · Appended Words, I</p>
+    <p class="passage-gloss"><em>In Change there is the Great Ultimate. It gives birth to the Two Forms; the Two Forms to the Four Images; the Four Images to the Eight Trigrams.</em></p>
+    ${INK_WASH}
+  </aside></div></div>`;
 
   const figure = document.getElementById('cast-figure');
   const detail = document.getElementById('cast-detail');
@@ -415,7 +561,27 @@ function castView() {
     document.querySelectorAll('[data-method]').forEach((b) => { b.disabled = true; });
 
     if (finishIfComplete()) {
-      if (!quick) await pause(950);
+      // The sixth line arrives before the reading opens: a slow ink
+      // spread, then the hexagram's name. (A pause is not motion, so a
+      // shortened beat remains under reduced motion; see pause().)
+      if (!quick) {
+        let named = false;
+        try {
+          const data = await loadData();
+          const arrived = data.byNumber.get(numberForValues(cast.values));
+          const arrival = document.getElementById('cast-arrival');
+          if (arrival && arrived && run === castRun) {
+            arrival.innerHTML = `<span class="arrival-ink" aria-hidden="true"></span>
+              <p class="arrival-number">${arrived.number} · <span lang="zh-Hant">第${chineseNumeral(arrived.number)}卦</span></p>
+              <p class="arrival-name" lang="zh-Hant">${escapeHtml(arrived.name_zh)}</p>
+              <p class="arrival-gloss">${escapeHtml(arrived.name_pinyin)}${arrived.name_en ? ` · ${escapeHtml(arrived.name_en)}` : ''}</p>`;
+            arrival.hidden = false;
+            announce(`${nameLabel(arrived)}.`);
+            named = true;
+          }
+        } catch { /* texts still loading: the reading will open unnamed */ }
+        await pause(named ? 1750 : 950);
+      }
       if (run !== castRun) return true;
       window.location.hash = encodeReading(cast.method, cast.values);
     }
@@ -517,7 +683,8 @@ function readingView(route) {
       const relating = relNumber ? DATA.byNumber.get(relNumber) : null;
       const shown = relating ? [primary, relating] : [primary];
       const tr = shown.every((h) => h.texts[defaultTranslation()]) ? defaultTranslation() : pickTranslation(primary);
-      setBodyTranslation(tr);
+      const facingEn = facingFor(shown, tr);
+      setBodyTranslation(tr, facingEn);
       const changing = changingIndices(route.values);
       const allChanging = changing.length === 6;
       const specialCase = allChanging && (primary.number === 1 || primary.number === 2);
@@ -526,24 +693,26 @@ function readingView(route) {
 
       document.title = `${primary.name_zh} ${primary.name_pinyin}${relating ? ` → ${relating.name_zh} ${relating.name_pinyin}` : ''} — Yijing 易經`;
 
+      // One DOM, two readings of it: a centred column on narrow screens,
+      // a book spread (sticky figure | text) on wide ones.
       let body = '';
       if (inSession && last.question) {
         body += `<p class="question-echo">“${escapeHtml(last.question)}”</p>`;
       }
-      body += hexaHead(primary, { values: route.values });
-      body += translationBar(shown, tr);
+      body += `<div class="spread">${spreadSide(primary, { values: route.values, relating })}<div class="spread-main">`;
+      body += translationBar(shown, tr, facingEn);
 
       if (specialCase) {
         // All six changing on 1/2: 用九/用六 is the primary text (PLAN.md M9).
-        body += textBlock(
+        body += slotBlock(
           `<span class="zh" lang="zh-Hant">${specialLabel(primary.number)}</span> · when all six lines change`,
-          primary.texts[tr].special, tr, 'special', 'h2');
+          primary, tr, 'special', facingEn, 'special', 'h2');
       } else {
-        body += judgmentBlock(primary, tr);
-        body += imageBlock(primary, tr);
+        body += judgmentBlock(primary, tr, 'judgment', 'h2', facingEn);
+        body += imageBlock(primary, tr, 'image', 'h2', facingEn);
         if (changing.length > 0) {
           body += `<section><h2 class="layer-label">Changing lines · <span class="zh" lang="zh-Hant">爻辭</span></h2>`;
-          body += changing.map((i) => lineEntry(primary, tr, i, { changing: true })).join('');
+          body += changing.map((i) => lineEntry(primary, tr, i, { changing: true, facingEn })).join('');
           body += '</section>';
           body += `<p class="small soft">Every changing line is shown, without choosing among them — <a href="#/about">why, in About</a>.</p>`;
         } else {
@@ -557,17 +726,18 @@ function readingView(route) {
         if (allChanging && !specialCase) {
           body += `<p class="question-echo small">All six lines change; the relating hexagram carries the reading.</p>`;
         }
-        body += judgmentBlock(relating, tr, 'relating-judgment', 'h3');
-        body += imageBlock(relating, tr, 'relating-image', 'h3');
+        body += judgmentBlock(relating, tr, 'relating-judgment', 'h3', facingEn);
+        body += imageBlock(relating, tr, 'relating-image', 'h3', facingEn);
         body += `<p class="small soft"><a href="${hexagramHash(relating.number)}">Read hexagram ${relating.number} in full</a></p>`;
       }
+      body += '</div></div>';
 
       if (specialCase) {
         body += `<details class="quiet">
           <summary>The judgment, image, and six lines of ${escapeHtml(primary.name_pinyin)}</summary>
           ${judgmentBlock(primary, tr, 'judgment-full', 'p')}
           ${imageBlock(primary, tr, 'image-full', 'p')}
-          ${changing.map((i) => lineEntry(primary, tr, i, { changing: true, anchor: false })).join('')}
+          ${changing.map((i) => lineEntry(primary, tr, i, { changing: true, anchor: false, focusable: false })).join('')}
         </details>`;
       }
 
@@ -581,6 +751,8 @@ function readingView(route) {
 
       app.innerHTML = `<div class="view">${body}</div>`;
       bindTranslationBar(render);
+      bindLineHighlight();
+      bindWideRerender(routeSeq, render);
       restoreAnchor(anchor);
 
       document.getElementById('cast-again').addEventListener('click', () => {
@@ -619,24 +791,28 @@ function hexagramView(number) {
     const render = (preservePlace = false) => {
       const anchor = preservePlace ? captureAnchor() : null;
       const tr = pickTranslation(h);
-      setBodyTranslation(tr);
+      const facingEn = facingFor([h], tr);
+      setBodyTranslation(tr, facingEn);
       document.title = `${h.name_zh} ${h.name_pinyin}${h.name_en ? ` · ${h.name_en}` : ''} — Yijing 易經`;
       const prev = number > 1 ? DATA.byNumber.get(number - 1) : null;
       const next = number < 64 ? DATA.byNumber.get(number + 1) : null;
 
-      let body = hexaHead(h);
-      body += translationBar([h], tr);
-      body += judgmentBlock(h, tr);
-      body += imageBlock(h, tr);
+      let body = `<div class="spread">${spreadSide(h)}<div class="spread-main">`;
+      body += translationBar([h], tr, facingEn);
+      body += judgmentBlock(h, tr, 'judgment', 'h2', facingEn);
+      body += imageBlock(h, tr, 'image', 'h2', facingEn);
       body += `<section><h2 class="layer-label">The Lines · <span class="zh" lang="zh-Hant">爻辭</span> <span class="soft">(from the bottom)</span></h2>`;
-      body += [0, 1, 2, 3, 4, 5].map((i) => lineEntry(h, tr, i)).join('');
-      if (h.texts[tr].special) {
-        body += `<article class="line-entry" data-anchor="special">
+      body += [0, 1, 2, 3, 4, 5].map((i) => lineEntry(h, tr, i, { facingEn })).join('');
+      if (h.texts[tr].special || (facingEn && h.texts.zh.special)) {
+        const specialText = facingEn
+          ? `<div class="facing-cols"><div class="facing-zh">${zhVerticalText(h.texts.zh.special)}</div><div class="facing-en">${slotText(h.texts[facingEn].special, facingEn)}</div></div>`
+          : slotText(h.texts[tr].special, tr);
+        body += `<article class="line-entry${facingEn ? ' facing-pair' : ''}" data-anchor="special">
           <p class="line-tag"><span class="zh" lang="zh-Hant">${specialLabel(number)}</span> · when all six lines change</p>
-          ${slotText(h.texts[tr].special, tr)}
+          <div class="line-text">${specialText}</div>
         </article>`;
       }
-      body += '</section>';
+      body += '</section></div></div>';
       body += `<nav class="prev-next" aria-label="Neighbouring hexagrams">
         ${prev ? `<a href="${hexagramHash(prev.number)}">← ${prev.number} <span class="pn-name" lang="zh-Hant">${escapeHtml(prev.name_zh)}</span> ${escapeHtml(prev.name_pinyin)}</a>` : '<span></span>'}
         ${next ? `<a class="next" href="${hexagramHash(next.number)}">${next.number} <span class="pn-name" lang="zh-Hant">${escapeHtml(next.name_zh)}</span> ${escapeHtml(next.name_pinyin)} →</a>` : '<span></span>'}
@@ -644,6 +820,8 @@ function hexagramView(number) {
 
       app.innerHTML = `<div class="view">${body}</div>`;
       bindTranslationBar(render);
+      bindLineHighlight();
+      bindWideRerender(routeSeq, render);
       restoreAnchor(anchor);
     };
     render();
@@ -656,21 +834,49 @@ function foldPinyin(s) {
   return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/v/g, 'u').replace(/[^a-z0-9\u3400-\u9fff]/g, '');
 }
 
-function libraryView() {
-  withData(() => {
-    document.title = 'The 64 hexagrams — Yijing 易經';
-    setBodyTranslation('');
-    const cells = DATA.hexagrams.map((h) => `<a class="library-cell" href="${hexagramHash(h.number)}" aria-label="${escapeHtml(nameLabel(h))}">
+function libraryCell(h) {
+  const preview = firstJudgmentLine(h);
+  return `<a class="library-cell" href="${hexagramHash(h.number)}" aria-label="${escapeHtml(nameLabel(h))}">
       ${hexagramSVG({ bits: h.bits, plain: true })}
       <span class="num">${h.number}</span>
       <span class="name" lang="zh-Hant">${escapeHtml(h.name_zh)}</span>
       <span class="pinyin">${escapeHtml(h.name_pinyin)}</span>
       ${h.name_en ? `<span class="en">${escapeHtml(h.name_en)}</span>` : ''}
-    </a>`).join('');
+      ${preview ? `<span class="lib-preview" aria-hidden="true"${preview.id === 'zh' ? ' lang="zh-Hant"' : ''}>${escapeHtml(preview.text)}</span>` : ''}
+    </a>`;
+}
 
-    app.innerHTML = `<div class="view">
+function trigramAxisHead(t, scope) {
+  return `<th scope="${scope}" class="matrix-axis">${trigramFigure(t)}<span class="matrix-axis-name"><span lang="zh-Hant">${escapeHtml(t.name_zh)}</span> ${escapeHtml(t.name_pinyin)}</span><span class="matrix-axis-image"><span lang="zh-Hant">${escapeHtml(t.image_zh)}</span> ${IMAGE_EN[t.image_zh] || escapeHtml(t.image_pinyin)}</span></th>`;
+}
+
+function libraryMatrixHtml() {
+  const { order, cells } = buildTrigramMatrix(DATA.hexagrams, DATA.trigrams);
+  const head = `<tr><th class="matrix-corner"><span class="matrix-corner-upper">upper <span lang="zh-Hant">上卦</span></span><span class="matrix-corner-lower">lower <span lang="zh-Hant">下卦</span></span></th>${order.map((t) => trigramAxisHead(t, 'col')).join('')}</tr>`;
+  const rows = cells.map((row, ui) => `<tr>${trigramAxisHead(order[ui], 'row')}${row.map((h) => `<td class="matrix-cell"><a href="${hexagramHash(h.number)}" aria-label="${escapeHtml(nameLabel(h))}">${hexagramSVG({ bits: h.bits, plain: true })}<span class="num">${h.number}</span><span class="name" lang="zh-Hant">${escapeHtml(h.name_zh)}</span><span class="pinyin">${escapeHtml(h.name_pinyin)}</span></a></td>`).join('')}</tr>`).join('');
+  return `<div class="matrix-wrap"><table class="trigram-matrix">
+    <caption class="visually-hidden">The sixty-four hexagrams by upper and lower trigram. Rows are the upper trigram, columns the lower.</caption>
+    <thead>${head}</thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function libraryView() {
+  withData(() => {
+    document.title = 'The 64 hexagrams — Yijing 易經';
+    setBodyTranslation('');
+    const render = () => {
+      const mode = libraryMode(local.get(L_LIBRARY), WIDE_MQ.matches);
+      const grid = mode === 'trigrams'
+        ? libraryMatrixHtml()
+        : `<div class="library-grid">${DATA.hexagrams.map(libraryCell).join('')}</div>`;
+
+      app.innerHTML = `<div class="view">
       <h1 class="page-title" tabindex="-1">The sixty-four hexagrams</h1>
-      <p class="lede">In King Wen order — the order of the book.</p>
+      <p class="lede">${mode === 'trigrams' ? 'By their two trigrams — the upper down the side, the lower across the top.' : 'In King Wen order — the order of the book.'}</p>
+      <div class="library-toggle" role="group" aria-label="Library arrangement">
+        <button type="button" data-library-view="kingwen" aria-pressed="${mode === 'kingwen'}">King Wen order</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-library-view="trigrams" aria-pressed="${mode === 'trigrams'}">By trigrams</button>
+      </div>
       <form class="jump-field" id="jump-form">
         <label for="jump">Go to a hexagram — number, pinyin, or name</label>
         <div class="row">
@@ -679,9 +885,23 @@ function libraryView() {
         </div>
         <p class="jump-msg" id="jump-msg" role="status"></p>
       </form>
-      <div class="library-grid">${cells}</div>
+      ${grid}
     </div>`;
 
+      app.querySelectorAll('[data-library-view]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          local.set(L_LIBRARY, btn.dataset.libraryView);
+          render();
+          announce(btn.dataset.libraryView === 'trigrams' ? 'Hexagrams by trigrams shown.' : 'King Wen order shown.');
+          const again = app.querySelector(`[data-library-view="${btn.dataset.libraryView}"]`);
+          if (again) again.focus({ preventScroll: true });
+        });
+      });
+      bindWideRerender(routeSeq, render);
+      bindJump();
+    };
+
+    function bindJump() {
     document.getElementById('jump-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const q = document.getElementById('jump').value.trim();
@@ -709,6 +929,8 @@ function libraryView() {
         msg.textContent = `No hexagram answers to “${q}”.`;
       }
     });
+    }
+    render();
     focusHeading();
   });
 }
@@ -755,6 +977,7 @@ function route() {
 
   document.querySelector('main').classList.toggle('library-wide', r.name === 'library');
   document.body.classList.toggle('route-library', r.name === 'library');
+  document.body.dataset.route = r.name;
   document.querySelectorAll('[data-nav]').forEach((a) => {
     if (a.dataset.nav === r.name) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');

@@ -10,7 +10,13 @@ Noto Serif TC 易 glyph, and verifies cmap coverage:
   data/trigrams.json) and every Han character in the rendered source
   (index.html, css/style.css, js/*.js) is in the Noto subset;
 - every character used by the Legge texts, pinyin names, and every
-  non-Han character in the rendered source is in the EB Garamond subsets.
+  non-Han character in the rendered source is in the EB Garamond subsets;
+- the 繫辭 vertical passage on the desktop cast page is in the Noto
+  subset (it reaches the scan through js/app.js, and is also named
+  below so the requirement survives a move);
+- the eight trigram symbols (U+2630..U+2637, carried by NEITHER source
+  font, verified below) are drawn as SVG by js/render.js, so they must
+  never appear as literals in the rendered source.
 
 The source scan is deliberately wholesale (comments included), so a
 character that appears anywhere in the JS/HTML/CSS the browser runs
@@ -45,7 +51,20 @@ SOURCES = {
 }
 
 # Rendered source files scanned for characters, beyond the JSON corpus.
-SOURCE_FILES = ("index.html", "css/style.css", "js/app.js", "js/engine.js", "js/render.js")
+# (js/about.js renders too, and js/book.js feeds the desktop layouts.)
+SOURCE_FILES = ("index.html", "css/style.css", "js/app.js", "js/engine.js",
+                "js/render.js", "js/about.js", "js/book.js")
+
+# Desktop cast-page vertical passage (繫辭上) + title-slip characters.
+# Named here as well as scanned from js/app.js, so the Noto requirement
+# is explicit and survives the markup moving.
+VERTICAL_PASSAGE = "易有太極，是生兩儀，兩儀生四象，四象生八卦。繫辭上易經"
+
+# Trigram symbols from data/trigrams.json "symbol" fields. Neither OFL
+# source carries U+2630..U+2637 (checked against the full fonts), so
+# the site draws them (trigramFigure in js/render.js). They are listed
+# here only so the check can fail if one is ever typeset instead.
+TRIGRAM_SYMBOLS = "".join(chr(cp) for cp in range(0x2630, 0x2638))
 
 
 def corpus_chars():
@@ -105,7 +124,7 @@ def required_chars():
 
 def noto_unicodes():
     han, _ = required_chars()
-    wanted = set(han)
+    wanted = set(han) | {c for c in VERTICAL_PASSAGE if not c.isspace()}
     # Fullwidth/CJK punctuation the received text and UI lean on.
     wanted |= set("，。、；：？！·…—「」『』（）《》〈〉")
     return sorted(wanted)
@@ -196,6 +215,37 @@ def check_coverage():
         print(f"  FAIL    Noto subset missing {len(missing)}: {''.join(missing[:40])}")
     else:
         print(f"  ok      Noto subset covers all {len(noto_unicodes())} corpus+source characters")
+
+    # Trigram symbols must be drawn, never typeset: no literal may reach
+    # the rendered source (neither subset could show it). The data file
+    # still carries them, so also confirm all eight are the data values.
+    src_text = "".join((ROOT / rel).read_text(encoding="utf-8") for rel in SOURCE_FILES)
+    leaked = [c for c in TRIGRAM_SYMBOLS if c in src_text]
+    if leaked:
+        ok = False
+        print(f"  FAIL    trigram symbols typeset in rendered source: {''.join(leaked)} (draw them via trigramFigure)")
+    else:
+        print("  ok      trigram symbols are drawn SVG only (no U+2630 literals in source)")
+    trigrams = json.loads((ROOT / "data/trigrams.json").read_text(encoding="utf-8"))
+    if {t["symbol"] for t in trigrams} != set(TRIGRAM_SYMBOLS):
+        ok = False
+        print("  FAIL    data/trigrams.json symbols differ from U+2630..U+2637")
+    render_src = (ROOT / "js/render.js").read_text(encoding="utf-8")
+    if "trigramFigure" not in render_src:
+        ok = False
+        print("  FAIL    js/render.js no longer draws trigramFigure")
+
+    # EB Garamond small caps back the desktop section labels.
+    for fname in ("eb-garamond.woff2",):
+        font = TTFont(str(FONTS_DIR / fname))
+        feats = set()
+        if "GSUB" in font:
+            feats = {r.FeatureTag for r in font["GSUB"].table.FeatureList.FeatureRecord}
+        if "smcp" not in feats:
+            ok = False
+            print(f"  FAIL    {fname} subset lost the smcp small-caps feature")
+        else:
+            print(f"  ok      {fname} keeps smcp (desktop small caps)")
 
     _, latin = required_chars()
     for fname in ("eb-garamond.woff2", "eb-garamond-italic.woff2"):

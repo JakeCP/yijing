@@ -687,6 +687,412 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
   }
 }
 
+/* ------------------------------------------------- atmosphere (all sizes) */
+
+/* Soft vignette held to the viewport; the grain settles over ink and
+   paper alike, like print. One 3.3 KB tiling PNG, embedded; dark rooms
+   get the same tile inverted (pale dust on an ink-stone ground). */
+body {
+  background-image: radial-gradient(120% 90% at 50% 38%, transparent 55%, color-mix(in srgb, var(--ink) 7%, transparent) 100%);
+  background-attachment: fixed;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,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");
+  background-size: 160px 160px;
+  opacity: 0.55;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body::after { filter: invert(1); opacity: 0.4; }
+}
+:root[data-theme="dark"] body::after { filter: invert(1); opacity: 0.4; }
+
+/* New book furniture exists in the DOM at every width where it makes
+   sense; narrow screens simply do not show the desktop-only pieces. */
+.cast-layout { width: 100%; }
+.cast-ritual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-width: 0;
+}
+.cast-aside, .trigram-rows, .relating-mini, .lib-preview,
+.library-toggle, .facing-toggle, .facing-sep { display: none; }
+
+/* The sixth line, arriving: ink spreads, then the name stands in it. */
+.cast-arrival {
+  position: relative;
+  margin-top: 1.6rem;
+  padding: 1.4rem 2.2rem 1.2rem;
+  text-align: center;
+}
+.cast-arrival[hidden] { display: none; }
+.arrival-ink {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 9rem; height: 9rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--ink) 13%, transparent) 0%, transparent 68%);
+}
+.arrival-number { color: var(--soft); font-size: 0.98rem; margin: 0; position: relative; }
+.arrival-name {
+  font-family: var(--serif-zh);
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin: 0.1rem 0 0;
+  position: relative;
+}
+.arrival-gloss { font-style: italic; color: var(--soft); margin: 0.15rem 0 0; position: relative; }
+@media (prefers-reduced-motion: no-preference) {
+  .arrival-ink { animation: ink-spread 1.5s ease-out both; }
+  .arrival-number, .arrival-name, .arrival-gloss { animation: ink-in 1.1s ease 0.35s both; }
+}
+@keyframes ink-spread {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.25); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1.6); }
+}
+
+/* Figure line and line text, lit together. */
+.hex-line { transition: fill 0.35s ease, opacity 0.35s ease; }
+.hex-line.is-lit { fill: var(--accent); }
+.hex-line:focus { outline: none; fill: var(--accent); }
+.hex-line:focus .hex-line-hit {
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  fill: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+.line-entry { border-radius: 4px; }
+.line-entry.is-lit { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+
+/* ============================================================ the book, wide
+   Wide screens open the book instead of centring the phone column:
+   a two-part cast, a sticky-figure spread, a fuller library. Below
+   these widths nothing above changes. */
+
+@media (min-width: 1024px) {
+  body { font-size: 1.1875rem; }
+
+  /* Frame: a running head over a ruled page. */
+  body[data-route="cast"] .topbar, body[data-route="reading"] .topbar,
+  body[data-route="hexagram"] .topbar, body[data-route="library"] .topbar,
+  body[data-route="cast"] footer, body[data-route="reading"] footer,
+  body[data-route="hexagram"] footer, body[data-route="library"] footer {
+    width: min(100% - 5rem, 74rem);
+  }
+  body[data-route="cast"] main, body[data-route="reading"] main,
+  body[data-route="hexagram"] main, body[data-route="library"] main {
+    width: min(100% - 5rem, 74rem);
+    position: relative;
+    z-index: 1;
+  }
+  body[data-route="library"] .topbar, body[data-route="library"] footer,
+  body[data-route="library"] main { width: min(100% - 5rem, 82rem); }
+  .topbar { padding: 1.4rem 0 0.9rem; border-bottom: 1px solid var(--hairline); }
+  .page-title { font-size: 2.5rem; margin-top: 3rem; }
+  .lede { font-size: 1.12rem; }
+
+  /* EB Garamond carries true small caps (GSUB smcp; kept by the subset's
+     --layout-features=*). Chinese label characters stay full-size. */
+  .layer-label {
+    font-style: normal;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.09em;
+    font-size: 1.08rem;
+    margin-bottom: 0.55rem;
+  }
+  .layer-label .zh { font-variant-caps: normal; letter-spacing: 0.06em; font-size: 1.02em; }
+  .layer-label .soft { font-variant-caps: normal; letter-spacing: 0; font-size: 0.92em; }
+
+  /* ------------------------------------------------ cast: passage | ritual */
+  .cast-layout {
+    display: grid;
+    grid-template-columns: minmax(15rem, 21rem) minmax(0, 1fr);
+    column-gap: 4.5rem;
+    align-items: start;
+    width: 100%;
+    padding-top: 1.6rem;
+  }
+  .cast-ritual { grid-column: 2; grid-row: 1; padding-top: 0.4rem; }
+  .cast-aside {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    position: sticky;
+    top: 2rem;
+    padding: 0.6rem 2.2rem 0 0.2rem;
+    border-right: 1px solid var(--hairline);
+    text-align: left;
+  }
+  .title-slip {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border: 1px solid color-mix(in srgb, var(--ink) 55%, transparent);
+    box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--hairline);
+    padding: 1.1rem 0.55rem;
+    height: fit-content;
+  }
+  .slip-text {
+    font-family: var(--serif-zh);
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: 0.35em;
+    line-height: 1.4;
+  }
+  .vertical-passage {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: var(--serif-zh);
+    font-size: 1.42rem;
+    line-height: 2.05;
+    letter-spacing: 0.14em;
+    color: var(--soft);
+    margin: 0;
+    max-height: min(62vh, 36rem);
+  }
+  .passage-source { width: 100%; color: var(--soft); font-size: 0.98rem; margin: 0.4rem 0 0; }
+  .passage-gloss { width: 100%; color: var(--soft); font-size: 1rem; line-height: 1.65; margin: 0; max-width: 17em; }
+  .ink-wash {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 190px;
+    z-index: 0;
+    color: var(--ink);
+    pointer-events: none;
+  }
+  .wash-far { fill: currentColor; opacity: 0.05; }
+  .wash-mid { fill: currentColor; opacity: 0.075; }
+  .wash-water { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; opacity: 0.13; }
+  .wash-moon { fill: var(--accent); opacity: 0.12; }
+
+  .cast-title { font-size: 4.6rem; }
+  .cast-subtitle { font-size: 1.15rem; }
+  .question-field { width: min(100%, 30em); margin-top: 2.6rem; }
+  .question-field input { font-size: 1.2rem; }
+  .cast-stage { min-height: 23rem; margin-top: 2.6rem; }
+  .cast-figure { min-height: 11rem; }
+  .cast-figure .hexagram { width: 13rem; }
+  .cast-placeholder { font-size: 1.9rem; }
+  .coin { width: 4.4rem; height: 4.4rem; }
+  .coins-row { gap: 1.3rem; }
+  .stalks { width: 6.6rem; }
+  .cast-button { min-width: 22rem; min-height: 4rem; font-size: 1.25rem; }
+  .arrival-name { font-size: 3.4rem; }
+
+  /* ------------------------------------------- reading: the book spread */
+  .spread {
+    display: grid;
+    grid-template-columns: minmax(16rem, 21rem) minmax(0, 1fr);
+    align-items: start;
+    margin-top: 1.2rem;
+  }
+  .spread-side {
+    position: sticky;
+    top: 1.2rem;
+    max-height: calc(100dvh - 2.4rem);
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-right: 3rem;
+    border-right: 1px solid var(--hairline);
+  }
+  .spread-side::-webkit-scrollbar { display: none; }
+  .spread-main { padding-left: 3rem; min-width: 0; }
+  .spread-side .hexa-head { margin-top: 1.4rem; }
+  .spread-side .hexa-head .hexagram { width: 12.5rem; }
+  .hexa-name { font-size: 4.3rem; }
+  .hexa-pinyin { font-size: 1.6rem; }
+  .hexa-en { font-size: 1.25rem; }
+  .trigram-rows {
+    display: block;
+    width: fit-content;
+    margin: 1.7rem auto 0;
+    padding-top: 1.3rem;
+    border-top: 3px double color-mix(in srgb, var(--ink) 35%, transparent);
+    text-align: left;
+  }
+  .trigram-row { display: flex; align-items: center; gap: 0.9rem; margin: 0.7rem 0; }
+  .trigram-row .trigram-figure { width: 2.5rem; flex: none; }
+  .trigram-row-text { margin: 0; font-size: 1rem; color: var(--soft); line-height: 1.5; }
+  .trigram-place {
+    display: block;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+  }
+  .relating-mini {
+    display: block;
+    margin: 1.8rem auto 0.4rem;
+    padding-top: 1.3rem;
+    border-top: 3px double color-mix(in srgb, var(--ink) 35%, transparent);
+    text-align: center;
+    text-decoration: none;
+    max-width: 15rem;
+  }
+  .relating-mini-label { display: block; color: var(--soft); font-style: italic; font-size: 0.98rem; margin-bottom: 0.7rem; }
+  .relating-mini .hexagram { width: 4.6rem; margin: 0 auto 0.6rem; }
+  .relating-mini-name { display: block; font-size: 1rem; line-height: 1.45; }
+  .relating-mini:hover .relating-mini-name { text-decoration: underline; text-underline-offset: 0.22em; }
+
+  .spread-main .translation-bar { justify-content: flex-start; margin-top: 0.4rem; }
+  .spread-main .hexa-head { text-align: left; margin: 2.6rem 0 0.4rem; }
+  .spread-main .hexa-head .hexagram { width: 7.5rem; margin: 0 0 1rem; }
+  .spread-main .hexa-head .hexa-name { font-size: 2.7rem; }
+  .spread-main .text-block { margin: 2rem 0; max-width: 36em; }
+  .question-echo { text-align: left; margin-inline: 0; }
+
+  /* Marginalia: the line label sits in the margin, changing lines are
+     ticked in cinnabar (the word "changing" still says it in text). */
+  .spread-main .line-entry {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    column-gap: 1.6rem;
+    margin: 1.7rem 0;
+    padding: 0.35rem 0.6rem 0.35rem 0;
+    max-width: 44em;
+  }
+  .spread-main .line-entry .line-tag {
+    text-align: right;
+    margin: 0;
+    padding-top: 0.2rem;
+    padding-right: 0.9rem;
+    border-right: 2px solid transparent;
+    line-height: 1.55;
+  }
+  .spread-main .line-entry.is-changing .line-tag { border-right-color: var(--accent); }
+
+  /* ---------------------------------------------------------- library */
+  .library-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 1.6rem 0 0.2rem;
+    color: var(--soft);
+  }
+  .library-toggle button {
+    color: var(--soft);
+    font-size: 1rem;
+    padding: 0.35rem 0.8rem;
+    min-height: 2.75rem;
+    border-radius: 999px;
+  }
+  .library-toggle button:hover { color: var(--ink); }
+  .library-toggle button[aria-pressed="true"] {
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px var(--hairline);
+    background: var(--wash);
+  }
+  .library-toggle .sep { color: var(--hairline); }
+  .library-grid { gap: 2.4rem 1.2rem; margin-top: 2.4rem; }
+  .library-cell .hexagram { width: 4.4rem; }
+  .library-cell .name { font-size: 1.38rem; }
+  .library-cell .pinyin { font-size: 0.95rem; }
+  .library-cell .en { font-size: 0.92rem; }
+  .lib-preview {
+    display: block;
+    height: 2.7em;
+    overflow: hidden;
+    margin-top: 0.45rem;
+    padding: 0 0.3rem;
+    color: var(--soft);
+    font-style: italic;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    opacity: 0;
+  }
+  .library-cell:hover .lib-preview, .library-cell:focus .lib-preview,
+  .library-cell:focus-visible .lib-preview { opacity: 1; }
+  @media (prefers-reduced-motion: no-preference) {
+    .lib-preview { transition: opacity 0.45s ease; }
+  }
+
+  .matrix-wrap { overflow-x: auto; margin-top: 2.2rem; padding-bottom: 0.6rem; }
+  .trigram-matrix { border-collapse: collapse; width: 100%; min-width: 58rem; }
+  .trigram-matrix th, .trigram-matrix td {
+    border: 1px solid var(--hairline);
+    padding: 0.65rem 0.3rem;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 400;
+  }
+  .matrix-axis { background: var(--wash); }
+  .matrix-axis .trigram-figure { width: 2.3rem; margin: 0 auto 0.35rem; }
+  .matrix-axis-name { display: block; font-size: 0.95rem; line-height: 1.4; }
+  .matrix-axis-image { display: block; color: var(--soft); font-size: 0.85rem; line-height: 1.4; }
+  .matrix-corner { background: var(--wash); color: var(--soft); font-size: 0.88rem; line-height: 1.5; }
+  .matrix-corner-upper, .matrix-corner-lower { display: block; }
+  .matrix-cell a { text-decoration: none; display: block; border-radius: 4px; padding: 0.3rem 0.1rem; }
+  .matrix-cell a:hover { background: var(--wash); }
+  .matrix-cell .hexagram { width: 3.1rem; margin: 0 auto 0.4rem; }
+  .matrix-cell .num { color: var(--soft); font-size: 0.78rem; display: block; line-height: 1.3; }
+  .matrix-cell .name { font-family: var(--serif-zh); font-size: 1.08rem; display: block; line-height: 1.35; }
+  .matrix-cell .pinyin { color: var(--soft); font-style: italic; font-size: 0.8rem; display: block; line-height: 1.35; }
+}
+
+/* --------------------------------------------- wider still: facing pages */
+@media (min-width: 1280px) {
+  body[data-route="cast"] main, body[data-route="reading"] main,
+  body[data-route="hexagram"] main { width: min(100% - 6rem, 80rem); }
+  body[data-route="cast"] .topbar, body[data-route="reading"] .topbar,
+  body[data-route="hexagram"] .topbar,
+  body[data-route="cast"] footer, body[data-route="reading"] footer,
+  body[data-route="hexagram"] footer { width: min(100% - 6rem, 80rem); }
+  body[data-route="library"] main, body[data-route="library"] .topbar,
+  body[data-route="library"] footer { width: min(100% - 6rem, 88rem); }
+  .spread { grid-template-columns: minmax(18rem, 23rem) minmax(0, 1fr); }
+  .spread-side .hexa-head .hexagram { width: 14rem; }
+  .library-cell .hexagram { width: 5rem; }
+  .vertical-passage { font-size: 1.6rem; }
+
+  .facing-toggle, .facing-sep { display: inline-flex; }
+  .facing-sep { align-self: center; }
+  /* English on the left-hand page, the Chinese — set vertically, in the
+     old direction — facing it on the right. DOM order stays Chinese
+     first, so assistive reading order is unchanged by the placement. */
+  .facing-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(7.5rem, 11rem);
+    column-gap: 2.2rem;
+    align-items: start;
+  }
+  .facing-en { grid-column: 1; grid-row: 1; min-width: 0; }
+  .facing-zh {
+    grid-column: 2;
+    grid-row: 1;
+    border-left: 1px solid var(--hairline);
+    padding-left: 1.6rem;
+    display: flex;
+    justify-content: center;
+  }
+  .spread-main .facing-pair {
+    background: var(--wash);
+    border: 1px solid var(--hairline);
+    padding: 1.3rem 1.5rem 1.4rem;
+    max-width: none;
+  }
+  .spread-main .line-entry.facing-pair { padding: 1.1rem 1.3rem 1.2rem 0; }
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: var(--serif-zh);
+    font-size: 1.22rem;
+    line-height: 1.95;
+    letter-spacing: 0.07em;
+    max-height: 23rem;
+    overflow-x: auto;
+    margin: 0;
+  }
+}
+
 /* ------------------------------------------------------------------ print */
 
 @media print {
@@ -698,10 +1104,17 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
     --hairline: #d8d2c4;
     --wash: transparent;
   }
-  body { background: #fff; font-size: 11.5pt; }
+  body { background: #fff; background-image: none; font-size: 11.5pt; }
+  body::after { display: none; }
   .topbar, footer, .translation-bar, .actions, .cast-controls,
   .prev-next, .theme-toggle, .skip-link, .method-choice, .question-field,
-  .jump-field, .manual-cast, details.quiet summary { display: none !important; }
+  .jump-field, .manual-cast, details.quiet summary,
+  .cast-aside, .ink-wash, .library-toggle, .facing-toggle, .facing-sep,
+  .trigram-rows, .relating-mini, .lib-preview, .facing-zh { display: none !important; }
+  .cast-layout, .spread, .facing-cols, .spread-main .line-entry { display: block; }
+  .spread-side { position: static; max-height: none; overflow: visible; border: 0; padding: 0; }
+  .spread-main { padding: 0; }
+  .spread-main .facing-pair { border: 0; background: none; padding: 0; }
   /* app.js opens every <details> on beforeprint, so collapsed texts
      (cast record, the all-changing extras) reach the page. */
   details.quiet { margin: 1.2rem 0; }

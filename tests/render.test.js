@@ -2,7 +2,7 @@
 // Run: node --test
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { coinSVG } from '../js/render.js';
+import { coinSVG, hexagramSVG, trigramFigure } from '../js/render.js';
 
 test('coin faces are drawn paths, never <text> (tofu-proof without fonts)', () => {
   const inscribed = coinSVG('character');
@@ -20,4 +20,27 @@ test('coin faces are drawn paths, never <text> (tofu-proof without fonts)', () =
     assert.ok(svg.includes('coin-rim') && svg.includes('coin-hole'));
     assert.ok(svg.startsWith('<svg') && svg.endsWith('</svg>'));
   }
+});
+
+test('trigram figures are drawn, never typeset (no font carries U+2630s)', () => {
+  const tri = { name_zh: '乾', name_pinyin: 'Qián', bits: [1, 1, 1] };
+  const svg = trigramFigure(tri);
+  assert.ok(!svg.includes('<text'));
+  assert.ok(![...svg].some((c) => { const n = c.codePointAt(0); return n >= 0x2630 && n <= 0x2637; }), 'no trigram codepoints');
+  assert.equal((svg.match(/class="hex-line"/g) ?? []).length, 3);
+  assert.ok(svg.includes('trigram-figure'));
+});
+
+test('interactive hexagrams expose six named, focusable lines in a group', () => {
+  const svg = hexagramSVG({
+    bits: [1, 0, 0, 0, 1, 0], interactive: true, label: 'Hexagram 3',
+    lineNames: ['Line 1 a', 'Line 2 b', 'Line 3 c', 'Line 4 d', 'Line 5 e', 'Line 6 f'],
+  });
+  assert.ok(svg.includes('role="group"'));
+  assert.equal((svg.match(/tabindex="0"/g) ?? []).length, 6);
+  assert.equal((svg.match(/data-line="[1-6]"/g) ?? []).length, 6);
+  assert.ok(svg.includes('aria-label="Line 6 f"'));
+  const plain = hexagramSVG({ bits: [1, 0, 0, 0, 1, 0] });
+  assert.ok(!plain.includes('tabindex'), 'static figures stay out of the tab order');
+  assert.equal((plain.match(/data-line="[1-6]"/g) ?? []).length, 6);
 });
