@@ -6,7 +6,8 @@ Legge is a collation witness only; wording is never taken from him.
 Slot shapes are defined in [SCHEMA.md](SCHEMA.md); the rendering brief is in
 [PLAN.md](PLAN.md) (the `poem` rendering paragraph).
 
-Pilot: hexagrams 1, 3, 29, 52 in `data/poem/`. Batches of 8 follow this sheet.
+Pilot: hexagrams 1, 3, 29, 52 in `data/poem/`, revised to this sheet after
+the pilot review (one notch toward poetry). Batches of 8 follow this sheet.
 Any change to a glossary rendering is changed here first, then in every file
 already written — no local synonyms for a fixed formula.
 
@@ -24,6 +25,12 @@ Do not explain an image, moralise it, or turn it into advice.
   accurate. Cut every word that only smooths.
 - Fragments are allowed. The Chinese drops subjects and verbs; English verse
   may too. A fragment that matches the Chinese beats a padded full sentence.
+- Natural English first (pilot review). This is a poem, not a gloss: allow
+  articles, small verbs and ordinary syntax so a line reads as English
+  ("It is good to see the great person.", "So the noble one…"). Ban gloss-ese:
+  no bare mantic words strung with commas, no "Favours seeing…" / "by this,"
+  frames. Each hexagram should have at least one moment of real beauty —
+  found in its own images, never in added ones.
 - No added imagery. No metaphors, landscapes, seasons, or feelings that are
   not in the slot. Review test: every English content word answers to a
   Chinese content word, or is listed as supplied grammar (see Mechanics).
@@ -127,27 +134,27 @@ is the same word and takes the same rendering.
 | Chinese | Rendering | Why (one line) |
 |---|---|---|
 | 元 | Great | 元 is head/first/source; "great" keeps primacy without "supreme" inflation. |
-| 亨 | goes through / through | An offering received, a passage opening — physical "through", not abstract "success". |
-| 小亨 | goes through a little | Same verb, small measure kept; no separate word invented. |
-| 利 | favours / favourable | Circumstances favour an act (harvest-cut benefit); not moral "advantage". |
-| 不利 | does not favour / no favour in | Straight negation of 利; never softened to "unwise". |
+| 亨 | It goes through. / goes through | An offering received, a passage opening — physical "through", not abstract "success". |
+| 小亨 | It goes through a little. | Same verb, small measure kept; no separate word invented. |
+| 利 | It is good to… / it is good… | Natural sentence frame for the harvest-cut benefit; "favours" was gloss-ese. |
+| 不利 | It is not good to… | Straight negation of 利; never softened to "unwise". |
 | 貞 | hold firm / holding firm | What divination fixes, held to; not "correct" （正） nor endurance-cliché "perseverance". |
-| 元亨利貞 | Great, through, favourable — hold firm. | Four mantic words kept as four beats; wording fixed, line breaks may vary. |
-| 元亨 | Great, and through. | Built from the fixed parts; no fused paraphrase. |
-| 利貞 | Favours holding firm. | Fixed phrase from fixed parts; never "perseverance furthers". |
+| 元亨利貞 | Begin greatly, and go through. / It is good to hold firm. | Two spare sentences, not four cryptic beats; fixed wording, line break between them. |
+| 元亨 | Begin greatly, and go through. | First sentence of the 元亨利貞 form; 元 as great beginning, 亨 as going through. |
+| 利貞 | It is good to hold firm. | Fixed phrase from fixed parts; never "perseverance furthers". |
 | 吉 | Good. | Single-word verdict; no luck machinery ("good fortune") added. |
 | 元吉 / 大吉 | Great good. | 元 adds firstness, 大 size; English "great" honestly covers both. |
-| 終吉 / 終凶 | In the end, good. / In the end, ill. | 終 is outcome at the end, kept temporal and plain. |
-| 凶 | Ill. | The outcome is ill; "evil" imports a moral agent the text does not name. |
+| 終吉 / 終凶 | In the end, good. / In the end, misfortune. | 終 is outcome at the end, kept temporal and plain. |
+| 凶 | Misfortune. | Unambiguous and short; "Ill." read as sick, "evil" imports a moral agent. |
 | 厲 | danger / Danger. | Grindstone-pressing threat; distinct from terrain-word 險 "peril". |
 | 險 | peril / perilous | Steep, exposed ground （坎險）; kept for the place-word, not merged with 厲. |
 | 吝 | shame / Shame. | A grudging outcome that diminishes; distinct from regret （悔） and ill （凶）. |
 | 貞吉 | Holding firm: good. | Colon verdict: the holding stated, the outcome tagged — no supplied "if". |
-| 貞凶 | Holding firm: ill. | Same frame as 貞吉； the pair must stay visibly a pair. |
+| 貞凶 | Holding firm: misfortune. | Same frame as 貞吉； the pair must stay visibly a pair. |
 | 貞厲 | Holding firm: danger. | Same frame; danger is present threat, not final outcome. |
 | 貞吝 | Holding firm: shame. | Same frame; completes the 貞 + verdict set without new syntax. |
-| 永貞 / 利永貞 | holding firm long / Favours holding firm, long. | 永 is length of time laid after the fixed phrase, not "eternal firmness". |
-| 利居貞 | Favours staying, holding firm. | 居 is stay/dwell; staying is the act favoured, holding firm its manner. |
+| 永貞 / 利永貞 | holding firm, long / It is good to hold firm, long. | 永 is length of time laid after the fixed phrase, not "eternal firmness". |
+| 利居貞 | It is good to stay and hold firm. | 居 is stay/dwell; staying is the act, holding firm its manner. |
 | 不可貞 | cannot hold firm | Prohibition kept as inability of the course, not a moral ban. |
 | 悔 / 有悔 | regret / There will be regret. | Plain human regret; never "repentance" (no sin/confession frame). |
 | 悔亡 | Regret gone. | 亡 = gone/lost: regret that was there leaves — unlike 無悔. |
@@ -155,25 +162,25 @@ is the same word and takes the same rendering.
 | 無咎 （无咎） | No harm. | 咎 is fault landing as harm; not inner "blame", guilt, or "error". |
 | 何咎 | What harm? | Rhetorical question kept as a question, same noun as 無咎. |
 | 無不利 | Nothing unfavourable. | Double negative preserved; never flattened to "everything favourable". |
-| 無攸利 | No favour anywhere. | 攸 = anywhere (cf. 有攸往）; stronger and vaguer than 無不利, kept distinct. |
+| 無攸利 | No good anywhere. | 攸 = anywhere (cf. 有攸往）; stronger and vaguer than 無不利, kept distinct. |
 
 ### Going, crossing, acting
 
 | Chinese | Rendering | Why (one line) |
 |---|---|---|
 | 有攸往 | having somewhere to go | 攸 is a where; literal "somewhere" keeps the destination open. |
-| 利有攸往 | Favours having somewhere to go. | Fixed phrase; never "furthers to have a goal". |
-| 不利有攸往 | Does not favour having somewhere to go. | Straight negation, same somewhere. |
+| 利有攸往 | It is good to have somewhere to go. | Fixed phrase; never "furthers to have a goal". |
+| 不利有攸往 | It is not good to have somewhere to go. | Straight negation, same somewhere. |
 | 往 / 來 | going, go / coming, come | Plain direction words; verdicts stay tags ("Going: good."). |
 | 征 | march | 征 is a punitive expedition, not generic travel; kept military. |
 | 行 | go, walk, move (by syntax) | Feet first; 行有尚 (29) is "Going is honoured." （尚 = honoured/valued). |
-| 利涉大川 | Favours fording the great river. | 涉 is wading a crossing, hence "ford"; 大川 one great river, kept singular. |
-| 不利涉大川 | Does not favour fording the great river. | Same crossing, negated; the pair must mirror exactly. |
+| 利涉大川 | It is good to ford the great river. | 涉 is wading a crossing, hence "ford"; 大川 one great river, kept singular. |
+| 不利涉大川 | It is not good to ford the great river. | Same crossing, negated; the pair must mirror exactly. |
 | 勿用 (standalone) | Do not act. | Mantic prohibition with no object: refrain from action/employment. |
 | 勿用 + verb phrase | Do not + verb | Object cases stay literal （勿用取女 "Do not take the woman."). |
 | 勿用有攸往 (3, J) | Do not set out anywhere. | One idiom for the fused phrase; glossed in 03 notes, not generalised. |
 | 見 | see; (read xiàn) appear | 見龍 is the dragon appearing; 利見大人 is seeing — syntax decides, notes mark it. |
-| 利見大人 | Favours seeing the great person. | An audience in plain words; no "meeting with" padding. |
+| 利見大人 | It is good to see the great person. | An audience in plain words; natural syntax over gloss-ese. |
 | 有孚 / 孚 | There is trust. / trust | Trust as credit held between people; not private "sincerity" or "inner truth". |
 | 用見大人 (46) | Seek to see the great person. | 用 here is purposive (thereby see), kept distinct from 利見 by "seek". |
 
@@ -188,7 +195,7 @@ is the same word and takes the same rendering.
 | 先王 | the early kings | Ancestor-kings of the Image layer; "early" keeps time, not bureaucracy. |
 | 王假有廟 | The king comes to the temple. | 假 here reads gé "comes to"; arrival kept, borrowings noted per file. |
 | 侯 / 諸侯 | a lord, lords / the lords | Enfeoffed lords in plain English; no "feudal princes". |
-| 建侯 | setting up lords | 建 is set up/establish; helpers installed, not "appointing officials". |
+| 建侯 / 利建侯 | setting up lords / It is good to set up lords. | 建 is set up/establish; helpers installed, not "appointing officials". |
 | 丈人 (7) | the elder | A senior of experience (army context), kept distinct from 大人/君子. |
 | 帝 / 上帝 | Di (in names, e.g. Di Yi) / the god on high | A high ancestral power distinct from 天； lower-case "god" avoids importing God. |
 | 天 | heaven | Sky as ordering power; lower-case avoids Heaven the afterlife. |
@@ -205,9 +212,10 @@ in the same voice, without archaising to mark the layer. Fixed frame:
 
 - Image statement, then the hexagram name as a label after a colon where the
   Chinese names it: "Clouds and thunder: Sprouting."
-- Pivot kept identical in all 64: "The noble one, by this," （君子以）,
-  "The early kings, by this," （先王以）, "The great person, by this," （大人以）.
-  以 is "by this / thereby" — never "in accordance with this".
+- Pivot kept identical in all 64: "So the noble one …" （君子以）,
+  "So the early kings …" （先王以）, "So the great person …" （大人以）,
+  "So the ruler …" （后以）. 以 is the turn from image to act — "So",
+  never "by this," or "in accordance with this" (gloss-ese).
 - The closing action stays concrete: sorting threads, eating and drinking,
   closing passes. Do not gloss it into government, character, or advice.
 
@@ -248,6 +256,10 @@ Chinese name and pinyin at small size.
 | 29 | 坎 Kǎn | Pit | 坎 is the pit/trap itself; water is its trigram image, "abyss" its commentary fate. |
 | 52 | 艮 Gèn | Stilling | 艮 is used as a verb through the text (stilling toes, waist, jaws); mountain stays in the Image. |
 
+### All 64 names (King Wen order)
+
+1 Heaven, 2 Earth, 3 Sprouting, 4 Untaught, 5 Held Up, 6 Lawsuit, 7 Army, 8 Drawing Close, 9 Small Store, 10 Treading, 11 Flowing, 12 Blocked, 13 People Together, 14 Great Having, 15 Bowing Low, 16 Delight, 17 Going Along, 18 Spoiling, 19 Coming Near, 20 Looking, 21 Teeth, 22 Adornment, 23 Peeling, 24 Coming Back, 25 Without Falseness, 26 Great Store, 27 Jaws, 28 Great Excess, 29 Pit, 30 Flame, 31 Feeling, 32 Lasting, 33 Withdrawal, 34 Great Strength, 35 Rising, 36 Wounded Light, 37 Household, 38 Estranged, 39 Limping, 40 Untying, 41 Lessening, 42 Adding, 43 Deciding, 44 Meeting, 45 Clustering, 46 Climbing, 47 Hemmed In, 48 Well, 49 Change of Skin, 50 Bronze Pot, 51 Thunder, 52 Stilling, 53 Step by Step, 54 A Sister Marries, 55 Fullness, 56 Travelling, 57 Wind, 58 Gladness, 59 Scattering, 60 Measure, 61 Central Trust, 62 Small Excess, 63 Already Across, 64 Not Yet Across.
+
 ## Line-label convention
 
 Poem files store **no line labels** — exactly as `zh` and `legge` slots store
@@ -267,6 +279,13 @@ in PLAN.md M4 and are a display concern only.
   prefixes and do not repeat the hexagram name, except where the Chinese
   itself contains it （習坎 in 29's judgment; the name label in Images).
 
+### Dragons (hexagram 1)
+
+| Chinese | Rendering | Why |
+|---|---|---|
+| 潛龍 | The dragon lies hidden. | 潛 is hidden/submerged; the hiddenness, not water alone, carries the line. |
+| 亢龍 | The dragon flies too high. | 亢 is overreaching, arrogant height; "too high" alone was weak without the verb of flight from L5. |
+
 ## Review checklist (each batch)
 
 1. Read the Chinese slot first, the English second. Legge last, if at all —
@@ -281,3 +300,6 @@ in PLAN.md M4 and are a display concern only.
    works as prose explanation, re-break it around its image and verdict.
 6. Confirm `name_en` against the name policy and the full 64-name list so
    far; confirm `notes` covers every non-literal choice in the file.
+7. Read for gloss-ese: any line that needs the Chinese beside it to parse
+   is rewritten in natural English. Check the hexagram has its moment of
+   beauty, and that it comes from an image already in the Chinese.

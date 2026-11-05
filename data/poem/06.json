@@ -1,0 +1,56 @@
+{
+  "number": 6,
+  "name_en": "Lawsuit",
+  "judgment": [
+    "There is trust, and it is blocked.",
+    "Wary, and held to the middle: good.",
+    "Pressed to the end: misfortune.",
+    "It is good to see the great person.",
+    "It is not good to ford the great river."
+  ],
+  "image": [
+    "Heaven and water move against each other: Lawsuit.",
+    "So the noble one, starting anything,",
+    "plans the beginning."
+  ],
+  "lines": [
+    [
+      "Do not drag the matter on.",
+      "There is a little talk.",
+      "In the end, good."
+    ],
+    [
+      "The suit cannot be won.",
+      "Go home and slip away —",
+      "the town's three hundred households",
+      "take no harm."
+    ],
+    [
+      "Living on old virtue.",
+      "Holding firm: danger — in the end, good.",
+      "In the king's service, perhaps:",
+      "nothing completed."
+    ],
+    [
+      "The suit cannot be won.",
+      "Turn back, accept what is charged,",
+      "change, and rest holding firm.",
+      "Good."
+    ],
+    [
+      "To plead the suit:",
+      "great good."
+    ],
+    [
+      "Perhaps given a belt of honour —",
+      "by morning's end,",
+      "three times stripped of it."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "訟 is a plea at law; 'Lawsuit', not Wilhelm's 'Conflict'.",
+    "judgment": "惕中吉終凶 parsed as middle-course good, end pressed through misfortune.",
+    "L6": "鞶帶 a broad belt of rank, given and stripped (褫) three times in a morning."
+  }
+}

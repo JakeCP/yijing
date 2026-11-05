@@ -1,0 +1,53 @@
+{
+  "number": 45,
+  "name_en": "Clustering",
+  "judgment": [
+    "It goes through.",
+    "The king comes to the temple.",
+    "It is good to see the great person.",
+    "It goes through. It is good to hold firm.",
+    "A great beast offered: good.",
+    "It is good to have somewhere to go."
+  ],
+  "image": [
+    "The marsh rises over the earth: Clustering.",
+    "So the noble one keeps his weapons mended,",
+    "on guard for the unforeseen."
+  ],
+  "lines": [
+    [
+      "There is trust, and it does not last:",
+      "now scattered, now clustered.",
+      "One cry, one hand-grip — and laughter.",
+      "Do not grieve. Going: no harm."
+    ],
+    [
+      "Drawn along: good. No harm.",
+      "Trust — then it is good to use",
+      "the simple offering."
+    ],
+    [
+      "Clustering, sighing.",
+      "No good anywhere.",
+      "Going: no harm. A little shame."
+    ],
+    [
+      "Great good. No harm."
+    ],
+    [
+      "Clustering in high place: no harm.",
+      "There is no trust —",
+      "begin greatly, hold firm long: regret gone."
+    ],
+    [
+      "Sighing and lamenting,",
+      "tears and snivel.",
+      "No harm."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "萃 is things/people gathered thick; 'Clustering', not Wilhelm's 'Gathering Together (Massing)'.",
+    "L2": "禴 the thin spring/summer offering — 'simple offering', as in 46 L2 (same Chinese, same words)."
+  }
+}

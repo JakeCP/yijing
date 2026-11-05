@@ -1,0 +1,51 @@
+{
+  "number": 7,
+  "name_en": "Army",
+  "judgment": [
+    "Hold firm.",
+    "An elder in charge:",
+    "good, and no harm."
+  ],
+  "image": [
+    "Water in the earth: Army.",
+    "So the noble one makes room for the people",
+    "and gathers the many in."
+  ],
+  "lines": [
+    [
+      "The army marches out in order.",
+      "Without order: misfortune."
+    ],
+    [
+      "In the midst of the army:",
+      "good, and no harm.",
+      "Three times the king gives the charge."
+    ],
+    [
+      "The army, perhaps,",
+      "carts back its corpses.",
+      "Misfortune."
+    ],
+    [
+      "The army camps to the left.",
+      "No harm."
+    ],
+    [
+      "Game in the field — seize it, and speak out.",
+      "No harm.",
+      "The eldest leads the army; the younger carts corpses.",
+      "Holding firm: misfortune."
+    ],
+    [
+      "The great ruler gives the charge:",
+      "open states, found houses.",
+      "Do not use the small person."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "師 is the host on campaign; plain 'Army'.",
+    "judgment": "丈人 the elder (senior commander), kept distinct from 大人.",
+    "L5": "執言 'seize and speak' (take the prisoner and hear him); compressed, both halves kept."
+  }
+}

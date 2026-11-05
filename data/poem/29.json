@@ -9,15 +9,14 @@
   ],
   "image": [
     "Water comes again and again: Pit after pit.",
-    "The noble one, by this,",
-    "holds virtue and conduct constant,",
+    "So the noble one holds virtue and conduct constant",
     "and practises teaching."
   ],
   "lines": [
     [
       "Pit after pit —",
       "down into a pit inside the pit.",
-      "Ill."
+      "Misfortune."
     ],
     [
       "The pit is perilous.",
@@ -44,18 +43,13 @@
       "Bound with cords,",
       "set down among thorns,",
       "three years, no way out.",
-      "Ill."
+      "Misfortune."
     ]
   ],
   "special": null,
   "notes": {
-    "name_en": "坎 is a pit, hole, trap in the ground (its trigram image is water collected in it). Title keeps the trap-thing, rejecting Wilhelm's 'Abysmal' and a generic 'Water'.",
-    "judgment": "習坎有孚維心亨行有尚。 習 holds both 'repeated' (trigram doubled) and 'practised at'; verse takes repetition ('pit after pit'), and the practised sense answers back in the Image （習教事 'practises teaching'). 尚 = honoured/valued, kept as esteem, not success. 心亨 per glossary: the heart goes through.",
-    "image": "水洊至習坎；君子以常德行習教事。 洊 = arriving again, rendered 'comes again and again'. The 習 pivot (repeated pit / repeated practice) is preserved by echo, not explained.",
-    "L2": "九二 坎有險求小得。 Read as outcome — seeking yields a little — rather than advice to ask small; 'Seeking brings a little' stays open to both without adding 'only'.",
-    "L3": "六三 來之坎坎險且枕入于坎窞勿用。 之 read as 'going' against 來 'coming'. 枕 read literally as pillow/resting on peril (a traditional reading: lying on danger); alternatives gloss 枕 as 'deep'. Literal pillow kept and flagged here.",
-    "L4": "六四 樽酒簋貳用缶納約自牖終無咎。 簋 are ritual grain vessels — 'vessels of grain' is an approximation. 約 = the simple/frugal (thing offered), rendered 'simple gift'; 牖 is a window-opening where light enters. Plainness, not ritual theory, carries the line.",
-    "L5": "九五 坎不盈祗既平無咎。 盈 = full to brimming; 祗 = only/just. Water level, not yet overflowing — the point at which it can level out.",
-    "L6": "上六 係用徽纆寘于叢棘三歲不得凶。 徽纆 are binding cords; 叢棘 a thorn enclosure (a prison). 不得 has no object in the Chinese; 'no way out' supplies release as the missing object."
+    "name_en": "坎 is a pit, hole, trap in the ground; rejecting Wilhelm's 'The Abysmal'. Revised pilot: 凶 now 'Misfortune.', Image pivot 'So…'.",
+    "L3": "險且枕 kept literal — peril for a pillow, resting your head on danger.",
+    "L4": "簋 ritual grain vessels; 約 the frugal/simple gift; 牖 a window-opening."
   }
 }

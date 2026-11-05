@@ -1,13 +1,14 @@
 # Yijing 易經
 
 A beautiful, quiet, ad-free Yijing (I Ching) for the web — see [docs/PLAN.md](docs/PLAN.md).
-Cast with three coins or yarrow stalks; read the received Chinese text and
-James Legge's 1882 translation. No trackers, no third-party requests;
+Cast with three coins or yarrow stalks; read the received Chinese text,
+a new poetic rendering, and James Legge's 1882 translation. No trackers, no third-party requests;
 everything happens on your device.
 
-Status: **Phases 1–3 complete** (data, engine + tests, UI + design).
-Phase 4 (an original poetic rendering + English names) is next; until then
-Legge is the default translation and hexagrams are named in Chinese + pinyin.
+Status: **Phases 1–4 complete** (data, engine + tests, UI + design,
+original poetic rendering + English names). The rendering is the default
+English text (Chinese by default for `zh` browser languages); the rendering
+and names are CC BY 4.0 (see [LICENSE-content.md](LICENSE-content.md)).
 
 ## Run the site locally
 
@@ -32,7 +33,7 @@ everything uses Node's standard library.
 
 ```bash
 node --test                                 # engine: exact distributions, King Wen vectors, routing
-node scripts/validate.mjs --require zh,legge
+node scripts/validate.mjs --require zh,legge,poem
 scripts/.cache/fontenv/bin/python scripts/build-fonts.py --check   # font cmap coverage
 ```
 
@@ -51,7 +52,8 @@ node scripts/build.mjs --fetch    # re-download sources and re-pin provenance (r
   is idempotent (byte-identical output).
 - Data contract: [docs/SCHEMA.md](docs/SCHEMA.md). How the sources were collated and
   what was corrected: [docs/COLLATION.md](docs/COLLATION.md).
-- Outputs: `data/hexagrams.json` (64 hexagrams × 原文 + Legge 1882),
+- Outputs: `data/hexagrams.json` (64 hexagrams × 原文 + Legge 1882 + the rendering,
+  merged from `data/poem/NN.json` with `notes` stripped),
   `data/trigrams.json`. When the data changes, bump `DATA_VERSION` in
   `js/app.js` so browsers pick up the new corpus.
 

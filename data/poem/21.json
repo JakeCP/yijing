@@ -1,0 +1,47 @@
+{
+  "number": 21,
+  "name_en": "Teeth",
+  "judgment": [
+    "It goes through.",
+    "It is good to use the law courts."
+  ],
+  "image": [
+    "Thunder and lightning: Teeth.",
+    "So the early kings made punishments clear",
+    "and set the laws in order."
+  ],
+  "lines": [
+    [
+      "Shoes of fetters, toes crushed.",
+      "No harm."
+    ],
+    [
+      "Biting skin, nose crushed.",
+      "No harm."
+    ],
+    [
+      "Biting dried meat, meeting poison.",
+      "A little shame. No harm."
+    ],
+    [
+      "Biting dried meat on the bone —",
+      "a metal arrowhead found.",
+      "It is good to hold firm in hardship.",
+      "Good."
+    ],
+    [
+      "Biting dried meat —",
+      "yellow metal found.",
+      "Holding firm: danger. No harm."
+    ],
+    [
+      "Shouldering fetters, ears crushed.",
+      "Misfortune."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "噬嗑 is biting and closing the jaws; concrete 'Teeth', not Wilhelm's 'Biting Through'.",
+    "L4": "乾胏 dried meat with bone; 金矢 a bronze/metal arrowhead bitten on in it."
+  }
+}

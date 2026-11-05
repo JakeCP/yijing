@@ -1,0 +1,49 @@
+{
+  "number": 5,
+  "name_en": "Held Up",
+  "judgment": [
+    "There is trust.",
+    "Bright, it goes through.",
+    "Holding firm: good.",
+    "It is good to ford the great river."
+  ],
+  "image": [
+    "Clouds rise up to heaven: Held Up.",
+    "So the noble one eats and drinks,",
+    "and feasts at ease."
+  ],
+  "lines": [
+    [
+      "Waiting at the edge of town.",
+      "It is good to keep constant.",
+      "No harm."
+    ],
+    [
+      "Waiting on the sand.",
+      "There is a little talk.",
+      "In the end, good."
+    ],
+    [
+      "Waiting in the mud",
+      "brings raiders coming."
+    ],
+    [
+      "Waiting in blood —",
+      "out of the hole."
+    ],
+    [
+      "Waiting at wine and food.",
+      "Holding firm: good."
+    ],
+    [
+      "Down into the hole.",
+      "Three guests come uninvited.",
+      "Honour them: in the end, good."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "需 is need held up as waiting (clouds not yet rain); 'Held Up', not Wilhelm's bare 'Waiting'.",
+    "L4": "血/穴: blood and the pit-hole kept as places of waiting, a step worse each line."
+  }
+}

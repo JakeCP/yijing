@@ -1,0 +1,50 @@
+{
+  "number": 44,
+  "name_en": "Meeting",
+  "judgment": [
+    "The woman is strong.",
+    "Do not take the woman."
+  ],
+  "image": [
+    "Wind under heaven: Meeting.",
+    "So the ruler issues the charge,",
+    "proclaiming it to the four quarters."
+  ],
+  "lines": [
+    [
+      "Tied to a metal brake.",
+      "Holding firm: good.",
+      "With somewhere to go, you meet misfortune.",
+      "A lean pig, surely, stamps and stamps."
+    ],
+    [
+      "A fish in the wrapping.",
+      "No harm.",
+      "Not good for guests."
+    ],
+    [
+      "No skin on the buttocks;",
+      "walking comes haltingly.",
+      "Danger. No great harm."
+    ],
+    [
+      "No fish in the wrapping.",
+      "Rising up: misfortune."
+    ],
+    [
+      "A melon wrapped in willow leaves,",
+      "its pattern held inside.",
+      "Something falls from heaven."
+    ],
+    [
+      "Meeting with the horns.",
+      "Shame. No harm."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "姤 is an unexpected meeting/encounter; plain 'Meeting', not Wilhelm's 'Coming to Meet'.",
+    "L1": "金柅 a metal cart-brake; the lean pig (羸豕) stamping (蹢躅) is the small force barely held.",
+    "L4": "43 L4 repeats here in the Chinese (臀無膚其行次且); the English repeats word for word."
+  }
+}

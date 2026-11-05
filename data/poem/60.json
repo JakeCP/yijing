@@ -1,0 +1,44 @@
+{
+  "number": 60,
+  "name_en": "Measure",
+  "judgment": [
+    "It goes through.",
+    "Bitter measure: you cannot hold firm."
+  ],
+  "image": [
+    "Water over the marsh: Measure.",
+    "So the noble one makes numbers and measures,",
+    "and weighs virtue and conduct."
+  ],
+  "lines": [
+    [
+      "Not going out of the door-courtyard.",
+      "No harm."
+    ],
+    [
+      "Not going out of the gate-courtyard.",
+      "Misfortune."
+    ],
+    [
+      "No measure — then lamenting.",
+      "No harm."
+    ],
+    [
+      "Measure at rest.",
+      "It goes through."
+    ],
+    [
+      "Sweet measure: good.",
+      "Going is honoured."
+    ],
+    [
+      "Bitter measure:",
+      "holding firm, misfortune.",
+      "Regret gone."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "節 is a bamboo joint, hence limit and measure; 'Measure', not Wilhelm's 'Limitation'."
+  }
+}

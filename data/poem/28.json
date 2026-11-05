@@ -1,0 +1,48 @@
+{
+  "number": 28,
+  "name_en": "Great Excess",
+  "judgment": [
+    "The ridgepole sags.",
+    "It is good to have somewhere to go.",
+    "It goes through."
+  ],
+  "image": [
+    "The marsh drowns the trees: Great Excess.",
+    "So the noble one stands alone without fear,",
+    "leaves the world without sadness."
+  ],
+  "lines": [
+    [
+      "White rushes spread underneath.",
+      "No harm."
+    ],
+    [
+      "A dry poplar puts out shoots.",
+      "An old man gets a young wife.",
+      "Nothing unfavourable."
+    ],
+    [
+      "The ridgepole sags.",
+      "Misfortune."
+    ],
+    [
+      "The ridgepole rises: good.",
+      "Anything else: shame."
+    ],
+    [
+      "A dry poplar puts out flowers.",
+      "An old woman gets a young husband.",
+      "No harm, no praise."
+    ],
+    [
+      "Fording too far,",
+      "the water over your head.",
+      "Misfortune — no harm."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "大過 great going-past; paired with 62 Small Excess. Not Wilhelm's 'Preponderance of the Great'.",
+    "L6": "過涉滅頂 fording past, head drowned (滅頂) — yet 無咎, the paradox kept."
+  }
+}

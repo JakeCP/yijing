@@ -1,0 +1,52 @@
+{
+  "number": 42,
+  "name_en": "Adding",
+  "judgment": [
+    "It is good to have somewhere to go.",
+    "It is good to ford the great river."
+  ],
+  "image": [
+    "Wind and thunder: Adding.",
+    "So the noble one, seeing good, moves towards it;",
+    "having faults, changes them."
+  ],
+  "lines": [
+    [
+      "It is good to use this for great work.",
+      "Great good. No harm."
+    ],
+    [
+      "Someone adds to it —",
+      "a tortoise of ten strings, not to be refused.",
+      "Holding firm, long: good.",
+      "The king offers to the god on high: good."
+    ],
+    [
+      "Added to by a time of misfortune: no harm.",
+      "There is trust, walking the middle;",
+      "tell the duke, jade tablet in hand."
+    ],
+    [
+      "Walking the middle:",
+      "tell the duke — he follows.",
+      "It is good to use this, in trust,",
+      "to move the state."
+    ],
+    [
+      "There is trust, a kindly heart:",
+      "do not ask — great good.",
+      "There is trust: kindness answers my virtue."
+    ],
+    [
+      "No one adds to it;",
+      "someone strikes it.",
+      "A heart set up without constancy.",
+      "Misfortune."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "益 is overflow, adding to; 'Adding', paired with 41 Lessening.",
+    "L3": "用凶事: gain that comes through another's ill time (relief work, funerals) — 'by a time of misfortune'."
+  }
+}

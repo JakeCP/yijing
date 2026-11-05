@@ -1,0 +1,53 @@
+{
+  "number": 51,
+  "name_en": "Thunder",
+  "judgment": [
+    "It goes through.",
+    "Thunder comes, shock upon shock —",
+    "and laughter and talk again.",
+    "Thunder startles a hundred miles;",
+    "the sacrificial ladle is not dropped."
+  ],
+  "image": [
+    "Thunder, repeated: Thunder.",
+    "So the noble one, in fear and trembling,",
+    "sets himself in order."
+  ],
+  "lines": [
+    [
+      "Thunder comes, shock upon shock;",
+      "afterwards, laughter and talk.",
+      "Good."
+    ],
+    [
+      "Thunder comes: danger.",
+      "A hundred thousand cowries lost —",
+      "climb to the nine mounds.",
+      "Do not chase them: in seven days, got back."
+    ],
+    [
+      "Thunder, stunned, stunned.",
+      "Moving in thunder: no harm."
+    ],
+    [
+      "Thunder — stuck in mud."
+    ],
+    [
+      "Thunder going and coming: danger.",
+      "A hundred thousand — nothing lost.",
+      "There is work to do."
+    ],
+    [
+      "Thunder: shrinking back, eyes darting.",
+      "To march: misfortune.",
+      "It strikes not you but your neighbour: no harm.",
+      "Over marriages, there is talk."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "震 doubled thunder trigram; the thing named, not Wilhelm's 'The Arousing (Shock, Thunder)'.",
+    "judgment": "匕鬯 the ladle and aromatic sacrificial wine, held steady through the shock.",
+    "L2": "億 a vast count ('a hundred thousand' cowrie money); same measure in L5, kept identical."
+  }
+}

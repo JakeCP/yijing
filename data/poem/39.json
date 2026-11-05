@@ -1,0 +1,42 @@
+{
+  "number": 39,
+  "name_en": "Limping",
+  "judgment": [
+    "It is good in the south-west;",
+    "not good in the north-east.",
+    "It is good to see the great person.",
+    "Holding firm: good."
+  ],
+  "image": [
+    "Water on the mountain: Limping.",
+    "So the noble one turns back on himself",
+    "and mends his virtue."
+  ],
+  "lines": [
+    [
+      "Going: limping. Coming: praise."
+    ],
+    [
+      "The king's servant, limping, limping —",
+      "not for his own sake."
+    ],
+    [
+      "Going on limps; coming, turn back."
+    ],
+    [
+      "Going on limps; coming, join together."
+    ],
+    [
+      "Great limping — friends come."
+    ],
+    [
+      "Going: limping. Coming: great. Good.",
+      "It is good to see the great person."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "蹇 is lameness, a limping halt; 'Limping', not Wilhelm's 'Obstruction'.",
+    "judgment": "South-west level, north-east steep — directions kept without the traditional topography glossed in."
+  }
+}

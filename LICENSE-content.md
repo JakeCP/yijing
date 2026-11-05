@@ -27,9 +27,11 @@ Attribution shown: “English translation: James Legge (1882).”
 
 ## The rendering (`poem`) and English names — CC BY 4.0
 
-The poetic rendering and the English hexagram names (Phase 4; not yet
-present) are original work for this site, © the site authors, licensed
+The poetic rendering and the English hexagram names (Phase 4) are
+original work for this site, © the site authors, licensed
 under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+Attribution shown: “A rendering — © the site authors, CC BY 4.0.”
 
 ## Fonts — SIL Open Font License 1.1
 

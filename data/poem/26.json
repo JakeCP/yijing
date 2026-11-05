@@ -1,0 +1,47 @@
+{
+  "number": 26,
+  "name_en": "Great Store",
+  "judgment": [
+    "It is good to hold firm.",
+    "Not eating at home: good.",
+    "It is good to ford the great river."
+  ],
+  "image": [
+    "Heaven inside the mountain: Great Store.",
+    "So the noble one grows rich in former words and past deeds,",
+    "storing up virtue."
+  ],
+  "lines": [
+    [
+      "There is danger:",
+      "it is good to stop."
+    ],
+    [
+      "The cart sheds a spoke."
+    ],
+    [
+      "Fine horses, chasing.",
+      "It is good to hold firm in hardship.",
+      "Daily, drill cart and guard.",
+      "It is good to have somewhere to go."
+    ],
+    [
+      "A board on the young bull's horns.",
+      "Great good."
+    ],
+    [
+      "Teeth of a gelded pig.",
+      "Good."
+    ],
+    [
+      "Carrying heaven's high road.",
+      "It goes through."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "大畜 great storing/restraining; paired with 9 Small Store. Not Wilhelm's 'Taming Power of the Great'.",
+    "L2": "輿說輻: same wording as 9 L3 in the base text, so the same English, word for word.",
+    "L4": "牿 a board bound across a young bull's horns so it cannot gore."
+  }
+}

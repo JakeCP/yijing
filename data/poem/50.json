@@ -1,0 +1,53 @@
+{
+  "number": 50,
+  "name_en": "Bronze Pot",
+  "judgment": [
+    "Great good. It goes through."
+  ],
+  "image": [
+    "Fire up over wood: Bronze Pot.",
+    "So the noble one sets his place straight",
+    "and holds the charge firm."
+  ],
+  "lines": [
+    [
+      "The pot, feet upturned:",
+      "it is good to empty out the dregs.",
+      "A concubine taken, for her son.",
+      "No harm."
+    ],
+    [
+      "The pot has food in it.",
+      "My enemy is sick",
+      "and cannot come near me.",
+      "Good."
+    ],
+    [
+      "The pot's ears are changed; it cannot be carried.",
+      "The pheasant fat goes uneaten.",
+      "Rain is coming: regret thins.",
+      "In the end, good."
+    ],
+    [
+      "The pot's leg breaks.",
+      "The duke's stew is spilled,",
+      "its juices soaking.",
+      "Misfortune."
+    ],
+    [
+      "The pot: yellow ears,",
+      "a carrying-bar of metal.",
+      "It is good to hold firm."
+    ],
+    [
+      "The pot: a carrying-bar of jade.",
+      "Great good.",
+      "Nothing unfavourable."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "鼎 is the three-legged bronze cooking vessel; 'Bronze Pot', not Wilhelm's 'The Cauldron'.",
+    "L1": "出否 emptying what is bad/stale (否 as foul matter here, not hexagram 12)."
+  }
+}

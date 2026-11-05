@@ -1,0 +1,46 @@
+{
+  "number": 32,
+  "name_en": "Lasting",
+  "judgment": [
+    "It goes through. No harm.",
+    "It is good to hold firm.",
+    "It is good to have somewhere to go."
+  ],
+  "image": [
+    "Thunder and wind: Lasting.",
+    "So the noble one stands firm",
+    "and does not change direction."
+  ],
+  "lines": [
+    [
+      "Sinking deep for lasting:",
+      "holding firm, misfortune.",
+      "No good anywhere."
+    ],
+    [
+      "Regret gone."
+    ],
+    [
+      "Not lasting in virtue:",
+      "perhaps shame borne for it.",
+      "Holding firm: shame."
+    ],
+    [
+      "In the field, no game."
+    ],
+    [
+      "Lasting in virtue, holding firm:",
+      "for a wife, good;",
+      "for a husband, misfortune."
+    ],
+    [
+      "Shaking lasting to pieces.",
+      "Misfortune."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "恆 is constancy through time; 'Lasting', not Wilhelm's 'Duration'.",
+    "L1": "浚恆 digging deep at once for permanence — depth seized too soon."
+  }
+}

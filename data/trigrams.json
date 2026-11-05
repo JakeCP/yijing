@@ -2,7 +2,7 @@
   {
     "name_zh": "乾",
     "name_pinyin": "Qián",
-    "name_en": null,
+    "name_en": "Heaven",
     "symbol": "☰",
     "image_zh": "天",
     "image_pinyin": "Tiān",
@@ -15,7 +15,7 @@
   {
     "name_zh": "坤",
     "name_pinyin": "Kūn",
-    "name_en": null,
+    "name_en": "Earth",
     "symbol": "☷",
     "image_zh": "地",
     "image_pinyin": "Dì",
@@ -28,7 +28,7 @@
   {
     "name_zh": "震",
     "name_pinyin": "Zhèn",
-    "name_en": null,
+    "name_en": "Thunder",
     "symbol": "☳",
     "image_zh": "雷",
     "image_pinyin": "Léi",
@@ -41,7 +41,7 @@
   {
     "name_zh": "巽",
     "name_pinyin": "Xùn",
-    "name_en": null,
+    "name_en": "Wind",
     "symbol": "☴",
     "image_zh": "風",
     "image_pinyin": "Fēng",
@@ -54,7 +54,7 @@
   {
     "name_zh": "坎",
     "name_pinyin": "Kǎn",
-    "name_en": null,
+    "name_en": "Water",
     "symbol": "☵",
     "image_zh": "水",
     "image_pinyin": "Shuǐ",
@@ -67,7 +67,7 @@
   {
     "name_zh": "離",
     "name_pinyin": "Lí",
-    "name_en": null,
+    "name_en": "Fire",
     "symbol": "☲",
     "image_zh": "火",
     "image_pinyin": "Huǒ",
@@ -80,7 +80,7 @@
   {
     "name_zh": "艮",
     "name_pinyin": "Gèn",
-    "name_en": null,
+    "name_en": "Mountain",
     "symbol": "☶",
     "image_zh": "山",
     "image_pinyin": "Shān",
@@ -93,7 +93,7 @@
   {
     "name_zh": "兌",
     "name_pinyin": "Duì",
-    "name_en": null,
+    "name_en": "Marsh",
     "symbol": "☱",
     "image_zh": "澤",
     "image_pinyin": "Zé",

@@ -1,0 +1,50 @@
+{
+  "number": 56,
+  "name_en": "Travelling",
+  "judgment": [
+    "It goes through a little.",
+    "On the road, holding firm: good."
+  ],
+  "image": [
+    "Fire on the mountain: Travelling.",
+    "So the noble one is clear and careful in punishments,",
+    "and keeps no case waiting."
+  ],
+  "lines": [
+    [
+      "Travelling, petty, petty —",
+      "this is where disaster is got."
+    ],
+    [
+      "Travelling, reaching a lodging,",
+      "his money held to his chest,",
+      "he gets a young servant. Holding firm."
+    ],
+    [
+      "Travelling: the lodging burns down.",
+      "The young servant is lost.",
+      "Holding firm: danger."
+    ],
+    [
+      "Travelling, at a resting place,",
+      "he has his money and his axe.",
+      "My heart is not glad."
+    ],
+    [
+      "Shooting a pheasant: one arrow lost.",
+      "In the end, praise, and a posting."
+    ],
+    [
+      "A bird: its nest burns.",
+      "The traveller first laughs,",
+      "then wails aloud.",
+      "A cow lost, in ease. Misfortune."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "旅 is the sojourner away from home; 'Travelling' (the state, not Wilhelm's person 'The Wanderer').",
+    "L5": "譽命 praise and an official charge/appointment — 'a posting'.",
+    "L6": "喪牛于易: 易 as ease again (cf. 34 L5), loss through carelessness at rest."
+  }
+}

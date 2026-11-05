@@ -1,0 +1,48 @@
+{
+  "number": 54,
+  "name_en": "A Sister Marries",
+  "judgment": [
+    "To march: misfortune.",
+    "No good anywhere."
+  ],
+  "image": [
+    "Thunder over the marsh: A Sister Marries.",
+    "So the noble one, through to the very end,",
+    "knows what is spoiled."
+  ],
+  "lines": [
+    [
+      "A sister married as a younger handmaid.",
+      "Lame, yet can tread.",
+      "To march: good."
+    ],
+    [
+      "One-eyed, yet can see.",
+      "It is good for the hidden one to hold firm."
+    ],
+    [
+      "A sister married as one who must wait —",
+      "sent back, and married as a handmaid after all."
+    ],
+    [
+      "A sister's marriage misses its date.",
+      "Married late, there is a time."
+    ],
+    [
+      "Di Yi gives his sister in marriage.",
+      "The ruler's sleeves are not as fine",
+      "as the handmaid's sleeves.",
+      "The moon is almost full: good."
+    ],
+    [
+      "The woman holds a basket: nothing in it.",
+      "The young man stabs a sheep: no blood.",
+      "No good anywhere."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "歸妹 a younger sister given in marriage; 'A Sister Marries', not Wilhelm's 'The Marrying Maiden'.",
+    "L3": "須 a waiting-servant/attendant status; 娣 the younger sister-bridesmaid who accompanies the bride."
+  }
+}

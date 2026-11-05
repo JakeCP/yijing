@@ -2,20 +2,20 @@
   "number": 3,
   "name_en": "Sprouting",
   "judgment": [
-    "Great, through, favourable — hold firm.",
+    "Begin greatly, and go through.",
+    "It is good to hold firm.",
     "Do not set out anywhere.",
-    "Favours setting up lords."
+    "It is good to set up lords."
   ],
   "image": [
     "Clouds and thunder: Sprouting.",
-    "The noble one, by this,",
-    "sorts the warp threads."
+    "So the noble one sorts the warp threads."
   ],
   "lines": [
     [
       "Circling a great rock.",
-      "Favours staying, holding firm.",
-      "Favours setting up lords."
+      "It is good to stay and hold firm.",
+      "It is good to set up lords."
     ],
     [
       "Halting, turning — horses wheeling back.",
@@ -38,7 +38,7 @@
     [
       "Its fat stored up.",
       "Holding firm in small things: good.",
-      "In great things: ill."
+      "In great things: misfortune."
     ],
     [
       "Horses wheeling back.",
@@ -47,12 +47,8 @@
   ],
   "special": null,
   "notes": {
-    "name_en": "屯 （說文： 屯難也，象艸木之初生） is a sprout forcing the ground; it also means gather/store/garrison (active in 'setting up lords' and L5's stored fat). Title takes the sprout as primary, gathering as overtone.",
-    "judgment": "元亨利貞勿用有攸往利建侯。 Despite comma-per-word punctuation in the base text, 勿用有攸往 is read as one phrase ('do not set out anywhere'); read as separate items it contradicts L1's staying. 建侯 = setting up lords as helpers.",
-    "image": "雲雷屯；君子以經綸。 Upper water as cloud over lower thunder. 經綸 kept as its concrete craft — sorting warp threads — not Legge's government gloss.",
-    "L1": "初九 磐桓。 Binome for hesitant circling, kept literal with 磐 'great rock' rather than abstract 'difficulty in advancing'. 利居貞 per glossary.",
-    "L2": "六二 屯如邅如乘馬班如。匪寇婚媾女子貞不字十年乃字。 班如 refrain fixed as 'horses wheeling back' in L2/L4/L6. 字 read as betrothal ('promised'), matching 婚媾； the alternative 'bear a child' is rejected — the scene is a marriage party, not a birth. 女子 = the girl.",
-    "L3": "六三 既鹿無虞惟入于林中君子幾不如舍往吝。 虞 is the forester/gamekeeper who guides the hunt — 'guide' keeps function without the office title. 幾 read as seeing the incipient turn early; 舍 （捨） = let go of the chase.",
-    "L5": "九五 屯其膏小貞吉大貞凶。 Here 屯 takes its store-up sense: 膏 fat/richness hoarded, not spread. 'Fat' kept literal. 小/大貞 supplied with 'things' as grammar only."
+    "judgment": "勿用有攸往 read as one phrase, 'do not set out anywhere'.",
+    "L2": "班如 refrain 'horses wheeling back' in L2/L4/L6, word for word. 字 as betrothal, 'promised'.",
+    "L5": "屯其膏: 屯 in its store-up sense; 膏 fat kept literal."
   }
 }

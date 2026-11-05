@@ -1,0 +1,53 @@
+{
+  "number": 24,
+  "name_en": "Coming Back",
+  "judgment": [
+    "It goes through.",
+    "Out and in, no sickness.",
+    "Friends come: no harm.",
+    "Turning back along the road —",
+    "seven days, and the return comes.",
+    "It is good to have somewhere to go."
+  ],
+  "image": [
+    "Thunder in the earth: Coming Back.",
+    "So the early kings, at the turning day, closed the passes.",
+    "Merchants did not travel,",
+    "and the ruler did not go round the regions."
+  ],
+  "lines": [
+    [
+      "Coming back from not far.",
+      "No call even for regret.",
+      "Great good."
+    ],
+    [
+      "Coming back at rest.",
+      "Good."
+    ],
+    [
+      "Coming back again and again: danger.",
+      "No harm."
+    ],
+    [
+      "Walking in the middle,",
+      "coming back alone."
+    ],
+    [
+      "Coming back solidly.",
+      "No regret."
+    ],
+    [
+      "Coming back, lost: misfortune, disaster on disaster.",
+      "Marching out ends in great defeat,",
+      "ruin for the ruler. Misfortune.",
+      "Ten years, and no marching again."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "復 is the turn back along the road; 'Coming Back', not Wilhelm's 'Return (The Turning Point)'.",
+    "image": "至日 the solstice 'turning day'; passes closed, rest enforced.",
+    "L6": "災眚 disaster from outside and harm from within, rendered 'disaster on disaster'."
+  }
+}

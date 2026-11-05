@@ -1,0 +1,43 @@
+{
+  "number": 58,
+  "name_en": "Gladness",
+  "judgment": [
+    "It goes through.",
+    "It is good to hold firm."
+  ],
+  "image": [
+    "Marsh joined to marsh: Gladness.",
+    "So the noble one joins friends",
+    "in talk and practice."
+  ],
+  "lines": [
+    [
+      "Gladness in harmony.",
+      "Good."
+    ],
+    [
+      "Gladness with trust.",
+      "Good. Regret gone."
+    ],
+    [
+      "Gladness coming on.",
+      "Misfortune."
+    ],
+    [
+      "Gladness weighed, not yet settled:",
+      "keep clear of sickness — there is joy."
+    ],
+    [
+      "Trust in what peels away:",
+      "there is danger."
+    ],
+    [
+      "Drawn on into gladness."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "兌 is open gladness (its trigram image is the marsh); 'Gladness', not Wilhelm's 'The Joyous, Lake'.",
+    "L4": "商 weighing deliberating; 介疾 keeping a firm border against sickness/court flatterers — 'keep clear'."
+  }
+}

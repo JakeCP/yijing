@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Phase 1 data build: fetch (pinned) -> parse -> oracle checks -> collate ->
-// overrides -> data/hexagrams.json + data/trigrams.json. Node >= 20, no deps.
+// Data build: fetch (pinned) -> parse -> oracle checks -> collate ->
+// overrides -> poem merge (Phase 4) -> data/hexagrams.json + data/trigrams.json.
+// Node >= 20, no deps.
 //
 // Usage:
 //   node scripts/build.mjs           # use scripts/.cache, verify provenance hashes
@@ -226,6 +227,35 @@ function applyOverrides(hexagrams) {
   return list.length;
 }
 
+// Trigram name_en (Phase 4, docs/POEM_STYLE.md): natural-image nouns.
+const TRIGRAM_NAME_EN = { '乾': 'Heaven', '坤': 'Earth', '震': 'Thunder', '巽': 'Wind', '坎': 'Water', '離': 'Fire', '艮': 'Mountain', '兌': 'Marsh' };
+
+// Poem merge (Phase 4): data/poem/NN.json -> texts.poem + name_en.
+// `notes` is review-only and stripped; files are local (no provenance pin).
+function mergePoems(hexagrams) {
+  const dir = path.join(ROOT, 'data', 'poem');
+  let merged = 0;
+  for (const hex of hexagrams) {
+    const f = path.join(dir, `${String(hex.number).padStart(2, '0')}.json`);
+    if (!fs.existsSync(f)) continue;
+    const poem = JSON.parse(fs.readFileSync(f, 'utf8'));
+    if (poem.number !== hex.number) throw new Error(`poem ${f}: number ${poem.number} != ${hex.number}`);
+    if (typeof poem.name_en !== 'string' || !poem.name_en) throw new Error(`poem ${f}: missing name_en`);
+    for (const slot of ['judgment', 'image', 'lines']) {
+      if (!(slot in poem)) throw new Error(`poem ${f}: missing ${slot}`);
+    }
+    hex.name_en = poem.name_en;
+    hex.texts.poem = {
+      judgment: poem.judgment,
+      image: poem.image,
+      lines: poem.lines,
+      special: poem.special ?? null,
+    };
+    merged++;
+  }
+  return merged;
+}
+
 async function main() {
   fs.mkdirSync(CACHE, { recursive: true });
   const needFetch = DO_FETCH || !fs.existsSync(PROVENANCE_PATH);
@@ -374,6 +404,8 @@ async function main() {
   // ---- overrides + write data ----
   const applied = applyOverrides(hexagrams);
   console.log(`overrides applied: ${applied}`);
+  const poems = mergePoems(hexagrams);
+  console.log(`poems merged: ${poems}/64 (notes stripped)`);
 
   // Plain-text dumps of the FINAL (post-override) slots, for the read-through.
   const dump = (tr) => hexagrams.map((h) => {
@@ -385,8 +417,9 @@ async function main() {
   }).join('\n\n');
   fs.writeFileSync(path.join(CACHE, 'dump-zh.txt'), `${dump('zh')}\n`);
   fs.writeFileSync(path.join(CACHE, 'dump-legge.txt'), `${dump('legge')}\n`);
+  if (poems) fs.writeFileSync(path.join(CACHE, 'dump-poem.txt'), `${dump('poem')}\n`);
   const trigrams = TRIGRAMS.map((t) => ({
-    name_zh: t.name_zh, name_pinyin: t.name_pinyin, name_en: null,
+    name_zh: t.name_zh, name_pinyin: t.name_pinyin, name_en: TRIGRAM_NAME_EN[t.name_zh] ?? null,
     symbol: t.symbol, image_zh: t.image_zh, image_pinyin: t.image_pinyin, bits: t.bits,
   }));
   fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });

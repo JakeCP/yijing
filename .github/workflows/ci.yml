@@ -15,7 +15,7 @@ jobs:
       - name: Engine tests (exact enumeration, King Wen vectors, routing)
         run: node --test
       - name: Validate data
-        run: node scripts/validate.mjs --require zh,legge
+        run: node scripts/validate.mjs --require zh,legge,poem
       - name: Verify font subset coverage
         run: |
           python3 -m pip install --quiet fonttools brotli

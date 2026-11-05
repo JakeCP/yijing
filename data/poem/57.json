@@ -1,0 +1,50 @@
+{
+  "number": 57,
+  "name_en": "Wind",
+  "judgment": [
+    "It goes through a little.",
+    "It is good to have somewhere to go.",
+    "It is good to see the great person."
+  ],
+  "image": [
+    "Wind upon wind: Wind.",
+    "So the noble one repeats the charge",
+    "and carries business through."
+  ],
+  "lines": [
+    [
+      "Forward, back.",
+      "It is good for a fighting man to hold firm."
+    ],
+    [
+      "Yielding, under the bed,",
+      "with scribes and shamans in hosts.",
+      "Good. No harm."
+    ],
+    [
+      "Yielding again and again.",
+      "Shame."
+    ],
+    [
+      "Regret gone.",
+      "In the field, three grades of game are caught."
+    ],
+    [
+      "Holding firm: good. Regret gone; nothing unfavourable.",
+      "No beginning, but an end.",
+      "Three days before geng, three days after geng.",
+      "Good."
+    ],
+    [
+      "Yielding, under the bed:",
+      "his money and his axe are lost.",
+      "Holding firm: misfortune."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "巽 doubled wind trigram, the yielding entry of wind; the thing named, not Wilhelm's 'The Gentle'.",
+    "L5": "庚 geng, seventh stem-day (cf. 甲 in 18); the day-names kept where the count matters.",
+    "L6": "資斧 money-and-axe — the same stock phrase as 56 L4, kept in the same words."
+  }
+}

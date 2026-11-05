@@ -1,0 +1,50 @@
+{
+  "number": 64,
+  "name_en": "Not Yet Across",
+  "judgment": [
+    "It goes through.",
+    "A small fox, almost across —",
+    "its tail gets wet.",
+    "No good anywhere."
+  ],
+  "image": [
+    "Fire over water: Not Yet Across.",
+    "So the noble one carefully tells things apart",
+    "and puts each in its place."
+  ],
+  "lines": [
+    [
+      "Wetting your tail.",
+      "Shame."
+    ],
+    [
+      "Dragging your wheels.",
+      "Holding firm: good."
+    ],
+    [
+      "Not yet across. To march: misfortune.",
+      "It is good to ford the great river."
+    ],
+    [
+      "Holding firm: good. Regret gone.",
+      "Thundering, he strikes the Guifang;",
+      "three years — rewarded with a great state."
+    ],
+    [
+      "Holding firm: good. No regret.",
+      "The light of the noble one:",
+      "there is trust. Good."
+    ],
+    [
+      "There is trust in drinking wine: no harm.",
+      "Wetting your head —",
+      "trust there may be, but this is lost."
+    ]
+  ],
+  "special": null,
+  "notes": {
+    "name_en": "未濟 the crossing not yet made; paired with 63 Already Across. Not Wilhelm's 'Before Completion'.",
+    "L1": "The wet tail of the judgment's fox, now in the first line; the water sequence (tail, wheels, head) mirrors 63 in reverse.",
+    "L6": "有孚失是 'though there is trust, losing this (rightness)' — kept open as 'but this is lost'."
+  }
+}

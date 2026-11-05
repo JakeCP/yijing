@@ -3,7 +3,7 @@
     "number": 1,
     "name_zh": "乾",
     "name_pinyin": "Qián",
-    "name_en": null,
+    "name_en": "Heaven",
     "symbol": "䷀",
     "bits": [
       1,
@@ -77,6 +77,50 @@
         "special": [
           "(The lines of this hexagram are all strong and undivided, as appears from) the use of the number nine. If the host of dragons (thus) appearing were to divest themselves of their heads, there would be good fortune."
         ]
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to hold firm."
+        ],
+        "image": [
+          "Heaven moves, strong.",
+          "So the noble one keeps strong",
+          "and does not rest."
+        ],
+        "lines": [
+          [
+            "The dragon lies hidden.",
+            "Do not act."
+          ],
+          [
+            "The dragon appears in the field.",
+            "It is good to see the great person."
+          ],
+          [
+            "All day the noble one is strong, and strong again,",
+            "at dusk still wary, as if in danger.",
+            "No harm."
+          ],
+          [
+            "Perhaps leaping —",
+            "still in the deep.",
+            "No harm."
+          ],
+          [
+            "The dragon flies in heaven.",
+            "It is good to see the great person."
+          ],
+          [
+            "The dragon flies too high.",
+            "There will be regret."
+          ]
+        ],
+        "special": [
+          "Dragons appear together,",
+          "no head among them.",
+          "Good."
+        ]
       }
     }
   },
@@ -84,7 +128,7 @@
     "number": 2,
     "name_zh": "坤",
     "name_pinyin": "Kūn",
-    "name_en": null,
+    "name_en": "Earth",
     "symbol": "䷁",
     "bits": [
       0,
@@ -158,6 +202,53 @@
         "special": [
           "(The lines of this hexagram are all weak and divided, as appears from) the use of the number six. If those (who are thus represented) be perpetually correct and firm, advantage will arise."
         ]
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to hold firm, as a mare does.",
+          "The noble one has somewhere to go:",
+          "first lost, then a master is found.",
+          "In the south-west, friends are found;",
+          "in the north-east, friends are lost.",
+          "At rest, holding firm: good."
+        ],
+        "image": [
+          "The earth lies open to all: Earth.",
+          "So the noble one carries things",
+          "on deep virtue."
+        ],
+        "lines": [
+          [
+            "Treading on frost —",
+            "hard ice is coming."
+          ],
+          [
+            "Straight, square, great.",
+            "Nothing practised,",
+            "yet nothing unfavourable."
+          ],
+          [
+            "A brightness held inside: hold firm.",
+            "In the king's service, perhaps —",
+            "nothing completed, yet brought to an end."
+          ],
+          [
+            "A tied-up sack.",
+            "No harm, no praise."
+          ],
+          [
+            "A yellow skirt.",
+            "Great good."
+          ],
+          [
+            "Dragons fight in the wilds.",
+            "Their blood is black and yellow."
+          ]
+        ],
+        "special": [
+          "It is good to hold firm, long."
+        ]
       }
     }
   },
@@ -165,7 +256,7 @@
     "number": 3,
     "name_zh": "屯",
     "name_pinyin": "Zhūn",
-    "name_en": null,
+    "name_en": "Sprouting",
     "symbol": "䷂",
     "bits": [
       1,
@@ -235,6 +326,53 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to hold firm.",
+          "Do not set out anywhere.",
+          "It is good to set up lords."
+        ],
+        "image": [
+          "Clouds and thunder: Sprouting.",
+          "So the noble one sorts the warp threads."
+        ],
+        "lines": [
+          [
+            "Circling a great rock.",
+            "It is good to stay and hold firm.",
+            "It is good to set up lords."
+          ],
+          [
+            "Halting, turning — horses wheeling back.",
+            "Not raiders — suitors.",
+            "The girl holds firm: not promised.",
+            "Ten years — then promised."
+          ],
+          [
+            "After a deer, with no guide —",
+            "only deeper into the forest.",
+            "The noble one sees early: better to let go.",
+            "To go on: shame."
+          ],
+          [
+            "Horses wheeling back.",
+            "Seeking marriage.",
+            "Going: good.",
+            "Nothing unfavourable."
+          ],
+          [
+            "Its fat stored up.",
+            "Holding firm in small things: good.",
+            "In great things: misfortune."
+          ],
+          [
+            "Horses wheeling back.",
+            "Weeping blood in streams."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -242,7 +380,7 @@
     "number": 4,
     "name_zh": "蒙",
     "name_pinyin": "Méng",
-    "name_en": null,
+    "name_en": "Untaught",
     "symbol": "䷃",
     "bits": [
       0,
@@ -312,6 +450,55 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is not I who seek the untaught child —",
+          "the untaught child seeks me.",
+          "At the first casting, I tell.",
+          "A second, a third — that is troubling,",
+          "and what troubles gets no telling.",
+          "It is good to hold firm."
+        ],
+        "image": [
+          "A spring comes out under the mountain: Untaught.",
+          "So the noble one acts with decision",
+          "and nurtures virtue."
+        ],
+        "lines": [
+          [
+            "To open up the untaught,",
+            "it is good to use punishments —",
+            "to strike off fetters and cords.",
+            "To go on with it: shame."
+          ],
+          [
+            "To take the untaught in: good.",
+            "To take in a wife: good.",
+            "The son can keep the house."
+          ],
+          [
+            "Do not take this woman.",
+            "She sees a man of gold",
+            "and is not her own.",
+            "No good anywhere."
+          ],
+          [
+            "Shut in, untaught.",
+            "Shame."
+          ],
+          [
+            "The untaught child.",
+            "Good."
+          ],
+          [
+            "Striking at the untaught.",
+            "It is not good to be the raider;",
+            "it is good to fend raiders off."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -319,7 +506,7 @@
     "number": 5,
     "name_zh": "需",
     "name_pinyin": "Xū",
-    "name_en": null,
+    "name_en": "Held Up",
     "symbol": "䷄",
     "bits": [
       1,
@@ -389,6 +576,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "There is trust.",
+          "Bright, it goes through.",
+          "Holding firm: good.",
+          "It is good to ford the great river."
+        ],
+        "image": [
+          "Clouds rise up to heaven: Held Up.",
+          "So the noble one eats and drinks,",
+          "and feasts at ease."
+        ],
+        "lines": [
+          [
+            "Waiting at the edge of town.",
+            "It is good to keep constant.",
+            "No harm."
+          ],
+          [
+            "Waiting on the sand.",
+            "There is a little talk.",
+            "In the end, good."
+          ],
+          [
+            "Waiting in the mud",
+            "brings raiders coming."
+          ],
+          [
+            "Waiting in blood —",
+            "out of the hole."
+          ],
+          [
+            "Waiting at wine and food.",
+            "Holding firm: good."
+          ],
+          [
+            "Down into the hole.",
+            "Three guests come uninvited.",
+            "Honour them: in the end, good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -396,7 +626,7 @@
     "number": 6,
     "name_zh": "訟",
     "name_pinyin": "Sòng",
-    "name_en": null,
+    "name_en": "Lawsuit",
     "symbol": "䷅",
     "bits": [
       0,
@@ -466,6 +696,55 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "There is trust, and it is blocked.",
+          "Wary, and held to the middle: good.",
+          "Pressed to the end: misfortune.",
+          "It is good to see the great person.",
+          "It is not good to ford the great river."
+        ],
+        "image": [
+          "Heaven and water move against each other: Lawsuit.",
+          "So the noble one, starting anything,",
+          "plans the beginning."
+        ],
+        "lines": [
+          [
+            "Do not drag the matter on.",
+            "There is a little talk.",
+            "In the end, good."
+          ],
+          [
+            "The suit cannot be won.",
+            "Go home and slip away —",
+            "the town's three hundred households",
+            "take no harm."
+          ],
+          [
+            "Living on old virtue.",
+            "Holding firm: danger — in the end, good.",
+            "In the king's service, perhaps:",
+            "nothing completed."
+          ],
+          [
+            "The suit cannot be won.",
+            "Turn back, accept what is charged,",
+            "change, and rest holding firm.",
+            "Good."
+          ],
+          [
+            "To plead the suit:",
+            "great good."
+          ],
+          [
+            "Perhaps given a belt of honour —",
+            "by morning's end,",
+            "three times stripped of it."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -473,7 +752,7 @@
     "number": 7,
     "name_zh": "師",
     "name_pinyin": "Shī",
-    "name_en": null,
+    "name_en": "Army",
     "symbol": "䷆",
     "bits": [
       0,
@@ -543,6 +822,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Hold firm.",
+          "An elder in charge:",
+          "good, and no harm."
+        ],
+        "image": [
+          "Water in the earth: Army.",
+          "So the noble one makes room for the people",
+          "and gathers the many in."
+        ],
+        "lines": [
+          [
+            "The army marches out in order.",
+            "Without order: misfortune."
+          ],
+          [
+            "In the midst of the army:",
+            "good, and no harm.",
+            "Three times the king gives the charge."
+          ],
+          [
+            "The army, perhaps,",
+            "carts back its corpses.",
+            "Misfortune."
+          ],
+          [
+            "The army camps to the left.",
+            "No harm."
+          ],
+          [
+            "Game in the field — seize it, and speak out.",
+            "No harm.",
+            "The eldest leads the army; the younger carts corpses.",
+            "Holding firm: misfortune."
+          ],
+          [
+            "The great ruler gives the charge:",
+            "open states, found houses.",
+            "Do not use the small person."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -550,7 +873,7 @@
     "number": 8,
     "name_zh": "比",
     "name_pinyin": "Bì",
-    "name_en": null,
+    "name_en": "Drawing Close",
     "symbol": "䷇",
     "bits": [
       0,
@@ -620,6 +943,51 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Good.",
+          "Casting again, back to the source:",
+          "begin greatly, hold firm long — no harm.",
+          "The unrestful are coming even now.",
+          "The latecomer: misfortune."
+        ],
+        "image": [
+          "Water on the earth: Drawing Close.",
+          "So the early kings set up the many states",
+          "and kept close to the lords."
+        ],
+        "lines": [
+          [
+            "There is trust in drawing close: no harm.",
+            "Trust like a jar filled full —",
+            "in the end something else comes.",
+            "Good."
+          ],
+          [
+            "Drawing close from within.",
+            "Holding firm: good."
+          ],
+          [
+            "Drawing close",
+            "to the wrong people."
+          ],
+          [
+            "Drawing close outward.",
+            "Holding firm: good."
+          ],
+          [
+            "Drawing close, openly.",
+            "The king drives the hunt from three sides",
+            "and lets the game in front go.",
+            "The townsfolk are not warned. Good."
+          ],
+          [
+            "Drawing close with no head to it.",
+            "Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -627,7 +995,7 @@
     "number": 9,
     "name_zh": "小畜",
     "name_pinyin": "Xiǎo Xù",
-    "name_en": null,
+    "name_en": "Small Store",
     "symbol": "䷈",
     "bits": [
       1,
@@ -697,6 +1065,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "Thick clouds, no rain —",
+          "from our western outskirts."
+        ],
+        "image": [
+          "Wind moves across heaven: Small Store.",
+          "So the noble one refines",
+          "the pattern of virtue."
+        ],
+        "lines": [
+          [
+            "Coming back by the same road —",
+            "what harm in that? Good."
+          ],
+          [
+            "Led back.",
+            "Good."
+          ],
+          [
+            "The cart sheds a spoke.",
+            "Husband and wife glare at each other."
+          ],
+          [
+            "There is trust.",
+            "Blood goes, fear leaves.",
+            "No harm."
+          ],
+          [
+            "Trust, bound tight.",
+            "Rich through the neighbours."
+          ],
+          [
+            "Rain has come, and rest.",
+            "The wife carried on honoured virtue: holding firm, danger.",
+            "The moon is almost full.",
+            "For the noble one to march: misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -704,7 +1114,7 @@
     "number": 10,
     "name_zh": "履",
     "name_pinyin": "Lǚ",
-    "name_en": null,
+    "name_en": "Treading",
     "symbol": "䷉",
     "bits": [
       1,
@@ -774,6 +1184,47 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Treading on the tiger's tail —",
+          "it does not bite.",
+          "It goes through."
+        ],
+        "image": [
+          "Heaven above, marsh below: Treading.",
+          "So the noble one sorts high from low",
+          "and settles the people's will."
+        ],
+        "lines": [
+          [
+            "Treading plainly.",
+            "To go: no harm."
+          ],
+          [
+            "The road trodden, level and level.",
+            "The hidden one, holding firm: good."
+          ],
+          [
+            "One-eyed, and sees; lame, and treads.",
+            "Treading the tiger's tail: it bites. Misfortune.",
+            "A fighting man acting the great ruler."
+          ],
+          [
+            "Treading the tiger's tail,",
+            "fearful, fearful.",
+            "In the end, good."
+          ],
+          [
+            "Treading, decided.",
+            "Holding firm: danger."
+          ],
+          [
+            "Look at the treading, examine its signs.",
+            "As it turns back: great good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -781,7 +1232,7 @@
     "number": 11,
     "name_zh": "泰",
     "name_pinyin": "Tài",
-    "name_en": null,
+    "name_en": "Flowing",
     "symbol": "䷊",
     "bits": [
       1,
@@ -851,6 +1302,53 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "The small goes, the great comes.",
+          "Good — it goes through."
+        ],
+        "image": [
+          "Heaven and earth meet: Flowing.",
+          "So the ruler shapes the way of heaven and earth to its measure,",
+          "helps heaven and earth in what fits,",
+          "and so stands by the people."
+        ],
+        "lines": [
+          [
+            "Pulling up couch grass by its roots,",
+            "clump with clump.",
+            "To march: good."
+          ],
+          [
+            "Taking in the wild land,",
+            "fording the river on foot,",
+            "not leaving the far-off behind.",
+            "Friends are lost — honour is won on the middle road."
+          ],
+          [
+            "No flat without a slope, no going without return.",
+            "Holding firm in hardship: no harm.",
+            "Do not grieve — trust holds.",
+            "In food there is blessing."
+          ],
+          [
+            "Fluttering down, not rich,",
+            "with the neighbours —",
+            "no warning needed, where trust is."
+          ],
+          [
+            "Di Yi gives his sister in marriage.",
+            "Blessing: great good."
+          ],
+          [
+            "The city wall falls back into the moat.",
+            "Do not use the army.",
+            "Orders go out from your own town.",
+            "Holding firm: shame."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -858,7 +1356,7 @@
     "number": 12,
     "name_zh": "否",
     "name_pinyin": "Pǐ",
-    "name_en": null,
+    "name_en": "Blocked",
     "symbol": "䷋",
     "bits": [
       0,
@@ -928,6 +1426,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Blocked — the wrong people.",
+          "It is not good for the noble one to hold firm.",
+          "The great goes, the small comes."
+        ],
+        "image": [
+          "Heaven and earth do not meet: Blocked.",
+          "So the noble one keeps virtue spare and avoids trouble,",
+          "and will not take honour in salary."
+        ],
+        "lines": [
+          [
+            "Pulling couch grass by the roots,",
+            "clump with clump.",
+            "Holding firm: good — it goes through."
+          ],
+          [
+            "Taking orders.",
+            "For the small person: good.",
+            "For the great person: blocked — and through."
+          ],
+          [
+            "Shame, wrapped and held."
+          ],
+          [
+            "There is a charge: no harm.",
+            "The companions leave with blessing."
+          ],
+          [
+            "Blockage rests.",
+            "For the great person: good.",
+            "It could go! It could go! —",
+            "tie it to the mulberry clump."
+          ],
+          [
+            "Blockage overturned.",
+            "First blocked, then glad."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -935,7 +1475,7 @@
     "number": 13,
     "name_zh": "同人",
     "name_pinyin": "Tóng Rén",
-    "name_en": null,
+    "name_en": "People Together",
     "symbol": "䷌",
     "bits": [
       1,
@@ -1005,6 +1545,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "People together in the open country:",
+          "it goes through.",
+          "It is good to ford the great river.",
+          "It is good for the noble one to hold firm."
+        ],
+        "image": [
+          "Heaven with fire: People Together.",
+          "So the noble one sorts the clans",
+          "and tells things apart."
+        ],
+        "lines": [
+          [
+            "People together at the gate.",
+            "No harm."
+          ],
+          [
+            "People together at the clan shrine.",
+            "Shame."
+          ],
+          [
+            "Soldiers hidden in the thicket,",
+            "up on the high mound —",
+            "three years, and they do not rise."
+          ],
+          [
+            "Up on the wall —",
+            "cannot attack.",
+            "Good."
+          ],
+          [
+            "People together:",
+            "first they wail, then they laugh.",
+            "A great host at last brings meeting."
+          ],
+          [
+            "People together at the edge of town.",
+            "No regret."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1012,7 +1595,7 @@
     "number": 14,
     "name_zh": "大有",
     "name_pinyin": "Dà Yǒu",
-    "name_en": null,
+    "name_en": "Great Having",
     "symbol": "䷍",
     "bits": [
       1,
@@ -1082,6 +1665,45 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through."
+        ],
+        "image": [
+          "Fire up in heaven: Great Having.",
+          "So the noble one stops evil, lifts good,",
+          "and follows heaven's fair charge."
+        ],
+        "lines": [
+          [
+            "Nothing done that harms — that is not harm.",
+            "Through hardship: no harm."
+          ],
+          [
+            "A great cart to carry it.",
+            "Having somewhere to go:",
+            "no harm."
+          ],
+          [
+            "A duke presents it to the Son of Heaven.",
+            "The small person cannot."
+          ],
+          [
+            "Not swelling full.",
+            "No harm."
+          ],
+          [
+            "Trust meeting trust,",
+            "and dignity with it.",
+            "Good."
+          ],
+          [
+            "Help comes from heaven.",
+            "Good — nothing unfavourable."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1089,7 +1711,7 @@
     "number": 15,
     "name_zh": "謙",
     "name_pinyin": "Qiān",
-    "name_en": null,
+    "name_en": "Bowing Low",
     "symbol": "䷎",
     "bits": [
       0,
@@ -1159,6 +1781,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "The noble one has an ending."
+        ],
+        "image": [
+          "A mountain inside the earth: Bowing Low.",
+          "So the noble one takes from the much",
+          "and adds to the little,",
+          "weighs things and gives evenly."
+        ],
+        "lines": [
+          [
+            "Low, and low again, the noble one",
+            "fords the great river.",
+            "Good."
+          ],
+          [
+            "Bowing low, it sounds out.",
+            "Holding firm: good."
+          ],
+          [
+            "Toiling, bowing low,",
+            "the noble one has an ending.",
+            "Good."
+          ],
+          [
+            "Nothing unfavourable —",
+            "bowing low, hands spread wide."
+          ],
+          [
+            "Not rich, with the neighbours.",
+            "It is good to strike and invade.",
+            "Nothing unfavourable."
+          ],
+          [
+            "Bowing low, it sounds out.",
+            "It is good to march the army out,",
+            "to march on towns and states."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1166,7 +1831,7 @@
     "number": 16,
     "name_zh": "豫",
     "name_pinyin": "Yù",
-    "name_en": null,
+    "name_en": "Delight",
     "symbol": "䷏",
     "bits": [
       0,
@@ -1236,6 +1901,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good to set up lords",
+          "and march the army out."
+        ],
+        "image": [
+          "Thunder rises out of earth: Delight.",
+          "So the early kings made music and great offerings,",
+          "honouring virtue, presenting to the god on high,",
+          "in matching sacrifice to the ancestors."
+        ],
+        "lines": [
+          [
+            "Delight that sounds itself out.",
+            "Misfortune."
+          ],
+          [
+            "Firm as a rock,",
+            "not waiting out the day.",
+            "Holding firm: good."
+          ],
+          [
+            "Delight with eyes raised: regret.",
+            "Slow — and there is regret."
+          ],
+          [
+            "Delight from its source: great gain.",
+            "Do not doubt.",
+            "Friends gather like hair under a clasp."
+          ],
+          [
+            "Holding firm in sickness:",
+            "long ill, and does not die."
+          ],
+          [
+            "Delight in the dark.",
+            "What is made will change.",
+            "No harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1243,7 +1950,7 @@
     "number": 17,
     "name_zh": "隨",
     "name_pinyin": "Suí",
-    "name_en": null,
+    "name_en": "Going Along",
     "symbol": "䷐",
     "bits": [
       1,
@@ -1313,6 +2020,51 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to hold firm.",
+          "No harm."
+        ],
+        "image": [
+          "Thunder inside the marsh: Going Along.",
+          "So the noble one, as dusk comes on,",
+          "goes in to feast and rest."
+        ],
+        "lines": [
+          [
+            "The office changes.",
+            "Holding firm: good.",
+            "Out of the gate, dealings bear fruit."
+          ],
+          [
+            "Bound to the small boy,",
+            "losing the grown man."
+          ],
+          [
+            "Bound to the grown man,",
+            "losing the small boy.",
+            "Going along, what is sought is granted.",
+            "It is good to stay and hold firm."
+          ],
+          [
+            "Going along brings a catch.",
+            "Holding firm: misfortune.",
+            "Trust on the road, brought to light —",
+            "what harm?"
+          ],
+          [
+            "Trust in what is fine.",
+            "Good."
+          ],
+          [
+            "Held fast, bound fast,",
+            "then following, tied fast.",
+            "The king offers at the western mountain."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1320,7 +2072,7 @@
     "number": 18,
     "name_zh": "蠱",
     "name_pinyin": "Gǔ",
-    "name_en": null,
+    "name_en": "Spoiling",
     "symbol": "䷑",
     "bits": [
       0,
@@ -1390,6 +2142,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to ford the great river.",
+          "Three days before the first day,",
+          "three days after the first day."
+        ],
+        "image": [
+          "Wind under the mountain: Spoiling.",
+          "So the noble one stirs the people up",
+          "and nurtures virtue."
+        ],
+        "lines": [
+          [
+            "Sorting out the father's spoiling.",
+            "There is a son —",
+            "the father takes no harm.",
+            "Danger — in the end, good."
+          ],
+          [
+            "Sorting out the mother's spoiling:",
+            "you cannot hold firm."
+          ],
+          [
+            "Sorting out the father's spoiling:",
+            "a little regret,",
+            "no great harm."
+          ],
+          [
+            "Letting the father's spoiling be.",
+            "Going on, you will meet shame."
+          ],
+          [
+            "Sorting out the father's spoiling:",
+            "used, and praised."
+          ],
+          [
+            "Not serving kings and lords,",
+            "holding your own work high."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1397,7 +2192,7 @@
     "number": 19,
     "name_zh": "臨",
     "name_pinyin": "Lín",
-    "name_en": null,
+    "name_en": "Coming Near",
     "symbol": "䷒",
     "bits": [
       1,
@@ -1467,6 +2262,47 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to hold firm.",
+          "By the eighth month: misfortune."
+        ],
+        "image": [
+          "Earth above the marsh: Coming Near.",
+          "So the noble one teaches, and thinks, without end,",
+          "shelters and guards the people without bound."
+        ],
+        "lines": [
+          [
+            "Coming near, feeling together.",
+            "Holding firm: good."
+          ],
+          [
+            "Coming near, feeling together.",
+            "Good — nothing unfavourable."
+          ],
+          [
+            "Coming near sweetly:",
+            "no good anywhere.",
+            "Grieve over it, and there is no harm."
+          ],
+          [
+            "Coming right near.",
+            "No harm."
+          ],
+          [
+            "Coming near wisely —",
+            "what fits a great ruler.",
+            "Good."
+          ],
+          [
+            "Coming near solidly.",
+            "Good, and no harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1474,7 +2310,7 @@
     "number": 20,
     "name_zh": "觀",
     "name_pinyin": "Guān",
-    "name_en": null,
+    "name_en": "Looking",
     "symbol": "䷓",
     "bits": [
       0,
@@ -1544,6 +2380,45 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Hands washed, the offering not yet made —",
+          "there is trust, grave and held high."
+        ],
+        "image": [
+          "Wind moves over the earth: Looking.",
+          "So the early kings went round the regions,",
+          "looked at the people, and set up teaching."
+        ],
+        "lines": [
+          [
+            "A child's looking.",
+            "For the small person: no harm.",
+            "For the noble one: shame."
+          ],
+          [
+            "Looking through a crack.",
+            "It is good for a woman to hold firm."
+          ],
+          [
+            "Looking at my own life:",
+            "forward, back."
+          ],
+          [
+            "Looking at the light of the state.",
+            "It is good to be a guest of the king."
+          ],
+          [
+            "Looking at my own life.",
+            "The noble one: no harm."
+          ],
+          [
+            "Looking at that life.",
+            "The noble one: no harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1551,7 +2426,7 @@
     "number": 21,
     "name_zh": "噬嗑",
     "name_pinyin": "Shì Hé",
-    "name_en": null,
+    "name_en": "Teeth",
     "symbol": "䷔",
     "bits": [
       1,
@@ -1621,6 +2496,47 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is good to use the law courts."
+        ],
+        "image": [
+          "Thunder and lightning: Teeth.",
+          "So the early kings made punishments clear",
+          "and set the laws in order."
+        ],
+        "lines": [
+          [
+            "Shoes of fetters, toes crushed.",
+            "No harm."
+          ],
+          [
+            "Biting skin, nose crushed.",
+            "No harm."
+          ],
+          [
+            "Biting dried meat, meeting poison.",
+            "A little shame. No harm."
+          ],
+          [
+            "Biting dried meat on the bone —",
+            "a metal arrowhead found.",
+            "It is good to hold firm in hardship.",
+            "Good."
+          ],
+          [
+            "Biting dried meat —",
+            "yellow metal found.",
+            "Holding firm: danger. No harm."
+          ],
+          [
+            "Shouldering fetters, ears crushed.",
+            "Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1628,7 +2544,7 @@
     "number": 22,
     "name_zh": "賁",
     "name_pinyin": "Bì",
-    "name_en": null,
+    "name_en": "Adornment",
     "symbol": "䷕",
     "bits": [
       1,
@@ -1698,6 +2614,46 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is a little good",
+          "to have somewhere to go."
+        ],
+        "image": [
+          "Fire under the mountain: Adornment.",
+          "So the noble one makes the many matters clear,",
+          "and does not dare settle lawsuits."
+        ],
+        "lines": [
+          [
+            "Adorning the toes.",
+            "Leaving the cart, going on foot."
+          ],
+          [
+            "Adorning the beard."
+          ],
+          [
+            "Adorned, glistening.",
+            "Holding firm, long: good."
+          ],
+          [
+            "Adorned, white —",
+            "a white horse, flying.",
+            "Not raiders: suitors."
+          ],
+          [
+            "Adornment in hill gardens.",
+            "A roll of silk, small, so small.",
+            "Shame — in the end, good."
+          ],
+          [
+            "White adornment.",
+            "No harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1705,7 +2661,7 @@
     "number": 23,
     "name_zh": "剝",
     "name_pinyin": "Bō",
-    "name_en": null,
+    "name_en": "Peeling",
     "symbol": "䷖",
     "bits": [
       0,
@@ -1775,6 +2731,45 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is not good to have somewhere to go."
+        ],
+        "image": [
+          "The mountain rests on the earth: Peeling.",
+          "So those above make the below thick,",
+          "and settle the dwellings."
+        ],
+        "lines": [
+          [
+            "Peeling the bed at its feet.",
+            "The casting ignored: misfortune."
+          ],
+          [
+            "Peeling the bed at its frame.",
+            "The casting ignored: misfortune."
+          ],
+          [
+            "Peeling it.",
+            "No harm."
+          ],
+          [
+            "Peeling the bed to the skin.",
+            "Misfortune."
+          ],
+          [
+            "A string of fish —",
+            "favour through the palace women.",
+            "Nothing unfavourable."
+          ],
+          [
+            "A great fruit, uneaten.",
+            "The noble one gets a carriage.",
+            "The small person's hut is peeled away."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1782,7 +2777,7 @@
     "number": 24,
     "name_zh": "復",
     "name_pinyin": "Fù",
-    "name_en": null,
+    "name_en": "Coming Back",
     "symbol": "䷗",
     "bits": [
       1,
@@ -1852,6 +2847,52 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "Out and in, no sickness.",
+          "Friends come: no harm.",
+          "Turning back along the road —",
+          "seven days, and the return comes.",
+          "It is good to have somewhere to go."
+        ],
+        "image": [
+          "Thunder in the earth: Coming Back.",
+          "So the early kings, at the turning day, closed the passes.",
+          "Merchants did not travel,",
+          "and the ruler did not go round the regions."
+        ],
+        "lines": [
+          [
+            "Coming back from not far.",
+            "No call even for regret.",
+            "Great good."
+          ],
+          [
+            "Coming back at rest.",
+            "Good."
+          ],
+          [
+            "Coming back again and again: danger.",
+            "No harm."
+          ],
+          [
+            "Walking in the middle,",
+            "coming back alone."
+          ],
+          [
+            "Coming back solidly.",
+            "No regret."
+          ],
+          [
+            "Coming back, lost: misfortune, disaster on disaster.",
+            "Marching out ends in great defeat,",
+            "ruin for the ruler. Misfortune.",
+            "Ten years, and no marching again."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1859,7 +2900,7 @@
     "number": 25,
     "name_zh": "無妄",
     "name_pinyin": "Wú Wàng",
-    "name_en": null,
+    "name_en": "Without Falseness",
     "symbol": "䷘",
     "bits": [
       1,
@@ -1929,6 +2970,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "It is good to hold firm.",
+          "What is not right in it brings harm.",
+          "It is not good to have somewhere to go."
+        ],
+        "image": [
+          "Thunder rolls under heaven; things are given without falseness.",
+          "So the early kings, in full accord with the season,",
+          "nourished the ten thousand things."
+        ],
+        "lines": [
+          [
+            "Without falseness.",
+            "Going: good."
+          ],
+          [
+            "Reaping without ploughing,",
+            "a ripe field without clearing it —",
+            "then it is good to have somewhere to go."
+          ],
+          [
+            "A disaster out of nowhere:",
+            "a cow, left tethered —",
+            "the passer-by's gain,",
+            "the townsman's disaster."
+          ],
+          [
+            "It can hold firm.",
+            "No harm."
+          ],
+          [
+            "Sickness out of nowhere:",
+            "no medicine — there will be joy."
+          ],
+          [
+            "Without falseness,",
+            "going brings harm.",
+            "No good anywhere."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -1936,7 +3021,7 @@
     "number": 26,
     "name_zh": "大畜",
     "name_pinyin": "Dà Xù",
-    "name_en": null,
+    "name_en": "Great Store",
     "symbol": "䷙",
     "bits": [
       1,
@@ -2006,6 +3091,46 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good to hold firm.",
+          "Not eating at home: good.",
+          "It is good to ford the great river."
+        ],
+        "image": [
+          "Heaven inside the mountain: Great Store.",
+          "So the noble one grows rich in former words and past deeds,",
+          "storing up virtue."
+        ],
+        "lines": [
+          [
+            "There is danger:",
+            "it is good to stop."
+          ],
+          [
+            "The cart sheds a spoke."
+          ],
+          [
+            "Fine horses, chasing.",
+            "It is good to hold firm in hardship.",
+            "Daily, drill cart and guard.",
+            "It is good to have somewhere to go."
+          ],
+          [
+            "A board on the young bull's horns.",
+            "Great good."
+          ],
+          [
+            "Teeth of a gelded pig.",
+            "Good."
+          ],
+          [
+            "Carrying heaven's high road.",
+            "It goes through."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2013,7 +3138,7 @@
     "number": 27,
     "name_zh": "頤",
     "name_pinyin": "Yí",
-    "name_en": null,
+    "name_en": "Jaws",
     "symbol": "䷚",
     "bits": [
       1,
@@ -2083,6 +3208,52 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Holding firm: good.",
+          "Watch the jaws,",
+          "and seek what fills your own mouth."
+        ],
+        "image": [
+          "Thunder under the mountain: Jaws.",
+          "So the noble one is careful with words,",
+          "and measures food and drink."
+        ],
+        "lines": [
+          [
+            "Letting your holy tortoise go,",
+            "watching me, jaws drooping.",
+            "Misfortune."
+          ],
+          [
+            "Jaws turned upside down,",
+            "against the constant way, fed from the hill.",
+            "To march: misfortune."
+          ],
+          [
+            "Against the jaws: holding firm, misfortune.",
+            "Ten years, do not act.",
+            "No good anywhere."
+          ],
+          [
+            "Jaws turned upside down: good.",
+            "A tiger watching, fixed, fixed,",
+            "its appetite driving, driving.",
+            "No harm."
+          ],
+          [
+            "Against the constant way:",
+            "staying, holding firm: good.",
+            "You cannot ford the great river."
+          ],
+          [
+            "From the jaws it comes:",
+            "danger, and good.",
+            "It is good to ford the great river."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2090,7 +3261,7 @@
     "number": 28,
     "name_zh": "大過",
     "name_pinyin": "Dà Guò",
-    "name_en": null,
+    "name_en": "Great Excess",
     "symbol": "䷛",
     "bits": [
       0,
@@ -2160,6 +3331,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "The ridgepole sags.",
+          "It is good to have somewhere to go.",
+          "It goes through."
+        ],
+        "image": [
+          "The marsh drowns the trees: Great Excess.",
+          "So the noble one stands alone without fear,",
+          "leaves the world without sadness."
+        ],
+        "lines": [
+          [
+            "White rushes spread underneath.",
+            "No harm."
+          ],
+          [
+            "A dry poplar puts out shoots.",
+            "An old man gets a young wife.",
+            "Nothing unfavourable."
+          ],
+          [
+            "The ridgepole sags.",
+            "Misfortune."
+          ],
+          [
+            "The ridgepole rises: good.",
+            "Anything else: shame."
+          ],
+          [
+            "A dry poplar puts out flowers.",
+            "An old woman gets a young husband.",
+            "No harm, no praise."
+          ],
+          [
+            "Fording too far,",
+            "the water over your head.",
+            "Misfortune — no harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2167,7 +3380,7 @@
     "number": 29,
     "name_zh": "坎",
     "name_pinyin": "Kǎn",
-    "name_en": null,
+    "name_en": "Pit",
     "symbol": "䷜",
     "bits": [
       0,
@@ -2237,6 +3450,54 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Pit after pit.",
+          "There is trust.",
+          "Only the heart goes through.",
+          "Going is honoured."
+        ],
+        "image": [
+          "Water comes again and again: Pit after pit.",
+          "So the noble one holds virtue and conduct constant",
+          "and practises teaching."
+        ],
+        "lines": [
+          [
+            "Pit after pit —",
+            "down into a pit inside the pit.",
+            "Misfortune."
+          ],
+          [
+            "The pit is perilous.",
+            "Seeking brings a little."
+          ],
+          [
+            "Coming, going: pit, pit.",
+            "Peril for a pillow.",
+            "Down into the pit inside the pit.",
+            "Do not act."
+          ],
+          [
+            "A jar of wine, two vessels of grain —",
+            "earthenware only —",
+            "the simple gift passed in at the window.",
+            "In the end, no harm."
+          ],
+          [
+            "The pit, not overfull,",
+            "only just level.",
+            "No harm."
+          ],
+          [
+            "Bound with cords,",
+            "set down among thorns,",
+            "three years, no way out.",
+            "Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2244,7 +3505,7 @@
     "number": 30,
     "name_zh": "離",
     "name_pinyin": "Lí",
-    "name_en": null,
+    "name_en": "Flame",
     "symbol": "䷝",
     "bits": [
       1,
@@ -2314,6 +3575,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good to hold firm.",
+          "It goes through.",
+          "Keeping a cow: good."
+        ],
+        "image": [
+          "Brightness doubled rises: Flame.",
+          "So the great person keeps the brightness going,",
+          "lighting the four quarters."
+        ],
+        "lines": [
+          [
+            "Footsteps crossing and crossing.",
+            "Honour this: no harm."
+          ],
+          [
+            "Yellow flame.",
+            "Great good."
+          ],
+          [
+            "Flame of the sun slanting down.",
+            "Not drumming on a pot, and singing —",
+            "then the lament of great age.",
+            "Misfortune."
+          ],
+          [
+            "Suddenly it comes:",
+            "burning, dying, cast away."
+          ],
+          [
+            "Tears come out in floods,",
+            "grief and lament.",
+            "Good."
+          ],
+          [
+            "The king marches out.",
+            "In triumph he beheads the chief;",
+            "those caught are not of his party.",
+            "No harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2321,7 +3626,7 @@
     "number": 31,
     "name_zh": "咸",
     "name_pinyin": "Xián",
-    "name_en": null,
+    "name_en": "Feeling",
     "symbol": "䷞",
     "bits": [
       0,
@@ -2391,6 +3696,46 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is good to hold firm.",
+          "Taking a woman: good."
+        ],
+        "image": [
+          "A marsh on the mountain: Feeling.",
+          "So the noble one, empty,",
+          "receives people."
+        ],
+        "lines": [
+          [
+            "Feeling in the big toe."
+          ],
+          [
+            "Feeling in the calves: misfortune.",
+            "Staying: good."
+          ],
+          [
+            "Feeling in the thighs,",
+            "gripping what follows them.",
+            "Going: shame."
+          ],
+          [
+            "Holding firm: good. Regret gone.",
+            "To and fro, to and fro it goes —",
+            "friends follow your thoughts."
+          ],
+          [
+            "Feeling in the back.",
+            "No regret."
+          ],
+          [
+            "Feeling in the jaws,",
+            "the cheeks, the tongue."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2398,7 +3743,7 @@
     "number": 32,
     "name_zh": "恆",
     "name_pinyin": "Héng",
-    "name_en": null,
+    "name_en": "Lasting",
     "symbol": "䷟",
     "bits": [
       0,
@@ -2468,6 +3813,46 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through. No harm.",
+          "It is good to hold firm.",
+          "It is good to have somewhere to go."
+        ],
+        "image": [
+          "Thunder and wind: Lasting.",
+          "So the noble one stands firm",
+          "and does not change direction."
+        ],
+        "lines": [
+          [
+            "Sinking deep for lasting:",
+            "holding firm, misfortune.",
+            "No good anywhere."
+          ],
+          [
+            "Regret gone."
+          ],
+          [
+            "Not lasting in virtue:",
+            "perhaps shame borne for it.",
+            "Holding firm: shame."
+          ],
+          [
+            "In the field, no game."
+          ],
+          [
+            "Lasting in virtue, holding firm:",
+            "for a wife, good;",
+            "for a husband, misfortune."
+          ],
+          [
+            "Shaking lasting to pieces.",
+            "Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2475,7 +3860,7 @@
     "number": 33,
     "name_zh": "遯",
     "name_pinyin": "Dùn",
-    "name_en": null,
+    "name_en": "Withdrawal",
     "symbol": "䷠",
     "bits": [
       0,
@@ -2545,6 +3930,46 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is a little good to hold firm."
+        ],
+        "image": [
+          "Heaven, with a mountain under it: Withdrawal.",
+          "So the noble one keeps the small person far off —",
+          "not hateful, but stern."
+        ],
+        "lines": [
+          [
+            "At the tail of the withdrawal: danger.",
+            "Do not set out anywhere."
+          ],
+          [
+            "Holding it fast with yellow oxhide —",
+            "nothing can tear it free."
+          ],
+          [
+            "A withdrawal held back, haltered:",
+            "sickness, danger.",
+            "Keeping servants and maids: good."
+          ],
+          [
+            "A good withdrawal:",
+            "for the noble one, good;",
+            "for the small person, blocked."
+          ],
+          [
+            "A fine withdrawal.",
+            "Holding firm: good."
+          ],
+          [
+            "A fat withdrawal.",
+            "Nothing unfavourable."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2552,7 +3977,7 @@
     "number": 34,
     "name_zh": "大壯",
     "name_pinyin": "Dà Zhuàng",
-    "name_en": null,
+    "name_en": "Great Strength",
     "symbol": "䷡",
     "bits": [
       1,
@@ -2622,6 +4047,47 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good to hold firm."
+        ],
+        "image": [
+          "Thunder up in heaven: Great Strength.",
+          "So the noble one never treads",
+          "where the rites forbid."
+        ],
+        "lines": [
+          [
+            "Strong in the toes.",
+            "To march: misfortune — and that is sure."
+          ],
+          [
+            "Holding firm: good."
+          ],
+          [
+            "The small person uses strength, the noble one a net.",
+            "Holding firm: danger.",
+            "A ram butts the fence —",
+            "its horns stuck fast."
+          ],
+          [
+            "Holding firm: good. Regret gone.",
+            "The fence breaks open, nothing stuck —",
+            "strong as the axle of a great cart."
+          ],
+          [
+            "Losing the sheep, easily.",
+            "No regret."
+          ],
+          [
+            "A ram butts the fence:",
+            "cannot go back, cannot push through.",
+            "No good anywhere.",
+            "Hardship — then good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2629,7 +4095,7 @@
     "number": 35,
     "name_zh": "晉",
     "name_pinyin": "Jìn",
-    "name_en": null,
+    "name_en": "Rising",
     "symbol": "䷢",
     "bits": [
       0,
@@ -2699,6 +4165,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "The Lord of Kang is given horses,",
+          "breeding in plenty;",
+          "three times received in one day."
+        ],
+        "image": [
+          "Light comes out over the earth: Rising.",
+          "So the noble one, of himself,",
+          "makes his bright virtue shine."
+        ],
+        "lines": [
+          [
+            "Rising, then beaten back.",
+            "Holding firm: good.",
+            "Nothing trusted — be generous: no harm."
+          ],
+          [
+            "Rising, and grieving.",
+            "Holding firm: good.",
+            "Great blessing received from the king's mother."
+          ],
+          [
+            "The many agree.",
+            "Regret gone."
+          ],
+          [
+            "Rising like a hamster.",
+            "Holding firm: danger."
+          ],
+          [
+            "Regret gone.",
+            "Loss and gain — do not grieve.",
+            "Going: good — nothing unfavourable."
+          ],
+          [
+            "Rising to the horns:",
+            "use it only to strike your own town.",
+            "Danger, good, no harm.",
+            "Holding firm: shame."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2706,7 +4216,7 @@
     "number": 36,
     "name_zh": "明夷",
     "name_pinyin": "Míng Yí",
-    "name_en": null,
+    "name_en": "Wounded Light",
     "symbol": "䷣",
     "bits": [
       1,
@@ -2776,6 +4286,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good to hold firm in hardship."
+        ],
+        "image": [
+          "Light goes into the earth: Wounded Light.",
+          "So the noble one, among the many,",
+          "is darkened, and still bright."
+        ],
+        "lines": [
+          [
+            "Wounded light in flight, wings drooping.",
+            "The noble one travels three days without food.",
+            "He has somewhere to go;",
+            "his host has words for him."
+          ],
+          [
+            "Wounded in the left thigh.",
+            "Rescue with a strong horse: good."
+          ],
+          [
+            "Wounded light, hunting in the south —",
+            "the great head taken.",
+            "You cannot hold firm in haste."
+          ],
+          [
+            "Into the left side of the belly,",
+            "to the heart of the wounded light —",
+            "and out by gate and courtyard."
+          ],
+          [
+            "The wounded light of Jizi.",
+            "It is good to hold firm."
+          ],
+          [
+            "Not bright — dark.",
+            "First it climbed to heaven,",
+            "then went down into the earth."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2783,7 +4335,7 @@
     "number": 37,
     "name_zh": "家人",
     "name_pinyin": "Jiā Rén",
-    "name_en": null,
+    "name_en": "Household",
     "symbol": "䷤",
     "bits": [
       1,
@@ -2853,6 +4405,46 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good for a woman to hold firm."
+        ],
+        "image": [
+          "Wind comes out of fire: Household.",
+          "So the noble one lets words have substance",
+          "and deeds have constancy."
+        ],
+        "lines": [
+          [
+            "A fence round the house.",
+            "Regret gone."
+          ],
+          [
+            "Nothing longingly pursued —",
+            "at the cooking in the middle rooms.",
+            "Holding firm: good."
+          ],
+          [
+            "The household, stern, stern:",
+            "regret, danger — good.",
+            "Wife and children, laughing, laughing:",
+            "in the end, shame."
+          ],
+          [
+            "Riches in the house.",
+            "Great good."
+          ],
+          [
+            "The king comes to have a household.",
+            "Do not grieve: good."
+          ],
+          [
+            "There is trust, and dignity with it.",
+            "In the end, good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2860,7 +4452,7 @@
     "number": 38,
     "name_zh": "睽",
     "name_pinyin": "Kuí",
-    "name_en": null,
+    "name_en": "Estranged",
     "symbol": "䷥",
     "bits": [
       1,
@@ -2930,6 +4522,51 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "In small things: good."
+        ],
+        "image": [
+          "Fire above, marsh below: Estranged.",
+          "So the noble one is together,",
+          "and still different."
+        ],
+        "lines": [
+          [
+            "Regret gone.",
+            "A horse lost: do not chase it —",
+            "it comes back itself.",
+            "Meeting bad people: no harm."
+          ],
+          [
+            "Meeting your lord in a lane.",
+            "No harm."
+          ],
+          [
+            "A cart dragged back,",
+            "its ox pulled up short;",
+            "the man branded, his nose cut off.",
+            "No beginning — there is an end."
+          ],
+          [
+            "Estranged and alone,",
+            "meeting the first husband.",
+            "Trust exchanged: danger, no harm."
+          ],
+          [
+            "Regret gone.",
+            "Your kin bite through the skin.",
+            "Going: what harm?"
+          ],
+          [
+            "Estranged, alone: a pig carrying dirt, a cartload of ghosts.",
+            "First the bow is drawn on them, then the bow is laid down.",
+            "Not raiders: suitors.",
+            "Going, and meeting rain: good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -2937,7 +4574,7 @@
     "number": 39,
     "name_zh": "蹇",
     "name_pinyin": "Jiǎn",
-    "name_en": null,
+    "name_en": "Limping",
     "symbol": "䷦",
     "bits": [
       0,
@@ -3007,6 +4644,42 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good in the south-west;",
+          "not good in the north-east.",
+          "It is good to see the great person.",
+          "Holding firm: good."
+        ],
+        "image": [
+          "Water on the mountain: Limping.",
+          "So the noble one turns back on himself",
+          "and mends his virtue."
+        ],
+        "lines": [
+          [
+            "Going: limping. Coming: praise."
+          ],
+          [
+            "The king's servant, limping, limping —",
+            "not for his own sake."
+          ],
+          [
+            "Going on limps; coming, turn back."
+          ],
+          [
+            "Going on limps; coming, join together."
+          ],
+          [
+            "Great limping — friends come."
+          ],
+          [
+            "Going: limping. Coming: great. Good.",
+            "It is good to see the great person."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3014,7 +4687,7 @@
     "number": 40,
     "name_zh": "解",
     "name_pinyin": "Xiè",
-    "name_en": null,
+    "name_en": "Untying",
     "symbol": "䷧",
     "bits": [
       0,
@@ -3084,6 +4757,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good in the south-west.",
+          "With nowhere to go,",
+          "coming back: good.",
+          "With somewhere to go:",
+          "early is good."
+        ],
+        "image": [
+          "Thunder and rain stir: Untying.",
+          "So the noble one pardons faults",
+          "and forgives crimes."
+        ],
+        "lines": [
+          [
+            "No harm."
+          ],
+          [
+            "In the field, three foxes caught,",
+            "a yellow arrowhead found.",
+            "Holding firm: good."
+          ],
+          [
+            "A load on the back, yet riding in a carriage —",
+            "it brings raiders coming.",
+            "Holding firm: shame."
+          ],
+          [
+            "Untie your big toe.",
+            "Friends come, and then there is trust."
+          ],
+          [
+            "Only the noble one can untie: good.",
+            "There is trust, even with the small person."
+          ],
+          [
+            "A duke shoots a hawk",
+            "on top of a high wall —",
+            "and gets it.",
+            "Nothing unfavourable."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3091,7 +4808,7 @@
     "number": 41,
     "name_zh": "損",
     "name_pinyin": "Sǔn",
-    "name_en": null,
+    "name_en": "Lessening",
     "symbol": "䷨",
     "bits": [
       1,
@@ -3161,6 +4878,54 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "There is trust. Great good, no harm.",
+          "It can hold firm.",
+          "It is good to have somewhere to go.",
+          "What is there to use?",
+          "Two vessels of grain can serve for the offering."
+        ],
+        "image": [
+          "A marsh under the mountain: Lessening.",
+          "So the noble one checks anger",
+          "and stops up wanting."
+        ],
+        "lines": [
+          [
+            "Business done, go quickly: no harm —",
+            "but weigh what to lessen."
+          ],
+          [
+            "It is good to hold firm.",
+            "To march: misfortune.",
+            "Without lessening, adding to it."
+          ],
+          [
+            "Three people walking —",
+            "one person less.",
+            "One person walking —",
+            "a friend gained."
+          ],
+          [
+            "Lessening the sickness,",
+            "quickly — there is joy.",
+            "No harm."
+          ],
+          [
+            "Someone adds to it:",
+            "a tortoise worth ten strings of cowries",
+            "cannot be refused. Great good."
+          ],
+          [
+            "Without lessening, adding to it: no harm.",
+            "Holding firm: good.",
+            "It is good to have somewhere to go.",
+            "Getting a servant with no household."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3168,7 +4933,7 @@
     "number": 42,
     "name_zh": "益",
     "name_pinyin": "Yì",
-    "name_en": null,
+    "name_en": "Adding",
     "symbol": "䷩",
     "bits": [
       1,
@@ -3238,6 +5003,52 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It is good to have somewhere to go.",
+          "It is good to ford the great river."
+        ],
+        "image": [
+          "Wind and thunder: Adding.",
+          "So the noble one, seeing good, moves towards it;",
+          "having faults, changes them."
+        ],
+        "lines": [
+          [
+            "It is good to use this for great work.",
+            "Great good. No harm."
+          ],
+          [
+            "Someone adds to it —",
+            "a tortoise of ten strings, not to be refused.",
+            "Holding firm, long: good.",
+            "The king offers to the god on high: good."
+          ],
+          [
+            "Added to by a time of misfortune: no harm.",
+            "There is trust, walking the middle;",
+            "tell the duke, jade tablet in hand."
+          ],
+          [
+            "Walking the middle:",
+            "tell the duke — he follows.",
+            "It is good to use this, in trust,",
+            "to move the state."
+          ],
+          [
+            "There is trust, a kindly heart:",
+            "do not ask — great good.",
+            "There is trust: kindness answers my virtue."
+          ],
+          [
+            "No one adds to it;",
+            "someone strikes it.",
+            "A heart set up without constancy.",
+            "Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3245,7 +5056,7 @@
     "number": 43,
     "name_zh": "夬",
     "name_pinyin": "Guài",
-    "name_en": null,
+    "name_en": "Deciding",
     "symbol": "䷪",
     "bits": [
       1,
@@ -3315,6 +5126,52 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Held up in the king's court,",
+          "trust cried aloud. There is danger.",
+          "Word goes out from your own town:",
+          "it is not good to go straight to arms.",
+          "It is good to have somewhere to go."
+        ],
+        "image": [
+          "The marsh rises to heaven: Deciding.",
+          "So the noble one gives out rewards",
+          "down to those below; virtue hoarded is taboo."
+        ],
+        "lines": [
+          [
+            "Strong in the front toes.",
+            "Going, and not up to it, makes shame."
+          ],
+          [
+            "Fearful cries.",
+            "At nightfall there are soldiers —",
+            "do not grieve."
+          ],
+          [
+            "Strong in the cheekbones: there is misfortune.",
+            "The noble one, decided, decided,",
+            "walks alone into rain —",
+            "soaked, and vexed. No harm."
+          ],
+          [
+            "No skin on the buttocks;",
+            "walking comes haltingly.",
+            "A sheep led along: regret gone.",
+            "Words heard, and not believed."
+          ],
+          [
+            "Amaranth on the hill, decided, decided.",
+            "Walking the middle: no harm."
+          ],
+          [
+            "Nothing cried aloud.",
+            "In the end, misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3322,7 +5179,7 @@
     "number": 44,
     "name_zh": "姤",
     "name_pinyin": "Gòu",
-    "name_en": null,
+    "name_en": "Meeting",
     "symbol": "䷫",
     "bits": [
       0,
@@ -3392,6 +5249,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "The woman is strong.",
+          "Do not take the woman."
+        ],
+        "image": [
+          "Wind under heaven: Meeting.",
+          "So the ruler issues the charge,",
+          "proclaiming it to the four quarters."
+        ],
+        "lines": [
+          [
+            "Tied to a metal brake.",
+            "Holding firm: good.",
+            "With somewhere to go, you meet misfortune.",
+            "A lean pig, surely, stamps and stamps."
+          ],
+          [
+            "A fish in the wrapping.",
+            "No harm.",
+            "Not good for guests."
+          ],
+          [
+            "No skin on the buttocks;",
+            "walking comes haltingly.",
+            "Danger. No great harm."
+          ],
+          [
+            "No fish in the wrapping.",
+            "Rising up: misfortune."
+          ],
+          [
+            "A melon wrapped in willow leaves,",
+            "its pattern held inside.",
+            "Something falls from heaven."
+          ],
+          [
+            "Meeting with the horns.",
+            "Shame. No harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3399,7 +5299,7 @@
     "number": 45,
     "name_zh": "萃",
     "name_pinyin": "Cuì",
-    "name_en": null,
+    "name_en": "Clustering",
     "symbol": "䷬",
     "bits": [
       0,
@@ -3469,6 +5369,53 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "The king comes to the temple.",
+          "It is good to see the great person.",
+          "It goes through. It is good to hold firm.",
+          "A great beast offered: good.",
+          "It is good to have somewhere to go."
+        ],
+        "image": [
+          "The marsh rises over the earth: Clustering.",
+          "So the noble one keeps his weapons mended,",
+          "on guard for the unforeseen."
+        ],
+        "lines": [
+          [
+            "There is trust, and it does not last:",
+            "now scattered, now clustered.",
+            "One cry, one hand-grip — and laughter.",
+            "Do not grieve. Going: no harm."
+          ],
+          [
+            "Drawn along: good. No harm.",
+            "Trust — then it is good to use",
+            "the simple offering."
+          ],
+          [
+            "Clustering, sighing.",
+            "No good anywhere.",
+            "Going: no harm. A little shame."
+          ],
+          [
+            "Great good. No harm."
+          ],
+          [
+            "Clustering in high place: no harm.",
+            "There is no trust —",
+            "begin greatly, hold firm long: regret gone."
+          ],
+          [
+            "Sighing and lamenting,",
+            "tears and snivel.",
+            "No harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3476,7 +5423,7 @@
     "number": 46,
     "name_zh": "升",
     "name_pinyin": "Shēng",
-    "name_en": null,
+    "name_en": "Climbing",
     "symbol": "䷭",
     "bits": [
       0,
@@ -3546,6 +5493,45 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Begin greatly, and go through.",
+          "Seek to see the great person.",
+          "Do not grieve.",
+          "Marching south: good."
+        ],
+        "image": [
+          "Trees grow up inside the earth: Climbing.",
+          "So the noble one follows virtue duly,",
+          "piling the small up into the high and great."
+        ],
+        "lines": [
+          [
+            "Climbing in trust.",
+            "Great good."
+          ],
+          [
+            "Trust — then it is good to use",
+            "the simple offering. No harm."
+          ],
+          [
+            "Climbing into an empty town."
+          ],
+          [
+            "The king offers on Mount Qi.",
+            "Good. No harm."
+          ],
+          [
+            "Holding firm: good.",
+            "Climbing the steps."
+          ],
+          [
+            "Climbing in the dark:",
+            "good in nothing but unceasing holding firm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3553,7 +5539,7 @@
     "number": 47,
     "name_zh": "困",
     "name_pinyin": "Kùn",
-    "name_en": null,
+    "name_en": "Hemmed In",
     "symbol": "䷮",
     "bits": [
       0,
@@ -3623,6 +5609,54 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through. Holding firm:",
+          "for the great person, good; no harm.",
+          "Words are spoken and not believed."
+        ],
+        "image": [
+          "The marsh has no water: Hemmed In.",
+          "So the noble one stakes his life",
+          "to carry out his will."
+        ],
+        "lines": [
+          [
+            "Buttocks hemmed in on a tree stump.",
+            "Down into a dark valley:",
+            "three years, nothing seen."
+          ],
+          [
+            "Hemmed in at wine and food.",
+            "The scarlet knee-covers are coming.",
+            "It is good to use offering and sacrifice.",
+            "To march: misfortune. No harm."
+          ],
+          [
+            "Hemmed in by stone,",
+            "leaning on thorns.",
+            "Into your own palace —",
+            "and your wife not there. Misfortune."
+          ],
+          [
+            "Coming slowly, slowly,",
+            "hemmed in by a metal carriage.",
+            "Shame — there is an end."
+          ],
+          [
+            "Nose cut, feet cut off,",
+            "hemmed in by scarlet knee-covers.",
+            "Slowly, there is release.",
+            "It is good to use sacrifice."
+          ],
+          [
+            "Hemmed in by vines, on ground that shakes.",
+            "You say: a move, and regret.",
+            "Regret it, and march: good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3630,7 +5664,7 @@
     "number": 48,
     "name_zh": "井",
     "name_pinyin": "Jǐng",
-    "name_en": null,
+    "name_en": "Well",
     "symbol": "䷯",
     "bits": [
       0,
@@ -3700,6 +5734,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "The town may move, the well does not.",
+          "Nothing lost, nothing gained — coming and going, the well wells on.",
+          "Almost at the water, the rope not yet down —",
+          "the jug smashed.",
+          "Misfortune."
+        ],
+        "image": [
+          "Water up in the trees: Well.",
+          "So the noble one toils with the people,",
+          "urging them to help each other."
+        ],
+        "lines": [
+          [
+            "A well of mud, not drunk from.",
+            "An old well: no birds even."
+          ],
+          [
+            "At the well's low pool, shooting little fish.",
+            "The jar is cracked and leaking."
+          ],
+          [
+            "The well is cleaned, and not drunk from —",
+            "it grieves my heart.",
+            "It could be drawn from.",
+            "The king, bright: all receive its blessing."
+          ],
+          [
+            "The well is tiled.",
+            "No harm."
+          ],
+          [
+            "The well is clear:",
+            "a cold spring, drunk from."
+          ],
+          [
+            "The well drawn: do not cover it.",
+            "There is trust. Great good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3707,7 +5784,7 @@
     "number": 49,
     "name_zh": "革",
     "name_pinyin": "Gé",
-    "name_en": null,
+    "name_en": "Change of Skin",
     "symbol": "䷰",
     "bits": [
       1,
@@ -3777,6 +5854,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "On its own day, then there is trust.",
+          "Begin greatly, and go through.",
+          "It is good to hold firm.",
+          "Regret gone."
+        ],
+        "image": [
+          "Fire inside the marsh: Change of Skin.",
+          "So the noble one sets the calendar in order",
+          "and makes the seasons clear."
+        ],
+        "lines": [
+          [
+            "Bound fast with yellow oxhide."
+          ],
+          [
+            "On its own day, change it.",
+            "To march: good.",
+            "No harm."
+          ],
+          [
+            "To march: misfortune. Holding firm: danger.",
+            "The talk of change, three times settled —",
+            "there is trust."
+          ],
+          [
+            "Regret gone.",
+            "There is trust: change the charge.",
+            "Good."
+          ],
+          [
+            "The great person changes like a tiger.",
+            "Before any casting, there is trust."
+          ],
+          [
+            "The noble one changes like a leopard;",
+            "the small person changes his face.",
+            "To march: misfortune.",
+            "Staying, holding firm: good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3784,7 +5905,7 @@
     "number": 50,
     "name_zh": "鼎",
     "name_pinyin": "Dǐng",
-    "name_en": null,
+    "name_en": "Bronze Pot",
     "symbol": "䷱",
     "bits": [
       0,
@@ -3854,6 +5975,53 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Great good. It goes through."
+        ],
+        "image": [
+          "Fire up over wood: Bronze Pot.",
+          "So the noble one sets his place straight",
+          "and holds the charge firm."
+        ],
+        "lines": [
+          [
+            "The pot, feet upturned:",
+            "it is good to empty out the dregs.",
+            "A concubine taken, for her son.",
+            "No harm."
+          ],
+          [
+            "The pot has food in it.",
+            "My enemy is sick",
+            "and cannot come near me.",
+            "Good."
+          ],
+          [
+            "The pot's ears are changed; it cannot be carried.",
+            "The pheasant fat goes uneaten.",
+            "Rain is coming: regret thins.",
+            "In the end, good."
+          ],
+          [
+            "The pot's leg breaks.",
+            "The duke's stew is spilled,",
+            "its juices soaking.",
+            "Misfortune."
+          ],
+          [
+            "The pot: yellow ears,",
+            "a carrying-bar of metal.",
+            "It is good to hold firm."
+          ],
+          [
+            "The pot: a carrying-bar of jade.",
+            "Great good.",
+            "Nothing unfavourable."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3861,7 +6029,7 @@
     "number": 51,
     "name_zh": "震",
     "name_pinyin": "Zhèn",
-    "name_en": null,
+    "name_en": "Thunder",
     "symbol": "䷲",
     "bits": [
       1,
@@ -3931,6 +6099,52 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "Thunder comes, shock upon shock —",
+          "and laughter and talk again.",
+          "Thunder startles a hundred miles;",
+          "the sacrificial ladle is not dropped."
+        ],
+        "image": [
+          "Thunder, repeated: Thunder.",
+          "So the noble one, in fear and trembling,",
+          "sets himself in order."
+        ],
+        "lines": [
+          [
+            "Thunder comes, shock upon shock;",
+            "afterwards, laughter and talk.",
+            "Good."
+          ],
+          [
+            "Thunder comes: danger.",
+            "A hundred thousand cowries lost —",
+            "climb to the nine mounds.",
+            "Do not chase them: in seven days, got back."
+          ],
+          [
+            "Thunder, stunned, stunned.",
+            "Moving in thunder: no harm."
+          ],
+          [
+            "Thunder — stuck in mud."
+          ],
+          [
+            "Thunder going and coming: danger.",
+            "A hundred thousand — nothing lost.",
+            "There is work to do."
+          ],
+          [
+            "Thunder: shrinking back, eyes darting.",
+            "To march: misfortune.",
+            "It strikes not you but your neighbour: no harm.",
+            "Over marriages, there is talk."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -3938,7 +6152,7 @@
     "number": 52,
     "name_zh": "艮",
     "name_pinyin": "Gèn",
-    "name_en": null,
+    "name_en": "Stilling",
     "symbol": "䷳",
     "bits": [
       0,
@@ -4008,6 +6222,50 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Stilling the back —",
+          "the body not caught.",
+          "Crossing the courtyard, no one seen.",
+          "No harm."
+        ],
+        "image": [
+          "Mountain on mountain: Stilling.",
+          "So the noble one lets no thought",
+          "leave its place."
+        ],
+        "lines": [
+          [
+            "Stilling the toes.",
+            "No harm.",
+            "It is good to hold firm, long."
+          ],
+          [
+            "Stilling the calves.",
+            "What it follows, it cannot lift.",
+            "The heart is not glad."
+          ],
+          [
+            "Stilling the waist,",
+            "splitting the muscles of the back.",
+            "Danger smokes the heart."
+          ],
+          [
+            "Stilling the trunk.",
+            "No harm."
+          ],
+          [
+            "Stilling the jaws.",
+            "Words in order.",
+            "Regret gone."
+          ],
+          [
+            "Stilling, made solid.",
+            "Good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4015,7 +6273,7 @@
     "number": 53,
     "name_zh": "漸",
     "name_pinyin": "Jiàn",
-    "name_en": null,
+    "name_en": "Step by Step",
     "symbol": "䷴",
     "bits": [
       0,
@@ -4085,6 +6343,52 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "A woman given in marriage: good.",
+          "It is good to hold firm."
+        ],
+        "image": [
+          "Trees on the mountain: Step by Step.",
+          "So the noble one stays in worthy virtue",
+          "and betters the customs."
+        ],
+        "lines": [
+          [
+            "Wild geese come step by step to the shore.",
+            "The small boy is in danger.",
+            "There is talk. No harm."
+          ],
+          [
+            "Wild geese come step by step to the great rock.",
+            "Eating and drinking, at ease, at ease.",
+            "Good."
+          ],
+          [
+            "Wild geese come step by step to the dry land.",
+            "The husband marches and does not come back;",
+            "the wife conceives and does not bear. Misfortune.",
+            "It is good to fend raiders off."
+          ],
+          [
+            "Wild geese come step by step to the trees.",
+            "Perhaps they find a flat branch.",
+            "No harm."
+          ],
+          [
+            "Wild geese come step by step to the mound.",
+            "The wife, three years, does not conceive.",
+            "In the end nothing overcomes her.",
+            "Good."
+          ],
+          [
+            "Wild geese come step by step to the high road.",
+            "Their feathers can be used for the dancing.",
+            "Good."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4092,7 +6396,7 @@
     "number": 54,
     "name_zh": "歸妹",
     "name_pinyin": "Guī Mèi",
-    "name_en": null,
+    "name_en": "A Sister Marries",
     "symbol": "䷵",
     "bits": [
       1,
@@ -4162,6 +6466,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "To march: misfortune.",
+          "No good anywhere."
+        ],
+        "image": [
+          "Thunder over the marsh: A Sister Marries.",
+          "So the noble one, through to the very end,",
+          "knows what is spoiled."
+        ],
+        "lines": [
+          [
+            "A sister married as a younger handmaid.",
+            "Lame, yet can tread.",
+            "To march: good."
+          ],
+          [
+            "One-eyed, yet can see.",
+            "It is good for the hidden one to hold firm."
+          ],
+          [
+            "A sister married as one who must wait —",
+            "sent back, and married as a handmaid after all."
+          ],
+          [
+            "A sister's marriage misses its date.",
+            "Married late, there is a time."
+          ],
+          [
+            "Di Yi gives his sister in marriage.",
+            "The ruler's sleeves are not as fine",
+            "as the handmaid's sleeves.",
+            "The moon is almost full: good."
+          ],
+          [
+            "The woman holds a basket: nothing in it.",
+            "The young man stabs a sheep: no blood.",
+            "No good anywhere."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4169,7 +6515,7 @@
     "number": 55,
     "name_zh": "豐",
     "name_pinyin": "Fēng",
-    "name_en": null,
+    "name_en": "Fullness",
     "symbol": "䷶",
     "bits": [
       1,
@@ -4239,6 +6585,55 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "The king comes to it.",
+          "Do not grieve:",
+          "it should be as at midday."
+        ],
+        "image": [
+          "Thunder and lightning both arrive: Fullness.",
+          "So the noble one settles lawsuits,",
+          "and carries out punishments."
+        ],
+        "lines": [
+          [
+            "Meeting the lord who matches him:",
+            "though ten days pass, no harm.",
+            "Going is honoured."
+          ],
+          [
+            "Fullness screened off:",
+            "at midday the Dipper is seen.",
+            "Going brings suspicion and sickness.",
+            "There is trust, breaking out: good."
+          ],
+          [
+            "Fullness curtained thick:",
+            "at midday small stars are seen.",
+            "His right arm is broken.",
+            "No harm."
+          ],
+          [
+            "Fullness screened off:",
+            "at midday the Dipper is seen.",
+            "Meeting his lord in the half-light: good."
+          ],
+          [
+            "Brightness comes:",
+            "there is blessing and praise.",
+            "Good."
+          ],
+          [
+            "A full house, the household screened off.",
+            "Peering in at the door: still, no one there.",
+            "Three years, nothing seen.",
+            "Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4246,7 +6641,7 @@
     "number": 56,
     "name_zh": "旅",
     "name_pinyin": "Lǚ",
-    "name_en": null,
+    "name_en": "Travelling",
     "symbol": "䷷",
     "bits": [
       0,
@@ -4316,6 +6711,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through a little.",
+          "On the road, holding firm: good."
+        ],
+        "image": [
+          "Fire on the mountain: Travelling.",
+          "So the noble one is clear and careful in punishments,",
+          "and keeps no case waiting."
+        ],
+        "lines": [
+          [
+            "Travelling, petty, petty —",
+            "this is where disaster is got."
+          ],
+          [
+            "Travelling, reaching a lodging,",
+            "his money held to his chest,",
+            "he gets a young servant. Holding firm."
+          ],
+          [
+            "Travelling: the lodging burns down.",
+            "The young servant is lost.",
+            "Holding firm: danger."
+          ],
+          [
+            "Travelling, at a resting place,",
+            "he has his money and his axe.",
+            "My heart is not glad."
+          ],
+          [
+            "Shooting a pheasant: one arrow lost.",
+            "In the end, praise, and a posting."
+          ],
+          [
+            "A bird: its nest burns.",
+            "The traveller first laughs,",
+            "then wails aloud.",
+            "A cow lost, in ease. Misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4323,7 +6761,7 @@
     "number": 57,
     "name_zh": "巽",
     "name_pinyin": "Xùn",
-    "name_en": null,
+    "name_en": "Wind",
     "symbol": "䷸",
     "bits": [
       0,
@@ -4393,6 +6831,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through a little.",
+          "It is good to have somewhere to go.",
+          "It is good to see the great person."
+        ],
+        "image": [
+          "Wind upon wind: Wind.",
+          "So the noble one repeats the charge",
+          "and carries business through."
+        ],
+        "lines": [
+          [
+            "Forward, back.",
+            "It is good for a fighting man to hold firm."
+          ],
+          [
+            "Yielding, under the bed,",
+            "with scribes and shamans in hosts.",
+            "Good. No harm."
+          ],
+          [
+            "Yielding again and again.",
+            "Shame."
+          ],
+          [
+            "Regret gone.",
+            "In the field, three grades of game are caught."
+          ],
+          [
+            "Holding firm: good. Regret gone; nothing unfavourable.",
+            "No beginning, but an end.",
+            "Three days before geng, three days after geng.",
+            "Good."
+          ],
+          [
+            "Yielding, under the bed:",
+            "his money and his axe are lost.",
+            "Holding firm: misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4400,7 +6881,7 @@
     "number": 58,
     "name_zh": "兌",
     "name_pinyin": "Duì",
-    "name_en": null,
+    "name_en": "Gladness",
     "symbol": "䷹",
     "bits": [
       1,
@@ -4470,6 +6951,43 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is good to hold firm."
+        ],
+        "image": [
+          "Marsh joined to marsh: Gladness.",
+          "So the noble one joins friends",
+          "in talk and practice."
+        ],
+        "lines": [
+          [
+            "Gladness in harmony.",
+            "Good."
+          ],
+          [
+            "Gladness with trust.",
+            "Good. Regret gone."
+          ],
+          [
+            "Gladness coming on.",
+            "Misfortune."
+          ],
+          [
+            "Gladness weighed, not yet settled:",
+            "keep clear of sickness — there is joy."
+          ],
+          [
+            "Trust in what peels away:",
+            "there is danger."
+          ],
+          [
+            "Drawn on into gladness."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4477,7 +6995,7 @@
     "number": 59,
     "name_zh": "渙",
     "name_pinyin": "Huàn",
-    "name_en": null,
+    "name_en": "Scattering",
     "symbol": "䷺",
     "bits": [
       0,
@@ -4547,6 +7065,48 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "The king comes to the temple.",
+          "It is good to ford the great river.",
+          "It is good to hold firm."
+        ],
+        "image": [
+          "Wind moves over water: Scattering.",
+          "So the early kings offered to the god on high",
+          "and set up temples."
+        ],
+        "lines": [
+          [
+            "Rescue with a strong horse: good."
+          ],
+          [
+            "Scattering: run to your support.",
+            "Regret gone."
+          ],
+          [
+            "Scattering your own self.",
+            "No regret."
+          ],
+          [
+            "Scattering the flock: great good.",
+            "Scattered, they make a hill —",
+            "more than common minds could think."
+          ],
+          [
+            "Scattering like sweat, his great cry goes out;",
+            "scattering from where the king lives.",
+            "No harm."
+          ],
+          [
+            "Scattering the blood,",
+            "leaving it far behind.",
+            "No harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4554,7 +7114,7 @@
     "number": 60,
     "name_zh": "節",
     "name_pinyin": "Jié",
-    "name_en": null,
+    "name_en": "Measure",
     "symbol": "䷻",
     "bits": [
       1,
@@ -4624,6 +7184,45 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "Bitter measure: you cannot hold firm."
+        ],
+        "image": [
+          "Water over the marsh: Measure.",
+          "So the noble one makes numbers and measures,",
+          "and weighs virtue and conduct."
+        ],
+        "lines": [
+          [
+            "Not going out of the door-courtyard.",
+            "No harm."
+          ],
+          [
+            "Not going out of the gate-courtyard.",
+            "Misfortune."
+          ],
+          [
+            "No measure — then lamenting.",
+            "No harm."
+          ],
+          [
+            "Measure at rest.",
+            "It goes through."
+          ],
+          [
+            "Sweet measure: good.",
+            "Going is honoured."
+          ],
+          [
+            "Bitter measure:",
+            "holding firm, misfortune.",
+            "Regret gone."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4631,7 +7230,7 @@
     "number": 61,
     "name_zh": "中孚",
     "name_pinyin": "Zhōng Fú",
-    "name_en": null,
+    "name_en": "Central Trust",
     "symbol": "䷼",
     "bits": [
       1,
@@ -4701,6 +7300,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "Pigs and fish: good.",
+          "It is good to ford the great river.",
+          "It is good to hold firm."
+        ],
+        "image": [
+          "Wind over the marsh: Central Trust.",
+          "So the noble one weighs lawsuits",
+          "and puts off executions."
+        ],
+        "lines": [
+          [
+            "At rest and prepared: good.",
+            "Anything else is not rest."
+          ],
+          [
+            "A crane crying in the shade;",
+            "its young answer it.",
+            "I have a good cup of wine —",
+            "I will share it with you, to the dregs."
+          ],
+          [
+            "Meeting a match:",
+            "now drumming, now stopping,",
+            "now weeping, now singing."
+          ],
+          [
+            "The moon almost full.",
+            "A team-horse is lost.",
+            "No harm."
+          ],
+          [
+            "There is trust, bound tight.",
+            "No harm."
+          ],
+          [
+            "Winged sounds climb to heaven.",
+            "Holding firm: misfortune."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4708,7 +7350,7 @@
     "number": 62,
     "name_zh": "小過",
     "name_pinyin": "Xiǎo Guò",
-    "name_en": null,
+    "name_en": "Small Excess",
     "symbol": "䷽",
     "bits": [
       0,
@@ -4778,6 +7420,56 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is good to hold firm.",
+          "Small things can be done; great things cannot.",
+          "A flying bird leaves its sound behind:",
+          "not fit to go up, fit to go down. Great good."
+        ],
+        "image": [
+          "Thunder on the mountain: Small Excess.",
+          "So the noble one, in conduct, exceeds in reverence,",
+          "in mourning exceeds in grief,",
+          "in spending exceeds in thrift."
+        ],
+        "lines": [
+          [
+            "A bird flying on:",
+            "misfortune with it."
+          ],
+          [
+            "Passing your grandfather, meeting your grandmother;",
+            "not reaching your ruler, meeting his minister.",
+            "No harm."
+          ],
+          [
+            "Do not pass it by: guard against it.",
+            "Close behind, someone may strike you.",
+            "Misfortune."
+          ],
+          [
+            "No harm.",
+            "Not passing, you meet it.",
+            "Going: danger — take warning.",
+            "Do not act on holding firm for ever."
+          ],
+          [
+            "Thick clouds, no rain —",
+            "from our western outskirts.",
+            "The duke shoots with a stringed arrow",
+            "and takes the one in the cave."
+          ],
+          [
+            "Not meeting, passing it by:",
+            "the flying bird is snared.",
+            "Misfortune.",
+            "This is called disaster and harm."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4785,7 +7477,7 @@
     "number": 63,
     "name_zh": "既濟",
     "name_pinyin": "Jì Jì",
-    "name_en": null,
+    "name_en": "Already Across",
     "symbol": "䷾",
     "bits": [
       1,
@@ -4855,6 +7547,49 @@
           ]
         ],
         "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "It is a little good to hold firm.",
+          "At first good; in the end, disorder."
+        ],
+        "image": [
+          "Water over fire: Already Across.",
+          "So the noble one thinks of trouble",
+          "and guards against it beforehand."
+        ],
+        "lines": [
+          [
+            "Dragging your wheels,",
+            "wetting your tail.",
+            "No harm."
+          ],
+          [
+            "A woman loses her carriage-curtain.",
+            "Do not chase it:",
+            "in seven days, got back."
+          ],
+          [
+            "Gaozong struck the Guifang;",
+            "three years, and he overcame them.",
+            "Do not use the small person."
+          ],
+          [
+            "Fine silk ends as stuffing-rags.",
+            "All day, take warning."
+          ],
+          [
+            "The eastern neighbour slaughters an ox;",
+            "it is nothing beside the western neighbour's simple offering,",
+            "which truly receives the blessing."
+          ],
+          [
+            "Wetting your head.",
+            "Danger."
+          ]
+        ],
+        "special": null
       }
     }
   },
@@ -4862,7 +7597,7 @@
     "number": 64,
     "name_zh": "未濟",
     "name_pinyin": "Wèi Jì",
-    "name_en": null,
+    "name_en": "Not Yet Across",
     "symbol": "䷿",
     "bits": [
       0,
@@ -4929,6 +7664,49 @@
           ],
           [
             "The topmost line, undivided, shows its subject full of confidence and therefore feasting (quietly). There will be no error. (If he) cherish this confidence, till he (is like the fox who) gets his head immersed, it will fail of what is right."
+          ]
+        ],
+        "special": null
+      },
+      "poem": {
+        "judgment": [
+          "It goes through.",
+          "A small fox, almost across —",
+          "its tail gets wet.",
+          "No good anywhere."
+        ],
+        "image": [
+          "Fire over water: Not Yet Across.",
+          "So the noble one carefully tells things apart",
+          "and puts each in its place."
+        ],
+        "lines": [
+          [
+            "Wetting your tail.",
+            "Shame."
+          ],
+          [
+            "Dragging your wheels.",
+            "Holding firm: good."
+          ],
+          [
+            "Not yet across. To march: misfortune.",
+            "It is good to ford the great river."
+          ],
+          [
+            "Holding firm: good. Regret gone.",
+            "Thundering, he strikes the Guifang;",
+            "three years — rewarded with a great state."
+          ],
+          [
+            "Holding firm: good. No regret.",
+            "The light of the noble one:",
+            "there is trust. Good."
+          ],
+          [
+            "There is trust in drinking wine: no harm.",
+            "Wetting your head —",
+            "trust there may be, but this is lost."
           ]
         ],
         "special": null

@@ -8,7 +8,7 @@ import {
 } from './engine.js';
 import { hexagramSVG, coinSVG, stalksSVG, escapeHtml } from './render.js';
 
-const DATA_VERSION = '1'; // bump when data/*.json changes (PLAN.md S9)
+const DATA_VERSION = '2'; // bump when data/*.json changes (PLAN.md S9)
 const app = document.getElementById('app');
 const liveRegion = document.getElementById('live');
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -72,7 +72,7 @@ function defaultTranslation() {
   const saved = local.get(L_TRANSLATION);
   if (saved === 'zh' || saved === 'legge' || saved === 'poem') return saved;
   if ((navigator.language || '').toLowerCase().startsWith('zh')) return 'zh';
-  // Rendering becomes the default once it exists (Phase 4); Legge until then.
+  // The Rendering is the default English text; Chinese above wins (Phase 4).
   if (DATA && DATA.hexagrams.every((h) => h.texts.poem)) return 'poem';
   return 'legge';
 }
@@ -763,9 +763,11 @@ function aboutView() {
           from Internet Archive page scans. Legge’s parentheses are his supplied wording,
           kept verbatim. Public domain.</td></tr>
       <tr><th scope="row">A rendering</th>
-          <td>A new poetic rendering is being written for this site; until it arrives,
-          Legge is the default English text and hexagrams are named in Chinese and pinyin.
-          The rendering will be © the site authors, CC BY 4.0.</td></tr>
+          <td>An original poetic rendering written for this site from the Chinese text above,
+          with its own short English hexagram names. It is the default English text;
+          switches to <span lang="zh-Hant">原文</span> or Legge hold for your next visit.
+          © the site authors, licensed under
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</td></tr>
       <tr><th scope="row">Type</th>
           <td>EB Garamond and Noto Serif TC, self-hosted subsets under the SIL Open Font
           License 1.1 (licence files ship with the fonts). This page makes no requests
