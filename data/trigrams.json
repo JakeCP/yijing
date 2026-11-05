@@ -1,0 +1,106 @@
+[
+  {
+    "name_zh": "乾",
+    "name_pinyin": "Qián",
+    "name_en": null,
+    "symbol": "☰",
+    "image_zh": "天",
+    "image_pinyin": "Tiān",
+    "bits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name_zh": "坤",
+    "name_pinyin": "Kūn",
+    "name_en": null,
+    "symbol": "☷",
+    "image_zh": "地",
+    "image_pinyin": "Dì",
+    "bits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name_zh": "震",
+    "name_pinyin": "Zhèn",
+    "name_en": null,
+    "symbol": "☳",
+    "image_zh": "雷",
+    "image_pinyin": "Léi",
+    "bits": [
+      1,
+      0,
+      0
+    ]
+  },
+  {
+    "name_zh": "巽",
+    "name_pinyin": "Xùn",
+    "name_en": null,
+    "symbol": "☴",
+    "image_zh": "風",
+    "image_pinyin": "Fēng",
+    "bits": [
+      0,
+      1,
+      1
+    ]
+  },
+  {
+    "name_zh": "坎",
+    "name_pinyin": "Kǎn",
+    "name_en": null,
+    "symbol": "☵",
+    "image_zh": "水",
+    "image_pinyin": "Shuǐ",
+    "bits": [
+      0,
+      1,
+      0
+    ]
+  },
+  {
+    "name_zh": "離",
+    "name_pinyin": "Lí",
+    "name_en": null,
+    "symbol": "☲",
+    "image_zh": "火",
+    "image_pinyin": "Huǒ",
+    "bits": [
+      1,
+      0,
+      1
+    ]
+  },
+  {
+    "name_zh": "艮",
+    "name_pinyin": "Gèn",
+    "name_en": null,
+    "symbol": "☶",
+    "image_zh": "山",
+    "image_pinyin": "Shān",
+    "bits": [
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name_zh": "兌",
+    "name_pinyin": "Duì",
+    "name_en": null,
+    "symbol": "☱",
+    "image_zh": "澤",
+    "image_pinyin": "Zé",
+    "bits": [
+      1,
+      1,
+      0
+    ]
+  }
+]

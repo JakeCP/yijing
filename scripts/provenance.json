@@ -1,0 +1,1074 @@
+{
+  "version": 1,
+  "note": "Pinned inputs for scripts/build.mjs. Regenerate only with --fetch after deliberate source review. Wikisource oldid = revision id captured at fetch; cached wikitext is the reproducible input.",
+  "sources": [
+    {
+      "id": "gutenberg-zh",
+      "description": "Project Gutenberg #25501 易經 (Chinese received text; base text, PG branding stripped at parse)",
+      "url": "https://www.gutenberg.org/files/25501/25501-0.txt",
+      "cache": "gutenberg-25501.txt",
+      "sha256": "e9539317a2845c98ec90b4fca8fe788ccf1653d00b7b82bf936fe7f8c3350f86",
+      "bytes": 113408,
+      "details": {
+        "ebook": 25501,
+        "note": "PG header/footer between START/END markers excluded by parser"
+      }
+    },
+    {
+      "id": "ia-legge-djvu-xml",
+      "description": "James Legge, SBE vol.16 The Yi King (1882), IA item I-Ching, DjVu OCR XML (parsed; word coordinates separate translation from notes by type size)",
+      "url": "https://archive.org/download/I-Ching/JamesLegge-IChing_djvu.xml",
+      "cache": "legge-djvu.xml",
+      "sha256": "a231a6790de8f4248b7ef06854b739bb1435f4e0a8a27ab515dc968b8a34d7d6",
+      "bytes": 12285985,
+      "details": {
+        "item": "I-Ching",
+        "edition": "Sacred Books of the East vol. XVI, Clarendon Press, 1882 (title page of scan)"
+      }
+    },
+    {
+      "id": "ia-legge-djvu-txt",
+      "description": "Same IA OCR as plain text (reference copy for manual checks; not parsed — its reading order interleaves footnotes)",
+      "url": "https://archive.org/download/I-Ching/JamesLegge-IChing_djvu.txt",
+      "cache": "legge-djvu.txt",
+      "sha256": "7cd3cfdd9295fa254904a1c385c693f33677fbae0490e8f839b57534aecd7bcf",
+      "bytes": 888146,
+      "details": {
+        "item": "I-Ching"
+      }
+    },
+    {
+      "id": "zh-wikisource",
+      "description": "zh Wikisource 周易 per-hexagram wikitext (collation only; CC BY-SA, no text copied into base)",
+      "url": "https://zh.wikisource.org/w/api.php (64 titles 周易/<name>)",
+      "cache": "zh-wikisource.json",
+      "sha256": "a0b6c7cdcad2827e7437b743f81e95e19a8c1768467e450c0f91edcd5a397b36",
+      "bytes": 96255,
+      "details": {
+        "pages": [
+          {
+            "number": 1,
+            "title": "周易/乾",
+            "oldid": 2404991
+          },
+          {
+            "number": 2,
+            "title": "周易/坤",
+            "oldid": 2404999
+          },
+          {
+            "number": 3,
+            "title": "周易/屯",
+            "oldid": 10643482
+          },
+          {
+            "number": 4,
+            "title": "周易/蒙",
+            "oldid": 10645379
+          },
+          {
+            "number": 5,
+            "title": "周易/需",
+            "oldid": 10643261
+          },
+          {
+            "number": 6,
+            "title": "周易/訟",
+            "oldid": 10645409
+          },
+          {
+            "number": 7,
+            "title": "周易/師",
+            "oldid": 2405011
+          },
+          {
+            "number": 8,
+            "title": "周易/比",
+            "oldid": 10645543
+          },
+          {
+            "number": 9,
+            "title": "周易/小畜",
+            "oldid": 10645530
+          },
+          {
+            "number": 10,
+            "title": "周易/履",
+            "oldid": 10647513
+          },
+          {
+            "number": 11,
+            "title": "周易/泰",
+            "oldid": 2106138
+          },
+          {
+            "number": 12,
+            "title": "周易/否",
+            "oldid": 10645603
+          },
+          {
+            "number": 13,
+            "title": "周易/同人",
+            "oldid": 10645635
+          },
+          {
+            "number": 14,
+            "title": "周易/大有",
+            "oldid": 10645712
+          },
+          {
+            "number": 15,
+            "title": "周易/謙",
+            "oldid": 2106142
+          },
+          {
+            "number": 16,
+            "title": "周易/豫",
+            "oldid": 10645735
+          },
+          {
+            "number": 17,
+            "title": "周易/隨",
+            "oldid": 10645020
+          },
+          {
+            "number": 18,
+            "title": "周易/蠱",
+            "oldid": 2106145
+          },
+          {
+            "number": 19,
+            "title": "周易/臨",
+            "oldid": 2106146
+          },
+          {
+            "number": 20,
+            "title": "周易/觀",
+            "oldid": 10645159
+          },
+          {
+            "number": 21,
+            "title": "周易/噬嗑",
+            "oldid": 10645753
+          },
+          {
+            "number": 22,
+            "title": "周易/賁",
+            "oldid": 2405035
+          },
+          {
+            "number": 23,
+            "title": "周易/剝",
+            "oldid": 10645800
+          },
+          {
+            "number": 24,
+            "title": "周易/復",
+            "oldid": 10643037
+          },
+          {
+            "number": 25,
+            "title": "周易/无妄",
+            "oldid": 10645038
+          },
+          {
+            "number": 26,
+            "title": "周易/大畜",
+            "oldid": 10646304
+          },
+          {
+            "number": 27,
+            "title": "周易/頤",
+            "oldid": 10643091
+          },
+          {
+            "number": 28,
+            "title": "周易/大過",
+            "oldid": 10645184
+          },
+          {
+            "number": 29,
+            "title": "周易/坎",
+            "oldid": 10646381
+          },
+          {
+            "number": 30,
+            "title": "周易/離",
+            "oldid": 10646424
+          },
+          {
+            "number": 31,
+            "title": "周易/咸",
+            "oldid": 10646450
+          },
+          {
+            "number": 32,
+            "title": "周易/恒",
+            "oldid": 10646486
+          },
+          {
+            "number": 33,
+            "title": "周易/遯",
+            "oldid": 10645108
+          },
+          {
+            "number": 34,
+            "title": "周易/大壯",
+            "oldid": 10646529
+          },
+          {
+            "number": 35,
+            "title": "周易/晉",
+            "oldid": 10646579
+          },
+          {
+            "number": 36,
+            "title": "周易/明夷",
+            "oldid": 10644507
+          },
+          {
+            "number": 37,
+            "title": "周易/家人",
+            "oldid": 2405005
+          },
+          {
+            "number": 38,
+            "title": "周易/睽",
+            "oldid": 10646622
+          },
+          {
+            "number": 39,
+            "title": "周易/蹇",
+            "oldid": 2405036
+          },
+          {
+            "number": 40,
+            "title": "周易/解",
+            "oldid": 10646666
+          },
+          {
+            "number": 41,
+            "title": "周易/損",
+            "oldid": 10646704
+          },
+          {
+            "number": 42,
+            "title": "周易/益",
+            "oldid": 10646726
+          },
+          {
+            "number": 43,
+            "title": "周易/夬",
+            "oldid": 2405003
+          },
+          {
+            "number": 44,
+            "title": "周易/姤",
+            "oldid": 10646826
+          },
+          {
+            "number": 45,
+            "title": "周易/萃",
+            "oldid": 10647546
+          },
+          {
+            "number": 46,
+            "title": "周易/升",
+            "oldid": 10646879
+          },
+          {
+            "number": 47,
+            "title": "周易/困",
+            "oldid": 10647032
+          },
+          {
+            "number": 48,
+            "title": "周易/井",
+            "oldid": 10645240
+          },
+          {
+            "number": 49,
+            "title": "周易/革",
+            "oldid": 10643173
+          },
+          {
+            "number": 50,
+            "title": "周易/鼎",
+            "oldid": 10647086
+          },
+          {
+            "number": 51,
+            "title": "周易/震",
+            "oldid": 10644930
+          },
+          {
+            "number": 52,
+            "title": "周易/艮",
+            "oldid": 10647135
+          },
+          {
+            "number": 53,
+            "title": "周易/漸",
+            "oldid": 2560535
+          },
+          {
+            "number": 54,
+            "title": "周易/歸妹",
+            "oldid": 10647182
+          },
+          {
+            "number": 55,
+            "title": "周易/豐",
+            "oldid": 10645290
+          },
+          {
+            "number": 56,
+            "title": "周易/旅",
+            "oldid": 10647234
+          },
+          {
+            "number": 57,
+            "title": "周易/巽",
+            "oldid": 10644966
+          },
+          {
+            "number": 58,
+            "title": "周易/兌",
+            "oldid": 2404993
+          },
+          {
+            "number": 59,
+            "title": "周易/渙",
+            "oldid": 10647580
+          },
+          {
+            "number": 60,
+            "title": "周易/節",
+            "oldid": 2405027
+          },
+          {
+            "number": 61,
+            "title": "周易/中孚",
+            "oldid": 10647425
+          },
+          {
+            "number": 62,
+            "title": "周易/小過",
+            "oldid": 10643238
+          },
+          {
+            "number": 63,
+            "title": "周易/既濟",
+            "oldid": 2572417
+          },
+          {
+            "number": 64,
+            "title": "周易/未濟",
+            "oldid": 10647450
+          }
+        ]
+      }
+    },
+    {
+      "id": "en-wikisource",
+      "description": "en Wikisource SBE Volume 16, Hexagram 1-32 transclusions + underlying Page: wikitext (collation only, Text section; CC BY-SA)",
+      "url": "https://en.wikisource.org/w/api.php (Hexagram 1-32 + Page:Sacred Books of the East - Volume 16.djvu/NN)",
+      "cache": "en-wikisource.json",
+      "sha256": "54c4771a6e99a1a7bac6ebc28c0b648bd53394daeb15b296f88e350cef1a812f",
+      "bytes": 213408,
+      "details": {
+        "hexagrams": [
+          {
+            "number": 1,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 1",
+            "oldid": 11866867,
+            "ranges": [
+              [
+                91,
+                92
+              ]
+            ]
+          },
+          {
+            "number": 2,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 2",
+            "oldid": 11866915,
+            "ranges": [
+              [
+                93,
+                95
+              ]
+            ]
+          },
+          {
+            "number": 3,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 3",
+            "oldid": 11866943,
+            "ranges": [
+              [
+                96,
+                97
+              ]
+            ]
+          },
+          {
+            "number": 4,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 4",
+            "oldid": 11866954,
+            "ranges": [
+              [
+                98,
+                100
+              ]
+            ]
+          },
+          {
+            "number": 5,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 5",
+            "oldid": 11867084,
+            "ranges": [
+              [
+                101,
+                102
+              ]
+            ]
+          },
+          {
+            "number": 6,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 6",
+            "oldid": 11867104,
+            "ranges": [
+              [
+                103,
+                104
+              ]
+            ]
+          },
+          {
+            "number": 7,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 7",
+            "oldid": 11868095,
+            "ranges": [
+              [
+                105,
+                106
+              ]
+            ]
+          },
+          {
+            "number": 8,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 8",
+            "oldid": 11868267,
+            "ranges": [
+              [
+                107,
+                109
+              ]
+            ]
+          },
+          {
+            "number": 9,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 9",
+            "oldid": 11868371,
+            "ranges": [
+              [
+                110,
+                111
+              ]
+            ]
+          },
+          {
+            "number": 10,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 10",
+            "oldid": 11868573,
+            "ranges": [
+              [
+                112,
+                114
+              ]
+            ]
+          },
+          {
+            "number": 11,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 11",
+            "oldid": 11868635,
+            "ranges": [
+              [
+                115,
+                116
+              ]
+            ]
+          },
+          {
+            "number": 12,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 12",
+            "oldid": 11868661,
+            "ranges": [
+              [
+                117,
+                119
+              ]
+            ]
+          },
+          {
+            "number": 13,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 13",
+            "oldid": 11875263,
+            "ranges": [
+              [
+                120,
+                121
+              ]
+            ]
+          },
+          {
+            "number": 14,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 14",
+            "oldid": 11883781,
+            "ranges": [
+              [
+                122,
+                122
+              ]
+            ]
+          },
+          {
+            "number": 15,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 15",
+            "oldid": 11883830,
+            "ranges": [
+              [
+                123,
+                124
+              ]
+            ]
+          },
+          {
+            "number": 16,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 16",
+            "oldid": 11883894,
+            "ranges": [
+              [
+                125,
+                126
+              ]
+            ]
+          },
+          {
+            "number": 17,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 17",
+            "oldid": 11885944,
+            "ranges": [
+              [
+                127,
+                128
+              ]
+            ]
+          },
+          {
+            "number": 18,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 18",
+            "oldid": 11887599,
+            "ranges": [
+              [
+                129,
+                130
+              ]
+            ]
+          },
+          {
+            "number": 19,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 19",
+            "oldid": 11888751,
+            "ranges": [
+              [
+                131,
+                132
+              ]
+            ]
+          },
+          {
+            "number": 20,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 20",
+            "oldid": 11902131,
+            "ranges": [
+              [
+                133,
+                134
+              ]
+            ]
+          },
+          {
+            "number": 21,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 21",
+            "oldid": 11903186,
+            "ranges": [
+              [
+                135,
+                136
+              ]
+            ]
+          },
+          {
+            "number": 22,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 22",
+            "oldid": 11903771,
+            "ranges": [
+              [
+                137,
+                138
+              ]
+            ]
+          },
+          {
+            "number": 23,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 23",
+            "oldid": 11915301,
+            "ranges": [
+              [
+                139,
+                140
+              ]
+            ]
+          },
+          {
+            "number": 24,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 24",
+            "oldid": 11915964,
+            "ranges": [
+              [
+                141,
+                142
+              ]
+            ]
+          },
+          {
+            "number": 25,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 25",
+            "oldid": 11938316,
+            "ranges": [
+              [
+                143,
+                145
+              ]
+            ]
+          },
+          {
+            "number": 26,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 26",
+            "oldid": 11938657,
+            "ranges": [
+              [
+                146,
+                147
+              ]
+            ]
+          },
+          {
+            "number": 27,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 27",
+            "oldid": 11938717,
+            "ranges": [
+              [
+                148,
+                149
+              ]
+            ]
+          },
+          {
+            "number": 28,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 28",
+            "oldid": 11951725,
+            "ranges": [
+              [
+                150,
+                151
+              ]
+            ]
+          },
+          {
+            "number": 29,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 29",
+            "oldid": 11952665,
+            "ranges": [
+              [
+                152,
+                153
+              ]
+            ]
+          },
+          {
+            "number": 30,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 30",
+            "oldid": 11953427,
+            "ranges": [
+              [
+                154,
+                156
+              ]
+            ]
+          },
+          {
+            "number": 31,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 31",
+            "oldid": 11966145,
+            "ranges": [
+              [
+                157,
+                158
+              ]
+            ]
+          },
+          {
+            "number": 32,
+            "title": "Sacred Books of the East/Volume 16/Hexagram 32",
+            "oldid": 16270524,
+            "ranges": []
+          }
+        ],
+        "pages": [
+          {
+            "djvu": 91,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/91",
+            "oldid": 11885446
+          },
+          {
+            "djvu": 92,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/92",
+            "oldid": 11866744
+          },
+          {
+            "djvu": 93,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/93",
+            "oldid": 11885435
+          },
+          {
+            "djvu": 94,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/94",
+            "oldid": 11885433
+          },
+          {
+            "djvu": 95,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/95",
+            "oldid": 11885431
+          },
+          {
+            "djvu": 96,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/96",
+            "oldid": 11885429
+          },
+          {
+            "djvu": 97,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/97",
+            "oldid": 11885427
+          },
+          {
+            "djvu": 98,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/98",
+            "oldid": 11885424
+          },
+          {
+            "djvu": 99,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/99",
+            "oldid": 15473695
+          },
+          {
+            "djvu": 100,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/100",
+            "oldid": 11884626
+          },
+          {
+            "djvu": 101,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/101",
+            "oldid": 11885449
+          },
+          {
+            "djvu": 102,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/102",
+            "oldid": 11883962
+          },
+          {
+            "djvu": 103,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/103",
+            "oldid": 11885450
+          },
+          {
+            "djvu": 104,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/104",
+            "oldid": 11883959
+          },
+          {
+            "djvu": 105,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/105",
+            "oldid": 11885453
+          },
+          {
+            "djvu": 106,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/106",
+            "oldid": 11885457
+          },
+          {
+            "djvu": 107,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/107",
+            "oldid": 11902112
+          },
+          {
+            "djvu": 108,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/108",
+            "oldid": 11885738
+          },
+          {
+            "djvu": 109,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/109",
+            "oldid": 11883938
+          },
+          {
+            "djvu": 110,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/110",
+            "oldid": 14513633
+          },
+          {
+            "djvu": 111,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/111",
+            "oldid": 11868370
+          },
+          {
+            "djvu": 112,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/112",
+            "oldid": 11885747
+          },
+          {
+            "djvu": 113,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/113",
+            "oldid": 11868364
+          },
+          {
+            "djvu": 114,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/114",
+            "oldid": 11902100
+          },
+          {
+            "djvu": 115,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/115",
+            "oldid": 15473688
+          },
+          {
+            "djvu": 116,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/116",
+            "oldid": 11883912
+          },
+          {
+            "djvu": 117,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/117",
+            "oldid": 11885759
+          },
+          {
+            "djvu": 118,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/118",
+            "oldid": 11885763
+          },
+          {
+            "djvu": 119,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/119",
+            "oldid": 11883909
+          },
+          {
+            "djvu": 120,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/120",
+            "oldid": 11902096
+          },
+          {
+            "djvu": 121,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/121",
+            "oldid": 11902095
+          },
+          {
+            "djvu": 122,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/122",
+            "oldid": 11902089
+          },
+          {
+            "djvu": 123,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/123",
+            "oldid": 11885772
+          },
+          {
+            "djvu": 124,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/124",
+            "oldid": 11883901
+          },
+          {
+            "djvu": 125,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/125",
+            "oldid": 11885773
+          },
+          {
+            "djvu": 126,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/126",
+            "oldid": 11883889
+          },
+          {
+            "djvu": 127,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/127",
+            "oldid": 11885826
+          },
+          {
+            "djvu": 128,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/128",
+            "oldid": 11885968
+          },
+          {
+            "djvu": 129,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/129",
+            "oldid": 11902081
+          },
+          {
+            "djvu": 130,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/130",
+            "oldid": 11902080
+          },
+          {
+            "djvu": 131,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/131",
+            "oldid": 15473689
+          },
+          {
+            "djvu": 132,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/132",
+            "oldid": 11902074
+          },
+          {
+            "djvu": 133,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/133",
+            "oldid": 11902073
+          },
+          {
+            "djvu": 134,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/134",
+            "oldid": 11902070
+          },
+          {
+            "djvu": 135,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/135",
+            "oldid": 11902064
+          },
+          {
+            "djvu": 136,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/136",
+            "oldid": 11902188
+          },
+          {
+            "djvu": 137,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/137",
+            "oldid": 11903185
+          },
+          {
+            "djvu": 138,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/138",
+            "oldid": 11903702
+          },
+          {
+            "djvu": 139,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/139",
+            "oldid": 11903765
+          },
+          {
+            "djvu": 140,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/140",
+            "oldid": 11915263
+          },
+          {
+            "djvu": 141,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/141",
+            "oldid": 11915961
+          },
+          {
+            "djvu": 142,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/142",
+            "oldid": 11915959
+          },
+          {
+            "djvu": 143,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/143",
+            "oldid": 11915954
+          },
+          {
+            "djvu": 144,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/144",
+            "oldid": 12333795
+          },
+          {
+            "djvu": 145,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/145",
+            "oldid": 11932358
+          },
+          {
+            "djvu": 146,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/146",
+            "oldid": 11938313
+          },
+          {
+            "djvu": 147,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/147",
+            "oldid": 15473690
+          },
+          {
+            "djvu": 148,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/148",
+            "oldid": 11938654
+          },
+          {
+            "djvu": 149,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/149",
+            "oldid": 11938685
+          },
+          {
+            "djvu": 150,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/150",
+            "oldid": 12333797
+          },
+          {
+            "djvu": 151,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/151",
+            "oldid": 11951690
+          },
+          {
+            "djvu": 152,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/152",
+            "oldid": 11951724
+          },
+          {
+            "djvu": 153,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/153",
+            "oldid": 11951867
+          },
+          {
+            "djvu": 154,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/154",
+            "oldid": 11953426
+          },
+          {
+            "djvu": 155,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/155",
+            "oldid": 11953867
+          },
+          {
+            "djvu": 156,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/156",
+            "oldid": 11953420
+          },
+          {
+            "djvu": 157,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/157",
+            "oldid": 11953878
+          },
+          {
+            "djvu": 158,
+            "title": "Page:Sacred Books of the East - Volume 16.djvu/158",
+            "oldid": 11966096
+          }
+        ]
+      }
+    }
+  ]
+}

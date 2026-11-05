@@ -1,0 +1,879 @@
+[
+  {
+    "slot": "zh.2.lines.5",
+    "find": "戰龍於野",
+    "replace": "龍戰於野",
+    "reason": "PG transposes the phrase. zh Wikisource reads 龍戰于野; Legge 'dragons fighting in the wild'; received text standard. PG's 於 kept."
+  },
+  {
+    "slot": "zh.4.judgment",
+    "find": "初噬告",
+    "replace": "初筮告",
+    "reason": "PG miswrites 筮 (stalk divination) as 噬 (bite), which makes no sense. zh Wikisource reads 筮; Legge 'first recourse to divination'."
+  },
+  {
+    "slot": "zh.18.lines.2",
+    "value": [
+      "幹父之蠱，小有悔，無大咎。"
+    ],
+    "reason": "PG drops 之蠱 and miswrites 悔 as 晦. Restored from zh Wikisource; cf. line 2 幹母之蠱 and Legge 'some small occasion for repentance'."
+  },
+  {
+    "slot": "zh.24.lines.0",
+    "find": "不復遠",
+    "replace": "不遠復",
+    "reason": "PG line transposed against its own 小象 (不遠之復) and 繫辭 quotation (不遠復); zh Wikisource agrees."
+  },
+  {
+    "slot": "zh.48.lines.2",
+    "find": "為我民惻",
+    "replace": "為我心惻",
+    "reason": "PG 民 for 心. zh Wikisource reads 心惻; Legge 'Our hearts are sorry for this'."
+  },
+  {
+    "slot": "zh.48.lines.5",
+    "find": "有孚無吉",
+    "replace": "有孚元吉",
+    "reason": "PG 無 for 元, against its own 小象 (元吉在上). zh Wikisource reads 元吉; Legge 'great good fortune'."
+  },
+  {
+    "slot": "zh.57.judgment",
+    "find": "利攸往",
+    "replace": "利有攸往",
+    "reason": "PG judgment omits 有 against its own 彖 quotation (利有攸往); zh Wikisource agrees."
+  },
+  {
+    "slot": "legge.1.lines.2",
+    "find": "but there will be no mistake,",
+    "replace": "but there will be no mistake.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.1.lines.5",
+    "find": "In the sich",
+    "replace": "In the sixth",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.2.judgment",
+    "find": "K hwAn",
+    "replace": "Khwan",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.2.lines.1",
+    "find": "advantageous.:",
+    "replace": "advantageous.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.2.special",
+    "value": [
+      "(The lines of this hexagram are all weak and divided, as appears from) the use of the number six. If those (who are thus represented) be perpetually correct and firm, advantage will arise."
+    ],
+    "reason": "Removes two leaked discursive-note sentences appended by the parser (post-completion token); en Wikisource confirms the paragraph ends at 'arise.'"
+  },
+  {
+    "slot": "legge.3.image",
+    "find": "form Aun",
+    "replace": "form Kun",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.4.lines.0",
+    "find": "regret. |",
+    "replace": "regret.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.4.lines.1",
+    "find": "family. |",
+    "replace": "family.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.4.lines.5",
+    "find": "no advantage [16] F will",
+    "replace": "no advantage will",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.5.judgment",
+    "find": "Hsii intimates",
+    "replace": "Hsu intimates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.5.image",
+    "find": "forms Hsii",
+    "replace": "forms Hsu",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.8.judgment",
+    "find": "But-let",
+    "replace": "But let",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.9.judgment",
+    "find": "Hsiao At indicates",
+    "replace": "Hsiao Khu indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.9.image",
+    "find": "form Hsiao Aht",
+    "replace": "form Hsiao Khu",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.9.lines.5",
+    "find": "Ifthe superior",
+    "replace": "If the superior",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.10.image",
+    "find": "form Lt.",
+    "replace": "form Li.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.10.lines.5",
+    "find": "examine the i aN ee presage",
+    "replace": "examine the presage",
+    "reason": "OCR garbage insertion; en Wikisource reads 'examine the presage'."
+  },
+  {
+    "slot": "legge.11.judgment",
+    "find": "good fortune, ' with",
+    "replace": "good fortune, with",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.11.lines.4",
+    "find": "Ti-yt’s",
+    "replace": "Ti-yi’s",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.12.image",
+    "find": "(the manifestation) of) his virtue",
+    "replace": "(the manifestation of) his virtue",
+    "reason": "OCR parenthesis misplacement; grammar requires 'of' inside the parenthesis."
+  },
+  {
+    "slot": "legge.12.lines.1",
+    "find": "subject ' patient",
+    "replace": "subject patient",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.13.judgment",
+    "find": "Thung Z4n",
+    "replace": "Thung Zan",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.13.image",
+    "find": "in accordance with this),",
+    "replace": "in accordance with this,",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.13.lines.1",
+    "find": "regret. |",
+    "replace": "regret.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.13.lines.4",
+    "find": "Inthe fifth lime",
+    "replace": "In the fifth line",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.14.judgment",
+    "find": "TA YQ indicates",
+    "replace": "Ta Yu indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.14.judgment",
+    "find": "great progress and SUCCESS",
+    "replace": "great progress and success",
+    "reason": "Small-caps emphasis in print read as capitals by OCR; en Wikisource reads 'success'."
+  },
+  {
+    "slot": "legge.14.image",
+    "find": "(The trigfam for)",
+    "replace": "(The trigram for)",
+    "reason": "OCR error (trigram)."
+  },
+  {
+    "slot": "legge.14.image",
+    "find": "form T&4 YQ",
+    "replace": "form Ta Yu",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.14.lines.3",
+    "find": "restraint. ‘There",
+    "replace": "restraint. There",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.15.judgment",
+    "find": "Kien indicates",
+    "replace": "Khien indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.15.image",
+    "find": "form Kien",
+    "replace": "form Khien",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.15.lines.1",
+    "find": "The ‘second",
+    "replace": "The second",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.15.lines.4",
+    "find": "force of arms, All",
+    "replace": "force of arms. All",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.15.lines.4",
+    "find": "movements will be advantageous,",
+    "replace": "movements will be advantageous.",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.16.judgment",
+    "value": [
+      "Yu indicates that, (in the state which it implies), feudal princes may be set up, and the hosts put in motion, with advantage."
+    ],
+    "reason": "IA OCR garbles the opening ('Yui ... it oe'); restored from en Wikisource (name in plain letters per policy)."
+  },
+  {
+    "slot": "legge.16.image",
+    "find": "the.earth",
+    "replace": "the earth",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.16.image",
+    "find": "form Yi.",
+    "replace": "form Yu.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.16.lines.1",
+    "value": [
+      "The second line, divided, shows one who is firm as a rock. (He sees a thing) without waiting till it has come to pass; with his firm correctness there will be good fortune."
+    ],
+    "reason": "IA paragraph extraction lost the middle of this line paragraph ('firm as a rock...'); restored from en Wikisource; the words are present in the IA plain-text OCR in footnote order."
+  },
+  {
+    "slot": "legge.16.lines.2",
+    "find": "understand!—- If",
+    "replace": "understand!—If",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.16.lines.3",
+    "find": "he obtains, Let",
+    "replace": "he obtains. Let",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.17.lines.2",
+    "find": "correct. |",
+    "replace": "correct.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.18.judgment",
+    "find": "Kfi indicates",
+    "replace": "Ku indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.18.judgment",
+    "find": "by it), There",
+    "replace": "by it). There",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.18.image",
+    "find": "form Kt.",
+    "replace": "form Ku.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.19.judgment",
+    "find": "while it will be. advantageous",
+    "replace": "while it will be advantageous",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.19.lines.0",
+    "find": "(with the subject of the (16] H second line), Through",
+    "replace": "(with the subject of the second line). Through",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text. Sentence punctuation per en Wikisource."
+  },
+  {
+    "slot": "legge.20.judgment",
+    "find": "_ KwéAn shows",
+    "replace": "Kwan shows",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.20.judgment",
+    "find": "(commanding reverent regard),",
+    "replace": "(commanding reverent regard).",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.22.image",
+    "find": "The superior. man",
+    "replace": "The superior man",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.23.lines.4",
+    "find": "every way. |",
+    "replace": "every way.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.24.judgment",
+    "find": "Ffi indicates",
+    "replace": "Fu indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.24.image",
+    "find": "form Fa.",
+    "replace": "form Fu.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.25.judgment",
+    "find": "WA Wang indicates",
+    "replace": "Wu Wang indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.25.lines.2",
+    "find": "as in _the case",
+    "replace": "as in the case",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.26.judgment",
+    "find": "conditions of T4 A it",
+    "replace": "conditions of Ta Khu it",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.26.image",
+    "find": "form Ta Akt.",
+    "replace": "form Ta Khu.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.27.judgment",
+    "find": "by it), We must",
+    "replace": "by it). We must",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.27.lines.2",
+    "find": "advantageous.:",
+    "replace": "advantageous.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.27.lines.3",
+    "find": "(the power to) nourish. ‘There",
+    "replace": "(the power to) nourish. There",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.28.image",
+    "find": "forms T 4 Kwo.",
+    "replace": "forms Ta Kwo.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.28.lines.0",
+    "find": "white mdo grass",
+    "replace": "white mao grass",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.28.lines.1",
+    "find": "every way. |",
+    "replace": "every way.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.28.lines.2",
+    "find": "beam that is weak, There",
+    "replace": "beam that is weak. There",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.29.judgment",
+    "find": "the mind 1s _ penetrating",
+    "replace": "the mind is penetrating",
+    "reason": "OCR error; en Wikisource wording agrees apart from its own stray stop ('is. penetrating')."
+  },
+  {
+    "slot": "legge.30.judgment",
+    "find": "course and _ success",
+    "replace": "course and success",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.30.image",
+    "find": "forms Lt.",
+    "replace": "forms Li.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.31.lines.5",
+    "find": "moving his\" jaws",
+    "replace": "moving his jaws",
+    "reason": "OCR error; en Wikisource proofread reading (see COLLATION.md)."
+  },
+  {
+    "slot": "legge.32.judgment",
+    "find": "it denotes), But",
+    "replace": "it denotes). But",
+    "reason": "Sentence punctuation; en Wikisource Hexagram 32 inline judgment reads 'no error (in what it denotes). But...'."
+  },
+  {
+    "slot": "legge.33.image",
+    "find": "at’a distance",
+    "replace": "at a distance",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.34.judgment",
+    "find": "TA Awang indicates",
+    "replace": "Ta Kwang indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Contents list reads 'Ta Kwang'."
+  },
+  {
+    "slot": "legge.34.image",
+    "find": "form T4 A wang.",
+    "replace": "form Ta Kwang.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.34.lines.5",
+    "find": "as he wovld fain",
+    "replace": "as he would fain",
+    "reason": "OCR v for u (would)."
+  },
+  {
+    "slot": "legge.35.judgment",
+    "find": "In 3in we see",
+    "replace": "In Zin we see",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. 'Zin' is read cleanly elsewhere in both IA OCRs."
+  },
+  {
+    "slot": "legge.35.image",
+    "find": "form 3in.",
+    "replace": "form Zin.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.36.judgment",
+    "find": "Ming f indicates",
+    "replace": "Ming I indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.36.lines.1",
+    "find": "indicated by) Ming [,",
+    "replace": "indicated by) Ming I,",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.36.lines.2",
+    "find": "indicated by) Ming 1, hunting in. the south",
+    "replace": "indicated by) Ming I, hunting in the south",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Stray stop also removed."
+  },
+  {
+    "slot": "legge.36.lines.4",
+    "find": "count of Kt fulfilled the condition indicated by Ming [.",
+    "replace": "count of Ki fulfilled the condition indicated by Ming I.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. The count of Ki (箕子)."
+  },
+  {
+    "slot": "legge.37.judgment",
+    "value": [
+      "For (the realisation of what is taught in) Kia Zan, (or for the regulation of the family), what is most advantageous is that the wife be firm and correct."
+    ],
+    "reason": "IA OCR garbles the name and inserts signature matter ('what is 7 (52 most...'); name confirmed by the Great Image of this hexagram and the Contents list."
+  },
+  {
+    "slot": "legge.37.lines.2",
+    "find": "regret. |",
+    "replace": "regret.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.38.judgment",
+    "find": "K hwei indicates",
+    "replace": "Khwei indicates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.38.lines.3",
+    "find": "together. | The position",
+    "replace": "together. The position",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.41.judgment",
+    "find": "movement that shali be made",
+    "replace": "movement that shall be made",
+    "reason": "OCR i for l; cf. line 6 of this hexagram, read cleanly."
+  },
+  {
+    "slot": "legge.41.lines.3",
+    "find": "shows its, subject",
+    "replace": "shows its subject",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.41.lines.4",
+    "find": "great good fortune.:",
+    "replace": "great good fortune.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.42.image",
+    "find": "form Yt.",
+    "replace": "form Yi.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.43.image",
+    "find": "form Kw4i.",
+    "replace": "form Kwai.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.44.judgment",
+    "find": "K 4u shows",
+    "replace": "Kau shows",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Contents list reads 'Kau'."
+  },
+  {
+    "slot": "legge.44.image",
+    "find": "form K4u.",
+    "replace": "form Kau.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.45.judgment",
+    "find": "denoted by) 3hui,",
+    "replace": "denoted by) Zhui,",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Initial inferred: OCR '3' = Z (cf. Zin/Zing), Contents 'Shui' with Z misread as S in small caps."
+  },
+  {
+    "slot": "legge.45.image",
+    "find": "form 3hui.",
+    "replace": "form Zhui.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.45.lines.0",
+    "find": "(the temporary diffculty)",
+    "replace": "(the temporary difficulty)",
+    "reason": "OCR dropped i (difficulty)."
+  },
+  {
+    "slot": "legge.45.lines.4",
+    "find": "longcontinued,",
+    "replace": "long-continued,",
+    "reason": "Compound hyphen lost to line-break dehyphenation; Legge hyphenates such compounds (cf. 'long-cherished' mid-line, Appendix II)."
+  },
+  {
+    "slot": "legge.46.judgment",
+    "find": "will be fortunate. |",
+    "replace": "will be fortunate.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.46.lines.3",
+    "find": "mount KAi.",
+    "replace": "mount Khi.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Mount Khi (岐山)."
+  },
+  {
+    "slot": "legge.46.lines.3",
+    "find": "no mistake.,",
+    "replace": "no mistake.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.47.judgment",
+    "find": "denoted by) Khw4n there",
+    "replace": "denoted by) Khwan there",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.47.judgment",
+    "find": "For the firm and {16} M correct,",
+    "replace": "For the firm and correct,",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.47.lines.0",
+    "find": "with. bare buttocks",
+    "replace": "with bare buttocks",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.48.judgment",
+    "find": "(Looking at) 3ing,",
+    "replace": "(Looking at) Zing,",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Spelled out in the discursive note: 'Ting and Zing (48)'."
+  },
+  {
+    "slot": "legge.48.image",
+    "find": "form 3ing.",
+    "replace": "form Zing.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.50.judgment",
+    "find": "great progress and SUCCESS",
+    "replace": "great progress and success",
+    "reason": "Small-caps emphasis read as capitals; cf. hexagram 14 judgment."
+  },
+  {
+    "slot": "legge.50.lines.1",
+    "find": "‘My enémy dislikes me, but he cannot approach me, there",
+    "replace": "‘My enemy dislikes me, but he cannot approach me,’ there",
+    "reason": "OCR acute accent and lost closing quote; second IA scan (1899) same page reads 'My enemy dislikes me, but he cannot approach me,'."
+  },
+  {
+    "slot": "legge.50.lines.2",
+    "find": "(thus) stopped. ‘The fat flesh",
+    "replace": "(thus) stopped. The fat flesh",
+    "reason": "Stray OCR quote; second IA scan same page reads 'stopped. The fat flesh'."
+  },
+  {
+    "slot": "legge.50.lines.2",
+    "find": "will not be eaten.. But",
+    "replace": "will not be eaten. But",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.51.judgment",
+    "find": "within a hundred If,",
+    "replace": "within a hundred li,",
+    "reason": "OCR If for li (里, the distance unit)."
+  },
+  {
+    "slot": "legge.51.lines.3",
+    "find": "in the mud. |",
+    "replace": "in the mud.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.52.judgment",
+    "value": [
+      "When one’s resting is like that of the back, and he loses all consciousness of self; when he walks in his courtyard, and does not see any (of the persons) in it,—there will be no error."
+    ],
+    "reason": "IA OCR drops the word 'back' (reads '/' and '|'); restored per second IA scan same page ('like that of the back, and he loses...') and the Chinese (艮其背). Tail wording as in IA 1882 OCR."
+  },
+  {
+    "slot": "legge.52.lines.1",
+    "find": "and is dissatished",
+    "replace": "and is dissatisfied",
+    "reason": "OCR garble (dissatisfied)."
+  },
+  {
+    "slot": "legge.53.judgment",
+    "find": "Aien suggests",
+    "replace": "Kien suggests",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Great Image of this hexagram reads 'Kien' cleanly."
+  },
+  {
+    "slot": "legge.54.image",
+    "find": "form Kwei Met.",
+    "replace": "form Kwei Mei.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.54.lines.3",
+    "find": "the time will come.:",
+    "replace": "the time will come.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.54.lines.4",
+    "find": "(king) Ti-yt,",
+    "replace": "(king) Ti-yi,",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.55.judgment",
+    "find": "F Ang intimates",
+    "replace": "Fang intimates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Great Image reads 'Fang' cleanly."
+  },
+  {
+    "slot": "legge.56.judgment",
+    "find": "Lii intimates",
+    "replace": "Lu intimates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Legge's Lü read as 'Lii' by OCR in judgment and image; plain-letter form Lu (cf. Hsu for Hsü)."
+  },
+  {
+    "slot": "legge.56.image",
+    "find": "form Lii.",
+    "replace": "form Lu.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.56.lines.5",
+    "find": "suggests the idea _ of a bird",
+    "replace": "suggests the idea of a bird",
+    "reason": "Stray OCR underscore."
+  },
+  {
+    "slot": "legge.57.judgment",
+    "find": "and progress, There will be advantage in movement onward",
+    "replace": "and progress. There will be advantage in movement onward",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64). Cf. the parallel opening of hexagram 57 in Appendix I quotations and sentence sense."
+  },
+  {
+    "slot": "legge.58.lines.2",
+    "find": "bringing round. himself",
+    "replace": "bringing round himself",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.59.judgment",
+    "find": "HwaAn intimates",
+    "replace": "Hwan intimates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.59.image",
+    "find": "form H wAan.",
+    "replace": "form Hwan.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.59.lines.5",
+    "find": "There will be no error..",
+    "replace": "There will be no error.",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.61.judgment",
+    "find": "Kung Fd (moves",
+    "replace": "Kung Fu (moves",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Contents list 'Kung Fu' (OCR 'Kung Ff')."
+  },
+  {
+    "slot": "legge.61.image",
+    "find": "form Aung F 0.",
+    "replace": "form Kung Fu.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.61.lines.3",
+    "find": "There will be no error. |",
+    "replace": "There will be no error.",
+    "reason": "Printer's signature / stray OCR matter embedded in the paragraph; not part of Legge's text."
+  },
+  {
+    "slot": "legge.62.judgment",
+    "value": [
+      "Hsiao Kwo indicates that (in the circumstances which it implies) there will be progress and attainment. But it will be advantageous to be firm and correct. (What the name denotes) may be done in small affairs, but not in great affairs. (It is like) the notes that come down from a bird on the wing;—to descend is better than to ascend. There will (in this way) be great good fortune."
+    ],
+    "reason": "IA OCR prefixes signature/figure matter ('4 ie, _') and garbles '(in the circumstances'; name confirmed by Great Image of this hexagram; remainder as IA reads."
+  },
+  {
+    "slot": "legge.62.lines.1",
+    "find": "but meetinz him",
+    "replace": "but meeting him",
+    "reason": "OCR z for g (meeting)."
+  },
+  {
+    "slot": "legge.62.lines.2",
+    "find": "injure him, There",
+    "replace": "injure him. There",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.62.lines.3",
+    "find": "(in his natural course), If",
+    "replace": "(in his natural course). If",
+    "reason": "Stray OCR punctuation; corrected per en Wikisource (1-32) or sentence sense/print parallels (33-64)."
+  },
+  {
+    "slot": "legge.62.lines.4",
+    "find": "fifth line, civided,",
+    "replace": "fifth line, divided,",
+    "reason": "OCR c for d (divided)."
+  },
+  {
+    "slot": "legge.62.lines.5",
+    "find": "calamity and selfproduced injury",
+    "replace": "calamity and self-produced injury",
+    "reason": "Compound hyphen lost to line-break dehyphenation; both IA OCRs break 'self-' at line end; Legge hyphenates self- compounds mid-line passim."
+  },
+  {
+    "slot": "legge.63.judgment",
+    "find": "Ai 31 intimates progress and success in small matters, There",
+    "replace": "Ki Zi intimates progress and success in small matters. There",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Contents 'Ki Zi'. Sentence stop restored."
+  },
+  {
+    "slot": "legge.63.image",
+    "find": "form At 3f.",
+    "replace": "form Ki Zi.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.63.lines.1",
+    "find": "There is No occasion",
+    "replace": "There is no occasion",
+    "reason": "OCR capital N mid-sentence."
+  },
+  {
+    "slot": "legge.63.lines.2",
+    "find": "case of) Kao 3ung who",
+    "replace": "case of) Kao Zung who",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md. Initial as in Zin/Zing."
+  },
+  {
+    "slot": "legge.64.judgment",
+    "find": "Wei 3t intimates",
+    "replace": "Wei Zi intimates",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  },
+  {
+    "slot": "legge.64.image",
+    "find": "form Wei 3i.",
+    "replace": "form Wei Zi.",
+    "reason": "OCR garbling of Legge's romanized name; corrected spelling (plain-letter policy, docs/SCHEMA.md), cf. COLLATION.md."
+  }
+]
