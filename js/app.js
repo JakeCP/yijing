@@ -4,7 +4,7 @@ import {
   parseRoute, castLine, cryptoRandomInt, synthesizeYarrowSplits,
   encodeReading, numberForValues, relatingNumber, bitsFromValues,
   changingIndices, isChanging, describeValue, labelFor, specialLabel,
-  hexagramHash,
+  chineseNumeral, hexagramHash,
 } from './engine.js';
 import { hexagramSVG, coinSVG, stalksSVG, escapeHtml } from './render.js';
 
@@ -137,7 +137,7 @@ function hexaHead(h, { values = null, big = true, headingLevel = 1 } = {}) {
   const tag = `h${headingLevel}`;
   return `<header class="hexa-head">
     ${hexagramSVG({ bits: h.bits, values, label: nameLabel(h) })}
-    <p class="hexa-number">Hexagram ${h.number} · <span lang="zh-Hant">第${h.number}卦</span></p>
+    <p class="hexa-number">${h.number} · <span lang="zh-Hant">第${chineseNumeral(h.number)}卦</span></p>
     <${tag} class="hexa-name"${headingLevel === 1 ? ' tabindex="-1"' : ''} lang="zh-Hant">${escapeHtml(h.name_zh)}</${tag}>
     <p class="hexa-pinyin">${escapeHtml(h.name_pinyin)}</p>
     ${h.name_en ? `<p class="hexa-en">${escapeHtml(h.name_en)}</p>` : ''}
@@ -234,6 +234,18 @@ function currentCast() {
 
 function saveCast(cast) { session.set(S_CAST, cast); }
 
+// 'three inscribed', 'two plain, one inscribed', … from coin sides
+// ('character' | 'blank'), majority first.
+function coinFacesPhrase(sides) {
+  const inscribed = sides.filter((s) => s === 'character').length;
+  return {
+    0: 'three plain',
+    1: 'two plain, one inscribed',
+    2: 'two inscribed, one plain',
+    3: 'three inscribed',
+  }[inscribed];
+}
+
 function detailRecord(line, splits) {
   if (line.method === 'coins') {
     return { kind: 'coins', value: line.value, faces: line.faces.map((f) => f.side) };
@@ -251,7 +263,6 @@ function castView() {
   document.title = 'Yijing 易經 — cast';
 
   app.innerHTML = `<div class="view cast-wrap">
-    <span class="seal seal-lg" lang="zh-Hant" aria-hidden="true">易</span>
     <h1 class="cast-title" tabindex="-1" lang="zh-Hant">易經</h1>
     <p class="cast-subtitle">the Book of Changes</p>
 
@@ -264,7 +275,6 @@ function castView() {
 
     <div class="method-choice" role="group" aria-label="Casting method">
       <button type="button" data-method="coins" aria-pressed="${cast.method === 'coins'}" ${started ? 'disabled' : ''}>Three coins</button>
-      <span aria-hidden="true">·</span>
       <button type="button" data-method="yarrow" aria-pressed="${cast.method === 'yarrow'}" ${started ? 'disabled' : ''}>Yarrow stalks</button>
     </div>
 
@@ -331,6 +341,9 @@ function castView() {
       : `Line ${cast.values.length} of 6 is cast`;
     undoBtn.disabled = animating || cast.values.length === 0;
     restartBtn.disabled = animating || cast.values.length === 0;
+    // Hidden (space reserved) until a first line exists to undo or clear.
+    undoBtn.classList.toggle('cast-minor-waiting', cast.values.length === 0);
+    restartBtn.classList.toggle('cast-minor-waiting', cast.values.length === 0);
     allBtn.disabled = animating || cast.values.length >= 6;
     button.disabled = animating;
   }
@@ -360,9 +373,8 @@ function castView() {
       detail.innerHTML = `<div class="coins-row">${line.faces.map((f) => `<span class="coin-flipping" style="display:inline-block">${coinSVG(f.side)}</span>`).join('')}</div>`;
       await delay(quick ? 300 : 640);
       if (run !== castRun) return false;
-      const facesText = line.faces.map((f) => f.side).join(' · ');
       detail.innerHTML = `<div class="coins-row">${line.faces.map((f) => coinSVG(f.side)).join('')}</div>
-        <p class="detail-note">${facesText} — ${line.value}, ${describeValue(line.value)}</p>`;
+        <p class="detail-note">${coinFacesPhrase(line.faces.map((f) => f.side))} — ${line.value}, ${describeValue(line.value)}</p>`;
       cast.values.push(line.value);
       cast.detail.push(detailRecord(line));
     } else {
@@ -370,17 +382,16 @@ function castView() {
       const names = ['First change', 'Second change', 'Third change'];
       detail.innerHTML = `${stalksSVG(49)}<div class="yarrow-changes"></div>`;
       const list = detail.querySelector('.yarrow-changes');
+      // One quiet line at a time; the splits in full live in the cast record.
       for (let i = 0; i < 3; i += 1) {
         await delay(quick ? 130 : 420);
         if (run !== castRun) return false;
         const s = splits[i];
-        list.insertAdjacentHTML('beforeend',
-          `<p class="change">${names[i]} — ${s.heap} stalks, divided ${s.left} · ${s.right}, ${s.removed} set aside</p>`);
+        list.innerHTML = `<p class="change">${names[i]} — ${s.heap} stalks, divided ${s.left} · ${s.right}, ${s.removed} set aside</p>`;
       }
       await delay(quick ? 120 : 380);
       if (run !== castRun) return false;
-      list.insertAdjacentHTML('beforeend',
-        `<p class="change detail-note">${line.remaining} remain — ${line.value}, ${describeValue(line.value)}</p>`);
+      list.innerHTML = `<p class="change detail-note">${line.remaining} remain — ${line.value}, ${describeValue(line.value)}</p>`;
       cast.values.push(line.value);
       cast.detail.push(detailRecord(line, splits));
     }
@@ -468,7 +479,7 @@ function castRecordHtml(route, last) {
     let detailText = `<span class="v">${v}</span> · ${describeValue(v)}`;
     const d = last && last.detail && last.detail[i];
     if (d && d.kind === 'coins' && Array.isArray(d.faces)) {
-      detailText += ` — coins: ${d.faces.join(' · ')}`;
+      detailText += ` — coins: ${coinFacesPhrase(d.faces)}`;
     } else if (d && d.kind === 'yarrow') {
       const divs = (d.splits || []).map((s) => `${s.heap} → ${s.left}·${s.right} (−${s.removed})`).join('; ');
       detailText += ` — yarrow: ${divs}; ${d.remaining} remain`;
@@ -527,7 +538,7 @@ function readingView(route) {
       }
 
       if (relating) {
-        body += `<p class="relating-arrow" aria-hidden="true"><span lang="zh-Hant">之</span> ↓</p>`;
+        body += `<p class="relating-arrow"><span lang="zh-Hant">之</span> · <span class="relating-gloss">becoming</span><span aria-hidden="true"> ↓</span></p>`;
         body += hexaHead(relating, { headingLevel: 2 });
         if (allChanging && !specialCase) {
           body += `<p class="question-echo small">All six lines change; the relating hexagram carries the reading.</p>`;

@@ -59,8 +59,8 @@ function variantFor(bits, indexFromBottom) {
 /**
  * Hexagram (or trigram) figure as an SVG string.
  * bits: bottom→top 0/1 array (length 6, or 3 for a trigram).
- * values: optional 6/7/8/9 cast values — draws ○ (old yang) / × (old yin)
- * markers beside changing lines (accent is decoration; the shapes differ).
+ * values: optional 6/7/8/9 cast values — draws a circle (old yang) or a
+ * cross (old yin) beside changing lines (accent is decoration; shapes differ).
  * plain: crisp rectangles instead of brush strokes (library grid).
  * label: accessible name, e.g. 'Hexagram 3, 屯 Zhūn'.
  * className: extra class on the <svg>.
@@ -120,12 +120,17 @@ export function escapeHtml(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-/** One coin face: character side carries 文 and a square hole; blank is bare. */
+// Coin inscriptions are drawn as paths, not <text>: the 文 (top) and 字
+// (bottom) outlines are taken from Noto Serif TC (OFL; see
+// fonts/NotoSerifTC-OFL.txt and make_favicon in scripts/build-fonts.py),
+// so the faces render even before the webfonts arrive.
+const COIN_GLYPH_WEN = '<g class="coin-glyph" transform="translate(39.02 27.70) scale(0.02172 -0.02172)"><path d="M414 832Q467 810 500.5 785.5Q534 761 552.5 738.0Q571 715 577.0 695.5Q583 676 579.0 663.5Q575 651 565.0 647.5Q555 644 541 653Q532 681 509.5 712.5Q487 744 458.0 773.5Q429 803 402 823ZM783 612Q747 484 686.5 377.0Q626 270 537.5 184.5Q449 99 329.0 33.5Q209 -32 54 -77L45 -60Q237 4 373.5 101.0Q510 198 596.5 326.5Q683 455 723 612ZM875 672Q875 672 883.0 665.5Q891 659 903.5 649.0Q916 639 929.5 627.5Q943 616 954 605Q950 589 929 589H59L50 619H831ZM272 612Q306 486 368.0 382.5Q430 279 518.5 199.0Q607 119 719.5 62.5Q832 6 966 -26L963 -37Q946 -37 931.0 -46.5Q916 -56 908 -73Q779 -35 672.5 25.0Q566 85 483.0 168.5Q400 252 342.0 359.5Q284 467 252 599Z"/></g>';
+const COIN_GLYPH_ZI = '<g class="coin-glyph" transform="translate(38.94 88.91) scale(0.02203 -0.02203)"><path d="M850 681 887 718 955 652Q950 648 940.5 646.5Q931 645 916 644Q897 617 865.0 584.5Q833 552 806 529L791 537Q803 557 816.5 583.0Q830 609 842.0 635.5Q854 662 861 681ZM169 730Q183 676 177.5 636.0Q172 596 156.0 570.5Q140 545 121 532Q110 524 97.0 520.0Q84 516 73.5 518.0Q63 520 57 529Q52 541 58.0 553.0Q64 565 77 573Q98 585 116.0 608.0Q134 631 143.5 662.5Q153 694 150 729ZM873 681V651H156V681ZM448 836Q488 821 512.5 802.5Q537 784 548.5 765.5Q560 747 561.5 731.5Q563 716 557.0 706.0Q551 696 540.5 694.0Q530 692 517 701Q511 733 486.5 769.5Q462 806 436 828ZM674 537 712 574 779 512Q773 507 763.0 505.5Q753 504 738 503Q695 473 637.0 440.0Q579 407 520 387H500Q535 405 571.0 432.0Q607 459 637.5 487.5Q668 516 686 537ZM557 402Q553 381 521 377V6Q521 -14 515.5 -30.5Q510 -47 490.5 -57.5Q471 -68 429 -72Q426 -62 421.0 -53.5Q416 -45 405 -39Q392 -33 369.0 -28.5Q346 -24 310 -21V-4Q310 -4 328.0 -5.5Q346 -7 371.5 -8.5Q397 -10 419.0 -11.5Q441 -13 450 -13Q466 -13 471.5 -8.0Q477 -3 477 10V412ZM869 340Q869 340 877.0 333.5Q885 327 897.5 317.0Q910 307 923.5 295.5Q937 284 949 273Q946 257 923 257H58L49 287H825ZM716 537V507H224L215 537Z"/></g>';
+
+/** One coin face: character side is inscribed around a square hole; blank is bare. */
 export function coinSVG(side) {
   const character = side === 'character';
-  const glyphs = character
-    ? '<text x="50" y="21" class="coin-char">文</text><text x="50" y="90" class="coin-char">字</text>'
-    : '';
+  const glyphs = character ? COIN_GLYPH_WEN + COIN_GLYPH_ZI : '';
   return `<svg class="coin coin-${character ? 'character' : 'blank'}" viewBox="0 0 100 100" aria-hidden="true" focusable="false">`
     + '<circle cx="50" cy="50" r="46" class="coin-rim"/><circle cx="50" cy="50" r="38" class="coin-inner"/>'
     + '<rect x="39" y="39" width="22" height="22" class="coin-hole"/>'

@@ -146,8 +146,6 @@ button {
   transform: rotate(-2deg);
   flex: none;
 }
-.seal-lg { width: 4.6rem; height: 4.6rem; font-size: 2.6rem; border-radius: 6px; }
-
 .theme-toggle {
   color: var(--soft);
   font-size: 0.95rem;
@@ -324,6 +322,17 @@ details.quiet summary {
 }
 details.quiet summary::-webkit-details-marker { display: none; }
 details.quiet summary:hover { color: var(--ink); }
+/* Disclosure triangle drawn with borders (no font glyph needed). */
+details.quiet summary::before {
+  content: "";
+  display: inline-block;
+  margin-right: 0.5em;
+  border-left: 0.42em solid currentColor;
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+  transition: transform 0.25s ease;
+}
+details.quiet[open] summary::before { transform: rotate(90deg); }
 
 .cast-record { font-size: 0.98rem; color: var(--soft); }
 .cast-record table { border-collapse: collapse; width: 100%; }
@@ -411,7 +420,7 @@ details.quiet summary:hover { color: var(--ink); }
 
 .method-choice {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.6rem;
   margin-top: 1.7rem;
   align-items: center;
   color: var(--soft);
@@ -468,12 +477,7 @@ details.quiet summary:hover { color: var(--ink); }
 .coin-rim { fill: none; stroke: var(--ink); stroke-width: 2.2; }
 .coin-inner { fill: var(--wash); stroke: var(--hairline); stroke-width: 1; }
 .coin-hole { fill: var(--paper); stroke: var(--ink); stroke-width: 1.8; }
-.coin-char {
-  font-family: var(--serif-zh);
-  font-size: 17px;
-  fill: var(--ink);
-  text-anchor: middle;
-}
+.coin-glyph { fill: var(--ink); }
 .coin-flipping { animation: coin-flip 0.62s ease both; transform-origin: center; }
 @keyframes coin-flip {
   0% { transform: rotateY(0deg) translateY(0); opacity: 0.4; }
@@ -499,7 +503,9 @@ details.quiet summary:hover { color: var(--ink); }
 .cast-progress { color: var(--soft); font-size: 0.98rem; margin: 0; font-style: italic; }
 .cast-minor {
   display: flex;
-  gap: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 1.8rem;
   color: var(--soft);
   font-size: 0.98rem;
 }
@@ -509,9 +515,12 @@ details.quiet summary:hover { color: var(--ink); }
   text-decoration: none;
   padding: 0.45rem 0.2rem;
   min-height: 2.75rem;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 .cast-minor button:hover:not(:disabled), .cast-minor a:hover { color: var(--ink); }
 .cast-minor button:disabled { opacity: 0.35; cursor: default; }
+/* Not yet applicable (no line cast): invisible, space kept, not focusable. */
+.cast-minor button.cast-minor-waiting { opacity: 0; visibility: hidden; }
 
 .manual-cast { width: min(100%, 24em); margin: 1rem auto 0; text-align: left; }
 .manual-cast .rows { display: flex; flex-direction: column; gap: 0.45rem; margin: 0.8rem 0 1.2rem; }
@@ -527,6 +536,7 @@ details.quiet summary:hover { color: var(--ink); }
   padding: 0.45rem 0.6rem;
   min-height: 2.9rem;
   flex: 1;
+  min-width: 0;
 }
 
 /* ---------------------------------------------------------------- library */
@@ -536,6 +546,7 @@ details.quiet summary:hover { color: var(--ink); }
 .jump-field .row { display: flex; gap: 0.7rem; align-items: flex-end; }
 .jump-field input {
   flex: 1;
+  min-width: 0;
   font: inherit;
   font-size: 1.0625rem;
   color: var(--ink);
@@ -615,10 +626,10 @@ details.quiet summary:hover { color: var(--ink); }
   margin: 2.2rem 0 -0.6rem;
   font-size: 1.3rem;
 }
+.relating-gloss { font-size: 1rem; font-style: italic; }
 
 /* Short screens: keep the cast button within thumb reach on load. */
 @media (max-height: 740px) {
-  .seal-lg { width: 3.4rem; height: 3.4rem; font-size: 1.9rem; }
   .cast-title { font-size: 2.5rem; }
   .cast-stage { min-height: 14.5rem; margin-top: 1.4rem; }
   .question-field { margin-top: 1.4rem; }
@@ -629,6 +640,10 @@ details.quiet summary:hover { color: var(--ink); }
 @media (max-width: 480px) {
   .about-body th, .about-body td { display: block; padding-right: 0; }
   .about-body th { padding-top: 0.7rem; color: var(--ink); }
+  /* Keep brand + nav + toggle on one line down to 320px. */
+  .topbar { gap: 0.9rem; }
+  .topbar nav { gap: 0.9rem; }
+  .cast-minor { gap: 0.2rem 1.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

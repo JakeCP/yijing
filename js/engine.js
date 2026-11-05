@@ -129,6 +129,19 @@ export function specialLabel(number) {
   return null;
 }
 
+// Chinese numerals for 1..99, e.g. 63 -> 六十三 (hexagram ordinals: 第…卦).
+const NUMERAL_DIGITS = '一二三四五六七八九';
+
+export function chineseNumeral(n) {
+  if (!Number.isInteger(n) || n < 1 || n > 99) {
+    throw new RangeError(`chineseNumeral expects an integer in 1..99, got ${n}`);
+  }
+  if (n < 10) return NUMERAL_DIGITS[n - 1];
+  const tens = Math.floor(n / 10);
+  const ones = n % 10;
+  return `${tens === 1 ? '' : NUMERAL_DIGITS[tens - 1]}十${ones === 0 ? '' : NUMERAL_DIGITS[ones - 1]}`;
+}
+
 // ----------------------------------------------------------------- King Wen
 
 // Explicit lookup table: index+1 is the King Wen number, string is bits

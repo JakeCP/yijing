@@ -7,9 +7,15 @@ fonts/*.woff2 + the OFL licence files, derives favicon.svg from the
 Noto Serif TC 易 glyph, and verifies cmap coverage:
 
 - every character used by the Chinese corpus (data/hexagrams.json,
-  data/trigrams.json) and the UI's Han strings is in the Noto subset;
-- every character used by the Legge texts and pinyin names is in the
-  EB Garamond subset.
+  data/trigrams.json) and every Han character in the rendered source
+  (index.html, css/style.css, js/*.js) is in the Noto subset;
+- every character used by the Legge texts, pinyin names, and every
+  non-Han character in the rendered source is in the EB Garamond subsets.
+
+The source scan is deliberately wholesale (comments included), so a
+character that appears anywhere in the JS/HTML/CSS the browser runs
+cannot slip past the check when it later moves into a rendered string.
+Keep comments free of glyphs neither source font carries.
 
 Usage:
   python3 scripts/build-fonts.py           # download (if needed) + build + check
@@ -38,9 +44,8 @@ SOURCES = {
     "noto-OFL.txt": "https://github.com/google/fonts/raw/main/ofl/notoseriftc/OFL.txt",
 }
 
-# Han characters the UI itself renders (js/app.js, index.html, coin faces),
-# beyond whatever the corpus contains.
-UI_HAN = "易經未卜無之第卦辭爻大象傳用九六初上二三四五原文陰陽以決疑文字"
+# Rendered source files scanned for characters, beyond the JSON corpus.
+SOURCE_FILES = ("index.html", "css/style.css", "js/app.js", "js/engine.js", "js/render.js")
 
 
 def corpus_chars():
@@ -79,16 +84,35 @@ def corpus_chars():
     return han, latin
 
 
+def source_chars():
+    """Non-ASCII characters in the rendered source, split by script
+    with the same U+2E80 boundary corpus_chars() uses."""
+    han, latin = set(), set()
+    for rel in SOURCE_FILES:
+        for c in (ROOT / rel).read_text(encoding="utf-8"):
+            if ord(c) < 0x80 or c.isspace():
+                continue
+            (han if ord(c) >= 0x2E80 else latin).add(c)
+    return han, latin
+
+
+def required_chars():
+    """Characters the coverage check demands: corpus + rendered source."""
+    han, latin = corpus_chars()
+    src_han, src_latin = source_chars()
+    return han | src_han, latin | src_latin
+
+
 def noto_unicodes():
-    han, _ = corpus_chars()
-    wanted = han | set(UI_HAN)
+    han, _ = required_chars()
+    wanted = set(han)
     # Fullwidth/CJK punctuation the received text and UI lean on.
     wanted |= set("，。、；：？！·…—「」『』（）《》〈〉")
     return sorted(wanted)
 
 
 def eb_unicodes():
-    _, latin = corpus_chars()
+    _, latin = required_chars()
     wanted = set(latin)
     wanted |= {chr(cp) for cp in range(0x20, 0x7F)}        # printable ASCII
     wanted |= {chr(cp) for cp in range(0xA0, 0x180)}       # Latin-1 + Ext-A (pinyin)
@@ -171,9 +195,9 @@ def check_coverage():
         ok = False
         print(f"  FAIL    Noto subset missing {len(missing)}: {''.join(missing[:40])}")
     else:
-        print(f"  ok      Noto subset covers all {len(noto_unicodes())} corpus+UI characters")
+        print(f"  ok      Noto subset covers all {len(noto_unicodes())} corpus+source characters")
 
-    _, latin = corpus_chars()
+    _, latin = required_chars()
     for fname in ("eb-garamond.woff2", "eb-garamond-italic.woff2"):
         cmap = TTFont(str(FONTS_DIR / fname)).getBestCmap()
         missing = [c for c in sorted(latin) if ord(c) not in cmap]
@@ -181,7 +205,7 @@ def check_coverage():
             ok = False
             print(f"  FAIL    {fname} missing: {''.join(missing[:40])}")
         else:
-            print(f"  ok      {fname} covers the Legge/pinyin characters")
+            print(f"  ok      {fname} covers the Legge/pinyin/source characters")
     return ok
 
 

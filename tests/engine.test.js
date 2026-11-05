@@ -12,6 +12,7 @@ import {
   relatingBits, relatingNumber, numberForBits, bitsForNumber, numberForValues,
   labelFor, specialLabel, encodeReading, decodeReading, parseRoute, hexagramHash,
   methodLetter, methodFromLetter, summarizeCast, makeCryptoRandomInt, KING_WEN_BITS,
+  chineseNumeral,
 } from '../js/engine.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -216,6 +217,17 @@ test('line label table (PLAN.md M4)', () => {
   assert.equal(specialLabel(1), '用九');
   assert.equal(specialLabel(2), '用六');
   assert.equal(specialLabel(3), null);
+});
+
+test('chineseNumeral: hexagram ordinals read 第…卦 in Chinese numerals', () => {
+  const table = {
+    1: '一', 2: '二', 9: '九', 10: '十', 11: '十一', 19: '十九',
+    20: '二十', 21: '二十一', 29: '二十九', 63: '六十三', 64: '六十四',
+  };
+  for (const [n, zh] of Object.entries(table)) assert.equal(chineseNumeral(Number(n)), zh, n);
+  // every hexagram number has one, built only from numeral characters
+  for (let n = 1; n <= 64; n += 1) assert.match(chineseNumeral(n), /^[一二三四五六七八九十]+$/);
+  for (const bad of [0, 100, -1, 1.5, '63', NaN]) assert.throws(() => chineseNumeral(bad), RangeError);
 });
 
 // --------------------------------------------------------------- URL/routes
