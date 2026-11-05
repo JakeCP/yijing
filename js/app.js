@@ -2,19 +2,19 @@
 
 import {
   parseRoute, castLine, cryptoRandomInt, synthesizeYarrowSplits,
-  encodeReading, numberForValues, relatingNumber, bitsFromValues,
-  changingIndices, isChanging, describeValue, labelFor, specialLabel,
+  encodeReading, numberForValues, relatingNumber,
+  changingIndices, describeValue, labelFor, specialLabel,
   chineseNumeral, hexagramHash,
 } from './engine.js';
 import { hexagramSVG, coinSVG, stalksSVG, escapeHtml } from './render.js';
 
-const DATA_VERSION = '2'; // bump when data/*.json changes (PLAN.md S9)
+const DATA_VERSION = '3'; // bump when data/*.json changes (PLAN.md S9)
 const app = document.getElementById('app');
 const liveRegion = document.getElementById('live');
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // Trigram natural-image names (UI copy; data carries the characters).
-const IMAGE_EN = { '天': 'heaven', '地': 'earth', '雷': 'thunder', '風': 'wind', '水': 'water', '火': 'fire', '山': 'mountain', '澤': 'lake' };
+const IMAGE_EN = { '天': 'heaven', '地': 'earth', '雷': 'thunder', '風': 'wind', '水': 'water', '火': 'fire', '山': 'mountain', '澤': 'marsh' };
 
 // --------------------------------------------------------------- storage
 function storage(kind) {
@@ -34,12 +34,10 @@ const L_TRANSLATION = 'yi-translation';
 // ------------------------------------------------------------------ data
 let DATA = null; // { hexagrams, trigrams, byNumber, trigramByName }
 let loadPromise = null;
-let loadFailed = false;
 
 function loadData() {
   if (DATA) return Promise.resolve(DATA);
   if (loadPromise) return loadPromise;
-  loadFailed = false;
   loadPromise = Promise.all([
     fetch(`data/hexagrams.json?v=${DATA_VERSION}`).then((r) => { if (!r.ok) throw new Error(`hexagrams ${r.status}`); return r.json(); }),
     fetch(`data/trigrams.json?v=${DATA_VERSION}`).then((r) => { if (!r.ok) throw new Error(`trigrams ${r.status}`); return r.json(); }),
@@ -53,7 +51,6 @@ function loadData() {
     return DATA;
   }).catch((err) => {
     loadPromise = null;
-    loadFailed = true;
     throw err;
   });
   return loadPromise;
@@ -64,10 +61,6 @@ if ('requestIdleCallback' in window) window.requestIdleCallback(() => { loadData
 else window.setTimeout(() => { loadData().catch(() => {}); }, 1200);
 
 // ------------------------------------------------------------ translation
-function availableTranslations(hexagram) {
-  return ['zh', 'legge', 'poem'].filter((id) => hexagram.texts[id]);
-}
-
 function defaultTranslation() {
   const saved = local.get(L_TRANSLATION);
   if (saved === 'zh' || saved === 'legge' || saved === 'poem') return saved;
@@ -101,6 +94,7 @@ function bindTranslationBar(rerender) {
       const id = btn.dataset.translation;
       local.set(L_TRANSLATION, id);
       rerender(true); // preserve the reader's place (per-line anchors)
+      announce(`${TRANSLATION_LABELS[id] === '原文' ? 'Chinese text' : TRANSLATION_LABELS[id]} shown.`);
       const next = app.querySelector(`[data-translation="${id}"]`);
       if (next) next.focus({ preventScroll: true });
     });
@@ -146,24 +140,26 @@ function hexaHead(h, { values = null, big = true, headingLevel = 1 } = {}) {
 }
 
 function slotText(lines, translation) {
+  // Chinese body text carries its language so speech switches voice (M15).
+  const lang = translation === 'zh' ? ' lang="zh-Hant"' : '';
   if (translation === 'poem' && lines.length > 1) {
-    return `<p class="slot-text">${lines.map((l) => `<span class="verse-line">${escapeHtml(l)}</span>`).join('')}</p>`;
+    return `<p class="slot-text"${lang}>${lines.map((l) => `<span class="verse-line">${escapeHtml(l)}</span>`).join('')}</p>`;
   }
-  return lines.map((l) => `<p class="slot-text">${escapeHtml(l)}</p>`).join('');
+  return lines.map((l) => `<p class="slot-text"${lang}>${escapeHtml(l)}</p>`).join('');
 }
 
-function textBlock(labelHtml, lines, translation, anchor) {
+function textBlock(labelHtml, lines, translation, anchor, headingTag = 'h2') {
   return `<section class="text-block" data-anchor="${anchor}">
-    <p class="layer-label">${labelHtml}</p>
+    <${headingTag} class="layer-label">${labelHtml}</${headingTag}>
     ${slotText(lines, translation)}
   </section>`;
 }
 
-function judgmentBlock(h, tr, anchor = 'judgment') {
-  return textBlock(`The Judgment · <span class="zh" lang="zh-Hant">卦辭</span>`, h.texts[tr].judgment, tr, anchor);
+function judgmentBlock(h, tr, anchor = 'judgment', headingTag = 'h2') {
+  return textBlock(`The Judgment · <span class="zh" lang="zh-Hant">卦辭</span>`, h.texts[tr].judgment, tr, anchor, headingTag);
 }
-function imageBlock(h, tr, anchor = 'image') {
-  return textBlock(`The Image · <span class="zh" lang="zh-Hant">大象</span> <span class="soft">(from the later <span class="zh" lang="zh-Hant">象傳</span>)</span>`, h.texts[tr].image, tr, anchor);
+function imageBlock(h, tr, anchor = 'image', headingTag = 'h2') {
+  return textBlock(`The Image · <span class="zh" lang="zh-Hant">大象</span> <span class="soft">(from the later <span class="zh" lang="zh-Hant">象傳</span>)</span>`, h.texts[tr].image, tr, anchor, headingTag);
 }
 
 function lineEntry(h, tr, index, { changing = false, anchor = true } = {}) {
@@ -195,10 +191,14 @@ function focusHeading() {
   if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
 }
 
+let routeSeq = 0; // bumped per route; async views bail out when stale
+
 async function withData(render) {
+  const seq = routeSeq;
   if (!DATA) {
     loadingView();
-    try { await loadData(); } catch { errorView(); return; }
+    try { await loadData(); } catch { if (seq === routeSeq) errorView(); return; }
+    if (seq !== routeSeq) return; // a newer route already owns the page
   }
   render();
 }
@@ -212,6 +212,12 @@ function setBodyTranslation(tr) { document.body.dataset.translation = tr; }
 
 function delay(ms) {
   return REDUCED.matches ? Promise.resolve() : new Promise((res) => { window.setTimeout(res, ms); });
+}
+
+// A pause is not motion: keep it even under reduced motion, so the sixth
+// line (and its announcement) lands before the reading replaces the page.
+function pause(ms) {
+  return new Promise((res) => { window.setTimeout(res, REDUCED.matches ? Math.min(ms, 350) : ms); });
 }
 
 // --------------------------------------------------------------- cast view
@@ -327,7 +333,7 @@ function castView() {
 
   function redraw(freshIndex = -1) {
     if (cast.values.length === 0) {
-      figure.innerHTML = '<p class="cast-placeholder" lang="zh-Hant">未卜</p>';
+      figure.innerHTML = '<p class="cast-placeholder" lang="zh-Hant" aria-hidden="true">未卜</p>';
     } else {
       const bits = cast.values.map((v) => (v === 7 || v === 9 ? 1 : 0));
       figure.innerHTML = hexagramSVG({
@@ -344,8 +350,13 @@ function castView() {
     // Hidden (space reserved) until a first line exists to undo or clear.
     undoBtn.classList.toggle('cast-minor-waiting', cast.values.length === 0);
     restartBtn.classList.toggle('cast-minor-waiting', cast.values.length === 0);
-    allBtn.disabled = animating || cast.values.length >= 6;
-    button.disabled = animating;
+    allBtn.setAttribute('aria-disabled', String(animating || cast.values.length >= 6));
+    allBtn.classList.toggle('is-busy', animating);
+    // Keep the cast button focusable while a line animates: a disabled
+    // button drops keyboard focus to <body>, breaking a keyboard-only
+    // cast. castOne() already ignores taps while animating.
+    button.setAttribute('aria-disabled', String(animating));
+    button.classList.toggle('is-busy', animating);
   }
 
   function finishIfComplete() {
@@ -404,7 +415,7 @@ function castView() {
     document.querySelectorAll('[data-method]').forEach((b) => { b.disabled = true; });
 
     if (finishIfComplete()) {
-      if (!quick) await delay(950);
+      if (!quick) await pause(950);
       if (run !== castRun) return true;
       window.location.hash = encodeReading(cast.method, cast.values);
     }
@@ -413,6 +424,7 @@ function castView() {
 
   button.addEventListener('click', () => { castOne(); });
   allBtn.addEventListener('click', async () => {
+    if (animating) return;
     while (run === castRun && cast.values.length < 6) {
       const ok = await castOne({ quick: true });
       if (!ok) break;
@@ -426,6 +438,7 @@ function castView() {
     saveCast(cast);
     detail.innerHTML = '';
     redraw();
+    if (undoBtn.disabled) button.focus({ preventScroll: true });
     if (cast.values.length === 0) {
       questionInput.disabled = false;
       document.querySelectorAll('[data-method]').forEach((b) => { b.disabled = false; });
@@ -441,6 +454,7 @@ function castView() {
     questionInput.disabled = false;
     document.querySelectorAll('[data-method]').forEach((b) => { b.disabled = false; });
     redraw();
+    button.focus({ preventScroll: true });
     announce('Cast cleared.');
   });
 
@@ -516,19 +530,19 @@ function readingView(route) {
       if (inSession && last.question) {
         body += `<p class="question-echo">“${escapeHtml(last.question)}”</p>`;
       }
-      body += translationBar(shown, tr);
       body += hexaHead(primary, { values: route.values });
+      body += translationBar(shown, tr);
 
       if (specialCase) {
         // All six changing on 1/2: 用九/用六 is the primary text (PLAN.md M9).
         body += textBlock(
           `<span class="zh" lang="zh-Hant">${specialLabel(primary.number)}</span> · when all six lines change`,
-          primary.texts[tr].special, tr, 'special');
+          primary.texts[tr].special, tr, 'special', 'h2');
       } else {
         body += judgmentBlock(primary, tr);
         body += imageBlock(primary, tr);
         if (changing.length > 0) {
-          body += `<section><p class="layer-label">Changing lines · <span class="zh" lang="zh-Hant">爻辭</span></p>`;
+          body += `<section><h2 class="layer-label">Changing lines · <span class="zh" lang="zh-Hant">爻辭</span></h2>`;
           body += changing.map((i) => lineEntry(primary, tr, i, { changing: true })).join('');
           body += '</section>';
           body += `<p class="small soft">Every changing line is shown, without choosing among them — <a href="#/about">why, in About</a>.</p>`;
@@ -543,16 +557,16 @@ function readingView(route) {
         if (allChanging && !specialCase) {
           body += `<p class="question-echo small">All six lines change; the relating hexagram carries the reading.</p>`;
         }
-        body += judgmentBlock(relating, tr, 'relating-judgment');
-        body += imageBlock(relating, tr, 'relating-image');
+        body += judgmentBlock(relating, tr, 'relating-judgment', 'h3');
+        body += imageBlock(relating, tr, 'relating-image', 'h3');
         body += `<p class="small soft"><a href="${hexagramHash(relating.number)}">Read hexagram ${relating.number} in full</a></p>`;
       }
 
       if (specialCase) {
         body += `<details class="quiet">
           <summary>The judgment, image, and six lines of ${escapeHtml(primary.name_pinyin)}</summary>
-          ${judgmentBlock(primary, tr, 'judgment')}
-          ${imageBlock(primary, tr, 'image')}
+          ${judgmentBlock(primary, tr, 'judgment-full', 'p')}
+          ${imageBlock(primary, tr, 'image-full', 'p')}
           ${changing.map((i) => lineEntry(primary, tr, i, { changing: true, anchor: false })).join('')}
         </details>`;
       }
@@ -610,11 +624,11 @@ function hexagramView(number) {
       const prev = number > 1 ? DATA.byNumber.get(number - 1) : null;
       const next = number < 64 ? DATA.byNumber.get(number + 1) : null;
 
-      let body = translationBar([h], tr);
-      body += hexaHead(h);
+      let body = hexaHead(h);
+      body += translationBar([h], tr);
       body += judgmentBlock(h, tr);
       body += imageBlock(h, tr);
-      body += `<section><p class="layer-label">The Lines · <span class="zh" lang="zh-Hant">爻辭</span> <span class="soft">(from the bottom)</span></p>`;
+      body += `<section><h2 class="layer-label">The Lines · <span class="zh" lang="zh-Hant">爻辭</span> <span class="soft">(from the bottom)</span></h2>`;
       body += [0, 1, 2, 3, 4, 5].map((i) => lineEntry(h, tr, i)).join('');
       if (h.texts[tr].special) {
         body += `<article class="line-entry" data-anchor="special">
@@ -700,87 +714,21 @@ function libraryView() {
 }
 
 // ------------------------------------------------------------------- about
-function aboutView() {
+async function aboutView() {
+  const seq = routeSeq;
   document.title = 'About — Yijing 易經';
   setBodyTranslation('');
-  app.innerHTML = `<div class="view about-body">
-    <h1 class="page-title" tabindex="-1">About this book</h1>
-    <p class="lede">A quiet Yijing <span lang="zh-Hant">易經</span> — the Book of Changes — for the web.
-    No accounts, no advertisements, no tracking: casting happens entirely on your device.</p>
-
-    <h2>What the Yijing is</h2>
-    <p>The Yijing is one of the oldest books in the world: a divination manual built from
-    sixty-four hexagrams — figures of six broken (<span lang="zh-Hant">陰</span>) and unbroken
-    (<span lang="zh-Hant">陽</span>) lines. A cast is made line by line, from the bottom up. Some
-    lines are “old” — about to change into their opposite — and flipping those gives a second,
-    relating hexagram (<span lang="zh-Hant">之卦</span>, zhī guà), the shape the moment is turning into.</p>
-    <p>The book was not written at once. Its layers are labelled honestly on every page here:</p>
-    <table>
-      <tr><th scope="row">The Judgment <span lang="zh-Hant">卦辭</span> and the Lines <span lang="zh-Hant">爻辭</span></th>
-          <td>The Zhou core, roughly 9th–8th century BCE. Terse oracular statements.</td></tr>
-      <tr><th scope="row">The Image <span lang="zh-Hant">大象</span></th>
-          <td>From the <span lang="zh-Hant">象傳</span>, one of the “Ten Wings” — commentaries added centuries
-          later (Warring States to Han). Moral reflections on each figure.</td></tr>
-      <tr><th scope="row"><span lang="zh-Hant">用九</span> / <span lang="zh-Hant">用六</span></th>
-          <td>Seventh statements for hexagrams 1 and 2 only, read when all six lines change.</td></tr>
-    </table>
-    <p>This site is offered <em>for reflection</em> — a way of sitting with a question and an
-    old image for a while. It is not advice, and it does not predict the future. For decisions
-    about health, money, or law, please talk to a person qualified to help.</p>
-
-    <h2>How casting works here</h2>
-    <p>Each line is one of four values: 6 old yin (changing), 7 young yang, 8 young yin,
-    9 old yang (changing).</p>
-    <table>
-      <tr><th scope="row">Three coins</th>
-          <td>Character side counts 3, blank side 2. The three coins sum to 6, 7, 8, or 9
-          with chances 1/8, 3/8, 3/8, 1/8.</td></tr>
-      <tr><th scope="row">Yarrow stalks</th>
-          <td>Forty-nine stalks are divided and counted off three times (“the three changes”);
-          what remains — 36, 32, 28, or 24 — is divided by four. This site samples
-          <em>the conventional yarrow odds</em> directly: 1/16, 5/16, 7/16, 3/16 for 6, 7, 8, 9.
-          When a division is shown, it is a true division consistent with the numbers drawn.</td></tr>
-      <tr><th scope="row">By hand</th>
-          <td>Cast with real coins or stalks, then enter the six numbers on the cast page.</td></tr>
-    </table>
-    <p>Randomness comes from your browser’s cryptographic generator. When several lines
-    change, older commentators gave rules for choosing among them; this site shows every
-    changing line equally and lets you weigh them. If all six lines change in hexagram 1 or 2,
-    the special <span lang="zh-Hant">用九</span> / <span lang="zh-Hant">用六</span> statement is the primary text.</p>
-    <p>Every reading has its own address, like <code>#/r/c789876</code>: the letter is the
-    method (<code>c</code> coins, <code>y</code> yarrow, <code>m</code> by hand) and the six
-    digits are the line values from the bottom. A reading can be shared by sharing that link.
-    Your question is never in the link and never leaves your device — it is kept only for this
-    visit and is cleared when you cast again.</p>
-
-    <h2>Sources &amp; licences</h2>
-    <table>
-      <tr><th scope="row"><span lang="zh-Hant">原文</span> — the Chinese text</th>
-          <td>The received <span lang="zh-Hant">易經</span> (Zhou core and <span lang="zh-Hant">大象傳</span>),
-          via Project Gutenberg #25501, collated against zh Wikisource. Public domain.</td></tr>
-      <tr><th scope="row">James Legge (1882)</th>
-          <td><em>Sacred Books of the East</em> vol. 16, first edition (Oxford, 1882), transcribed
-          from Internet Archive page scans. Legge’s parentheses are his supplied wording,
-          kept verbatim. Public domain.</td></tr>
-      <tr><th scope="row">A rendering</th>
-          <td>An original poetic rendering written for this site from the Chinese text above,
-          with its own short English hexagram names. It is the default English text;
-          switches to <span lang="zh-Hant">原文</span> or Legge hold for your next visit.
-          © the site authors, licensed under
-          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</td></tr>
-      <tr><th scope="row">Type</th>
-          <td>EB Garamond and Noto Serif TC, self-hosted subsets under the SIL Open Font
-          License 1.1 (licence files ship with the fonts). This page makes no requests
-          to third parties at all.</td></tr>
-      <tr><th scope="row">Code &amp; seal</th>
-          <td>Site code is MIT (see <code>LICENSE</code>); the seal mark is CC BY 4.0
-          (see <code>LICENSE-content.md</code>).</td></tr>
-    </table>
-
-    <hr class="rule">
-    <p class="small soft" style="text-align:center"><span lang="zh-Hant">卜以決疑</span> — “to cast is to settle a doubt,”
-    and then to sit with what comes for a while.</p>
-  </div>`;
+  try {
+    const { aboutHtml } = await import('./about.js');
+    if (seq !== routeSeq) return;
+    app.innerHTML = aboutHtml();
+  } catch {
+    if (seq !== routeSeq) return;
+    app.innerHTML = `<div class="view state-msg">
+      <h1 class="page-title" tabindex="-1">About this book</h1>
+      <p class="soft">This page could not be loaded. <a href="#/">Return to the cast</a>.</p>
+    </div>`;
+  }
   focusHeading();
 }
 
@@ -798,10 +746,9 @@ function notFoundView() {
 }
 
 // ------------------------------------------------------------------- router
-const NAV_ROUTES = { cast: '#/', library: '#/library', about: '#/about' };
-
 function route() {
   const r = parseRoute(window.location.hash);
+  routeSeq += 1; // invalidate any async view still loading
   castRun += 1; // cancel any cast animation in flight
   app.scrollTop = 0;
   window.scrollTo(0, 0);
@@ -823,6 +770,20 @@ function route() {
     default: notFoundView();
   }
 }
+
+// Print the whole reading, including what sits inside closed <details>.
+let printOpened = [];
+window.addEventListener('beforeprint', () => {
+  printOpened = [...app.querySelectorAll('details:not([open])')];
+  printOpened.forEach((d) => { d.open = true; });
+});
+window.addEventListener('afterprint', () => {
+  printOpened.forEach((d) => { d.open = false; });
+  printOpened = [];
+});
+
+// Skip link (a <button>: a hash href would be eaten by the router).
+document.getElementById('skip-link')?.addEventListener('click', () => focusHeading());
 
 window.addEventListener('hashchange', route);
 route();

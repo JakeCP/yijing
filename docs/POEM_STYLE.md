@@ -178,7 +178,7 @@ is the same word and takes the same rendering.
 | 不利涉大川 | It is not good to ford the great river. | Same crossing, negated; the pair must mirror exactly. |
 | 勿用 (standalone) | Do not act. | Mantic prohibition with no object: refrain from action/employment. |
 | 勿用 + verb phrase | Do not + verb | Object cases stay literal （勿用取女 "Do not take the woman."). |
-| 勿用有攸往 (3, J) | Do not set out anywhere. | One idiom for the fused phrase; glossed in 03 notes, not generalised. |
+| 勿用有攸往 (3 J, 33 L1) | Do not set out anywhere. | One idiom for the fused phrase; glossed in 03 notes, not generalised. |
 | 見 | see; (read xiàn) appear | 見龍 is the dragon appearing; 利見大人 is seeing — syntax decides, notes mark it. |
 | 利見大人 | It is good to see the great person. | An audience in plain words; natural syntax over gloss-ese. |
 | 有孚 / 孚 | There is trust. / trust | Trust as credit held between people; not private "sincerity" or "inner truth". |

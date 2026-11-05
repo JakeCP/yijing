@@ -96,6 +96,30 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+.skip-link {
+  position: absolute;
+  top: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+}
+.skip-link:not(:focus-visible) {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -193,6 +217,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.25; }
 .lede { color: var(--soft); margin-top: 0; }
 
 .layer-label {
+  font-weight: 400;
   font-style: italic;
   color: var(--soft);
   font-size: 1rem;
@@ -369,6 +394,8 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
 }
 .btn-primary:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
 .btn-primary:disabled { opacity: 0.35; cursor: default; }
+.btn-primary.is-busy { opacity: 0.55; cursor: default; }
+.cast-minor button.is-busy { opacity: 0.55; cursor: default; }
 
 /* ------------------------------------------------------------------ cast */
 
@@ -416,7 +443,8 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
   border-bottom-color: var(--accent);
   box-shadow: 0 1px 0 var(--accent);
 }
-.question-field input::placeholder { color: var(--soft); opacity: 0.65; font-style: italic; }
+/* Full-strength soft ink: at 65% opacity this fell under 4.5:1 on paper. */
+.question-field input::placeholder { color: var(--soft); font-style: italic; }
 
 .method-choice {
   display: flex;
@@ -557,6 +585,11 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
   padding: 0.35rem 0.1rem 0.45rem;
 }
 .jump-field input:focus { outline: none; border-bottom-color: var(--accent); box-shadow: 0 1px 0 var(--accent); }
+/* Keyboard focus keeps the full outline; the underline alone is easy to miss. */
+.question-field input:focus-visible, .jump-field input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .jump-msg { color: var(--accent); font-style: italic; font-size: 0.98rem; min-height: 1.6em; margin: 0.2rem 0 0; }
 
 .library-grid {
@@ -667,9 +700,14 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
   }
   body { background: #fff; font-size: 11.5pt; }
   .topbar, footer, .translation-bar, .actions, .cast-controls,
-  .prev-next, .theme-toggle, details.quiet summary { display: none !important; }
-  details.quiet { display: none !important; }
+  .prev-next, .theme-toggle, .skip-link, .method-choice, .question-field,
+  .jump-field, .manual-cast, details.quiet summary { display: none !important; }
+  /* app.js opens every <details> on beforeprint, so collapsed texts
+     (cast record, the all-changing extras) reach the page. */
+  details.quiet { margin: 1.2rem 0; }
   .view { animation: none; }
   a { text-decoration: none; }
   .hexa-head { margin-top: 0; }
+  .hexa-head, .text-block, .line-entry { break-inside: avoid; }
+  main { width: 100%; padding-bottom: 0; }
 }
