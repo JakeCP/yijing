@@ -14,27 +14,29 @@
   ],
   "lines": [
     [
-      "If he goes: limping.",
-      "If he comes: praise."
+      "Going: limping.",
+      "Coming: praise."
     ],
     [
       "The king's servant limps and limps,",
       "but not for his own sake."
     ],
     [
-      "If he goes: limping.",
-      "If he comes: he turns back."
+      "Going: limping.",
+      "Coming: turning back."
     ],
     [
-      "If he goes: limping.",
-      "If he comes: he joins the others."
+      "Going: limping.",
+      "Coming: joining."
     ],
     [
-      "His limping is great,",
-      "but his friends come."
+      "Great limping,",
+      "and friends come."
     ],
     [
-      "If he goes: limping. If he comes: great, and good.",
+      "Going: limping.",
+      "Coming: great.",
+      "Good.",
       "It is good to see the great person."
     ]
   ],
@@ -42,6 +44,6 @@
   "notes": {
     "name_en": "蹇 is lameness, a limping halt; 'Limping', not Wilhelm's 'Obstruction'.",
     "judgment": "South-west level, north-east steep — directions kept without the traditional topography glossed in.",
-    "L1": "往蹇來譽 and its refrains (L3, L4, L6): B supplies the 'if' the going/coming pair turns on; wording of the refrain otherwise unchanged."
+    "L1": "往蹇來譽 and its refrains (L3, L4, L6) kept as verdict tags ('Going: … Coming: …'), as the glossary fixes 往/來； no supplied 'if'."
   }
 }

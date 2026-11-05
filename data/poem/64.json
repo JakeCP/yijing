@@ -22,8 +22,8 @@
       "Holding firm: good."
     ],
     [
-      "He is not yet across, and to march: misfortune.",
-      "Yet it is good to ford the great river."
+      "He is not yet across. To march: misfortune.",
+      "It is good to ford the great river."
     ],
     [
       "Holding firm: good, and regret gone.",
@@ -32,20 +32,20 @@
     ],
     [
       "Holding firm: good, and no regret.",
-      "The noble one's light shines:",
-      "there is trust in it. Good."
+      "The noble one's light shines.",
+      "There is trust. Good."
     ],
     [
       "There is trust as he drinks wine: no harm.",
-      "But if he wets his head,",
-      "then, trust or not, this is lost."
+      "He wets his head:",
+      "with trust, he loses this."
     ]
   ],
   "special": null,
   "notes": {
     "name_en": "未濟 the crossing not yet made; paired with 63 Already Across. Not Wilhelm's 'Before Completion'.",
     "L1": "The wet tail of the judgment's fox, now in the first line; the water sequence (tail, wheels, head) mirrors 63 in reverse.",
-    "L6": "有孚失是 'though there is trust, losing this (rightness)'; B makes the wet head the condition ('if he wets his head, then…').",
-    "L5": "君子之光有孚: B gives the light its verb ('shines'); 有孚 then answers it ('there is trust in it')."
+    "L6": "濡其首 kept as a statement (as at 63 L6), not a condition; 有孚失是 'with trust, he loses this' (not 'trust or not').",
+    "L5": "君子之光有孚: B gives the light its verb ('shines'); 有孚 then stands alone in its glossary form, 'There is trust.'"
   }
 }

@@ -4,7 +4,7 @@
   "judgment": [
     "Begin greatly, and go through.",
     "It is good to hold firm.",
-    "Do not set out yet.",
+    "Do not set out.",
     "It is good to set up lords."
   ],
   "image": [
@@ -13,7 +13,7 @@
   ],
   "lines": [
     [
-      "Pacing back and forth, held up.",
+      "Pacing back and forth.",
       "It is good to stay and hold firm.",
       "It is good to set up lords."
     ],
@@ -31,11 +31,12 @@
     ],
     [
       "The horses wheel back.",
-      "Seeking marriage, she goes: good.",
+      "Seeking marriage.",
+      "Going: good.",
       "Nothing unfavourable."
     ],
     [
-      "Its fat is stored up, held back.",
+      "Its fat is stored up.",
       "Holding firm in small things: good.",
       "Holding firm in great things: misfortune."
     ],
@@ -46,9 +47,9 @@
   ],
   "special": null,
   "notes": {
-    "judgment": "勿用有攸往 read as one phrase, 'do not set out'; B adds 'yet' — the block is at the sprouting start, not for good.",
+    "judgment": "勿用有攸往 read as one phrase, in the glossary form 'Do not set out.' (no 'yet': the Chinese has no time word).",
     "L2": "班如 refrain 'horses wheeling back' in L2/L4/L6, word for word. 字 as betrothal, 'promised'.",
-    "L5": "屯其膏: 屯 in its store-up sense; 膏 fat kept literal, 'held back' for the storing.",
+    "L5": "屯其膏: 屯 in its store-up sense; 膏 fat kept literal.",
     "L3": "既鹿無虞: B supplies the hunter ('he only goes deeper'); 君子幾 'sees early'."
   }
 }

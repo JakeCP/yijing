@@ -4,7 +4,7 @@
   "judgment": [
     "There is trust, and it is blocked.",
     "If he is wary and holds to the middle: good.",
-    "But pressed to the end: misfortune.",
+    "In the end, misfortune.",
     "It is good to see the great person.",
     "It is not good to ford the great river."
   ],
@@ -22,18 +22,18 @@
     [
       "He cannot win the suit,",
       "so he goes home and slips away —",
-      "and the town's three hundred households",
+      "and his town's three hundred households",
       "take no harm."
     ],
     [
       "He lives on old virtue.",
-      "Holding firm: danger, but in the end good.",
-      "If he serves the king,",
+      "Holding firm: danger. In the end, good.",
+      "In the king's service, perhaps —",
       "he completes nothing."
     ],
     [
       "He cannot win the suit,",
-      "so he turns back and accepts what is charged;",
+      "so he turns back to the charge;",
       "he changes, and rests holding firm.",
       "Good."
     ],
@@ -50,7 +50,7 @@
   "special": null,
   "notes": {
     "name_en": "訟 is a plea at law; 'Lawsuit', not Wilhelm's 'Conflict'.",
-    "judgment": "惕中吉終凶 parsed as middle-course good, end pressed through misfortune; B spells out the if/but.",
+    "judgment": "惕中吉終凶 parsed as middle-course good, end misfortune; 終凶 in its glossary form ('pressed' rejected: no such word).",
     "L6": "鞶帶 a broad belt of rank, given and stripped (褫) three times in a morning."
   }
 }

@@ -9,7 +9,7 @@ import {
 import { hexagramSVG, trigramFigure, coinSVG, stalksSVG, escapeHtml } from './render.js';
 import { buildTrigramMatrix, firstJudgmentLine, facingEnglishId, facingActive, libraryMode } from './book.js';
 
-const DATA_VERSION = '5'; // bump when data/*.json changes (PLAN.md S9)
+const DATA_VERSION = '6'; // bump when data/*.json changes (PLAN.md S9)
 const app = document.getElementById('app');
 const liveRegion = document.getElementById('live');
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');

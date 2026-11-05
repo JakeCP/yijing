@@ -6,23 +6,23 @@
     "It is good to hold firm."
   ],
   "image": [
-    "Heaven moves, strong and steady.",
-    "So the noble one keeps strong,",
+    "Heaven moves, strong.",
+    "So the noble one strengthens himself,",
     "and does not rest."
   ],
   "lines": [
     [
-      "The dragon lies hidden in the deep.",
-      "This is not yet the time to act."
+      "The dragon lies hidden.",
+      "Do not act."
     ],
     [
       "The dragon appears in the field.",
-      "Now it is good to see the great person."
+      "It is good to see the great person."
     ],
     [
       "All day the noble one is strong, and strong again;",
       "at dusk still wary, as if in danger.",
-      "There is danger, but no harm."
+      "No harm."
     ],
     [
       "Perhaps leaping, still in the deep.",
@@ -30,7 +30,7 @@
     ],
     [
       "The dragon flies in heaven.",
-      "Now it is good to see the great person."
+      "It is good to see the great person."
     ],
     [
       "The dragon flies too high.",
@@ -44,10 +44,10 @@
   "notes": {
     "name_en": "乾 is the doubled heaven trigram; title names the thing (heaven), rejecting Wilhelm's 'The Creative'.",
     "judgment": "元亨利貞 in the fixed two-sentence form settled after the pilot review.",
-    "L1": "潛龍: pilot B 'lies hidden in the deep' (潛 submerged/hidden); 勿用 as 'not yet the time to act', the moment's prohibition, not a standing ban.",
+    "L1": "潛龍 in the glossary form 'The dragon lies hidden.' ('in the deep' rejected: no word for the deep); standalone 勿用 'Do not act.' (no 'not yet the time').",
     "L6": "亢龍: 亢 is overreaching, arrogant height; 'flies too high' keeps L5's flight and the excess.",
     "special": "見群龍無首: 見 reads 'appear'; 首 kept as 'head', animal and leader at once.",
-    "L3": "若厲無咎: B makes the contrast explicit — 'There is danger, but no harm.'",
+    "L3": "若厲無咎: 厲 stays inside 若, 'as if in danger'; no second, actual 'there is danger'.",
     "L4": "或躍在淵: the leaping one is still in the deep; B keeps the place with the leap."
   }
 }
