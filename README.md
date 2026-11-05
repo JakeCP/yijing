@@ -42,12 +42,7 @@ all asset paths are relative (the site works under a `/repo/` prefix),
 and CI (`.github/workflows/`) runs the tests + data validation + font
 check on every push — it does not deploy.
 
-**Before launch:** fill in the final absolute URL. `index.html` contains
-a clearly marked `TODO(launch)` placeholder (search for
-`FINAL-URL.invalid`): replace it with the production origin (e.g.
-`https://<user>.github.io/<repo>/`) and uncomment the `og:image`,
-`og:url`, and canonical tags. They are left commented out because Open
-Graph URLs must be absolute and the origin is not known until deploy.
+**Live URL:** https://jakecp.github.io/yijing/ — set in the `og:url`, `og:image` and canonical tags in `index.html`. Update them if the repo or domain changes.
 
 ## Performance (measured, Phase 5; desktop book layouts re-measured)
 
