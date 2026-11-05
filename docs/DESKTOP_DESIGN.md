@@ -14,9 +14,11 @@ English. Nothing got busier; the same whitespace is simply inhabited:
 paper you can feel, a landscape at the foot of the cast page, names set
 large like a title page.
 
-Below 1024px the layout, order, and tab sequence are the site as it was
-(one exception, on purpose: the paper grain and vignette live at every
-size, and the sixth line now "arrives" everywhere — see Cast).
+Below 1024px the site stays a single quiet column. Readings with
+changing lines are the one deliberate exception to the old order at
+every size: both figures stand together at the head, then the primary
+texts, then the relating texts (see Reading). The paper grain and
+vignette live at every size, and the sixth line "arrives" everywhere.
 
 ## Atmosphere (all sizes, subtle)
 
@@ -26,13 +28,18 @@ size, and the sixth line now "arrives" everywhere — see Cast).
   none). No runtime SVG filters anywhere. Dark mode inverts the same
   tile (`filter: invert(1)`, lower opacity): pale dust on an ink-stone,
   not a negative of the paper.
-- **Vignette** — a fixed radial gradient on `body`, 7% ink at the edges.
-- **Ink-wash landscape** — hand-placed SVG ridges/water/moon
-  (`INK_WASH` in [js/app.js](../js/app.js)), `currentColor` at 5–13%
-  opacity, fixed to the bottom edge of the cast page only, ≥1024px.
+- **Vignette** — a radial gradient (7% ink at the edges) on
+  `body::before`, a fixed full-viewport layer like the grain, so both
+  cover the window at every scroll position with no seam. (A
+  full-page screenshot still shows them once, at viewport height —
+  that is the capture, not the page.)
+- **Ink-wash landscape** — hand-placed SVG ridges/water/sun
+  (`INK_WASH` in [js/app.js](../js/app.js)), `currentColor` at
+  2.8–7% opacity (the small cinnabar sun at 10%), in its own reserved
+  band below the cast ritual — never under a control — and masked on
+  every edge so it dissolves into the paper. Desktop cast page only.
   Dark mode needs no second asset: `--ink` is pale there, so the wash
-  inverts with the palette; the moon keeps the cinnabar token (which
-  itself switches per scheme).
+  inverts with the palette.
 
 New decorative transfer: grain ≈3.3 KB (inside the CSS gzip) + wash
 ≈0.7 KB gzip (inside app.js) + Noto subset +708 B for 太極 — well under
@@ -45,15 +52,22 @@ the 60 KB budget. Full re-measured table in the
 
 Two-part grid (`.cast-layout`). Left, sticky, behind a hairline: the
 title slip 題簽 — 易經 set vertically inside a double-ruled frame —
-beside the 繫辭上 passage 易有太極，是生兩儀，兩儀生四象，四象生八卦。
-in `writing-mode: vertical-rl` (upright glyphs, soft ink), a source
-line, and a quiet English gloss beneath. Right: the ritual as before,
-larger — title 4.6rem, forming hexagram 13rem, coins 4.4rem, stalks
-6.6rem, a wider cast button.
+beside the 繫辭上 passage in `writing-mode: vertical-rl` (upright
+glyphs, soft ink), a source line, and a quiet English gloss beneath.
+The passage is two deliberate columns broken at the phrase boundary
+（易有太極，是生兩儀， / 兩儀生四象，四象生八卦。); a column never wraps,
+so nothing orphans. Right: the ritual as before, larger — title
+4.6rem, forming hexagram 10.5rem, coins 3.9rem, stalks 6.6rem, a
+wider cast button. The stage (18rem reserved) is sized so **Cast the
+coins stands above the fold at 1440×900 before casting**; at
+≤880px window height the ritual compacts further (title 3.5rem,
+stage 15rem, figure 9.2rem) so the same holds at 1280×800. The
+ink-wash band follows the whole layout, below the hand-cast entry.
 
 DOM order is ritual first, passage second (grid places it left), so
-screen readers meet the task before the epigraph; the passage itself is
-one `<p lang="zh-Hant">` in sentence order.
+screen readers meet the task before the epigraph; the passage itself
+is one `<p lang="zh-Hant">` whose two column spans stay in sentence
+order.
 
 **Sixth line arrival (all sizes):** after line six, before navigating,
 an ink disc spreads (`.arrival-ink`, radial gradient scale, 1.5s) and
@@ -64,11 +78,28 @@ the short naming beat).
 
 ### Reading `#/r/…` and hexagram `#/h/…` (≥1024px)
 
-A book spread (`.spread`): left, a sticky figure column — the hexagram
-large (12.5rem, 14rem at ≥1280px), name at 4.3rem with pinyin and
-English name, then, under a double rule, the two trigrams each with its
-drawn figure, name, pinyin, and image （天 heaven…); on readings, the
-relating hexagram miniature linked to its page. Right: the text.
+A book spread (`.spread`): left, a sticky figure column; right, the
+text. A single hexagram stands large (12.5rem, 14rem at ≥1280px),
+name at 4.3rem with pinyin and English name, then, under a double
+rule, the two trigrams each with its drawn figure, name, pinyin, and
+image （天 heaven…).
+
+**Reading order (every size).** When lines change, *both* figures
+come first, before any text: primary → 之 → relating, changing lines
+marked on the primary. On desktop the sticky column stacks them —
+primary (11rem, 12rem at ≥1280px; name 3.6rem) with its names,
+trigram phrase, and trigram rows, then 之 · becoming under a double
+rule, then the relating figure at 75% size, brushed like the primary
+and a touch lighter, linked to its page. On narrow screens the two
+figures sit side by side at reduced size with 之 between and their
+names beneath each. The texts follow in one order everywhere:
+primary judgment, image, and changing lines; then a section break
+and a quiet heading — *之 · becoming 31 咸 Xián · Feeling* — over the
+relating judgment and image. No large relating figure appears
+mid-text. When nothing changes, there is just the single hexagram,
+as before. Everything of the reading — including *The cast, line by
+line* and the Cast again / share row — stays inside the text column
+(`.spread-main`) on desktop.
 
 **Trigram symbols are drawn, not typed.** Neither OFL source font
 carries U+2630–U+2637 (☰–☷) — verified against the full EB Garamond
@@ -77,19 +108,24 @@ and Noto Serif TC fonts — so `trigramFigure()` in
 coins already draw their inscriptions. The font check now *fails* if a
 trigram literal ever reaches the rendered source.
 
-**Marginalia:** each line's label （初九 · line 1) sits in a right-aligned
-margin column; changing lines carry a cinnabar tick there (colour is
-never the only signal — the word "changing" remains). Hovering or
-focusing a line of the figure lights its text in a faint cinnabar wash
-and vice versa (figure lines become keyboard-focusable only at this
-width; `bindLineHighlight` in app.js).
+**Marginalia:** each line's label sits in a right-aligned margin
+column as two clean lines — 初九 large, then *line 1 · changing*
+beneath (on narrow screens the same label reads inline, as before).
+Changing lines carry a cinnabar tick there (colour is never the only
+signal — the word "changing" remains). Hovering or focusing a line
+of the primary figure lights its text in a faint cinnabar wash and
+vice versa; the relating figure never lights the texts (figure lines
+become keyboard-focusable only at this width; `bindLineHighlight` in
+app.js binds the interactive primary only).
 
 **Facing pages (≥1280px only):** a *Facing pages* toggle joins the
 translation selector (`localStorage: yi-facing`). Each judgment, image,
 and line is then set as a small opening: English (the chosen Rendering
 or Legge) on the left-hand page, the 原文 on the right in
 `vertical-rl`, separated by a gutter rule, on a faint washed ground.
-DOM order stays Chinese first per block. Choosing 原文 as the
+DOM order stays Chinese first per block, and the reading order above
+is unchanged: the relating judgment and image are facing pairs under
+their 之 · becoming heading. Choosing 原文 as the
 translation pairs it with the Rendering. The mode is gated in JS
 (`facingActive`, [js/book.js](../js/book.js)) as well as CSS, so a
 stored "on" can never leak the paired layout onto a narrow screen;
@@ -135,12 +171,15 @@ both EB Garamond files came out byte-identical.
 
 ## What did not change
 
-`data/` untouched; routes, casting odds, storage lifecycle untouched;
-mobile DOM order and tab order untouched (desktop focusables — figure
-lines, line texts, both new toggles — are rendered or revealed only at
-their widths). New pure logic is isolated in `js/book.js`
+`data/` untouched; routes, casting odds, storage lifecycle untouched.
+The reading order above is the one intentional order change at every
+size (on a phone the relating figure and its link now stand at the
+head, beside the primary). Desktop focusables — figure lines, line
+texts, both toggles — are still rendered or revealed only at their
+widths. New pure logic is isolated in `js/book.js`
 (matrix/preview/facing choices) with tests in `tests/book.test.js`;
-`tests/render.test.js` grew trigram/interactive-figure tests.
+`tests/render.test.js` covers trigram/interactive figures, the
+brush-by-default rule, and the reading's section order.
 
 ## Screenshot checklist for the lead
 
@@ -150,7 +189,11 @@ light *and* dark unless noted. Suggested names under
 
 ### Cast `#/`
 
-- [ ] 1440×900, untouched — passage + slip left, ritual right, wash at foot
+- [ ] 1440×900, untouched — two-column passage + slip left, ritual
+      right, **Cast the coins above the fold**; then scrolled to the
+      foot — the wash alone in its band below the hand-cast entry,
+      edges dissolved, nothing under it
+- [ ] 1280×800, untouched — cast button still above the fold
 - [ ] 1024×768 — grid at its tightest; passage must not crowd the ritual
 - [ ] 1440, after 3 coin casts — large forming hexagram, big coins
 - [ ] 1440, after 2 yarrow casts — stalk bundle scale
@@ -163,15 +206,21 @@ light *and* dark unless noted. Suggested names under
 
 ### Reading `#/r/c789876` (has changing lines + relating) and one still cast, e.g. `#/r/c777777`
 
-- [ ] 1440 top — sticky figure, trigram rows, relating miniature
-- [ ] 1440 scrolled mid-lines — figure stays, marginalia + cinnabar tick
+- [ ] 1440 top — sticky column holds **both** brushed figures
+      (primary, trigram rows, 之 · becoming, relating at 75%)
+- [ ] 1440 scrolled mid-lines — figures stay, two-line marginalia +
+      cinnabar tick; relating texts under their 之 · becoming heading,
+      no figure mid-text
+- [ ] 1440 foot — *The cast, line by line* and the action row inside
+      the text column, not full width
 - [ ] 1440 hovering line 3 of the figure (text lights) and hovering a
       line text (figure line lights) — two shots
 - [ ] 1440 with 原文 selected; with Legge selected
 - [ ] 1280+ *Facing pages* on — judgment opening; a line opening; then
       toggle off again
 - [ ] 1024 — spread without facing toggle visible
-- [ ] 375 — centred column unchanged
+- [ ] 375 — both figures side by side at the top, 之 between, names
+      under each; texts in the same order; still cast: single figure
 - [ ] Print preview (1440, facing on) — single column, no grain/wash
 
 ### Hexagram `#/h/29` and `#/h/1` （用九）

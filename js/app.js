@@ -169,28 +169,43 @@ function trigramPhrase(t) {
   return `<span lang="zh-Hant">${escapeHtml(t.name_zh)}</span> ${escapeHtml(t.name_pinyin)}, ${IMAGE_EN[t.image_zh] || escapeHtml(t.image_pinyin)}`;
 }
 
-function hexaHead(h, { values = null, big = true, headingLevel = 1, interactive = false } = {}) {
-  const upper = DATA.trigramByName.get(h.upper);
-  const lower = DATA.trigramByName.get(h.lower);
-  const tag = `h${headingLevel}`;
+function hexaFigure(h, { values = null, interactive = false, className = '' } = {}) {
   const lineNames = interactive
     ? h.bits.map((bit, i) => `Line ${i + 1}, ${labelFor(i + 1, bit)}${values && (values[i] === 6 || values[i] === 9) ? ', changing' : ''}`)
     : null;
-  return `<header class="hexa-head">
-    ${hexagramSVG({ bits: h.bits, values, label: nameLabel(h), interactive, lineNames })}
-    <p class="hexa-number">${h.number} · <span lang="zh-Hant">第${chineseNumeral(h.number)}卦</span></p>
+  return hexagramSVG({ bits: h.bits, values, label: nameLabel(h), interactive, lineNames, className });
+}
+
+function hexaNames(h, { headingLevel = 1 } = {}) {
+  const tag = `h${headingLevel}`;
+  return `<p class="hexa-number">${h.number} · <span lang="zh-Hant">第${chineseNumeral(h.number)}卦</span></p>
     <${tag} class="hexa-name"${headingLevel === 1 ? ' tabindex="-1"' : ''} lang="zh-Hant">${escapeHtml(h.name_zh)}</${tag}>
     <p class="hexa-pinyin">${escapeHtml(h.name_pinyin)}</p>
-    ${h.name_en ? `<p class="hexa-en">${escapeHtml(h.name_en)}</p>` : ''}
-    <p class="hexa-trigrams">${trigramPhrase(upper)} above · ${trigramPhrase(lower)} below</p>
+    ${h.name_en ? `<p class="hexa-en">${escapeHtml(h.name_en)}</p>` : ''}`;
+}
+
+function trigramLine(h, className = 'hexa-trigrams') {
+  const upper = DATA.trigramByName.get(h.upper);
+  const lower = DATA.trigramByName.get(h.lower);
+  return `<p class="${className}">${trigramPhrase(upper)} above · ${trigramPhrase(lower)} below</p>`;
+}
+
+function hexaHead(h, { values = null, big = true, headingLevel = 1, interactive = false } = {}) {
+  return `<header class="hexa-head">
+    ${hexaFigure(h, { values, interactive })}
+    ${hexaNames(h, { headingLevel })}
+    ${trigramLine(h)}
   </header>`;
 }
 
 /**
- * The sticky figure column of the desktop spread. On narrow screens it is
- * simply the familiar centred head (the extra rows stay hidden there).
- * The trigram rows repeat the head's trigram phrase with drawn figures,
- * so they are visual only; the relating miniature is a real link.
+ * The figure column: sticky on desktop, the head of the page on narrow
+ * screens. A reading with changing lines shows both figures here,
+ * before any text — side by side with 之 between on narrow screens,
+ * stacked (primary, its names and trigrams, 之, relating) in the
+ * desktop column. The trigram rows repeat the head's trigram phrase
+ * with drawn figures, so they are visual only; the relating figure is
+ * a real link to its page.
  */
 function spreadSide(h, { values = null, headingLevel = 1, relating = null } = {}) {
   const upper = DATA.trigramByName.get(h.upper);
@@ -201,25 +216,35 @@ function spreadSide(h, { values = null, headingLevel = 1, relating = null } = {}
       <span lang="zh-Hant">${escapeHtml(t.name_zh)}</span> ${escapeHtml(t.name_pinyin)} ·
       <span lang="zh-Hant">${escapeHtml(t.image_zh)}</span> ${IMAGE_EN[t.image_zh] || escapeHtml(t.image_pinyin)}</p>
     </div>`;
-  const mini = relating ? `<a class="relating-mini" href="${hexagramHash(relating.number)}">
-      <span class="relating-mini-label"><span lang="zh-Hant">之</span> · becoming</span>
-      ${hexagramSVG({ bits: relating.bits, plain: true, label: nameLabel(relating) })}
-      <span class="relating-mini-name">${relating.number} <span lang="zh-Hant">${escapeHtml(relating.name_zh)}</span> ${escapeHtml(relating.name_pinyin)}${relating.name_en ? ` · ${escapeHtml(relating.name_en)}` : ''}</span>
-    </a>` : '';
-  return `<div class="spread-side">
+  const rows = `<div class="trigram-rows" aria-hidden="true">${row(upper, 'Above')}${row(lower, 'Below')}</div>`;
+  if (!relating) {
+    return `<div class="spread-side">
     ${hexaHead(h, { values, headingLevel, interactive: WIDE_MQ.matches })}
-    <div class="trigram-rows" aria-hidden="true">${row(upper, 'Above')}${row(lower, 'Below')}</div>
-    ${mini}
+    ${rows}
+  </div>`;
+  }
+  return `<div class="spread-side has-relating">
+    <div class="side-fig-primary">${hexaFigure(h, { values, interactive: WIDE_MQ.matches, className: 'primary-figure' })}</div>
+    <p class="side-zhi"><span class="zhi-char" lang="zh-Hant">之</span><span class="zhi-gloss">becoming</span></p>
+    <a class="side-fig-relating" href="${hexagramHash(relating.number)}">
+      ${hexagramSVG({ bits: relating.bits, label: nameLabel(relating), className: 'relating-figure' })}
+      <span class="relating-name"><span class="rn-number">${relating.number}</span> <span class="rn-zh" lang="zh-Hant">${escapeHtml(relating.name_zh)}</span> <span class="rn-pinyin">${escapeHtml(relating.name_pinyin)}</span>${relating.name_en ? ` <span class="rn-en">${escapeHtml(relating.name_en)}</span>` : ''}</span>
+    </a>
+    <header class="side-names-primary">${hexaNames(h, { headingLevel })}</header>
+    ${trigramLine(h, 'hexa-trigrams side-trigram-line')}
+    ${rows}
   </div>`;
 }
 
-/** Light a figure line and its text together (hover and keyboard focus). */
+/** Light a figure line and its text together (hover and keyboard focus).
+ * Only the primary figure is interactive (its lines carry tabindex);
+ * the relating figure in the same column never lights the texts. */
 function bindLineHighlight() {
-  const lines = app.querySelectorAll('.spread-side .hex-line[data-line]');
+  const lines = app.querySelectorAll('.spread-side .hex-line[tabindex][data-line]');
   const entries = app.querySelectorAll('.line-entry[data-line]');
   if (!lines.length || !entries.length) return;
   const light = (n, on) => {
-    app.querySelectorAll(`.spread-side .hex-line[data-line="${n}"], .line-entry[data-line="${n}"]`)
+    app.querySelectorAll(`.spread-side .hex-line[tabindex][data-line="${n}"], .line-entry[data-line="${n}"]`)
       .forEach((el) => el.classList.toggle('is-lit', on));
   };
   const wire = (els) => els.forEach((el) => {
@@ -290,7 +315,7 @@ function lineEntry(h, tr, index, { changing = false, anchor = true, facingEn = n
       </div>`
     : slotText(h.texts[tr].lines[index], tr);
   return `<article class="line-entry${changing ? ' is-changing' : ''}${facingEn ? ' facing-pair' : ''}" data-line="${index + 1}"${canFocus ? ' tabindex="0"' : ''}${anchor ? ` data-anchor="line-${index + 1}"` : ''}>
-    <p class="line-tag"><span class="zh" lang="zh-Hant">${label}</span> · line ${index + 1}${changing ? ' · <span class="changing-note">changing</span>' : ''}</p>
+    <p class="line-tag"><span class="line-tag-name zh" lang="zh-Hant">${label}</span><span class="line-tag-sep" aria-hidden="true"> · </span><span class="line-tag-sub">line ${index + 1}${changing ? ' · <span class="changing-note">changing</span>' : ''}</span></p>
     <div class="line-text">${text}</div>
   </article>`;
 }
@@ -391,13 +416,15 @@ function detailRecord(line, splits) {
 }
 
 // Faint ink-wash ridges for the foot of the desktop cast page. Drawn
-// paths only, currentColor at CSS-set low opacity; hidden on narrow
-// screens and in print.
+// paths only, currentColor at CSS-set low opacity; CSS masks every
+// edge so it dissolves into the paper, and it sits in its own band
+// below the ritual, never under a control. The small disc is a
+// cinnabar sun inside the landscape. Hidden on narrow screens/print.
 const INK_WASH = `<svg class="ink-wash" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
 <path class="wash-far" d="M0 150 C140 96 240 132 360 84 C470 40 560 92 680 70 C800 48 900 108 1020 78 C1100 58 1160 84 1200 72 L1200 220 L0 220 Z"/>
 <path class="wash-mid" d="M0 182 C120 140 260 176 400 132 C540 88 640 150 790 124 C930 100 1030 152 1200 126 L1200 220 L0 220 Z"/>
 <path class="wash-water" d="M60 198 q30 -6 60 0 M210 206 q34 -6 68 0 M420 200 q30 -6 60 0 M640 208 q34 -6 68 0 M860 202 q30 -6 60 0 M1020 210 q34 -6 68 0"/>
-<circle class="wash-moon" cx="1015" cy="36" r="17"/>
+<circle class="wash-sun" cx="300" cy="52" r="11"/>
 </svg>`;
 
 function castView() {
@@ -460,11 +487,10 @@ function castView() {
   </div>
   <aside class="cast-aside" aria-label="From the Appended Words">
     <div class="title-slip"><span class="slip-text" lang="zh-Hant">易經</span></div>
-    <p class="vertical-passage" lang="zh-Hant">易有太極，是生兩儀，兩儀生四象，四象生八卦。</p>
+    <p class="vertical-passage" lang="zh-Hant"><span class="vp-col">易有太極，是生兩儀，</span><span class="vp-col">兩儀生四象，四象生八卦。</span></p>
     <p class="passage-source"><span lang="zh-Hant">繫辭上</span> · Appended Words, I</p>
     <p class="passage-gloss"><em>In Change there is the Great Ultimate. It gives birth to the Two Forms; the Two Forms to the Four Images; the Four Images to the Eight Trigrams.</em></p>
-    ${INK_WASH}
-  </aside></div></div>`;
+  </aside></div>${INK_WASH}</div>`;
 
   const figure = document.getElementById('cast-figure');
   const detail = document.getElementById('cast-detail');
@@ -721,16 +747,18 @@ function readingView(route) {
       }
 
       if (relating) {
-        body += `<p class="relating-arrow"><span lang="zh-Hant">之</span> · <span class="relating-gloss">becoming</span><span aria-hidden="true"> ↓</span></p>`;
-        body += hexaHead(relating, { headingLevel: 2 });
+        // Both figures already stand at the head (spreadSide); the
+        // relating texts follow the primary's under a quiet heading.
+        body += `<section class="relating-section">
+          <h2 class="relating-heading"><span class="rh-zhi" lang="zh-Hant">之</span> · becoming ${relating.number} <span class="rh-name" lang="zh-Hant">${escapeHtml(relating.name_zh)}</span> ${escapeHtml(relating.name_pinyin)}${relating.name_en ? ` · ${escapeHtml(relating.name_en)}` : ''}</h2>`;
         if (allChanging && !specialCase) {
           body += `<p class="question-echo small">All six lines change; the relating hexagram carries the reading.</p>`;
         }
         body += judgmentBlock(relating, tr, 'relating-judgment', 'h3', facingEn);
         body += imageBlock(relating, tr, 'relating-image', 'h3', facingEn);
-        body += `<p class="small soft"><a href="${hexagramHash(relating.number)}">Read hexagram ${relating.number} in full</a></p>`;
+        body += `<p class="small soft"><a href="${hexagramHash(relating.number)}">Read hexagram ${relating.number} in full</a></p>
+        </section>`;
       }
-      body += '</div></div>';
 
       if (specialCase) {
         body += `<details class="quiet">
@@ -748,6 +776,7 @@ function readingView(route) {
         <a class="quiet-link" href="${hexagramHash(primary.number)}">hexagram ${primary.number} in the book</a>
         <span class="copied-note" id="share-note" role="status"></span>
       </div>`;
+      body += '</div></div>';
 
       app.innerHTML = `<div class="view">${body}</div>`;
       bindTranslationBar(render);
@@ -808,7 +837,7 @@ function hexagramView(number) {
           ? `<div class="facing-cols"><div class="facing-zh">${zhVerticalText(h.texts.zh.special)}</div><div class="facing-en">${slotText(h.texts[facingEn].special, facingEn)}</div></div>`
           : slotText(h.texts[tr].special, tr);
         body += `<article class="line-entry${facingEn ? ' facing-pair' : ''}" data-anchor="special">
-          <p class="line-tag"><span class="zh" lang="zh-Hant">${specialLabel(number)}</span> · when all six lines change</p>
+          <p class="line-tag"><span class="line-tag-name zh" lang="zh-Hant">${specialLabel(number)}</span><span class="line-tag-sep" aria-hidden="true"> · </span><span class="line-tag-sub">when all six lines change</span></p>
           <div class="line-text">${specialText}</div>
         </article>`;
       }

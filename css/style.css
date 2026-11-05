@@ -653,13 +653,67 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
   margin: 1.8rem auto 0;
   max-width: 28em;
 }
-.relating-arrow {
-  text-align: center;
-  color: var(--soft);
-  margin: 2.2rem 0 -0.6rem;
-  font-size: 1.3rem;
+/* The relating texts follow the primary's under a quiet heading;
+   both figures stand together at the head (see .has-relating). */
+.relating-section {
+  margin-top: 2.8rem;
+  padding-top: 1.5rem;
+  border-top: 3px double color-mix(in srgb, var(--ink) 35%, transparent);
 }
-.relating-gloss { font-size: 1rem; font-style: italic; }
+.relating-heading {
+  font-size: 1.28rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem;
+}
+.relating-heading .rh-zhi { font-size: 1.45rem; }
+.relating-heading .rh-name { font-size: 1.4rem; }
+
+/* Reading head when lines change: the two figures together first.
+   Narrow screens set them side by side with 之 between (below);
+   the desktop column stacks them (see the wide block). */
+.side-names-primary { text-align: center; }
+.side-fig-relating { text-decoration: none; }
+.side-fig-relating:hover .relating-name { text-decoration: underline; text-underline-offset: 0.22em; }
+.side-zhi { color: var(--soft); text-align: center; }
+.side-zhi .zhi-char { font-style: normal; }
+.side-zhi .zhi-gloss { font-style: italic; }
+
+/* Narrow reading head: figures side by side, names under each. */
+@media (max-width: 1023px) {
+  .spread-side.has-relating {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) auto minmax(0, 4fr);
+    column-gap: 0.9rem;
+    align-items: start;
+    margin-top: 2.1rem;
+  }
+  .has-relating .side-fig-primary { grid-column: 1; grid-row: 1; }
+  .has-relating .side-fig-primary .hexagram { width: min(8.2rem, 100%); margin: 0 auto; }
+  .has-relating .side-zhi {
+    grid-column: 2; grid-row: 1;
+    align-self: center;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .has-relating .side-zhi .zhi-char { display: block; font-size: 1.55rem; }
+  .has-relating .side-zhi .zhi-gloss { display: block; font-size: 0.82rem; }
+  .has-relating .side-fig-relating {
+    grid-column: 3; grid-row: 1 / span 2;
+    display: block;
+    text-align: center;
+  }
+  .has-relating .side-fig-relating .hexagram { width: min(6.2rem, 100%); margin: 0 auto 0.7rem; opacity: 0.92; }
+  .has-relating .relating-name .rn-number { display: block; color: var(--soft); font-size: 0.88rem; line-height: 1.35; }
+  .has-relating .relating-name .rn-zh { display: block; font-family: var(--serif-zh); font-weight: 600; font-size: 1.7rem; line-height: 1.25; }
+  .has-relating .relating-name .rn-pinyin { display: block; font-style: italic; font-size: 1.02rem; line-height: 1.4; }
+  .has-relating .relating-name .rn-en { display: block; color: var(--soft); font-size: 0.95rem; line-height: 1.4; }
+  .has-relating .side-names-primary { grid-column: 1; grid-row: 2; margin-top: 0.7rem; }
+  .has-relating .side-names-primary .hexa-number { font-size: 0.92rem; }
+  .has-relating .side-names-primary .hexa-name { font-size: 2.05rem; }
+  .has-relating .side-names-primary .hexa-pinyin { font-size: 1.12rem; }
+  .has-relating .side-names-primary .hexa-en { font-size: 1rem; }
+  .has-relating .side-trigram-line { grid-column: 1 / -1; grid-row: 3; text-align: center; }
+}
 
 /* Short screens: keep the cast button within thumb reach on load. */
 @media (max-height: 740px) {
@@ -689,12 +743,18 @@ details.quiet[open] summary::before { transform: rotate(90deg); }
 
 /* ------------------------------------------------- atmosphere (all sizes) */
 
-/* Soft vignette held to the viewport; the grain settles over ink and
-   paper alike, like print. One 3.3 KB tiling PNG, embedded; dark rooms
-   get the same tile inverted (pale dust on an ink-stone ground). */
-body {
+/* Soft vignette and grain, both on fixed full-viewport layers, so
+   they cover the window at every scroll position with no seam (a
+   background-attachment: fixed body gradient can paint short on
+   some mobile browsers). One 3.3 KB tiling PNG, embedded; dark
+   rooms get the same tile inverted (pale dust on an ink-stone). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
   background-image: radial-gradient(120% 90% at 50% 38%, transparent 55%, color-mix(in srgb, var(--ink) 7%, transparent) 100%);
-  background-attachment: fixed;
 }
 body::after {
   content: "";
@@ -722,7 +782,7 @@ body::after {
   width: 100%;
   min-width: 0;
 }
-.cast-aside, .trigram-rows, .relating-mini, .lib-preview,
+.cast-aside, .trigram-rows, .ink-wash, .lib-preview,
 .library-toggle, .facing-toggle, .facing-sep { display: none; }
 
 /* The sixth line, arriving: ink spreads, then the name stands in it. */
@@ -818,7 +878,7 @@ body::after {
     column-gap: 4.5rem;
     align-items: start;
     width: 100%;
-    padding-top: 1.6rem;
+    padding-top: 1rem;
   }
   .cast-ritual { grid-column: 2; grid-row: 1; padding-top: 0.4rem; }
   .cast-aside {
@@ -857,35 +917,46 @@ body::after {
     letter-spacing: 0.14em;
     color: var(--soft);
     margin: 0;
-    max-height: min(62vh, 36rem);
   }
+  /* Two deliberate columns, broken at the phrase boundary in the
+     markup; a column never wraps, so nothing can orphan. In
+     vertical-rl each block child is its own column. */
+  .vertical-passage .vp-col { display: block; white-space: nowrap; }
   .passage-source { width: 100%; color: var(--soft); font-size: 0.98rem; margin: 0.4rem 0 0; }
   .passage-gloss { width: 100%; color: var(--soft); font-size: 1rem; line-height: 1.65; margin: 0; max-width: 17em; }
+  /* Its own reserved band below the ritual — never under a control.
+     Barely there, and masked on every edge so the ridges dissolve
+     into the paper instead of ending in a rectangle. */
   .ink-wash {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
+    display: block;
     width: 100%;
-    height: 190px;
-    z-index: 0;
+    height: 8.5rem;
+    margin-top: 2.8rem;
     color: var(--ink);
     pointer-events: none;
+    -webkit-mask-image: radial-gradient(118% 108% at 50% 58%, #000 50%, transparent 97%);
+    mask-image: radial-gradient(118% 108% at 50% 58%, #000 50%, transparent 97%);
   }
-  .wash-far { fill: currentColor; opacity: 0.05; }
-  .wash-mid { fill: currentColor; opacity: 0.075; }
-  .wash-water { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; opacity: 0.13; }
-  .wash-moon { fill: var(--accent); opacity: 0.12; }
+  .wash-far { fill: currentColor; opacity: 0.028; }
+  .wash-mid { fill: currentColor; opacity: 0.042; }
+  .wash-water { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; opacity: 0.07; }
+  .wash-sun { fill: var(--accent); opacity: 0.1; }
 
   .cast-title { font-size: 4.6rem; }
   .cast-subtitle { font-size: 1.15rem; }
-  .question-field { width: min(100%, 30em); margin-top: 2.6rem; }
+  .question-field { width: min(100%, 30em); margin-top: 1.9rem; }
   .question-field input { font-size: 1.2rem; }
-  .cast-stage { min-height: 23rem; margin-top: 2.6rem; }
-  .cast-figure { min-height: 11rem; }
-  .cast-figure .hexagram { width: 13rem; }
+  .method-choice { margin-top: 1.2rem; }
+  /* Sized so the cast button stands above the fold at 1440×900
+     before casting, while still reserving the full figure's room. */
+  .cast-stage { min-height: 18rem; margin-top: 1.3rem; }
+  .cast-figure { min-height: 9.5rem; }
+  .cast-figure .hexagram { width: 10.5rem; }
   .cast-placeholder { font-size: 1.9rem; }
-  .coin { width: 4.4rem; height: 4.4rem; }
+  .coin { width: 3.9rem; height: 3.9rem; }
   .coins-row { gap: 1.3rem; }
   .stalks { width: 6.6rem; }
+  .cast-controls { margin-top: 1rem; }
   .cast-button { min-width: 22rem; min-height: 4rem; font-size: 1.25rem; }
   .arrival-name { font-size: 3.4rem; }
 
@@ -929,24 +1000,41 @@ body::after {
     letter-spacing: 0.1em;
     font-size: 0.82rem;
   }
-  .relating-mini {
-    display: block;
-    margin: 1.8rem auto 0.4rem;
-    padding-top: 1.3rem;
+  /* Both figures in the sticky column: primary with its names and
+     trigrams, then 之 · becoming, then the relating figure at
+     three-quarter size, brushed like the primary, a touch lighter.
+     Flex order stacks them so; the DOM keeps figures-first. */
+  .spread-side.has-relating { display: flex; flex-direction: column; }
+  .spread-side.has-relating > * { flex: none; }
+  .has-relating .side-fig-primary { order: 1; }
+  .has-relating .side-fig-primary .hexagram { width: 11rem; margin: 1.2rem auto 1.1rem; }
+  .has-relating .side-names-primary { order: 2; }
+  .has-relating .side-names-primary .hexa-name { font-size: 3.6rem; }
+  .has-relating .side-names-primary .hexa-pinyin { font-size: 1.35rem; }
+  .has-relating .side-names-primary .hexa-en { font-size: 1.1rem; }
+  .has-relating .side-trigram-line { order: 3; text-align: center; }
+  .has-relating .trigram-rows { order: 4; margin-top: 1.2rem; padding-top: 1rem; }
+  .has-relating .trigram-row { margin: 0.45rem 0; }
+  .has-relating .side-zhi {
+    order: 5;
+    margin: 1.4rem auto 0.6rem;
+    padding-top: 1rem;
     border-top: 3px double color-mix(in srgb, var(--ink) 35%, transparent);
-    text-align: center;
-    text-decoration: none;
-    max-width: 15rem;
+    width: fit-content;
+    min-width: 11rem;
+    font-size: 1rem;
   }
-  .relating-mini-label { display: block; color: var(--soft); font-style: italic; font-size: 0.98rem; margin-bottom: 0.7rem; }
-  .relating-mini .hexagram { width: 4.6rem; margin: 0 auto 0.6rem; }
-  .relating-mini-name { display: block; font-size: 1rem; line-height: 1.45; }
-  .relating-mini:hover .relating-mini-name { text-decoration: underline; text-underline-offset: 0.22em; }
+  .has-relating .side-zhi .zhi-char { font-size: 1.3rem; }
+  .has-relating .side-zhi .zhi-gloss::before { content: " · "; }
+  .has-relating .side-fig-relating { order: 6; display: block; text-align: center; margin-bottom: 0.6rem; }
+  .has-relating .side-fig-relating .hexagram { width: 8.25rem; margin: 0 auto 0.6rem; opacity: 0.92; }
+  .has-relating .relating-name { display: block; font-size: 1rem; line-height: 1.45; }
+  .has-relating .relating-name .rn-number { color: var(--soft); }
+  .has-relating .relating-name .rn-zh { font-family: var(--serif-zh); font-size: 1.22rem; }
+  .has-relating .relating-name .rn-en::before { content: "· "; }
 
   .spread-main .translation-bar { justify-content: flex-start; margin-top: 0.4rem; }
-  .spread-main .hexa-head { text-align: left; margin: 2.6rem 0 0.4rem; }
-  .spread-main .hexa-head .hexagram { width: 7.5rem; margin: 0 0 1rem; }
-  .spread-main .hexa-head .hexa-name { font-size: 2.7rem; }
+  .spread-main .relating-heading { font-size: 1.45rem; }
   .spread-main .text-block { margin: 2rem 0; max-width: 36em; }
   .question-echo { text-align: left; margin-inline: 0; }
 
@@ -966,8 +1054,12 @@ body::after {
     padding-top: 0.2rem;
     padding-right: 0.9rem;
     border-right: 2px solid transparent;
-    line-height: 1.55;
+    line-height: 1.5;
   }
+  /* Two clean lines in the margin: the name large, the rest beneath. */
+  .spread-main .line-entry .line-tag-name { display: block; font-size: 1.32rem; line-height: 1.35; }
+  .spread-main .line-entry .line-tag-sep { display: none; }
+  .spread-main .line-entry .line-tag-sub { display: block; font-size: 0.95rem; }
   .spread-main .line-entry.is-changing .line-tag { border-right-color: var(--accent); }
 
   /* ---------------------------------------------------------- library */
@@ -1050,6 +1142,8 @@ body::after {
   body[data-route="library"] footer { width: min(100% - 6rem, 88rem); }
   .spread { grid-template-columns: minmax(18rem, 23rem) minmax(0, 1fr); }
   .spread-side .hexa-head .hexagram { width: 14rem; }
+  .has-relating .side-fig-primary .hexagram { width: 12rem; }
+  .has-relating .side-fig-relating .hexagram { width: 9rem; }
   .library-cell .hexagram { width: 5rem; }
   .vertical-passage { font-size: 1.6rem; }
 
@@ -1093,6 +1187,24 @@ body::after {
   }
 }
 
+/* Short desktop windows (e.g. 1280×800): the ritual compacts so the
+   cast button is above the fold before casting there too. */
+@media (min-width: 1024px) and (max-height: 880px) {
+  .cast-wrap { padding-top: 0.3rem; }
+  .cast-layout { padding-top: 0.4rem; }
+  .cast-title { font-size: 3.5rem; }
+  .question-field { margin-top: 1.2rem; }
+  .method-choice { margin-top: 0.9rem; }
+  .cast-stage { min-height: 15rem; margin-top: 0.9rem; }
+  .cast-figure { min-height: 8.4rem; }
+  .cast-figure .hexagram { width: 9.2rem; }
+  .cast-detail { min-height: 4.6rem; margin-top: 0.8rem; }
+  .coin { width: 3.3rem; height: 3.3rem; }
+  .cast-controls { margin-top: 0.8rem; }
+  .cast-button { min-height: 3.5rem; }
+  .vertical-passage { font-size: 1.22rem; }
+}
+
 /* ------------------------------------------------------------------ print */
 
 @media print {
@@ -1105,12 +1217,12 @@ body::after {
     --wash: transparent;
   }
   body { background: #fff; background-image: none; font-size: 11.5pt; }
-  body::after { display: none; }
+  body::before, body::after { display: none; }
   .topbar, footer, .translation-bar, .actions, .cast-controls,
   .prev-next, .theme-toggle, .skip-link, .method-choice, .question-field,
   .jump-field, .manual-cast, details.quiet summary,
   .cast-aside, .ink-wash, .library-toggle, .facing-toggle, .facing-sep,
-  .trigram-rows, .relating-mini, .lib-preview, .facing-zh { display: none !important; }
+  .trigram-rows, .lib-preview, .facing-zh { display: none !important; }
   .cast-layout, .spread, .facing-cols, .spread-main .line-entry { display: block; }
   .spread-side { position: static; max-height: none; overflow: visible; border: 0; padding: 0; }
   .spread-main { padding: 0; }
@@ -1121,6 +1233,7 @@ body::after {
   .view { animation: none; }
   a { text-decoration: none; }
   .hexa-head { margin-top: 0; }
-  .hexa-head, .text-block, .line-entry { break-inside: avoid; }
+  .hexa-head, .text-block, .line-entry,
+  .side-fig-primary, .side-fig-relating, .side-names-primary { break-inside: avoid; }
   main { width: 100%; padding-bottom: 0; }
 }

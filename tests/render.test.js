@@ -2,6 +2,7 @@
 // Run: node --test
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { coinSVG, hexagramSVG, trigramFigure } from '../js/render.js';
 
 test('coin faces are drawn paths, never <text> (tofu-proof without fonts)', () => {
@@ -43,4 +44,36 @@ test('interactive hexagrams expose six named, focusable lines in a group', () =>
   const plain = hexagramSVG({ bits: [1, 0, 0, 0, 1, 0] });
   assert.ok(!plain.includes('tabindex'), 'static figures stay out of the tab order');
   assert.equal((plain.match(/data-line="[1-6]"/g) ?? []).length, 6);
+});
+
+test('figures are brushed by default; flat lines are opt-in (library only)', () => {
+  const brushed = hexagramSVG({ bits: [1, 0, 1, 0, 1, 0] });
+  assert.ok(brushed.includes('<path d="M'), 'default figure draws brush paths');
+  assert.ok(!brushed.includes('<rect x="1"'), 'default figure draws no flat bars');
+  assert.ok(!brushed.includes('hexagram-plain'));
+  const flat = hexagramSVG({ bits: [1, 0, 1, 0, 1, 0], plain: true });
+  assert.ok(flat.includes('<rect x="1"') && flat.includes('hexagram-plain'), 'plain stays available for the library grid');
+});
+
+// app.js needs a DOM, so the reading's section order is asserted on the
+// render source: both figures in the side column first, then the primary
+// texts, then the relating texts under their own heading — never a large
+// relating head mid-text, and nothing trailing outside the text column.
+test('reading order: both figures first, primary text, then relating text', () => {
+  const app = readFileSync(new URL('../js/app.js', import.meta.url), 'utf8');
+  assert.ok(!app.includes('hexaHead(relating'), 'no large relating head mid-text');
+
+  const side = app.slice(app.indexOf('function spreadSide'), app.indexOf('function bindLineHighlight'));
+  assert.ok(side.includes('relating.bits'), 'the side column holds the relating figure');
+  assert.ok(!side.includes('plain'), 'the relating figure is brushed like the primary, not flat');
+
+  const reading = app.slice(app.indexOf('function readingView'), app.indexOf('// ----------------------------------------------------------- hexagram page'));
+  const at = ( needle) => reading.indexOf(needle);
+  assert.ok(at('spreadSide(primary') !== -1 && at('spreadSide(primary') < at('judgmentBlock(primary'), 'figures precede the primary text');
+  assert.ok(at('judgmentBlock(primary') < at('relating-heading'), 'primary text precedes the relating heading');
+  assert.ok(at('relating-heading') < at('judgmentBlock(relating'), 'relating judgment sits under its heading');
+  assert.ok(at('judgmentBlock(relating') < at('imageBlock(relating'), 'relating judgment before its image');
+  const spreadClose = reading.lastIndexOf("'</div></div>'");
+  assert.ok(at('castRecordHtml(route') !== -1 && at('castRecordHtml(route') < spreadClose, 'cast record stays inside the text column');
+  assert.ok(at('id="cast-again"') !== -1 && at('id="cast-again"') < spreadClose, 'the action row stays inside the text column');
 });
